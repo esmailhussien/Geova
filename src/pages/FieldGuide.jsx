@@ -7,7 +7,7 @@ const FieldGuide = () => {
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
       <Header />
 
-      <main className="flex-grow pt-32 pb-20">
+      <main className="flex-grow pt-20 md:pt-24 pb-20">
         {/* Hero Section */}
         <section className="px-6 py-16 text-center border-b border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900/30">
           <div className="max-w-4xl mx-auto space-y-6">

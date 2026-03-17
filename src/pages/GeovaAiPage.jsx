@@ -7,7 +7,7 @@ const GeovaAiPage = () => {
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display selection:bg-primary/30">
       <Header />
 
-      <main className="flex-grow pt-32">
+      <main className="flex-grow pt-20 md:pt-24">
         {/* AI Hero Section */}
         <section className="relative px-6 py-24 min-h-[90vh] flex flex-col justify-center overflow-hidden">
           {/* Futuristic Ambient Grid & Glows */}

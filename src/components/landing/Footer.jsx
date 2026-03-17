@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
         <div className="col-span-1 md:col-span-1 space-y-6">
           <Link to="/" className="flex items-center gap-0">
-            <img alt="Geova Logo" className="w-auto object-contain h-32 md:h-44" src={logo} />
+            <img alt="Geova Logo" className="w-auto object-contain h-16 md:h-20 scale-[1.1] md:scale-[1.2] origin-left" src={logo} />
           </Link>
           <p className="text-xs text-slate-500 font-medium leading-loose uppercase tracking-widest">
             Designing the logic of the physical world. Precision. Intelligence. Future.

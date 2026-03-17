@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
       <Header />
 
-      <main className="flex-grow pt-32 pb-20 px-6">
+      <main className="flex-grow pt-20 md:pt-24 pb-20 px-6">
         <div className="max-w-3xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 space-y-8 relative overflow-hidden">
 
           {/* Subtle Background Glow */}

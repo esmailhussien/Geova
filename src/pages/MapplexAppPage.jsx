@@ -8,7 +8,7 @@ const MapplexAppPage = () => {
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
       <Header />
 
-      <main className="flex-grow pt-32">
+      <main className="flex-grow pt-20 md:pt-24">
         {/* App Hero Section */}
         <section className="relative px-6 py-20 lg:py-32 overflow-hidden flex items-center min-h-[90vh]">
           {/* Background Ambient Glow */}

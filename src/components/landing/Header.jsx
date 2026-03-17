@@ -39,10 +39,10 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50 glass-panel border-b border-slate-200/50 dark:border-slate-800/50">
-      <div className="max-w-7xl mx-auto px-6 h-32 flex items-center justify-between gap-1">
+      <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between gap-1">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img alt="Geova Logo" className="w-auto h-44 md:h-52 object-contain" src={logo} />
+          <img alt="Geova Logo" className="w-auto h-12 md:h-16 scale-[1.3] md:scale-[1.6] origin-left object-contain" src={logo} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -90,7 +90,7 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full glass-panel border-b border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-xl backdrop-blur-xl">
+        <div className="md:hidden absolute top-[100%] left-0 w-full glass-panel border-b border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-xl backdrop-blur-xl">
           <nav className="flex flex-col px-6 py-8 gap-6">
             <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/#about">About</a>
             <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/#solutions">Solutions</a>
