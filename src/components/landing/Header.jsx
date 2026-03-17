@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/GEOVA.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
     // Check local storage or system preference
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       document.documentElement.classList.add('dark');
       setIsDark(true);
@@ -39,11 +39,10 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50 glass-panel border-b border-slate-200/50 dark:border-slate-800/50">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-1">
+      <div className="max-w-7xl mx-auto px-6 h-32 flex items-center justify-between gap-1">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img alt="Geova Logo" className="w-auto h-9 md:h-10 object-contain" src={logo} />
-          <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-accent dark:text-white uppercase -ml-1 mt-1 md:mt-1.5">EOVA</h2>
+          <img alt="Geova Logo" className="w-auto h-44 md:h-52 object-contain" src={logo} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -58,7 +57,7 @@ const Header = () => {
         {/* Action Buttons */}
         <div className="flex items-center gap-4">
           {/* Theme Toggle Button (Desktop & Mobile) */}
-          <button 
+          <button
             onClick={toggleTheme}
             className="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors p-2 rounded-full"
             aria-label="Toggle Dark Mode"
@@ -76,7 +75,7 @@ const Header = () => {
 
           {/* Mobile Menu Toggle Button */}
           <div className="md:hidden flex items-center">
-            <button 
+            <button
               onClick={toggleMobileMenu}
               className="text-slate-800 dark:text-white p-2"
               aria-label="Toggle Mobile Menu"

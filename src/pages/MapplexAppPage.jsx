@@ -8,7 +8,7 @@ const MapplexAppPage = () => {
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
       <Header />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-32">
         {/* App Hero Section */}
         <section className="relative px-6 py-20 lg:py-32 overflow-hidden flex items-center min-h-[90vh]">
           {/* Background Ambient Glow */}
@@ -27,11 +27,11 @@ const MapplexAppPage = () => {
                 </span>
                 Mobile Intelligence
               </div>
-              
+
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-accent dark:text-white">
                 Take the Power of Geova to the <span className="gradient-text">Field.</span>
               </h1>
-              
+
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Empower your mobile workforce with the Mapplex Engine. Capture spatial data, run complex routing algorithms, and analyze terrain—all offline, right from your device.
               </p>
@@ -45,7 +45,7 @@ const MapplexAppPage = () => {
                     <span className="text-sm font-black tracking-wide">Google Play</span>
                   </div>
                 </button>
-                
+
                 <button className="flex items-center justify-center gap-4 glass-panel text-slate-400 dark:text-slate-500 px-8 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 cursor-not-allowed opacity-60">
                   <span className="material-symbols-outlined text-3xl">phone_iphone</span>
                   <div className="flex flex-col items-start leading-tight">
@@ -61,7 +61,7 @@ const MapplexAppPage = () => {
               <div className="aspect-[9/19] rounded-[48px] border-[14px] border-slate-900 shadow-2xl overflow-hidden glass-panel relative bg-slate-50 dark:bg-slate-950 flex flex-col pt-12">
                 {/* Dynamic Island / Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-7 bg-slate-900 rounded-b-3xl z-20"></div>
-                
+
                 {/* Mockup Screen Content */}
                 <div className="flex-grow flex flex-col items-center justify-center p-8 text-center space-y-6 relative z-10">
                   <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center shadow-inner">
@@ -72,7 +72,7 @@ const MapplexAppPage = () => {
                     <p className="text-xs font-semibold text-primary uppercase tracking-widest">Mobile Client</p>
                   </div>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed pt-4">
-                    Map rendering engine initializing... <br/>
+                    Map rendering engine initializing... <br />
                     GPS lock acquired.
                   </p>
                 </div>
@@ -80,9 +80,9 @@ const MapplexAppPage = () => {
                 {/* Ambient glow inside screen */}
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none z-0"></div>
               </div>
-              
+
               {/* Decorative floating elements */}
-              <div className="absolute -right-8 top-20 glass-panel p-4 rounded-2xl hidden md:flex items-center gap-3 animate-bounce" style={{animationDuration: '3s'}}>
+              <div className="absolute -right-8 top-20 glass-panel p-4 rounded-2xl hidden md:flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
                 <span className="material-symbols-outlined text-primary">satellite_alt</span>
                 <span className="text-xs font-bold text-accent dark:text-white uppercase tracking-widest">RKT Fixed</span>
               </div>
@@ -94,7 +94,7 @@ const MapplexAppPage = () => {
         <section className="px-6 py-12 bg-accent dark:bg-slate-950 border-y border-slate-800">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-12 glass-panel border border-primary/20 rounded-[32px] overflow-hidden relative group hover:border-primary/50 transition-colors">
             <div className="absolute inset-0 bg-primary/5 pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
-            
+
             <div className="relative z-10 flex items-center gap-6">
               <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary shadow-[0_0_30px_#0d9488]">
                 <span className="material-symbols-outlined text-4xl">psychology</span>
@@ -104,7 +104,7 @@ const MapplexAppPage = () => {
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white mt-1">Powered by Geova AI</h2>
               </div>
             </div>
-            
+
             <div className="relative z-10 text-center md:text-right flex flex-col items-center md:items-end gap-4">
               <p className="text-sm text-slate-400 font-light max-w-sm">
                 The Mapplex engine relies on an offline neural architecture for complex routing and predictive layer caching.
@@ -137,7 +137,7 @@ const MapplexAppPage = () => {
               {/* Step 1 */}
               <div className="glass-panel p-8 rounded-[32px] space-y-8 hover:-translate-y-2 transition-transform duration-500 border border-slate-200/50 dark:border-slate-800/50 group relative overflow-hidden">
                 <div className="absolute -right-6 -top-6 text-9xl font-black text-slate-100 dark:text-slate-800/20 opacity-40 group-hover:text-primary/10 transition-colors pointer-events-none select-none">1</div>
-                
+
                 <div className="space-y-6 relative z-10 text-center sm:text-left">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto sm:mx-0 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">satellite_alt</span>
@@ -162,7 +162,7 @@ const MapplexAppPage = () => {
               {/* Step 2 */}
               <div className="glass-panel p-8 rounded-[32px] space-y-8 hover:-translate-y-2 transition-transform duration-500 border border-slate-200/50 dark:border-slate-800/50 group relative overflow-hidden">
                 <div className="absolute -right-6 -top-6 text-9xl font-black text-slate-100 dark:text-slate-800/20 opacity-40 group-hover:text-primary/10 transition-colors pointer-events-none select-none">2</div>
-                
+
                 <div className="space-y-6 relative z-10 text-center sm:text-left">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto sm:mx-0 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">layers</span>
@@ -187,7 +187,7 @@ const MapplexAppPage = () => {
               {/* Step 3 */}
               <div className="glass-panel p-8 rounded-[32px] space-y-8 hover:-translate-y-2 transition-transform duration-500 border border-slate-200/50 dark:border-slate-800/50 group relative overflow-hidden">
                 <div className="absolute -right-6 -top-6 text-9xl font-black text-slate-100 dark:text-slate-800/20 opacity-40 group-hover:text-primary/10 transition-colors pointer-events-none select-none">3</div>
-                
+
                 <div className="space-y-6 relative z-10 text-center sm:text-left">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto sm:mx-0 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">cloud_sync</span>

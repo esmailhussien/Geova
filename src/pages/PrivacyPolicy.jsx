@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
 
       <main className="flex-grow pt-32 pb-20 px-6">
         <div className="max-w-3xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 space-y-8 relative overflow-hidden">
-          
+
           {/* Subtle Background Glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-accent dark:text-white">Privacy Policy</h1>
             <p className="text-sm text-primary uppercase tracking-widest font-bold">Last Updated: March 2026</p>
           </div>
-          
+
           <div className="space-y-8 text-slate-600 dark:text-slate-400 leading-relaxed font-light relative z-10">
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-accent dark:text-white">1. Data Collection</h2>

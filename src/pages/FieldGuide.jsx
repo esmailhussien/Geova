@@ -7,7 +7,7 @@ const FieldGuide = () => {
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
       <Header />
 
-      <main className="flex-grow pt-24 pb-20">
+      <main className="flex-grow pt-32 pb-20">
         {/* Hero Section */}
         <section className="px-6 py-16 text-center border-b border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900/30">
           <div className="max-w-4xl mx-auto space-y-6">
@@ -58,7 +58,7 @@ const FieldGuide = () => {
                 <p className="text-sm text-slate-500 mt-2 font-light">Best practices for handling multi-user spatial edits and cloud synchronization.</p>
               </div>
             </a>
-            
+
             {/* Guide Card 4 */}
             <a href="#" className="group glass-panel p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 hover:border-primary/50 transition-colors space-y-4">
               <div className="aspect-video bg-slate-100 dark:bg-slate-950 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:bg-primary/5 transition-all">
@@ -80,7 +80,7 @@ const FieldGuide = () => {
                 <p className="text-sm text-slate-500 mt-2 font-light">Tips to maximize battery life and render performance when handling huge datasets.</p>
               </div>
             </a>
-            
+
             {/* Guide Card 6 */}
             <a href="#" className="group glass-panel p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 hover:border-primary/50 transition-colors space-y-4">
               <div className="aspect-video bg-slate-100 dark:bg-slate-950 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:bg-primary/5 transition-all">

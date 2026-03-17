@@ -7,7 +7,7 @@ const GeovaAiPage = () => {
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display selection:bg-primary/30">
       <Header />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-32">
         {/* AI Hero Section */}
         <section className="relative px-6 py-24 min-h-[90vh] flex flex-col justify-center overflow-hidden">
           {/* Futuristic Ambient Grid & Glows */}
@@ -15,7 +15,7 @@ const GeovaAiPage = () => {
             <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[radial-gradient(ellipse_at_50%_0%,_rgba(13,148,136,0.15),transparent_70%)]"></div>
             <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_100%_100%,_rgba(59,130,246,0.1),transparent_70%)]"></div>
             {/* Grid Pattern overlay */}
-            <div 
+            <div
               className="absolute inset-0 opacity-20"
               style={{
                 backgroundImage: `linear-gradient(to right, #0d9488 1px, transparent 1px), linear-gradient(to bottom, #0d9488 1px, transparent 1px)`,
@@ -32,11 +32,11 @@ const GeovaAiPage = () => {
                 <span className="material-symbols-outlined text-[10px] animate-spin" style={{ animationDuration: '3s' }}>hourglass_empty</span>
                 Neural Engine V2.5
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-accent dark:text-white">
-                The Intelligence <br/>Behind the <span className="gradient-text">Map.</span>
+                The Intelligence <br />Behind the <span className="gradient-text">Map.</span>
               </h1>
-              
+
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Geova AI isn't an afterthought; it's the core. Utilizing highly tuned neural networks, it processes raw spatial telemetry into predictive, actionable intelligence instantly—without requiring a cloud connection.
               </p>
@@ -55,7 +55,7 @@ const GeovaAiPage = () => {
             {/* Right Box: Floating AI Core Visualization */}
             <div className="relative mx-auto w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none">
               <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse"></div>
-              
+
               {/* Central 'Core' */}
               <div className="relative z-10 w-48 h-48 rounded-full border border-primary/50 flex items-center justify-center animate-[spin_20s_linear_infinite]">
                 <div className="w-40 h-40 rounded-full border border-dashed border-primary/40 flex items-center justify-center animate-[spin_15s_linear_infinite_reverse]">
@@ -64,13 +64,13 @@ const GeovaAiPage = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Floating Data Nodes */}
-              <div className="absolute top-10 right-20 glass-panel px-4 py-2 rounded-lg border border-slate-300/50 dark:border-slate-700/50 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{animationDuration: '4s'}}>
+              <div className="absolute top-10 right-20 glass-panel px-4 py-2 rounded-lg border border-slate-300/50 dark:border-slate-700/50 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{ animationDuration: '4s' }}>
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-ping"></div>
                 <span className="text-[10px] font-mono tracking-widest text-slate-600 dark:text-slate-300">GEO_PROC_OK</span>
               </div>
-              <div className="absolute bottom-20 left-10 glass-panel px-4 py-2 rounded-lg border border-slate-300/50 dark:border-slate-700/50 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{animationDuration: '5s', animationDelay: '1s'}}>
+              <div className="absolute bottom-20 left-10 glass-panel px-4 py-2 rounded-lg border border-slate-300/50 dark:border-slate-700/50 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{ animationDuration: '5s', animationDelay: '1s' }}>
                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-ping"></div>
                 <span className="text-[10px] font-mono tracking-widest text-slate-600 dark:text-slate-300">PREDICT_SYNC</span>
               </div>
@@ -120,7 +120,7 @@ const GeovaAiPage = () => {
         <section className="py-32 px-6 border-t border-slate-200 dark:border-slate-800 bg-gradient-to-b from-transparent to-slate-100 dark:to-slate-900">
           <div className="max-w-4xl mx-auto text-center space-y-8 p-12 glass-panel border border-primary/20 rounded-[48px] relative overflow-hidden">
             <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors"></div>
-            
+
             <span className="material-symbols-outlined text-6xl text-primary">hub</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-accent dark:text-white">
               Powering the Mapplex Engine
@@ -129,9 +129,9 @@ const GeovaAiPage = () => {
               The intelligence you see here directly fuels the Mapplex Mobile App. It is the invisible force turning a simple digital map into a highly adaptive, situationally-aware enterprise tool.
             </p>
             <div className="pt-4 relative z-10">
-               <a href="/mapplex" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-accent dark:hover:text-white transition-colors">
-                 See it in action <span className="material-symbols-outlined">arrow_forward</span>
-               </a>
+              <a href="/mapplex" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-accent dark:hover:text-white transition-colors">
+                See it in action <span className="material-symbols-outlined">arrow_forward</span>
+              </a>
             </div>
           </div>
         </section>

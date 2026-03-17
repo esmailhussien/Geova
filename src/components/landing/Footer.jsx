@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/GEOVA.png';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -8,10 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
         <div className="col-span-1 md:col-span-1 space-y-6">
           <Link to="/" className="flex items-center gap-0">
-            <div className="flex items-center">
-              <img alt="Geova Logo" className="w-auto object-contain h-6" src={logo} />
-            </div>
-            <h2 className="-ml-1 text-xl font-black tracking-tighter text-accent dark:text-white uppercase">EOVA</h2>
+            <img alt="Geova Logo" className="w-auto object-contain h-32 md:h-44" src={logo} />
           </Link>
           <p className="text-xs text-slate-500 font-medium leading-loose uppercase tracking-widest">
             Designing the logic of the physical world. Precision. Intelligence. Future.
