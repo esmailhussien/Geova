@@ -138,7 +138,7 @@
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZmh4cmJkZWlsY3V3YXp3c3ZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxNjI2NjEsImV4cCI6MjA4NzczODY2MX0.CWGS9bGsoBs5QTNC6UnLxC75InvAP1MzcYMcnu6b1QI"; 
     
     // Initialize Supabase Client
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     document.addEventListener("DOMContentLoaded", () => {
       // Elements
@@ -191,7 +191,7 @@
 
         // Perform Supabase Update User API Call
         // This relies on the session automatically persisted from the URL hash
-        const { error } = await supabase.auth.updateUser({
+        const { error } = await supabaseClient.auth.updateUser({
           password: password
         });
 
