@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password | Geova Mapplex</title>
+
+  <!-- External Fonts (Public Sans) & Supabase JS -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Tailwind Configuration matching Geova App Branding -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0d9488',
+            accent: '#0f172a',
+            'background-light': '#f8fafd',
+            'background-dark': '#020617',
+          },
+          fontFamily: {
+            display: ['"Public Sans"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom Glassmorphism Styles -->
+  <style type="text/tailwindcss">
+    @layer components {
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+      }
+    }
+    @layer utilities {
+      .gradient-text {
+        background: linear-gradient(135deg, #0d9488 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .input-styled {
+        @apply w-full px-4 py-3 rounded-lg border border-slate-200 bg-white/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200;
+      }
+    }
+    body {
+      @apply font-display bg-background-light text-slate-900 antialiased min-h-screen flex flex-col justify-center relative overflow-hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Decorative Blobs -->
+  <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-teal-100/50 blur-[80px] -z-10"></div>
+  <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-[80px] -z-10"></div>
+
+  <div class="w-full max-w-md mx-auto p-6 z-10">
+    <!-- Main Card -->
+    <div class="glass-panel rounded-2xl p-8 relative">
+      
+      <!-- Geova/Mapplex Logo Header -->
+      <div class="text-center mb-8">
+        <svg class="h-12 w-12 mx-auto text-primary mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Geova <span class="gradient-text">Mapplex</span></h1>
+        <p class="text-sm text-slate-500 mt-1">Re-secure your account</p>
+      </div>
+
+      <!-- State 1: Error (Hidden by default) -->
+      <div id="error-state" class="hidden text-center py-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-500 mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h2 class="text-lg font-semibold text-slate-800">Invalid or Expired Link</h2>
+        <p class="text-slate-500 mt-2 text-sm">This password recovery link is no longer valid. Please request a new one from the app.</p>
+      </div>
+
+      <!-- State 2: Form (Hidden by default) -->
+      <div id="form-state" class="hidden">
+        <form id="reset-form" class="space-y-4">
+          <div>
+            <label for="password" class="block text-sm font-medium text-slate-700 mb-1">New Password</label>
+            <input type="password" id="password" required minlength="6" class="input-styled" placeholder="••••••••">
+          </div>
+          <div>
+            <label for="confirm-password" class="block text-sm font-medium text-slate-700 mb-1">Confirm New Password</label>
+            <input type="password" id="confirm-password" required minlength="6" class="input-styled" placeholder="••••••••">
+          </div>
+          
+          <p id="form-message" class="text-sm hidden mt-2"></p>
+          
+          <button type="submit" class="w-full bg-primary hover:bg-teal-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex justify-center items-center mt-6">
+            <span id="submit-text">Update Password</span>
+            <!-- Loader (Hidden) -->
+            <svg id="submit-loader" class="animate-spin -mr-1 ml-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- State 3: Success (Hidden by default) -->
+      <div id="success-state" class="hidden text-center py-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teal-100 text-teal-600 mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <h2 class="text-lg font-semibold text-slate-800">Success!</h2>
+        <p class="text-slate-500 mt-2 text-sm">Your password has been successfully updated. You can now close this window and log in securely on Mapplex.</p>
+        <button onclick="window.close()" class="mt-6 px-4 py-2 border border-slate-200 text-slate-600 rounded-lg text-sm hover:bg-slate-50 transition-colors">Close Window</button>
+      </div>
+
+    </div>
+    
+    <!-- Footer Context -->
+    <p class="text-center text-xs text-slate-400 mt-8">
+      &copy; <script>document.write(new Date().getFullYear())</script> Geova Solutions. All rights reserved.
+    </p>
+  </div>
+
+  <!-- APPLICATION LOGIC -->
+  <script>
+    // --- SUPABASE CREDENTIALS (REPLACE CONSTANTS HERE) ---
+    // Note: Use your raw VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY directly here 
+    // because standard standalone HTML files cannot evaluate Vite ENV values.
+    const SUPABASE_URL = "https://fefhxrbdeilcuwazwsvr.supabase.co"; 
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZmh4cmJkZWlsY3V3YXp3c3ZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxNjI2NjEsImV4cCI6MjA4NzczODY2MX0.CWGS9bGsoBs5QTNC6UnLxC75InvAP1MzcYMcnu6b1QI"; 
+    
+    // Initialize Supabase Client
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Elements
+      const errorState = document.getElementById("error-state");
+      const formState = document.getElementById("form-state");
+      const successState = document.getElementById("success-state");
+      
+      const resetForm = document.getElementById("reset-form");
+      const formMessage = document.getElementById("form-message");
+      const submitText = document.getElementById("submit-text");
+      const submitLoader = document.getElementById("submit-loader");
+      const submitBtn = resetForm.querySelector('button[type="submit"]');
+
+      // 1. Initial State Check (Validate presence of token flow in the hash)
+      // Supabase appends #access_token=...&type=recovery to the URL upon email link click.
+      const hashParams = new URLSearchParams(window.location.hash.substring(1));
+      const isRecoveryFlow = hashParams.has("type") && hashParams.get("type") === "recovery";
+
+      if (isRecoveryFlow) {
+        formState.classList.remove("hidden");
+        // We do *not* manually parse the access token. 
+        // Supabase v2 magically reads the hash on page load and establishes a session instantly.
+      } else {
+        errorState.classList.remove("hidden");
+      }
+
+      // 2. Handle Form Submission
+      resetForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        // Reset message UI
+        formMessage.classList.add("hidden");
+        formMessage.classList.remove("text-red-500", "text-teal-600");
+
+        // Validate Client-Side
+        if (password !== confirmPassword) {
+          formMessage.textContent = "Passwords do not match.";
+          formMessage.classList.add("text-red-500");
+          formMessage.classList.remove("hidden");
+          return;
+        }
+
+        // Show Loaders
+        submitText.textContent = "Updating...";
+        submitLoader.classList.remove("hidden");
+        submitBtn.disabled = true;
+
+        // Perform Supabase Update User API Call
+        // This relies on the session automatically persisted from the URL hash
+        const { error } = await supabase.auth.updateUser({
+          password: password
+        });
+
+        // Hide Loaders
+        submitLoader.classList.add("hidden");
+        submitBtn.disabled = false;
+        submitText.textContent = "Update Password";
+
+        // Handle Response
+        if (error) {
+          formMessage.textContent = error.message;
+          formMessage.classList.add("text-red-500");
+          formMessage.classList.remove("hidden");
+        } else {
+          // Success Path - Swap UI States
+          formState.classList.add("hidden");
+          successState.classList.remove("hidden");
+          
+          // Best practice: Scrub the sensitive hash from the URL dynamically!
+          history.replaceState(null, document.title, window.location.pathname + window.location.search);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
