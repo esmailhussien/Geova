@@ -52,6 +52,8 @@ const Header = () => {
           <a className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest text-primary" href="/#mapplex">Mapplex</a>
           <a className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="/#vision">Vision</a>
           <Link className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest text-primary" to="/ai">Geova AI</Link>
+          <Link className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" to="/updates">Updates</Link>
+          <Link className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" to="/contact">Contact</Link>
         </nav>
 
         {/* Action Buttons */}
@@ -97,6 +99,8 @@ const Header = () => {
             <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest text-primary" href="/#mapplex">Mapplex</a>
             <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/#vision">Vision</a>
             <Link onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest text-primary" to="/ai">Geova AI</Link>
+            <Link onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" to="/updates">Updates</Link>
+            <Link onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" to="/contact">Contact</Link>
             <hr className="border-slate-200 dark:border-slate-800" />
             <Link to="/mapplex" className="w-full" onClick={toggleMobileMenu}>
               <button className="bg-accent dark:bg-white text-white dark:text-accent w-full px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all">

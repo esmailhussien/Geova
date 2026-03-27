@@ -4,6 +4,8 @@ import MapplexAppPage from "./pages/MapplexAppPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FieldGuide from "./pages/FieldGuide";
 import GeovaAiPage from "./pages/GeovaAiPage";
+import ContactPage from "./pages/ContactPage";
+import ChangelogPage from "./pages/ChangelogPage";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/guide" element={<FieldGuide />} />
         <Route path="/ai" element={<GeovaAiPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/updates" element={<ChangelogPage />} />
       </Routes>
     </Router>
   )

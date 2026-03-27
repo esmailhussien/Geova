@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-background-light dark:bg-background-dark py-20 px-6 border-t border-slate-200 dark:border-slate-800">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-16 md:gap-8">
         <div className="col-span-1 md:col-span-1 space-y-6">
           <Link to="/" className="flex items-center gap-0">
             <img alt="Geova Logo" className="w-auto object-contain h-16 md:h-20 scale-[1.1] md:scale-[1.2] origin-left" src={logo} />
@@ -35,6 +35,26 @@ const Footer = () => {
             <li><a className="hover:text-primary transition-colors" href="#">Case Studies</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">System Status</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">Global Map</a></li>
+          </ul>
+        </div>
+        <div className="space-y-6">
+          <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Contact Us</h4>
+          <ul className="space-y-4 text-xs font-bold tracking-widest text-slate-500">
+            <li>
+              <a className="hover:text-primary transition-colors flex items-center gap-2" href="mailto:support@geova.net">
+                <span className="material-symbols-outlined text-[16px]">support_agent</span> support@geova.net
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary transition-colors flex items-center gap-2" href="mailto:info@geova.net">
+                <span className="material-symbols-outlined text-[16px]">info</span> info@geova.net
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary transition-colors flex items-center gap-2" href="mailto:sales@geova.net">
+                <span className="material-symbols-outlined text-[16px]">storefront</span> sales@geova.net
+              </a>
+            </li>
           </ul>
         </div>
         <div className="space-y-6">
