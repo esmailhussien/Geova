@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Brand colors (Teal) */
+  --vp-c-brand-1: #0d9488;
+  --vp-c-brand-2: #0f766e;
+  --vp-c-brand-3: #115e59;
+  --vp-c-brand-soft: rgba(13, 148, 136, 0.16);
+  
+  /* Fonts */
+  --vp-font-family-base: 'Public Sans', 'Inter', sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Custom Dimensions */
+  --vp-nav-height: 80px;
+}
+
+/* Light Mode Overrides */
+:root {
+  --vp-c-bg: #f8fafd;
+  --vp-c-bg-alt: #ffffff;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-text-1: #0f172a;
+  --vp-c-text-2: #475569;
+  --vp-nav-bg-color: rgba(248, 250, 253, 0.6);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --vp-c-bg: #020617;
+  --vp-c-bg-alt: #0f172a;
+  --vp-c-bg-elv: #1e293b;
+  --vp-c-bg-soft: #0f172a;
+
+  --vp-c-text-1: #f8fafc;
+  --vp-c-text-2: #94a3b8;
+  
+  --vp-nav-bg-color: rgba(2, 6, 23, 0.6);
+}
+
+/* === Architectural UI Enhancements === */
+
+/* The WOW Factor: Spatial Depth Background Injection */
+.VPDoc {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fixed background blob for spatial depth (Teal) */
+.VPDoc::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 50%, rgba(13,148,136,0.06), transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dark .VPDoc::before {
+  background: radial-gradient(circle at 50% 50%, rgba(13,148,136,0.12), transparent 70%);
+}
+
+/* Glassmorphism for NavBar (Matching React Header.jsx) */
+.VPNavBar {
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.1) !important;
+}
+
+.dark .VPNavBar {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Gradient Text for Site Title */
+.VPNavBarTitle .title {
+  background: linear-gradient(135deg, #0d9488 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+/* Uppercase tracking-widest for nav links */
+.VPNavBarMenuLink {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600;
+  transition: color 0.25s;
+}
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Sidebar and Subnav Adjustments */
+.VPSidebar {
+  background-color: var(--vp-c-bg-alt);
+}
+.dark .VPSidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Typography Overrides for H1-H6 Matching Geova TailWind Typography */
+.vp-doc h1 {
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h2 {
+  font-weight: 700;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+  padding-bottom: 0.5rem;
+  letter-spacing: -0.015em;
+}
+
+/* Custom Card Styling (Matching Geova rounded-xl cards and hover shadows) */
+.vp-doc .custom-block {
+  border-radius: 0.75rem; /* Tailwind rounded-xl */
+}
+
+/* Prev/Next Page Buttons Hover Harmonization */
+.pager-link {
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(13, 148, 136, 0.15) !important;
+  transition: all 0.3s ease !important;
+}
+
+.pager-link:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  box-shadow: 0 10px 25px rgba(13, 148, 136, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+.dark .pager-link {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark .pager-link:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  box-shadow: 0 10px 25px rgba(13, 148, 136, 0.2) !important;
+}

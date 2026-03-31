@@ -32,7 +32,7 @@ const Footer = () => {
           <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Resources</h4>
           <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-500">
             <li><a className="hover:text-primary transition-colors" href="#">Manifesto</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+            <li><a className="hover:text-primary transition-colors" href="/docs/">Documentation</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">System Status</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">Global Map</a></li>
           </ul>

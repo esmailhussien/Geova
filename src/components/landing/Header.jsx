@@ -52,6 +52,7 @@ const Header = () => {
           <a className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest text-primary" href="/#mapplex">Mapplex</a>
           <a className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="/#vision">Vision</a>
           <Link className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest text-primary" to="/ai">Geova AI</Link>
+          <a className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="/docs/">Docs</a>
           <Link className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" to="/updates">Updates</Link>
           <Link className="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" to="/contact">Contact</Link>
         </nav>
@@ -99,6 +100,7 @@ const Header = () => {
             <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest text-primary" href="/#mapplex">Mapplex</a>
             <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/#vision">Vision</a>
             <Link onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest text-primary" to="/ai">Geova AI</Link>
+            <a onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/docs/">Docs</a>
             <Link onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" to="/updates">Updates</Link>
             <Link onClick={toggleMobileMenu} className="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" to="/contact">Contact</Link>
             <hr className="border-slate-200 dark:border-slate-800" />

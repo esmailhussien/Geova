@@ -42,9 +42,9 @@ const GeovaAiPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
-                <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
+                <a href="/docs/geova-ai/interface" className="bg-primary text-center text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
                   Access API Docs
-                </button>
+                </a>
                 <button className="glass-panel text-accent dark:text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-white/5 transition-all flex justify-center items-center gap-2">
                   <span className="material-symbols-outlined">play_circle</span>
                   View Architecture

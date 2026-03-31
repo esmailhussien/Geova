@@ -38,9 +38,9 @@ const Hero = () => {
               Discover Mapplex App
             </button>
           </Link>
-          <button className="glass-panel text-accent dark:text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-slate-200 dark:border-slate-800 transition-all">
+          <a href="/docs/" className="glass-panel flex items-center justify-center text-accent dark:text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-slate-200 dark:border-slate-800 transition-all hover:bg-slate-50 dark:hover:bg-slate-800/50">
             View Documentation
-          </button>
+          </a>
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">

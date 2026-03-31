@@ -17,9 +17,9 @@ const Solutions = () => {
           {/* Large Feature Card */}
           <div className="md:col-span-7 relative group overflow-hidden rounded-3xl bg-accent p-10 flex flex-col justify-end text-white border border-slate-800">
             <div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none">
-              <img 
-                className="w-full h-full object-cover" 
-                data-alt="Microchip neon lights high tech background" 
+              <img
+                className="w-full h-full object-cover"
+                data-alt="Microchip neon lights high tech background"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD2Jn09G7dLthvI7REwN9YZYuqF9COapsTL79vDghk4DZAY0xtfJBffyvG_OrrKlF3mSbeKXCiAkBvf8FRcQbbzcliGtUO0OXDS0YyCbSx9mFLriATRSEgZcJQr1U6cRgTL1aKnPb_tLU0MD_uPWFx-FjXqXMcBH9HKIthhuMA6HkEpgR10YpXnGoD4Jx9WOaBsOAB7fUONCbf7IhX8-jSILtnamgAFf8q9PllNP7PQJjYr_kwDRBa7eve14bADwqYERrHH1PhWfQ"
                 alt="High Tech Background"
               />
@@ -30,7 +30,7 @@ const Solutions = () => {
               <h4 className="text-3xl font-bold">Autonomous Core Logic</h4>
               <p className="max-w-md text-slate-300 font-light">The backbone of future automation. We design proprietary spatial kernels that allow machines to navigate and understand complex physical domains.</p>
               <button className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-primary pt-4 group">
-                                Deep Dive <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                Deep Dive <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
               </button>
             </div>
           </div>
