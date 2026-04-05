@@ -22,8 +22,8 @@ export default defineConfig({
     
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Core Engine', link: '/core-engine/offline-sync' },
-      { text: 'Screens', link: '/screens/dashboard/' },
+      { text: 'Getting Started', link: '/screens/auth-view' },
+      { text: 'Interface', link: '/screens/dashboard/' },
       { text: 'Geova AI', link: '/geova-ai/interface' },
       { text: 'Back to App', link: '/' }
     ],
@@ -33,39 +33,39 @@ export default defineConfig({
         text: 'Getting Started',
         collapsed: false,
         items: [
-          { text: 'Introduction', link: '/' }
+          { text: 'Introduction', link: '/' },
+          { text: 'Authentication', link: '/screens/auth-view' }
         ]
       },
       {
-        text: 'Core Engine',
+        text: 'Navigating the Interface',
         collapsed: false,
         items: [
-          { text: 'Offline Sync', link: '/core-engine/offline-sync' },
-          { text: 'Authentication', link: '/core-engine/auth' }
-        ]
-      },
-      {
-        text: 'Screens',
-        collapsed: false,
-        items: [
-          { text: 'Auth View', link: '/screens/auth-view' },
           { text: 'Dashboard', link: '/screens/dashboard/' },
           { text: 'Map Interface', link: '/screens/map-interface/' },
           { text: 'Layers View', link: '/screens/layers-view' },
           { text: 'Forms View', link: '/screens/forms-view' },
-          { text: 'Data View', link: '/screens/data-view' },
-          { text: 'Data Sync', link: '/screens/data-sync' },
-          { text: 'Admin View', link: '/screens/admin-view' }
+          { text: 'Data Table', link: '/screens/data-view' },
+          { text: 'Admin Console', link: '/screens/admin-view' }
         ]
       },
       {
-        text: 'Geova AI',
+        text: 'Advanced Operations',
         collapsed: false,
         items: [
-          { text: 'Interface', link: '/geova-ai/interface' },
-          { text: 'Prompt Guide', link: '/geova-ai/prompt-guide' },
-          { text: 'Engine Architecture', link: '/geova-ai/architecture' },
-          { text: 'Spatial Index', link: '/geova-ai/spatial-index' }
+          { text: 'Geova AI Protocol', link: '/geova-ai/interface' },
+          { text: 'AI Prompt Guide', link: '/geova-ai/prompt-guide' }
+        ]
+      },
+      {
+        text: 'System Architecture',
+        collapsed: true,
+        items: [
+          { text: 'Core Auth Strategy', link: '/core-engine/auth' },
+          { text: 'Offline Sync Engine', link: '/core-engine/offline-sync' },
+          { text: 'Data Sync Flow', link: '/screens/data-sync' },
+          { text: 'AI Architecture', link: '/geova-ai/architecture' },
+          { text: 'Spatial Indexing', link: '/geova-ai/spatial-index' }
         ]
       }
     ],

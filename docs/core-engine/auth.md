@@ -8,7 +8,7 @@ order: 6
 
 The `AuthView` module handles Supabase session management alongside local Guest Mode access.
 
-![Auth View Placeholder](../assets/images/auth-view-main.png)
+
 
 ## Authentication States
 

@@ -4,56 +4,39 @@ description: Exhaustive documentation regarding Geova AI's orchestration logic, 
 order: 1
 ---
 
-# Geova AI Interfaces & Capabilities
+---
+title: Geova AI Protocol
+description: Interact conversationally with your maps using the autonomous artificial intelligence spatial agent.
+---
 
-Geova AI operates as a robust, autonomous spatial agent. It acts as the primary orchestrator that translates ambiguous natural language inputs into explicit, validated GIS instructions.
+# Geova AI Protocol
 
-To ensure consistency and prevent computational deadlock when operating on vast datasets—such as **Global Carbon Sequestration Regions** or **Coastal Erosion Rates**—Geova separates intention parsing from mathematical execution.
+## Overview
+**Geova AI** is your dedicated, autonomous spatial orchestrator. Instead of clicking through twenty different menus to measure proximity or filter dense features, you can simply type your request in plain English. The AI understands complex geographic relationships and will immediately generate real-time visual results on your map.
 
-## Dynamic Precision Tools (`toolDefinitionGenerator.js`)
+## Action Steps
 
-LLMs historically hallucinate metadata keys when querying databases (e.g. searching for `CO2_Level` instead of `Carbon_Parts_Per_Million`). Geova circumvents this via the `toolDefinitionGenerator.js` module.
+### 1. Execute a Natural Language Query
+1. Open the Chat Interface on the right side of your dashboard.
+2. Type a command focused on the data you want to analyze. For example:
+   *"Visualize all points losing more than 5 meters of coastline per year."*
+3. Geova AI will parse your intent, query the exact layer, and render the results directly onto the map as a new "Ghost Layer".
 
-Every time a user prompts Geova AI, the `toolDefinitionGenerator` silently scans the `DataView` layers. It rips the exact, strict database schema mapping and **dynamically generates specialized JSON-RPC tools** tailored directly to the layer's actual configuration. 
+### 2. Reviewing Healed Results
+Sometimes, a highly specific query (e.g., *"Show me all Emergency Shelters within 2 km"*) might return absolutely 0 results. Instead of failing silently:
+1. Geova AI will proactively and autonomously expand its search parameters (e.g., expanding the search to 50 km).
+2. Look at the data table—you will see a subtle system notification detailing exactly how the AI "self-healed" the query to ensure you got actionable data!
 
-**Example Workflow:**
-1. A field agent analyzing **Coastal Erosion Risk** asks: *"Visualize areas losing more than 5 meters of coastline per year."*
-2. Before answering, the `toolDefinitionGenerator` evaluates the active `erosion_layer` schema.
-3. It writes a precise, transient tool containing the explicit schema enumerations (e.g., `ANNUAL_LOSS_M` of type `FLOAT`).
-4. The AI receives this hyper-restricted execution path, effectively enforcing 100% schema accuracy on every single operation.
+## Pro-Tips
+> 💡 **Tip:** Be as specific as possible with layer names! If you're analyzing a layer called "Carbon Sequestration Regions", use those exact words so the AI can match your intent flawlessly to the database schema.
 
-## Self-Healing Error Recovery (`agenticFallback.js`)
+> 💡 **Tip:** Notice the dashed purple outlines around your results? That is the Ghost Layer—it persists non-destructively so you can compare the AI's calculation against your original raw data.
 
-If a user asks "Show me all **Carbon Mitigation Shelters** within 2 kilometers of the hurricane path," but the strictest execution yields absolutely 0 results, a traditional engine returns an empty map—an unacceptable UX.
+---
 
-Geova implements a robust safety-net architecture via `agenticFallback.js`. It utilizes **Semantic Triggers** that catch empty outputs or SQL-syntax crashes mid-flight, immediately triggering a "Self-Healing Error Recovery" cycle to intelligently save the user's intent.
+## Technical Architecture (For Developers)
 
-For instance, `FIND_NEAREST_EMPTY_TARGET` fires within `agenticFallback.js`. Geova automatically drops the strict 2km boundary filter, expands its search buffer massively, and retries the calculation globally to yield alternative data.
+Geova separates intent parsing from mathematical execution natively inside the browser context.
 
-### `_selfHealed` Metadata Interface
-
-When `agenticFallback` successfully heals a broken execution branch, it injects a hidden `_selfHealed` payload directly into the `properties` of the first returned GeoJSON feature. The UI catches this payload and suppresses it from the physical data table, presenting a non-blocking toast warning instead.
-
-```json
-{
-  "type": "Feature",
-  "geometry": { ... },
-  "properties": {
-    "Name": "Safe Shelter Alpha",
-    "_selfHealed": {
-      "strategy": "EXPANDED_BUFFER",
-      "originalParameters": {
-        "radius": 2000,
-        "units": "meters"
-      },
-      "healedParameters": {
-        "radius": 50000,
-        "units": "meters"
-      },
-      "systemMessage": "No features found at 2 km. Automatically expanded search radius to 50 km to yield results based on Carbon data sparsity."
-    }
-  }
-}
-```
-
-The system alerts the worker that they are viewing an autonomously expanded scope without interrupting their core workflow mapping task.
+- **Dynamic Precision Tools (`toolDefinitionGenerator.js`):** LLMs historically hallucinate database keys. Geova AI mitigates this by silently scanning the active `DataView` layers every single prompt. It reads the specific types (`FLOAT`, `VARCHAR`) and synthesizes specialized JSON-RPC tool schemas dynamically. The AI is structurally prohibited from hallucinating parameter keys because its tool-set is transient and scoped exclusively to the active layer.
+- **Self-Healing Error Recovery (`agenticFallback.js`):** Geova implements explicit Semantic Triggers that capture topological crashes or Null Island errors mid-flight. For example, if a `turf.intersect` executes but returns an empty array, `FIND_NEAREST_EMPTY_TARGET` fires inside the Fallback module, dynamically expanding Buffer properties by an exponential multiplier and recursively executing the DAG to force geometric coverage.

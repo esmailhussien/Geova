@@ -4,37 +4,40 @@ description: The control center for reviewing tabular spatial data, exporting fo
 order: 5
 ---
 
-# Data & Sync (`DataView.js`)
+---
+title: Data Sync Hub
+description: The control center for exporting formats and hosting Local Sync sessions.
+---
 
-The Data & Sync view provides a traditional tabular interface to view, export, and ingest massive amounts of spatial data without crashing the single-page application. 
+# Data Sync Hub
 
-![Data View Placeholder](../assets/images/data-view-main.png)
+## Overview
+The **Data Sync Hub** is where you manage the critical export and offline transmission of your spatial data. Because Mapplex is designed for extreme offline conditions, this screen allows you to securely transfer your data to other offline devices (tablets, phones) in your camp without ever needing an internet connection.
 
-## DOM Virtualization (Performance)
+## Action Steps
 
-Mapplex commonly deals with layers containing 5,000+ polygons. Rendering 5,000 DOM `<tr>` rows instantly crashes mobile Safari and Chrome WebViews.
-`DataView` implements manual pagination via a "Load More" DOM button. It uses a module-level `_dataViewCache` to slice features into batches of 50. 
+### 1. Perform an Air-Gapped Local Sync
+If your team is deep in the field with zero cell coverage, you can consolidate everyone's collected geometries onto a single 'Host' device:
+1. **The Host:** One team leader opens the Sync Hub and clicks **Host Session**. The tablet will act as a local node server and display an IP address (e.g., `192.168.4.1:8080`).
+2. **The Worker:** Other field devices tap **Join Session**, explicitly type in the Host's IP address, and push their internal database directly via local Wi-Fi.
 
-## Import Pipeline (GeoJSON, KMZ, GPKG)
+### 2. Export Your Data Deliverables
+When you return to base, you can export your findings for external software:
+1. Navigate to the Layer you want to export.
+2. Select your desired architectural format:
+   - **GeoJSON**: Standard format for web mapping.
+   - **KMZ**: Zipped format for opening instantly in Google Earth.
+   - **CSV**: Standard Excel format (flattens complex polygons into coordinates).
+   - **GeoPackage (GPKG)**: An entire heavy SQLite database constructed entirely within your browser memory.
 
-The Data View serves as the primary ingestion dropzone. 
-Mapplex implements a robust parsing layer that detects files via magic bytes (instead of relying on generic `.gpkg` or `.kmz` file extensions, which Android file pickers often truncate).
+## Pro-Tips
+> 💡 **Tip:** If the Android file picker hides file extensions (like `.kmz` or `.gpkg`) when you are picking a file, don't worry! Geova utilizes "magic byte detection" to figure out the file structure programmatically even if the name gets corrupted.
 
-### Reference Layers vs. Feature Layers
-- **Target Layers**: Imported data matches the schema of your currently selected Mapplex layer.
-- **Reference Layers**: Imported data is stored exactly as it is (in `REFERENCE_DATA`). This is used for visual underlays and **Spatial Mapping** (where a form field auto-completes based on intersecting the Reference Layer).
+---
 
-## Local Sync (Offline Operations)
+## Technical Architecture (For Developers)
 
-Because Mapplex operates completely offline, teams deep in the field without cell coverage need to consolidate data before heading back to base.
-`DataView` provides a "Field Gathering" interface via WebSockets:
-1. **Host Session**: One device (e.g. tablet) boots up a local WebSocket Node server dynamically (assuming the platform allows it, or uses peer-to-peer logic/local IP).
-2. **Join & Send**: Worker devices type in the Host's IP address and Port (e.g. `192.168.4.1:8080`) and push their queued `STORES.FEATURES` directly via the local ad-hoc Wi-Fi network.
+The Local Sync infrastructure does not depend on cloud bridges. 
 
-## Export Architectures
-
-Data can be exported via:
-- **GeoJSON**: Standard web-GIS JSON format.
-- **KMZ**: Zipped KML for Google Earth compatibility.
-- **CSV**: Flattens geometries into standard Excel formats.
-- **GPKG (GeoPackage)**: Implements SQLite WASM (`sql.js`) client-side to dynamically construct a valid `.gpkg` database file containing the local features, entirely inside the browser memory.
+- **Local WebSocket Handoff:** The application boots up a dynamic local WebSocket Node server (`Host Session`) assuming the device platform exposes the network interfaces. 
+- **WASM SQLite Construction:** Constructing a `.gpkg` locally is achieved via `sql.js` (SQLite compiled to WebAssembly). Geova dynamically constructs an empty GPKG schema in-memory, injects the `features` rows utilizing precise WKB (Well-Known Binary) `LittleEndian` encoding, and pipes the final Blob to the user without ever touching a server.
