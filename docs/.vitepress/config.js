@@ -48,10 +48,12 @@ export default defineConfig({
         text: 'Screens',
         collapsed: false,
         items: [
+          { text: 'Auth View', link: '/screens/auth-view' },
           { text: 'Dashboard', link: '/screens/dashboard/' },
           { text: 'Map Interface', link: '/screens/map-interface/' },
           { text: 'Layers View', link: '/screens/layers-view' },
           { text: 'Forms View', link: '/screens/forms-view' },
+          { text: 'Data View', link: '/screens/data-view' },
           { text: 'Data Sync', link: '/screens/data-sync' },
           { text: 'Admin View', link: '/screens/admin-view' }
         ]
