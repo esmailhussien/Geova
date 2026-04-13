@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/landing/Header';
 import Footer from '../components/landing/Footer';
+import geovaiconAnimated from '../assets/geovaicon-animated.gif';
 
 const GeovaAiPage = () => {
   return (
@@ -34,7 +35,7 @@ const GeovaAiPage = () => {
               </div>
 
               <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-accent dark:text-white">
-                The Intelligence <br />Behind the <span className="gradient-text">Map.</span>
+                The Intelligence <br />Behind the <span className="gradient-brand">Map</span><span className="text-brand-orange">.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -56,21 +57,32 @@ const GeovaAiPage = () => {
             <div className="relative mx-auto w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none">
               <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse"></div>
 
-              {/* Central 'Core' */}
-              <div className="relative z-10 w-48 h-48 rounded-full border border-primary/50 flex items-center justify-center animate-[spin_20s_linear_infinite]">
-                <div className="w-40 h-40 rounded-full border border-dashed border-primary/40 flex items-center justify-center animate-[spin_15s_linear_infinite_reverse]">
-                  <div className="w-24 h-24 rounded-full bg-primary/20 backdrop-blur-md shadow-[0_0_50px_#0d9488] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-6xl text-accent dark:text-white">psychology</span>
+              {/* Central 'Core' - Refined & Scaled Down 10% */}
+              <div className="relative z-10 w-72 h-72 rounded-full flex items-center justify-center animate-[spin_30s_linear_infinite] shadow-[inset_0_0_30px_rgba(13,148,136,0.1)] border border-primary/10">
+                <div className="w-56 h-56 rounded-full border border-dashed border-primary/30 flex items-center justify-center animate-[spin_20s_linear_infinite_reverse]">
+                  <div className="w-40 h-40 rounded-full flex items-center justify-center relative group">
+                    {/* Cleaned up CSS: Natively transparent GIF with primary Geova hue mapping & drop shadow */}
+                    <img 
+                      src={geovaiconAnimated} 
+                      alt="Geova AI Core" 
+                      className="w-full h-full object-contain absolute z-10 scale-[1.35] group-hover:scale-[1.5] transition-transform duration-700 ease-out"
+                      style={{ filter: 'hue-rotate(-85deg) saturate(1.2) drop-shadow(0 0 20px rgba(13,148,136,0.5))' }}
+                    />
+                    {/* Clean inner pulse without a solid background box */}
+                    <div className="absolute inset-0 bg-primary/20 animate-ping rounded-full opacity-50" style={{ animationDuration: '3s' }}></div>
                   </div>
                 </div>
               </div>
 
               {/* Floating Data Nodes */}
               <div className="absolute top-10 right-20 glass-panel px-4 py-2 rounded-lg border border-slate-300/50 dark:border-slate-700/50 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{ animationDuration: '4s' }}>
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-ping"></div>
-                <span className="text-[10px] font-mono tracking-widest text-slate-600 dark:text-slate-300">GEO_PROC_OK</span>
+                <div className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-orange shadow-[0_0_10px_#ff751f]"></span>
+                </div>
+                <span className="text-[10px] font-mono tracking-widest text-slate-600 dark:text-brand-orange">GEO_PROC_OK</span>
               </div>
-              <div className="absolute bottom-20 left-10 glass-panel px-4 py-2 rounded-lg border border-slate-300/50 dark:border-slate-700/50 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{ animationDuration: '5s', animationDelay: '1s' }}>
+              <div className="absolute bottom-20 left-10 glass-panel px-4 py-2 rounded-lg border border-brand-orange/30 dark:border-brand-orange/30 flex items-center gap-2 backdrop-blur-md animate-bounce" style={{ animationDuration: '5s', animationDelay: '1s' }}>
                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-ping"></div>
                 <span className="text-[10px] font-mono tracking-widest text-slate-600 dark:text-slate-300">PREDICT_SYNC</span>
               </div>

@@ -14,6 +14,8 @@ export default {
       colors: {
         "primary": "#0d9488", // Teal for a modern tech feel
         "accent": "#0f172a",  // Deep slate/blue
+        "brand-orange": "#ff751f", // Official Geova 'G' Logo Accent
+
         "background-light": "#f8fafd",
         "background-dark": "#020617",
       },

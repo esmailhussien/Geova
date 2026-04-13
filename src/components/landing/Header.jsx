@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import MagneticButton from '../common/MagneticButton';
 import logo from '../../assets/GEOVA.png';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +8,13 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState(null); // Tracks open accordion on mobile
+
+  // Physics scroll triggers for Smart Island Navigation
+  const { scrollY } = useScroll();
+  const navLeftRight = useTransform(scrollY, [0, 80], ['0px', '24px']);
+  const navTop = useTransform(scrollY, [0, 80], ['0px', '24px']);
+  const navRadius = useTransform(scrollY, [0, 80], ['0px', '9999px']);
+  const navShadow = useTransform(scrollY, [0, 80], ['0px 0px 0px rgba(0,0,0,0)', '0px 20px 40px -10px rgba(0,0,0,0.1)']);
 
   // Initialize theme on mount
   useEffect(() => {
@@ -45,12 +54,23 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-panel border-b border-slate-200/50 dark:border-slate-800/50">
-      <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between gap-1">
+    <motion.header 
+      style={{
+        left: navLeftRight,
+        right: navLeftRight,
+        top: navTop,
+        borderRadius: navRadius,
+        boxShadow: navShadow,
+        maxWidth: '1280px',
+        margin: '0 auto', // Center it on 4k screens
+      }}
+      className="fixed z-[100] glass-panel border border-slate-200/50 dark:border-slate-800/50 transition-colors bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl"
+    >
+      <div className="px-6 h-20 md:h-24 flex items-center justify-between gap-1 w-full mx-auto">
 
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img alt="Geova Logo" className="w-auto h-12 md:h-16 scale-[1.3] md:scale-[1.6] origin-left object-contain" src={logo} />
+          <img alt="Geova Logo" className="w-auto h-12 md:h-16 scale-[2.2] origin-left object-contain" src={logo} />
         </Link>
 
         {/* Desktop Navigation (Information Architecture Tier 1) */}
@@ -181,12 +201,15 @@ const Header = () => {
             </span>
           </button>
 
-          {/* Primary CTA */}
-          <Link to="/mapplex" className="hidden md:block">
-            <button className="bg-accent dark:bg-white text-white dark:text-accent px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl">
-              Discover Mapplex
-            </button>
-          </Link>
+          <div className="hidden md:block">
+            <MagneticButton>
+              <Link to="/mapplex" className="inline-block relative">
+                <button className="bg-accent dark:bg-white text-white dark:text-accent px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#ff751f] dark:hover:bg-[#ff751f] hover:text-white dark:hover:text-white transition-colors duration-300 shadow-xl hover:shadow-[0_0_20px_#ff751f]">
+                  Discover Mapplex
+                </button>
+              </Link>
+            </MagneticButton>
+          </div>
 
           {/* Mobile Hover Trigger */}
           <div className="md:hidden flex items-center">
@@ -205,8 +228,10 @@ const Header = () => {
 
       {/* Mobile Navigation Accordion State */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-[100%] left-0 w-full glass-panel border-b border-t border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[85vh]">
+        <div className="md:hidden absolute top-[100%] mt-4 left-0 w-full glass-panel border border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[85vh] rounded-3xl z-40">
           <nav className="flex flex-col px-6 py-6 gap-2">
+            {/* Same mobile code structure below... */}
+
 
             {/* Products Mobile Accordion */}
             <div className="flex flex-col border-b border-slate-200/50 dark:border-slate-800/80 pb-2">
@@ -279,7 +304,7 @@ const Header = () => {
           </nav>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
 

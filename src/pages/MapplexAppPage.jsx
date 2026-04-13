@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/landing/Header';
 import Footer from '../components/landing/Footer';
+import mapplexIcon from '../assets/mapplex.png';
 
 const MapplexAppPage = () => {
   return (
@@ -29,7 +30,7 @@ const MapplexAppPage = () => {
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-accent dark:text-white">
-                Take the Power of Geova to the <span className="gradient-text">Field.</span>
+                Take the Power of Geova to the <span className="gradient-brand">Field</span><span className="text-brand-orange">.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -64,12 +65,12 @@ const MapplexAppPage = () => {
 
                 {/* Mockup Screen Content */}
                 <div className="flex-grow flex flex-col items-center justify-center p-8 text-center space-y-6 relative z-10">
-                  <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center shadow-inner">
-                    <span className="material-symbols-outlined text-5xl text-primary animate-pulse">public</span>
+                  <div className="w-40 h-40 flex items-center justify-center relative drop-shadow-[0_0_50px_rgba(13,148,136,0.6)]">
+                    <img src={mapplexIcon} alt="Mapplex App" className="w-full h-full object-contain animate-pulse" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-black uppercase tracking-tighter text-accent dark:text-white">Mapplex</h3>
-                    <p className="text-xs font-semibold text-primary uppercase tracking-widest">Mobile Client</p>
+                    <h3 className="text-3xl font-black uppercase tracking-tighter text-accent dark:text-white">Mapplex</h3>
+                    <p className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">Mapping & Beyond</p>
                   </div>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed pt-4">
                     Map rendering engine initializing... <br />

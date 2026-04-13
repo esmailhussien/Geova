@@ -37,4 +37,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  
+  .gradient-brand {
+    background: linear-gradient(135deg, #0d9488 0%, #ff751f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
