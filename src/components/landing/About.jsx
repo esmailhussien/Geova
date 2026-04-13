@@ -6,9 +6,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-            <img 
-              className="w-full h-full object-cover opacity-80 mix-blend-multiply dark:mix-blend-screen" 
-              data-alt="Sophisticated futuristic spatial data visualization with glowing nodes and high-tech infrastructure lines." 
+            <img
+              className="w-full h-full object-cover opacity-80 mix-blend-multiply dark:mix-blend-screen"
+              data-alt="Sophisticated futuristic spatial data visualization with glowing nodes and high-tech infrastructure lines."
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Ttcu-lVBbeBa3qKSi1oli1A64dtdY86zuCTUNfBPQcOyVSjkH77jGE7nvl1pj8oO9YPkuZ5Npx0JLk1DFZrbXOt0JmWFQEIe0MlQOPB4WYPQC6WqpePfTu5FehvHDd5TwAcxHby6D2DXU8pGK-R2Z2qjDOwfperlicFMfM97CsPBcWOZDWdP0oCbw54BKDQf57OVlIsYXIsJAZN-yG7jpVAw-MHMRsQazDJSoF7uCQjEI8-DiGInhRDMUsrkphdiM-3-UUlcEHg"
               alt="Geova Spatial Visualization"
             />

@@ -14,19 +14,19 @@ const Vision = () => {
           <div className="pt-4 border-l-4 border-primary pl-8 space-y-4">
             <p className="text-xl font-bold">2030 Vision Initiative</p>
             <p className="text-sm text-slate-400 leading-relaxed">
-                            Our roadmap focuses on the "Living City" model—environments that breathe, heal, and optimize in direct response to human and environmental needs.
+              Our roadmap focuses on the "Living City" model—environments that breathe, heal, and optimize in direct response to human and environmental needs.
             </p>
             <a className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-primary pt-4 group" href="#">
-                            Download Vision Manifesto <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+              Download Vision Manifesto <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
             </a>
           </div>
         </div>
       </div>
       {/* Abstract Map Decoration */}
       <div className="absolute bottom-[-100px] right-[-100px] w-1/2 opacity-20 hidden lg:block">
-        <img 
-          className="w-full h-full object-contain grayscale invert" 
-          data-alt="Matrix digital code map pattern" 
+        <img
+          className="w-full h-full object-contain grayscale invert"
+          data-alt="Matrix digital code map pattern"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa_1cHrHMr3-dxad8qYWjA84_IG9982s0jMXXa1sEeXGrjPVG-R7IGc-UGDxrUAIqOTIk4vuy_kg1IBgOrpb3znPDKkkgJBlu-ioj4xsxn14ZgMjDFlI_SoLWGrKBTjGLERNVDcbYg-sjxEsV9hqCjse0Bucha_4R3NfqwV37SRxemyUeLnIXaigqbiVM-InZLKeGEgWhgKpdSossRYPMzEPN7GE-p5qYDRmCuSuoS-jUc2oXc7XZx-38WGJSzow30OQRL9RNX5sQ"
           alt="Map Pattern"
         />

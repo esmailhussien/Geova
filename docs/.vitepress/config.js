@@ -22,39 +22,38 @@ export default defineConfig({
     
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Getting Started', link: '/screens/auth-view' },
-      { text: 'Interface', link: '/screens/dashboard/' },
+      { text: 'User Guide', link: '/guide/00-getting-started' },
+      { text: 'Core Engine', link: '/core-engine/auth' },
       { text: 'Geova AI', link: '/geova-ai/interface' },
       { text: 'Back to App', link: '/' }
     ],
 
     sidebar: [
       {
-        text: 'Getting Started',
+        text: 'Introduction',
         collapsed: false,
         items: [
-          { text: 'Introduction', link: '/' },
-          { text: 'Authentication', link: '/screens/auth-view' }
+          { text: 'Getting Started', link: '/guide/00-getting-started' }
         ]
       },
       {
-        text: 'Navigating the Interface',
+        text: 'Core Modules',
         collapsed: false,
         items: [
-          { text: 'Dashboard', link: '/screens/dashboard/' },
-          { text: 'Map Interface', link: '/screens/map-interface/' },
-          { text: 'Layers View', link: '/screens/layers-view' },
-          { text: 'Forms View', link: '/screens/forms-view' },
-          { text: 'Data Table', link: '/screens/data-view' },
-          { text: 'Admin Console', link: '/screens/admin-view' }
+          { text: 'Dashboard & Workspaces', link: '/guide/01-dashboard-view' },
+          { text: 'Map Experience', link: '/guide/03-map-view' },
+          { text: 'Layer Manager', link: '/guide/02-layers-view' },
+          { text: 'Forms & Schema', link: '/guide/04-forms-view' },
+          { text: 'Data Exchange', link: '/guide/05-data-view' },
+          { text: 'Geova AI Chat', link: '/guide/06-geova-ai-chat' }
         ]
       },
       {
-        text: 'Advanced Operations',
+        text: 'Advanced & Administration',
         collapsed: false,
         items: [
-          { text: 'Geova AI Protocol', link: '/geova-ai/interface' },
-          { text: 'AI Prompt Guide', link: '/geova-ai/prompt-guide' }
+          { text: 'Team & Shared', link: '/guide/07-team-view' },
+          { text: 'Admin Panel', link: '/guide/08-admin-view' }
         ]
       },
       {

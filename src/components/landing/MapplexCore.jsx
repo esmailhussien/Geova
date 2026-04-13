@@ -16,9 +16,9 @@ const MapplexCore = () => {
           </div>
           <div className="relative z-10 glass-panel border border-slate-200 dark:border-slate-800 rounded-[40px] p-4 md:p-8 max-w-4xl mx-auto shadow-2xl">
             <div className="aspect-video bg-accent rounded-[32px] overflow-hidden relative">
-              <img 
-                className="w-full h-full object-cover opacity-60" 
-                data-alt="Clean futuristic server room with blue lighting" 
+              <img
+                className="w-full h-full object-cover opacity-60"
+                data-alt="Clean futuristic server room with blue lighting"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM0bW_4J91JQ-o5iTsfTp2blHbREWlIA_cYlbaE9mwHPnWGY0yBxF_PXaN0oJ8dDS-qgFWJwTci1Hs3QANxT-aq7xjvw3psZDHUCcItYUSrvMnWMFEtPJzI0Gfdt80Yhh2jaoFM59daWtGppl-WVfNVaMI-nNCA3XVWPPb_a4_O4mqqlWOa_II-qglcsBgMik7TSy1Z_w_l3SKIbSt59IPo6KH1RJzO4X-GUCu_HuH1i0eRkFGBfMrW-t2yVTZhxiADgSuBaZyaLM"
                 alt="Server Room"
               />
@@ -33,7 +33,7 @@ const MapplexCore = () => {
                   <p className="text-xs">Real-time Node Visualization</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20 text-white text-[10px] font-mono">
-                                                     SECURE_CONNECTION: ACTIVE
+                  SECURE_CONNECTION: ACTIVE
                 </div>
               </div>
             </div>

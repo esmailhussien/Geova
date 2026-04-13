@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full z-50 glass-panel border-b border-slate-200/50 dark:border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between gap-1">
-        
+
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img alt="Geova Logo" className="w-auto h-12 md:h-16 scale-[1.3] md:scale-[1.6] origin-left object-contain" src={logo} />
@@ -55,7 +55,7 @@ const Header = () => {
 
         {/* Desktop Navigation (Information Architecture Tier 1) */}
         <nav className="hidden md:flex items-center gap-10">
-          
+
           {/* Products Mega-Menu */}
           <div className="relative group">
             <button className="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
@@ -63,7 +63,7 @@ const Header = () => {
             </button>
             <div className="absolute left-1/2 -translate-x-1/2 top-full w-[480px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pt-2">
               <div className="glass-panel bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl p-4 grid grid-cols-2 gap-4">
-                
+
                 {/* Premium Component: Mapplex */}
                 <a href="/#mapplex" className="group/item flex flex-col p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border border-transparent hover:border-primary/20">
                   <div className="flex items-center gap-3 mb-2">
@@ -81,7 +81,7 @@ const Header = () => {
                   </div>
                   <p className="text-xs text-slate-500 font-light leading-relaxed">Spatial Intelligence Core. Natural language analytics & processing.</p>
                 </Link>
-                
+
                 {/* Standard Link: Solutions */}
                 <a href="/#solutions" className="group/item flex flex-col p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border border-transparent hover:border-primary/20 col-span-2 bg-slate-50/50 dark:bg-slate-900/30">
                   <div className="flex items-center gap-3 mb-1">
@@ -101,7 +101,7 @@ const Header = () => {
             </button>
             <div className="absolute left-1/2 -translate-x-1/2 top-full w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pt-2">
               <div className="glass-panel bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl p-3 flex flex-col gap-1">
-                
+
                 <a href="/docs/" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/item:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-[18px]">menu_book</span>
@@ -132,7 +132,7 @@ const Header = () => {
             </button>
             <div className="absolute right-0 top-full w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pt-2">
               <div className="glass-panel bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl p-3 flex flex-col gap-1">
-                
+
                 <a href="/#about" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/item:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-[18px]">domain</span>
@@ -152,7 +152,7 @@ const Header = () => {
                     <div className="text-[10px] text-slate-500">The Manifesto</div>
                   </div>
                 </a>
-                
+
                 <Link to="/contact" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/item:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-[18px]">contact_support</span>
@@ -169,7 +169,7 @@ const Header = () => {
 
         {/* Action Buttons (Right Constraint) */}
         <div className="flex items-center gap-4">
-          
+
           {/* Theme Toggle Button (Desktop & Mobile) */}
           <button
             onClick={toggleTheme}
@@ -207,7 +207,7 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-[100%] left-0 w-full glass-panel border-b border-t border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[85vh]">
           <nav className="flex flex-col px-6 py-6 gap-2">
-            
+
             {/* Products Mobile Accordion */}
             <div className="flex flex-col border-b border-slate-200/50 dark:border-slate-800/80 pb-2">
               <button onClick={() => toggleAccordion('products')} className="flex items-center justify-between text-sm font-bold uppercase tracking-widest text-accent dark:text-white py-4 w-full">

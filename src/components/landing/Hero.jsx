@@ -7,13 +7,13 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 opacity-40 dark:opacity-20 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(13,148,136,0.1),transparent_70%)]"></div>
         {/* Abstract Data Visual */}
-        <div 
-          className="absolute inset-0" 
-          data-alt="Abstract blue glowing globe data visualization connectivity lines" 
+        <div
+          className="absolute inset-0"
+          data-alt="Abstract blue glowing globe data visualization connectivity lines"
           style={{
-            backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWkiWI8J1qh2iu1BXVmNOAEGjqMXyxTr6sRXU4cS2eiZrNrKgJfoBPSkmGSmSnrIqpIUxxEcXmJrw49qq7Sxg23AbA1_gcCcIkMh7fjpYxIvXVyZI73jLJA6iq2NcVWN_ySbzvxL_yNE0xu_rnBNyy5R9ngARBB7mZrvnGT51kfXfDp8QKIaG-UazT-Q19NzlWKHowOOKK3ZIK4ePeh6JMMwvEGQBOMEjSS_CKo-OU5RAFTyh91AU4ydZ6xJ-E1QefjEOArsq6dns')", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center", 
+            backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWkiWI8J1qh2iu1BXVmNOAEGjqMXyxTr6sRXU4cS2eiZrNrKgJfoBPSkmGSmSnrIqpIUxxEcXmJrw49qq7Sxg23AbA1_gcCcIkMh7fjpYxIvXVyZI73jLJA6iq2NcVWN_ySbzvxL_yNE0xu_rnBNyy5R9ngARBB7mZrvnGT51kfXfDp8QKIaG-UazT-Q19NzlWKHowOOKK3ZIK4ePeh6JMMwvEGQBOMEjSS_CKo-OU5RAFTyh91AU4ydZ6xJ-E1QefjEOArsq6dns')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             filter: "grayscale(100%) contrast(120%)"
           }}
         ></div>
@@ -27,7 +27,7 @@ const Hero = () => {
           Intelligent Infrastructure
         </div>
         <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tight text-accent dark:text-white">
-          Mapping <span className="gradient-text">Tomorrow's</span><br/>Solutions.
+          Mapping <span className="gradient-text">Tomorrow's</span><br />Solutions.
         </h1>
         <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
           Geova engineers the intersection of complex physical infrastructure and intelligent spatial logic. We don't just map environments; we design the systems that thrive within them.
