@@ -1,99 +1,178 @@
-# Module 06: Geova AI Spatial Assistant
+# Module 06: Geova AI Chat
 
-The **Geova AI Spatial Assistant** isn't merely a chatbot—it is an enterprise-grade, localized topological computing engine. Driven by an architecture of over 60 dedicated analytical modules, it bridges the gap between natural human language and highly complex mathematical spatial operations (DAG execution, R-Tree indexing, Isochrone generation, and 4D Temporal filtering). 
-
-Because the engine executes locally on your device's processor using Web Workers, your proprietary geometries never leave your system. Only lightweight schema intent is sent to the AI, ensuring 100% data privacy.
-
-This comprehensive guide covers every aspect of leveraging the AI for advanced spatial workflows.
+> Geova AI is Mapplex's conversational spatial intelligence engine. Ask questions about your GIS data in plain English and receive instant answers — SQL queries are generated, executed locally on your device, and results are rendered with interactive visualizations.
 
 ---
 
-## 1. The AI Chat Interface UI
+## 1. Opening Geova AI
 
-The Assistant provides a persistent experience that never obstructs your view of the map.
+Tap **Geova AI** in the bottom navigation or the AI icon. The chat interface opens with:
 
-### Initiating a Session
-1. Tap the **AI Assistant Floating Action Button (FAB)** located at the bottom of the Map View.
-2. The panel expands. Type or speak your inquiry using the microphone icon.
-3. The engine uses **Zero-Shot Intent Routing** to instantly categorize your message as one of three tiers:
-   - **Conversational** (greetings, thanks)
-   - **Tabular SQL** (filtering non-spatial attributes)
-   - **Spatial DAG** (complex geometric math)
-
-### Interacting with Results
-When the AI executes a Spatial DAG, it outputs the results both textually and visually:
-*   **The Chat Card:** Displays the AI's explanation of the logic it used, statistical summaries, and an embedded data table containing the geometric results.
-*   **Ephemeral `DAG_RESULT` Layer:** The AI actively manipulates your map. It renders a temporary highlights layer showing the precise polygons or points that satisfied your query. This layer persists so you can pan, zoom, and physically inspect the results before deciding what to do next.
+- **Header** — Shows the Geova AI logo, "Geova Network Active" status, and the currently active project name + record/layer count.
+- **Message Area** — A scrollable chat history
+- **Suggestion Bar** — Smart, contextual query chips based on your project's data schema
+- **Input Area** — Text input for typing queries, with `@` and `#` mention support
 
 ---
 
-## 2. Advanced Prompting & Conversational Memory
+## 2. Asking Your First Question
 
-Geova is designed for **Multi-Turn Workflows**. You do not need to restate your query parameters over and over again.
+### Typing a Query
 
-### Pronoun Resolution (Context Injection)
-If your first question was *"Show me all utility poles within 200 meters of Main Street"* (resulting in 400 poles), your next message can simply be: 
-*"Now filter them to only show the ones marked high-risk."*
-The engine natively resolves the word "them" to the previous execution plan, applying your new tabular filter securely against the cached 400 geometries instantly.
+1. Type a question in the input area:
+   > *"How many manholes are in Zone A?"*
+2. Tap the **Send** button (or press Enter).
+3. A **3-phase loading skeleton** animates while the AI processes:
+   - 🧠 **Analyzing query structure…**
+   - 🌐 **Running spatial analysis…**
+   - 📊 **Building response…**
+4. The AI responds with a formatted answer, often including record counts, tables, and maps.
 
-### Correction & Self-Healing
-If the AI selects the wrong template or layer, simply correct it conversationally: 
-*"No, I meant the Underground Pipes, not the Surface Lines."*
-The underlying **Agentic Fallback** and **Error Recovery** loops will self-heal the pipeline, swap the target layer, and re-run the topology.
+### Using Smart Suggestions
 
----
+The **Suggestion Bar** at the bottom displays dynamically generated query chips based on your project's schema. For example, if you have a layer called "Fire Hydrants" with fields like "Condition" and "Flow Rate":
+- *"Count all Fire Hydrants"*
+- *"What is the average Flow Rate?"*
+- *"Group Fire Hydrants by Condition"*
 
-## 3. The 24 Spatial Operations (The DAG Engine)
+Tap any chip to auto-send the query.
 
-The core mechanism of Geova AI is the **Directed Acyclic Graph (DAG) Template Engine**. By writing clear, intentional prompts, you can explicitly trigger one of 24 strictly programmed mathematical operations without relying on LLM hallucination.
+### Welcome Screen
 
-### A. Topology & Discovery
-These queries manipulate physical shapes and intersections.
-*   **Geometric Buffering:** *"Draw a 5km buffer around the chemical spill."*
-*   **Spatial Joins:** *"Tag every building footprint with the name of the Voting District it falls inside."*
-*   **Clipping & Masking:** *"Clip the national road network down to just the areas inside my City Zoning polygon."*
-*   **Change Detection:** *"Compare the 2024 Forest Canopy with 2025 to calculate exact acreage lost."*
-
-### B. Network Logistics & Isochrones
-These queries route geometries through real-world road network APIs.
-*   **Drive-Time Boundaries:** *"Map the 15-minute driving service area around the Hospital."*
-*   **Service Area Intersections:** *"Find all elementary schools located entirely within a 10-minute drive of the active fire."*
-*   **Network Load Simulation:** *"Simulate traffic choke points if the northern bridge is marked destroyed."*
-
-### C. Optimization & Site Selection
-Heavy computations used for urban planning and resource deployment.
-*   **Multi-Criteria Overlay:** *"Find optimal construction sites that are > 5km from wetlands, < 1km from highways, and on slope gradients < 15%."*
-*   **Catchment Analysis (Voronoi):** *"Generate Voronoi polygons to determine the theoretical service zones for all regional clinics."*
-*   **K-Means Spatial Clustering:** *"Cluster the 150,000 disease outbreak cases into 8 distinct geographical operation zones."*
-
-### D. Advanced Environmental Profiling
-*   **Right-of-Way Expropriation:** *"Calculate the private property acreage lost if we impose a 50-meter right-of-way expansion along the National Railway."*
-*   **Urban Heat/Green Equity:** *"Correlate neighborhood tree canopy percentages explicitly against ambient surface temperatures."*
-*   **Concentric Blast Radii:** *"Draw 1km, 5km, and 10km concentric circles outward from the nuclear plant."*
+If no messages exist, the **Empty State** shows:
+- Welcome message: *"Ask Me Anything"*
+- Privacy badges: **BYOK key stays on device**, **Limited samples may be sent**, **1 credit per useful answer**
+- Suggested Queries based on your project data
 
 ---
 
-## 4. 4D Temporal Filtering & Automation
+## 3. Mentions: @Layers and #Columns
 
-Geova's **Temporal Resolver** allows you to inject time directly into spatial statements seamlessly.
+### Mentioning a Layer
 
-### Dynamic Date Handling
-You can ask: *"Show me the pothole repairs completed in the last quarter"* or *"Find safety audits from exactly between Jan 12 and March 4."*
-The temporal engine extracts these abstract human dates, normalizes them into ISO timestamps, and injects them into the SQL or DAG engine before any geometry is processed.
+Type `@` in the input field to open the **Layer Mentions Dropdown**. This shows all layers in the active project. Select a layer to reference it in your query:
+> *"Show all records in @Fire_Hydrants where Condition is Poor"*
 
-### Proactive Anomaly Detection
-If you ask the AI to generically *"Analyze the inspections dataset"*, it triggers the `anomalyDetector` and `resultStatistics` modules. The AI will:
-1. Scan for temporal gaps or sudden data influxes.
-2. Warn you of data quality issues (e.g., *"⚠️ 15% of records are missing mandatory photos"*).
-3. Compute and render trend-line insights autonomously.
+### Mentioning a Column
+
+Type `#` to open the **Column Mentions Dropdown**. This lists all form fields across your layers. Use it for precision:
+> *"What is the average #Flow_Rate in @Fire_Hydrants?"*
+
+The mentions system uses keyboard navigation (↑/↓ arrows, Enter to select, Escape to dismiss).
 
 ---
 
-## 5. Exporting & Reporting Results
+## 4. Understanding AI Responses
 
-Once the AI produces a perfect map intelligence output, you can immortalize it directly from the chat.
+### Response Types
 
-### Post-Flight Operations
-*   **Commit to Layer:** Type *"Save these results to a new layer,"* and the AI will extract the ephemeral `DAG_RESULT` map, permanently digitizing it as a new distinct feature layer in your project.
-*   **Generate PDF Report:** Type *"Export a PDF report of this analysis."* The `pdfExporter.js` engine will compile the map snapshot, the logic summary, and the tabular data breakdown into a high-resolution, branded PDF for stakeholder management.
-*   **Tabular Exports:** Say *"Download a CSV,"* and the engine will instantly trigger a local download.
+The AI automatically selects the best display layout based on the query intent:
+
+| Intent | Display Mode | Example |
+|--------|-------------|---------|
+| **COUNT** | Scalar Count | *"How many? → 347 records"* |
+| **SUM / AVG** | Scalar Value | *"Average flow rate? → 42.7 GPM"* |
+| **GROUP_BY** | Group Table | *"Group by condition → Good: 120, Fair: 85, Poor: 42"* |
+| **COMPARE** | Comparison Table | *"Compare Zone A vs Zone B"* |
+| **TREND_ANALYSIS** | Temporal Insight | *"Inspection trend over 6 months"* |
+| **MAX / MIN** | Hero with Context | *"Oldest hydrant? → ID: H-0047, installed 1987"* |
+| **General Query** | Full Data Table | *"Show all hydrants near the river"* |
+
+### SQL Transparency
+
+Every response includes a collapsible **"View SQL Query"** section showing the exact SQL that was executed:
+```sql
+SELECT * FROM "Fire_Hydrants" WHERE "Condition" = 'Poor'
+```
+This is for transparency — you can verify exactly what the AI did.
+
+### Mini-Map
+
+When results contain geographic features, an **inline mini-map** renders directly in the chat bubble, showing the spatial distribution of results. Below the map:
+- Feature count indicator
+- **"Open Full Map"** button to view results on the main map
+
+---
+
+## 5. Action Buttons
+
+Each AI response with data includes an **action bar** with powerful tools:
+
+| Button | Action |
+|--------|--------|
+| **📊 Records** | Shows the total record count |
+| **🔍 Go Deeper** | Re-runs the query using a structured DAG template for more accurate results |
+| **📄 PDF** | Generates a professional PDF report of the results |
+| **⬇️ GeoJSON** | Exports results as a GeoJSON file |
+| **📋 CSV** | Exports results as a CSV spreadsheet |
+| **🌍 KML** | Exports results as KML for Google Earth |
+| **💾 Add to Mapplex** | Saves AI results as a permanent layer in your project |
+| **🗺️ Preview** | Shows results on the main map with AI preview overlay |
+| **🔗 Dissolve** | Merges overlapping polygons in DAG results |
+
+### Committing Results as a Layer
+
+Tap **"Add to Mapplex"** to save AI query results as a permanent project layer. This converts temporary analysis results into editable GIS features.
+
+### Exporting Results
+
+Export buttons download the result data immediately in the chosen format — no additional steps needed.
+
+---
+
+## 6. Session Management
+
+### Per-Project Sessions
+
+Each project has its own chat session. When you switch projects, the chat session switches automatically — your conversation history is preserved separately for each project.
+
+### Clearing History
+
+Tap the **🗑️ Clear** button (top-right) to delete all chat history for the current project. This requires confirmation.
+
+### Credit System
+
+- Each **useful** AI answer costs **1 credit**
+- Clarification questions and system failures are **not billed**
+- Credit usage is displayed in the input area
+
+---
+
+## 7. DAG Orchestration (Behind the Scenes)
+
+For complex spatial queries, the AI uses a **DAG (Directed Acyclic Graph)** orchestration engine:
+
+1. **Query Parsing** — The AI parses your natural language into structured intent
+2. **Template Matching** — Matches the query to a pre-built spatial analysis template
+3. **DAG Execution** — Runs a multi-step pipeline (fetch → filter → transform → aggregate)
+4. **Progress Tracking** — A live progress bar shows DAG node execution
+
+When the AI suggests **"Go Deeper"**, it re-routes through the template DAG engine for higher accuracy.
+
+### Offline Templates
+
+Some common queries work **entirely offline** using pre-built templates that don't require an API call.
+
+---
+
+## 8. Error Handling
+
+| Error Type | What You See | What to Do |
+|------------|-------------|------------|
+| **No Data Found** | Amber clarification bubble | Rephrase the query or verify your data |
+| **Auth Error** | Red bubble with key icon | Check your API key in settings |
+| **Out of Credits** | Red bubble with credit warning | Purchase more credits |
+| **Network Error** | Red bubble with retry button | Tap "Try Again" |
+
+---
+
+## 9. Privacy & Data Safety
+
+- **BYOK (Bring Your Own Key)** — Your API key stays on your device
+- **Minimal Data Sent** — Only limited schema details and sample field values are sent to improve AI accuracy
+- **No Full Datasets** — Geometries, coordinates, and full datasets are **never** sent automatically
+- **Local Execution** — SQL queries run locally on your device's IndexedDB
+
+---
+
+> **Next:** Proceed to [Module 07: Team & Collaboration](./07-team-view.md) to manage team members and monitor field performance.

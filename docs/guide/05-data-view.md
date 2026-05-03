@@ -1,86 +1,177 @@
 # Module 05: Data & Sync
 
-A Geographic Information System is only as powerful as its ability to integrate with the outside world. The **Data & Sync** module is the central hub for data interoperability—allowing you to ingress historical engineering files, egress field realities into enterprise systems, and synchronize offline field crews dynamically.
+> The Data & Sync module is your hub for exporting collected data, importing new datasets, managing reference zones, performing local P2P synchronization, and reviewing all features in tabular format.
 
 ---
 
-## 1. Exporting Your Field Data
+## 1. Module Overview
 
-When your field patrol is complete, the collected geometries and attribute forms must be delivered to decision-makers. Geova offers a highly flexible export engine.
+The Data & Sync screen is divided into four sections:
 
-### The "Why": Real-World Value
-An environmental consultancy has just mapped 400 invasive species clusters across a county. The client requested a simple spreadsheet for their financial audit, but the internal GIS engineers need the raw geometries to run spatial hot-spot analysis in QGIS. Instead of using separate tools, the project manager uses the **Export Data** dropdown. First, they drop down the menu, select **Entire Project**, and hit **CSV** to instantly satisfy the financial auditors. Then, they drop the menu, select only the specific invasive "Weeds Layer", and export it as a **GeoJSON** for the internal engineering team.
-
-### The "How": Step-by-Step
-1. Locate the **Export Data** panel at the top of the workspace.
-2. Click the layer selector dropdown. You can choose to export the **Entire Project** (combining all layers) or select a specific **Layer** (e.g., "Layer: Hydrants (45)").
-3. Choose your required output format:
-    *   **JSON:** Raw GeoJSON formatting. Unrivaled for web and software development.
-    *   **KMZ:** Heavily optimized for Google Earth and Google Maps.
-    *   **GPKG:** The modern, SQLite-driven "GeoPackage" standard. Best for QGIS and heavily attributed enterprise systems.
-    *   **CSV:** Standard Tabular spreadsheet format. Perfect for Excel, PowerBI, and non-spatial stakeholders.
+1. **Export Data** — Download your project in multiple formats
+2. **Import Features** — Upload geographic files or spreadsheets into your project
+3. **Spatial Reference Zones** — Upload background polygons for spatial auto-fill
+4. **Field Gathering (Local Sync)** — Peer-to-peer data synchronization between devices
+5. **Collected Features Table** — Browse and inspect all data in tabular format
 
 ---
 
-## 2. Importing Features
+## 2. Exporting Data
 
-Field work rarely starts with a blank map. You often need to import historical records as a baseline before updating them.
+### Selecting What to Export
 
-### The "Why": Real-World Value
-A broadband utility company acquired a struggling competitor. They received the competitor's fiber-optic network layout as a legacy `.kmz` file. Instead of redrawing the network manually, the operations manager clicks **IMPORT**, ingests the `network.kmz`, and instantly populates the active project with thousands of line strings. The field technicians can immediately go out, tap the imported lines, use the **Advanced Edit** tools to reshape them if reality doesn't match the historical file, and save the corrected data.
+Use the **export layer dropdown** at the top to choose:
+- **Entire Project** — Exports all features across all layers
+- **Specific Layer** — Exports only the features from one layer (shows feature count)
 
-### The "How": Step-by-Step
-1. In the **Import Features** panel, ensure your desired target layer is currently active in your Layer Manager.
-2. Tap the **IMPORT (GeoJSON, KMZ, GPKG)** button.
-3. Select the file from your local device. The shapes will immediately be digitized and appended to your active map layer.
+### Export Formats
 
----
+| Format | Button | Description |
+|--------|--------|-------------|
+| **JSON (GeoJSON)** | `JSON` | Standard GeoJSON format. Universally compatible with QGIS, ArcGIS, Mapbox, and web applications |
+| **KMZ** | `KMZ` | Compressed KML for Google Earth and Google Maps. Includes styling and descriptions |
+| **GPKG (GeoPackage)** | `GPKG` | SQLite-based OGC standard. Ideal for desktop GIS software and large datasets |
+| **CSV** | `CSV` | Tabular comma-separated values. Opens in Excel, Google Sheets, and databases. Includes coordinates as columns |
 
-## 3. Uploading Spatial Reference Zones
+Tap the desired format button and the file downloads immediately.
 
-Reference Zones are background layers that do not accept new data. They exist purely to provide geographical context and power the "Relational Intelligence" form features (discussed in Module 04).
-
-### The "Why": Real-World Value
-A municipality is sending inspectors to audit restaurant health codes. The inspectors need to know if a restaurant falls within a "Historical District" (which carries different building regulations). The GIS administrator clicks **Upload Reference** and uploads the `Historical_Zoning.geojson`. Now, whenever an inspector drops a point on the map, this background reference zone empowers the logic engine to automatically calculate the intersection and write "Historical Zone: True" into the form—completely invisible to the user.
-
-### The "How": Step-by-Step
-1. Navigate to the **Spatial Reference Zones** panel.
-2. Click **Upload Reference** and select your background polygon file (KMZ, KML, GeoJSON).
-3. A prompt will appear asking you to "Name This Reference Layer." Give it a clear, recognizable name (e.g., "City Zoning").
-4. Once saved, it will appear as a pill tag in the interface. To remove it later, simply tap the trash-can icon next to its name.
+> **Example:** A supervisor needs to submit weekly inspection progress to the city planning office. She selects the "Hydrant Inspections" layer → taps **CSV** → opens the file in Excel → emails it as an attachment. Total time: 30 seconds.
 
 ---
 
-## 4. Field Gathering (Local Peer-to-Peer Sync)
+## 3. Importing Features
 
-When operating in remote wilderness, disaster zones, or subterranean infrastructure where cellular internet does not exist, data synchronization is critical.
+### Geographic Vector Files
 
-### The "Why": Real-World Value
-A team of five US Forest Service rangers is charting the perimeter of a rapidly moving wildfire. There is zero cellular coverage. At the end of the day, they rendezvous at a mobile command tent. The commander does not want to physically swap SD cards. Instead, the commander hits **Host Session** on their master tablet, creating a local offline server over a portable Wi-Fi router. The four rangers tap **Join & Send**, type in the commander's IP address, and wirelessly push all 500 fire perimeter geometries to the master tablet in seconds—all without ever touching the public internet.
+1. Tap the **GeoJSON / KMZ / GPKG** import button.
+2. Select a file from your device.
+3. The system auto-detects the file type using **magic byte analysis** — no need for correct file extensions:
+   - **ZIP header** (PK) → treated as KMZ
+   - **SQLite header** → treated as GeoPackage
+   - **XML header** (`<`) → treated as KML
+   - **Otherwise** → treated as GeoJSON
+4. Features are parsed, converted to the internal format, and added to the currently selected layer.
+5. A progress indicator shows import status for large files.
 
-### The "How": Step-by-Step
-**For the Commander (Receiving Data):**
-1. Navigate to the **Field Gathering (Local Sync)** panel.
-2. Tap **Host Session**. The system will scan your network interfaces and display a dominant IP Address (e.g., `192.168.4.1`) and Port (e.g., `8080`).
-3. Leave this screen open. The device is now acting as a local server.
+For large GeoPackage files (50MB+), a warning appears before processing.
 
-**For the Field Technicians (Sending Data):**
+### Spreadsheet Import (CSV / Excel)
+
+1. Tap the **CSV / Excel** import button.
+2. Select a `.csv`, `.xlsx`, or `.xls` file.
+3. The **Spreadsheet Import Wizard** launches — a three-step process:
+
+#### Step 1: Column Mapping
+The wizard scans your columns and auto-detects which contain **latitude** and **longitude** values. You can override the mapping manually.
+
+#### Step 2: CRS Verification
+The system detects the Coordinate Reference System:
+- **WGS84** (EPSG:4326) — Standard GPS coordinates
+- **UTM** — Universal Transverse Mercator projections
+- **Web Mercator** (EPSG:3857) — Used by web maps
+
+Verify or manually select the correct CRS.
+
+#### Step 3: Import Preview
+A preview shows the first few rows mapped to geographic points on a mini-map. Confirm to import, or go back to adjust mappings.
+
+---
+
+## 4. Spatial Reference Zones
+
+Reference zones are background polygon layers used by the **Spatial Auto-Fill** feature in Forms.
+
+### Uploading Reference Data
+
+1. In the **Spatial Reference Zones** section, tap **Upload Reference**.
+2. Select a KMZ, KML, or GeoJSON file containing polygon zones (e.g., zoning districts, soil types, administrative boundaries).
+3. You'll be prompted to name the reference layer.
+4. The file is parsed and stored locally. Reference polygons appear on the map with an orange theme.
+
+### Managing Reference Layers
+
+Uploaded reference layers appear as tagged chips showing the source layer name. Each chip has a **🗑️ Delete** button to remove the reference layer.
+
+> **How Auto-Fill Works:** When you draw a point inside a reference polygon, form fields configured for Spatial Auto-Fill extract and auto-populate the matching attribute from the reference zone. See [Module 04: Forms](./04-forms-view.md) for configuration details.
+
+---
+
+## 5. Field Gathering (Local P2P Sync)
+
+Synchronize data between devices on the same Wi-Fi network — **no internet required**. This is designed for field teams working in remote areas.
+
+### Hosting a Session
+
+1. Tap **Host Session**.
+2. The sync modal opens showing:
+   - **Device IP Address** — Displayed in large monospaced font for easy reading across the room
+   - **Port** — Default: 8080
+   - **Status** — "Starting server…" → "Listening for connections"
+3. Share the IP address with team members.
+4. As team members connect and send data, the **host log** shows incoming feature counts.
+5. Tap **Stop Server** to end the session.
+
+### Joining & Sending Data
+
 1. Tap **Join & Send**.
-2. Type in the supervisor's **Host IP Address** and **Port**.
-3. Choose to send the entire project or a specific layer.
-4. Tap **Send Features to Host**. The system will establish a direct websocket bridge and offload the data seamlessly.
+2. Enter the **Host IP Address** (e.g., `192.168.43.1`).
+3. Enter the **Port** (default: 8080).
+4. Select **Which Layers to Send** — "All Layers" or a specific layer.
+5. Tap **Send Features to Host**.
+6. The status panel shows transfer progress.
+
+> **Example:** A field team of 5 workers collects hydrant data independently throughout the day. At the end of the shift, the supervisor opens "Host Session" on their tablet. Each worker connects via Wi-Fi hotspot and taps "Join & Send" — all data flows into the supervisor's device in under a minute. No cell signal needed.
 
 ---
 
-## 5. Reviewing Collected Features
+## 6. The Collected Features Table
 
-Before exporting or syncing, supervisors need to quickly audit the tabular integrity of the day's fieldwork.
+Below the import/export controls, all collected features are displayed as **expandable layer cards**:
 
-### The "Why": Real-World Value
-After a day of mapping pothole locations, a supervisor wants to verify that the crew didn't forget to attach photo evidence. Rather than clicking on 300 points on the map interface blindly, the supervisor opens the **Collected Features** data table. They instantly sort the columns, verify that the `Evidence_Image` column contains valid attachments, and confirm the geometry types are correct before finalizing the weekly report.
+### Layer Card
 
-### The "How": Step-by-Step
-1. Scroll down to the **Collected Features** data cards at the bottom of the Data View.
-2. The UI will group all data cleanly by Layer.
-3. Click on a specific card to expand its highly-responsive interactive table. 
-4. The table displays exactly `# of Features Collected`, auto-calculates geometry footprints (e.g., area for polygons, length for lines), handles pagination via the **Load More** button, and provides instant one-click buttons to preview attached PDFs and photos seamlessly.
+Each card shows:
+- **Layer name** with a geometry icon (📍 Point, 📏 Line, ⬠ Polygon)
+- **Feature count** (e.g., "347 Features Collected")
+- **Storage badge** — ☁️ `CLOUD` or 📱 `OFFLINE`
+- **Expand arrow** — Tap to reveal the data table
+
+### Data Table
+
+When expanded, a **scrollable, paginated table** appears with:
+- **Row numbers** (sticky left column)
+- **Geometry type** column
+- **Added Date** column
+- **Form field columns** — All attributes from the form schema appear as columns
+- **Auto-Geometry column** — Shows computed values (coordinates, length, area) in a green monospace font
+- **Photo/PDF columns** — Inline thumbnail previews and "View PDF" buttons
+
+### Pagination
+
+The table loads **50 rows at a time**. For large datasets, a **"Load More (+50)"** button appears at the bottom. This DOM virtualization approach keeps the browser responsive even with thousands of features.
+
+### Image & File Display
+
+| Data Type | How It Displays |
+|-----------|----------------|
+| **Photo / Image** | Clickable thumbnail that opens full-size in a new tab |
+| **PDF** | Red "View PDF" button that opens the document |
+| **Attachment** | Blue "View File" button for generic file download |
+
+---
+
+## 7. Role-Based Access
+
+| Role | Export | Import Features | Import Reference | Host/Join Sync |
+|------|--------|----------------|-----------------|----------------|
+| **Owner** | ✅ | ✅ | ✅ | ✅ |
+| **Admin** | ✅ | ✅ | ✅ | ✅ |
+| **Editor** | ✅ | ✅ | ✅ | ✅ |
+| **Collector** | ✅ | ✅ | ❌ | ✅ |
+| **Viewer** | ✅ | ❌ | ❌ | ✅ |
+
+> **Note:** Viewers can export and participate in sync sessions but cannot import new features or reference layers.
+
+---
+
+> **Next:** Proceed to [Module 06: Geova AI Chat](./06-geova-ai-chat.md) to ask spatial questions and generate automated analysis reports.

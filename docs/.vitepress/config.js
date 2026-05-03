@@ -22,49 +22,29 @@ export default defineConfig({
     
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'User Guide', link: '/guide/00-getting-started' },
-      { text: 'Core Engine', link: '/core-engine/auth' },
-      { text: 'Geova AI', link: '/geova-ai/interface' },
+      { text: 'User Guide', link: '/guide/README' },
       { text: 'Back to App', link: '/' }
     ],
 
     sidebar: [
       {
-        text: 'Introduction',
+        text: 'The Mapplex Platform',
         collapsed: false,
         items: [
-          { text: 'Getting Started', link: '/guide/00-getting-started' }
-        ]
-      },
-      {
-        text: 'Core Modules',
-        collapsed: false,
-        items: [
-          { text: 'Dashboard & Workspaces', link: '/guide/01-dashboard-view' },
-          { text: 'Map Experience', link: '/guide/03-map-view' },
-          { text: 'Layer Manager', link: '/guide/02-layers-view' },
-          { text: 'Forms & Schema', link: '/guide/04-forms-view' },
-          { text: 'Data Exchange', link: '/guide/05-data-view' },
-          { text: 'Geova AI Chat', link: '/guide/06-geova-ai-chat' }
-        ]
-      },
-      {
-        text: 'Advanced & Administration',
-        collapsed: false,
-        items: [
-          { text: 'Team & Shared', link: '/guide/07-team-view' },
-          { text: 'Admin Panel', link: '/guide/08-admin-view' }
-        ]
-      },
-      {
-        text: 'System Architecture',
-        collapsed: true,
-        items: [
-          { text: 'Core Auth Strategy', link: '/core-engine/auth' },
-          { text: 'Offline Sync Engine', link: '/core-engine/offline-sync' },
-          { text: 'Data Sync Flow', link: '/screens/data-sync' },
-          { text: 'AI Architecture', link: '/geova-ai/architecture' },
-          { text: 'Spatial Indexing', link: '/geova-ai/spatial-index' }
+          { text: 'Welcome & Workflows', link: '/guide/README' },
+          { text: '00 - Getting Started', link: '/guide/00-getting-started' },
+          { text: '01 - Dashboard', link: '/guide/01-dashboard-view' },
+          { text: '02 - Layers', link: '/guide/02-layers-view' },
+          { text: '03 - Map Engine', link: '/guide/03-map-view' },
+          { text: '04 - Forms & Logic', link: '/guide/04-forms-view' },
+          { text: '05 - Data & Sync', link: '/guide/05-data-view' },
+          { text: '06 - Geova AI', link: '/guide/06-geova-ai-chat' },
+          { text: '07 - Team', link: '/guide/07-team-view' },
+          { text: '08 - Admin View', link: '/guide/08-admin-view' },
+          { text: '08 - Settings', link: '/guide/08-settings' },
+          { text: '09 - Slope Profiler', link: '/guide/09-slope-profiler' },
+          { text: '10 - PDF Export', link: '/guide/10-map-pdf-export' },
+          { text: '11 - Troubleshooting', link: '/guide/11-troubleshooting' }
         ]
       }
     ],

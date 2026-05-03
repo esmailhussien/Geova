@@ -1,70 +1,145 @@
-# Module 07: Team Management & Performance
+# Module 07: Team & Collaboration
 
-Geospatial projects rarely involve just one person. Geova's **Team & Shared** architecture transforms the platform from a single-user mapping tool into a full-scale operational headquarters. 
-
-Available exclusively to Geova Pro workspaces, this module provides granular Role-Based Access Control (RBAC) to protect your databases, alongside a rich, analytics-driven Performance Dashboard to track your field workforce in real time.
+> Mapplex's team features let you invite members to your workspace, assign roles, track field collection performance with KPI dashboards, and manage team access — all from within the app.
 
 ---
 
-## 1. Navigating the Team Panel
+## 1. Team Panel Overview
 
-The team management interface is embedded directly inside your active project environment. You must have a project selected to manage its team.
+The **Team & Shared** panel is accessible from the Dashboard. It is a **Pro feature** — free users see a blurred preview with an unlock overlay.
 
-### The "Why": Real-World Value
-If you run an environmental agency, you may have one project dedicated to "Water Quality Testing" and another to "Forest Fire Boundaries." The Team Panel allows you to restrict field workers purely to the projects they are assigned to, ensuring a distracted worker doesn't accidentally log tree data into the water database.
-
-### The "How": Step-by-Step
-1. Open your Geova **Dashboard**.
-2. Select your active project from the project list.
-3. Tap the **Team & Shared** panel. 
-4. The panel is divided into two distinct sub-tabs: **Performance** (Analytics) and **Members** (Access Control).
+The panel has two tabs:
+- **Performance** — KPI dashboard with collection analytics
+- **Members** — Workspace member roster and invite management
 
 ---
 
-## 2. Inviting Members & Role-Based Access
+## 2. Performance Dashboard
 
-Protecting the integrity of your spatial database is critical. Not everyone who collects data should be allowed to delete it.
+The Performance tab provides a real-time analytics dashboard of field data collection activity.
 
-### The "Why": Real-World Value
-A supervisor hires 15 temporary summer interns to map invasive weed locations. If the interns are given full Admin rights, they could accidentally delete the entire layer, destroying years of historical data. By using the **Invite Member** tool, the supervisor assigns the interns the **Collector (Data Entry)** role. They can see the map and add new points, but the platform aggressively blocks them from deleting past data or altering the form schemas.
+### Date Range Filter
 
-### The "How": Step-by-Step
-1. Navigate to the **Members** tab.
-2. Click the **Invite Member** button (denoted by a `person_add` icon). *Note: You must be an Admin or Owner to see this button.*
-3. Type the email address of your colleague into the floating modal.
-4. Click the **Assigned Role** dropdown and select the strict permission tier:
-    *   **📍 Collector:** Can only view the map and submit new features. Ideal for temporary field workers.
-    *   **✏️ Editor:** Can do everything a Collector does, plus review and modify existing features. Ideal for senior field technicians.
-    *   **🔑 Admin:** Has full control over the map, can delete layers, alter Form Schemas, and invite other users.
-5. Tap **Send Invite**. The user will appear in the roster with a "Pending" badge until they accept.
+At the top, a **Date Range Picker** lets you filter all KPIs by time period. Default: last 30 days. Tap **Apply** to refresh.
+
+### KPI Summary Cards
+
+Four cards display key metrics:
+
+| Card | Metric |
+|------|--------|
+| **Total Features** | Total number of features collected in the date range |
+| **Contributors** | Number of unique team members who contributed data |
+| **Avg / Member** | Average features per contributor |
+| **Peak Day** | The single day with the highest collection activity |
+
+### Geometry Breakdown
+
+A visual bar chart shows the distribution of geometry types:
+- 🔵 **Points** (e.g., hydrants, poles)
+- 🟢 **Lines** (e.g., pipes, roads)
+- 🟣 **Polygons** (e.g., parcels, zones)
+
+The stacked bar adjusts proportionally with animated transitions.
+
+### 14-Day Activity Sparkline
+
+A bar chart showing daily feature creation over the past 14 days. Hover over any bar to see the exact count and date. This helps supervisors identify productivity patterns and off-days.
+
+### Top Contributor
+
+A highlighted card with a 🏆 trophy icon showing the team member who collected the most features in the selected period.
+
+### Contributor Leaderboard
+
+A ranked list of all contributors with:
+- 🥇🥈🥉 Medal icons for top 3
+- Feature count with progress bar (relative to the top performer)
+- Breakdown by geometry type (points/lines/polygons)
+- Number of layers touched
+- Last active date
 
 ---
 
-## 3. The Performance Dashboard
+## 3. Members Tab
 
-To ensure field workers are hitting their daily quotas, Geova automatically aggregates geometric collections into a gamified Performance Dashboard. 
+### Workspace Member Roster
 
-### The "Why": Real-World Value
-A municipality dispatched a fleet of 5 trucks to inspect 1,000 traffic lights over the weekend. On Monday morning, the city manager wants to know if the contract was fulfilled. Rather than manually counting dots on a map, the manager opens the **Performance** tab, sets the Date Range picker to "This Weekend", and instantly sees that exactly 1,000 features were collected. They also see a **Top Performer** card awarding the top technician for contributing 30% of the workload.
+All workspace members are displayed in a continuous card list. Each member card shows:
 
-### The "How": Step-by-Step
-1. Navigate to the **Performance** tab.
-2. Use the **Date Range** selector at the top to target a specific operational window (e.g., Today, Last 7 Days, Custom Range), and click **Apply**.
-3. The dashboard will instantly generate:
-    *   **KPI Cards:** High-level metrics showing Total Features, Active Contributors, Average Per Member, and the Peak Collection Day.
-    *   **Geometry Breakdown:** A visual split showing exactly how many Points, Lines, and Polygons were drawn, preventing workers from accidentally using the wrong draw tools.
-    *   **14-Day Activity Sparkline:** A bar chart showing the daily momentum of your field campaign over the last two weeks.
+- **Avatar** — Initial-based with gradient (or email icon for pending invites)
+- **Name & Email** — Full name and email address
+- **Role Badge** — Color-coded role indicator:
+  - 🟡 **Owner** — Full control, billing, workspace deletion
+  - 🔴 **Admin** — Full access, can invite and manage members
+  - 🔵 **Editor** — Can edit features and review data
+  - 🟢 **Collector** — Data entry only
+  - ⚪ **Viewer** — Read-only access
+- **Feature Count** — Number of features contributed
+- **(You)** indicator for the current user
+- **Pending** badge for invitations not yet accepted
+
+### Inviting a Member
+
+*(Requires Owner or Admin role)*
+
+1. Tap **Invite Member** (top-right of the Members tab).
+2. A glassmorphism modal opens with:
+   - **Email Address** — Enter the colleague's email
+   - **Assigned Role** — Select from Collector, Editor, or Admin via a rich dropdown
+3. Tap **Send Invite**.
+4. The invitation is sent via Supabase. The member appears as "Pending" until they accept.
+
+### Managing Members
+
+Tap the **⋮** menu on any member card. Available actions depend on your role:
+
+| Your Role | Can Manage |
+|-----------|-----------|
+| **Owner** | All members including admins |
+| **Admin** | Editors, collectors, and viewers (not owners) |
+| **Editor/Collector/Viewer** | Only themselves (to leave) |
 
 ---
 
-## 4. The Contributor Leaderboard
+## 4. Admin Dashboard
 
-Accountability is built directly into the system. Every point drawn is tagged with the user's secure ID.
+*(Visible only to workspace Owners and Admins)*
 
-### The "Why": Real-World Value
-During a severe winter storm, 10 technicians are dispatched to log broken power lines. One technician is slacking off, while another is working overtime. The supervisor glances at the **Contributor Leaderboard**. They immediately see Technician A has earned the 🥇 Gold Medal with 150 features logged, while Technician B is ranked #10 with only 4 lines drawn. The supervisor can instantly re-route resources to assist Technician B's sector.
+The **Admin Dashboard** is a separate view accessible from the navigation. It provides workspace-wide management:
 
-### The "How": Step-by-Step
-1. Scroll to the bottom of the **Performance** tab.
-2. The **Contributor Leaderboard** automatically ranks your active team members based on the volume of geometries they have generated within the selected date range.
-3. The leaderboard displays micro-stats for each user, including the exact breakdown of their drawn geometries (Points vs. Lines) and the date of their last active session, making it impossible for field crews to falsify their operational reports.
+### Pending Approvals
+
+A list of users who have requested access to the workspace. For each request:
+- User name, email, and requested role
+- Workspace name
+- **Approve** button → Opens a modal to assign the actual role (Collector/Editor/Admin)
+- **Reject** button → Permanently denies the registration
+
+### Active Team Members
+
+A list of approved members (excluding the current user and owners). Each member shows:
+- Name and email
+- **Role Selector** — A custom dropdown to change roles in real-time:
+  - 📍 **Collector** — Data entry
+  - ✏️ **Editor** — Review & edit
+  - 🔑 **Admin** — Full control
+- **🚫 Revoke** button — Removes workspace access entirely (requires confirmation)
+
+### Performance KPIs (Workspace-Wide)
+
+The Admin Dashboard includes the same KPI analytics as the Team Panel but scoped to the entire workspace (not just the active project):
+- Total features, active members, avg per member, peak day
+- Geometry breakdown bar
+- Top performer card
+- Member leaderboard with medal ranking
+
+### Security
+
+- Role changes are applied instantly via Supabase
+- The assignable roles are hardened to an allowlist (`collector`, `editor`, `admin`) — the `owner` role cannot be assigned through the UI
+- This is a defense-in-depth layer; server-side RLS constraints also enforce this
+
+---
+
+> **Next:** Proceed to [Module 08: Settings & Profile](./08-settings.md) to configure your account and application preferences.

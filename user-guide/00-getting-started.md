@@ -1,52 +1,80 @@
 # Module 00: Getting Started & Onboarding
 
-Welcome to Mapplex. Before you can begin drawing geometries or querying the Geova AI, you must set up your local environment and establish your cryptographic workspace.
-
-Because Mapplex is built for extreme, offline field conditions, it is deployed as a standalone native application to lock the application payload directly into your hardware.
+> This module walks you through installing Mapplex, signing in, and creating your first workspace — step by step.
 
 ---
 
-## 1. Installing Mapplex
+## 1. Installing Mapplex (Progressive Web App)
 
-You do not need an internet connection to use Mapplex in the field, but you do need an internet connection *once* to download and install the application to your mobile device.
+Mapplex is deployed as a **Progressive Web App (PWA)**. You install it once from your browser and it runs like a native app — no App Store required. Once installed, the app and your cached data work even without an internet connection.
 
-### Current Availability
-Currently, Mapplex is distributed as an **Android APK**, providing deep hardware access to ensure offline map tiles and local spatial databases launch flawlessly in absolute dead-zones. *(Note: Support for iOS and Web delivery is actively on our roadmap and will be available soon.)*
+### On iOS / Safari
 
-### The "How": Step-by-Step (Android APK)
-1. Obtain the official Mapplex `APK` file from your organization's deployment portal or via an authorized download link.
-2. If prompted, allow your Android device to "Install unknown apps" from your browser or file manager.
-3. Tap the downloaded `APK` file to begin the installation.
-4. Once installed, launch Mapplex directly from your device's app drawer. You are now ready to sync and deploy offline.
+1. Open Safari and navigate to your Mapplex URL.
+2. Tap the **Share** button (the square with an upward arrow).
+3. Scroll down and tap **Add to Home Screen**.
+4. Confirm the name "Mapplex" and tap **Add**.
+5. Close Safari. Tap the new Mapplex icon on your home screen to launch in full-screen.
+
+### On Android / Chrome
+
+1. Open Chrome and navigate to your Mapplex URL.
+2. A banner usually appears at the bottom: **"Add Mapplex to Home screen"** — tap it.
+3. If no banner appears, tap the **three-dot menu** (⋮) in the upper right.
+4. Select **Install App** or **Add to Home Screen**.
+5. Launch directly from your device's app drawer.
+
+> **Why a PWA?** App Store installs restrict deep local cache access and can force unwanted updates. A PWA locks the application payload to your device, guaranteeing that your offline map tiles and local databases launch reliably even in a dead-zone forest.
 
 ---
 
-## 2. Authentication & Secure Enrollment
+## 2. Authentication
 
-Mapplex uses robust cryptographic authentication to ensure that your proprietary spatial data—especially enterprise infrastructure—cannot be accessed if a field tablet is lost or stolen.
+Mapplex offers three ways to access the platform. When you first launch, you'll see the Auth View with the Mapplex logo.
 
-### The "Why": Real-World Value
-If a tablet containing the exact GPS locations of a city's secure underground water valves is dropped at a job site, anonymous access must be prevented. The Auth View ensures that local databases cannot be decrypted without strict session validation against the organization's enterprise tenant.
+### Option A: Sign In with Email & Password
 
-### The "How": Step-by-Step
-1. Launch Mapplex. You will be greeted by the **Auth View** landing screen.
-2. Choose your method of entry:
-    *   **Email Form:** Enter your corporate email and a secure password.
-    *   **Single-Sign-On (SSO):** (If enabled by your organization) Tap Google, Microsoft, or Apple for unified enterprise login.
-3. **Magic Link:** For fast field deployment where typing passwords on a muddy screen is difficult, enter your email and select **Send Magic Link**. Tap the link in your email to securely bypass password entry.
+1. Enter your **Email Address** in the email field.
+2. Enter your **Password**.
+3. Tap **Sign In**.
+
+The system remembers your last email for faster subsequent logins.
+
+### Option B: Create an Account (Sign Up)
+
+1. On the Sign In screen, tap **"Need an account? Sign Up"** at the bottom.
+2. Enter your **Full Name**, **Email Address**, and **Password** (minimum 6 characters).
+3. Confirm your password in the second password field.
+4. Tap **Create Account**.
+5. Check your inbox for a confirmation link — click it to activate your account.
+
+> **Note:** After creating an account, your administrator may need to approve your access. If your account is pending, you will see an **"Account Pending"** screen informing you that administrator approval is required.
+
+### Option C: Continue as Guest (Local Offline)
+
+If you don't want to create an account yet, tap **"Continue as Guest (Local Offline)"** at the bottom of the Auth screen. Guest mode stores all data locally on your device — no cloud sync, no team features.
+
+> **⚠️ Guest Limitation:** Guest data lives only on your device. If you lose your device, the data is gone. Create an account to back up to the cloud.
+
+### Forgot Your Password?
+
+1. On the Sign In screen, tap **"Forgot password?"** (located next to the Password label).
+2. Enter your account email.
+3. Tap **Send Reset Link**.
+4. Open the link from your inbox — you'll be prompted to enter and confirm a new password.
+
+### Device Limit
+
+Your account supports up to **2 active devices**. If you see a "Device Limit Reached" error, you must log out of another device or de-register it from the Mapplex Settings panel before signing in here.
 
 ---
 
 ## 3. Creating Your First Workspace
 
-In Mapplex, user accounts do not hold data—**Workspaces** do. A Workspace acts as a secure multi-tenant container housing billing logic, team members, and all underlying geographic projects.
+In Mapplex, user accounts don't hold data — **Workspaces** do. A Workspace is a secure, isolated container that holds billing configuration, team members, and all geographic projects underneath it.
 
-### The "Why": Real-World Value
-A freelance GIS consultant might work for "Miami City Planning" on Monday, and "Global Telecom Solutions" on Tuesday. Rather than having two separate logins, the consultant has one user account that bounces between two isolated Workspaces, ensuring Miami's data never accidentally bleeds into the Telecom database.
+After your first login (or immediately as a guest), the system routes you to the **Dashboard View** where you can create your very first project.
 
-### The "How": Step-by-Step
-1. After your initial login, if you are not yet assigned to an enterprise, the system will prompt you to create a **Personal Workspace**.
-2. Give your Workspace a name (e.g., "Field Operations Base").
-3. You will immediately be routed to the **Dashboard View** (Module 01), where you can create your very first geographic Map Project inside this new environment.
+> **Example:** A freelance GIS consultant might work for "Miami City Planning" on Monday and "Global Telecom Solutions" on Tuesday. They have one user account that switches between two isolated Workspaces, ensuring Miami's data never leaks into the Telecom database.
 
-> **Next Steps:** Proceed to [Module 01: The Project Dashboard](./01-dashboard-view.md) to learn how to spin up spatial projects.
+> **Next:** Proceed to [Module 01: The Project Dashboard](./01-dashboard-view.md) to create your first project.
