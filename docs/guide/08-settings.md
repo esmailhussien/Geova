@@ -149,7 +149,7 @@ Pro features are gated by the **EntitlementEngine**. When a locked feature is ac
 |---------|-------------|
 | **Geova AI Chat** | Conversational spatial intelligence |
 | **Team Performance Dashboard** | KPI analytics and leaderboards |
-| **Cloud Sync** | Supabase-backed project synchronization |
+| **Cloud Sync** | **Geova Cloud**-backed project synchronization |
 | **Lexicon Picklists** | Project-wide shared dropdown registries |
 | **Gallery Fields** | Multi-photo form fields with carousel |
 | **Smart Logic** | Conditional form rules |

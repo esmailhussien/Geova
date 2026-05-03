@@ -165,6 +165,15 @@
 
 /* Compress line-height and padding for a denser list */
 .VPSidebarItem.level-1 {
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+}
+
+.dark .VPSidebarItem.level-1 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.VPSidebarItem.level-1:last-child {
+  border-bottom: none;
 }

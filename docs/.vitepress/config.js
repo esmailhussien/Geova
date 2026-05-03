@@ -40,7 +40,6 @@ export default defineConfig({
           { text: '05 - Data & Sync', link: '/guide/05-data-view' },
           { text: '06 - Geova AI', link: '/guide/06-geova-ai-chat' },
           { text: '07 - Team', link: '/guide/07-team-view' },
-          { text: '08 - Admin View', link: '/guide/08-admin-view' },
           { text: '08 - Settings', link: '/guide/08-settings' },
           { text: '09 - Slope Profiler', link: '/guide/09-slope-profiler' },
           { text: '10 - PDF Export', link: '/guide/10-map-pdf-export' },
