@@ -21,9 +21,9 @@ export default defineConfig({
     },
     
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Docs Home', link: '/' },
       { text: 'User Guide', link: '/guide/README' },
-      { text: 'Back to App', link: '/' }
+      { text: 'Back to App', link: 'https://www.geova.net/' }
     ],
 
     sidebar: [

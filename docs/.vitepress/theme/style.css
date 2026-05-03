@@ -143,3 +143,28 @@
   border-color: var(--vp-c-brand-1) !important;
   box-shadow: 0 10px 25px rgba(13, 148, 136, 0.2) !important;
 }
+
+/* === Sidebar Compact UI Overrides === */
+/* Group Titles (e.g. "The Mapplex Platform") made to look like section headers */
+.VPSidebarGroup h2.title-text,
+.VPSidebarGroup .title .text {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 800 !important;
+  color: var(--vp-c-text-2) !important;
+  padding-bottom: 4px;
+}
+
+/* Sidebar Item Text made smaller */
+.VPSidebarItem .text {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Compress line-height and padding for a denser list */
+.VPSidebarItem.level-1 {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
