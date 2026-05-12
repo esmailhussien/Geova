@@ -131,4 +131,4 @@ The pipeline is **cancellable** — tap the cancel button on the loading overlay
 
 ---
 
-> **Next:** Proceed to [Module 11: Troubleshooting & FAQ](./11-troubleshooting.md) for common issues and solutions.
+> **Next:** Proceed to [Module 11: Troubleshooting & FAQ](./11-troubleshooting.md) for common issues, or [Module 12: CAD Manager](./12-cad-manager.md) for DXF import/export.

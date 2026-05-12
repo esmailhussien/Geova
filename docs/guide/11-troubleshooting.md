@@ -185,8 +185,8 @@ Each account supports up to **2 trusted devices**. Manage devices in **Account â
 
 | Action | Formats |
 |--------|---------|
-| **Import** | GeoJSON, KMZ/KML, GeoPackage, CSV, Excel (.xlsx/.xls) |
-| **Export** | GeoJSON, KMZ, GeoPackage, CSV |
+| **Import** | GeoJSON, KMZ/KML, GeoPackage, CSV, Excel (.xlsx/.xls), DXF |
+| **Export** | GeoJSON, KMZ, GeoPackage, CSV, DXF |
 | **Schema Import** | JSON, GeoJSON, CSV, KMZ/KML, GeoPackage |
 
 ### Is my data secure?

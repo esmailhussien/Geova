@@ -43,7 +43,9 @@ export default defineConfig({
           { text: '08 - Settings', link: '/guide/08-settings' },
           { text: '09 - Slope Profiler', link: '/guide/09-slope-profiler' },
           { text: '10 - PDF Export', link: '/guide/10-map-pdf-export' },
-          { text: '11 - Troubleshooting', link: '/guide/11-troubleshooting' }
+          { text: '11 - Troubleshooting', link: '/guide/11-troubleshooting' },
+          { text: '12 - CAD Manager', link: '/guide/12-cad-manager' },
+          { text: '13 - Engineering Drawing', link: '/guide/13-engineering-drawing-export' }
         ]
       }
     ],

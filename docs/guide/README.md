@@ -104,6 +104,8 @@ Follow the modules in order for a full walkthrough, or jump directly to the sect
 | [**09**](./09-slope-profiler.md) | **Slope Profiler** | Digital clinometer HUD, cross-section profiles, calibration, severity-coded readings |
 | [**10**](./10-map-pdf-export.md) | **Map PDF Export** | Page layout, title/notes, legend with classification expansion, print-quality generation |
 | [**11**](./11-troubleshooting.md) | **Troubleshooting & FAQ** | Common issues, GPS tips, import/export debugging, AI accuracy, performance optimization |
+| [**12**](./12-cad-manager.md) | **CAD Manager (DXF)** | Import DXF files with smart CRS detection, export features as DXF, UTM zone intelligence, Pro feature |
+| [**13**](./13-engineering-drawing-export.md) | **Engineering Drawing Export** | Technical schematics with dimension lines, vertex labels, angles, area/perimeter summaries |
 
 ---
 
@@ -123,6 +125,9 @@ Already comfortable and just need a refresher? Here are the most common tasks at
 | Color-code my map by data values | [Module 02 → Section 5](./02-layers-view.md) |
 | Ask the AI a spatial question | [Module 06 → Section 2](./06-geova-ai-chat.md) |
 | Export a PDF map | [Module 10](./10-map-pdf-export.md) |
+| Import a CAD / DXF drawing | [Module 12](./12-cad-manager.md) |
+| Export features as DXF | [Module 12 → Section 3](./12-cad-manager.md) |
+| Generate engineering survey drawings | [Module 13](./13-engineering-drawing-export.md) |
 | Invite a team member | [Module 07 → Section 3](./07-team-view.md) |
 | Measure a distance on the map | [Module 03 → Section 5](./03-map-view.md) |
 | Sync data between devices offline | [Module 05 → Section 5](./05-data-view.md) |
