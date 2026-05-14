@@ -185,14 +185,14 @@ Each account supports up to **2 trusted devices**. Manage devices in **Account �
 
 | Action | Formats |
 |--------|---------|
-| **Import** | GeoJSON, KMZ/KML, GeoPackage, CSV, Excel (.xlsx/.xls), DXF |
-| **Export** | GeoJSON, KMZ, GeoPackage, CSV, DXF |
+| **Import** | GeoJSON, KMZ/KML, GeoPackage, CSV, Excel (.xlsx/.xls), DXF, SHP (.zip) |
+| **Export** | GeoJSON, KMZ, GeoPackage, CSV, DXF, SHP (.zip) |
 | **Schema Import** | JSON, GeoJSON, CSV, KMZ/KML, GeoPackage |
 
 ### Is my data secure?
 
 - Data is stored locally on your device in IndexedDB (encrypted at rest by the OS).
-- Cloud data utilizes **Geova Hosted Storage** with strict Row-Level Security (RLS) — users can only access their workspace's data.
+- Cloud data uses Supabase with Row-Level Security (RLS) — users can only access their workspace's data.
 - Geova AI uses BYOK (Bring Your Own Key) — your API key never leaves your device.
 - No full datasets, geometries, or coordinates are sent to AI automatically.
 

@@ -88,7 +88,7 @@ All workspace members are displayed in a continuous card list. Each member card 
    - **Email Address** — Enter the colleague's email
    - **Assigned Role** — Select from Collector, Editor, or Admin via a rich dropdown
 3. Tap **Send Invite**.
-4. The invitation is processed securely via the **Geova Cloud**. The member appears as "Pending" until they accept.
+4. The invitation is sent via Supabase. The member appears as "Pending" until they accept.
 
 ### Managing Members
 
@@ -136,7 +136,7 @@ The Admin Dashboard includes the same KPI analytics as the Team Panel but scoped
 
 ### Security
 
-- Role changes are applied instantly across the **Geova Cloud**
+- Role changes are applied instantly via Supabase
 - The assignable roles are hardened to an allowlist (`collector`, `editor`, `admin`) — the `owner` role cannot be assigned through the UI
 - This is a defense-in-depth layer; server-side RLS constraints also enforce this
 

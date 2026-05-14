@@ -106,6 +106,7 @@ Follow the modules in order for a full walkthrough, or jump directly to the sect
 | [**11**](./11-troubleshooting.md) | **Troubleshooting & FAQ** | Common issues, GPS tips, import/export debugging, AI accuracy, performance optimization |
 | [**12**](./12-cad-manager.md) | **CAD Manager (DXF)** | Import DXF files with smart CRS detection, export features as DXF, UTM zone intelligence, Pro feature |
 | [**13**](./13-engineering-drawing-export.md) | **Engineering Drawing Export** | Technical schematics with dimension lines, vertex labels, angles, area/perimeter summaries |
+| [**14**](./14-shp-manager.md) | **Shp Manager (SHP)** | Import/export ESRI Shapefiles with auto CRS from .prj, multi-SHP ZIP, DBF schema preview |
 
 ---
 
@@ -128,6 +129,8 @@ Already comfortable and just need a refresher? Here are the most common tasks at
 | Import a CAD / DXF drawing | [Module 12](./12-cad-manager.md) |
 | Export features as DXF | [Module 12 → Section 3](./12-cad-manager.md) |
 | Generate engineering survey drawings | [Module 13](./13-engineering-drawing-export.md) |
+| Import a Shapefile (.shp) | [Module 14](./14-shp-manager.md) |
+| Export features as SHP | [Module 14 → Section 3](./14-shp-manager.md) |
 | Invite a team member | [Module 07 → Section 3](./07-team-view.md) |
 | Measure a distance on the map | [Module 03 → Section 5](./03-map-view.md) |
 | Sync data between devices offline | [Module 05 → Section 5](./05-data-view.md) |

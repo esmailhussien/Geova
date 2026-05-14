@@ -45,7 +45,8 @@ export default defineConfig({
           { text: '10 - PDF Export', link: '/guide/10-map-pdf-export' },
           { text: '11 - Troubleshooting', link: '/guide/11-troubleshooting' },
           { text: '12 - CAD Manager', link: '/guide/12-cad-manager' },
-          { text: '13 - Engineering Drawing', link: '/guide/13-engineering-drawing-export' }
+          { text: '13 - Engineering Drawing', link: '/guide/13-engineering-drawing-export' },
+          { text: '14 - SHP Manager', link: '/guide/14-shp-manager' }
         ]
       }
     ],
