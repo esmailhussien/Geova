@@ -6,11 +6,11 @@ import { motion, useInView } from 'framer-motion';
  * Splits a string into words and animates them sequentially (staggered).
  * Uses spring physics for a premium, heavy tech feel.
  */
-export const TextReveal = ({ 
-  text, 
-  className = "", 
+export const TextReveal = ({
+  text,
+  className = "",
   delay = 0,
-  staggerDuration = 0.05 
+  staggerDuration = 0.05
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -19,9 +19,9 @@ export const TextReveal = ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { 
-        staggerChildren: staggerDuration, 
-        delayChildren: delay 
+      transition: {
+        staggerChildren: staggerDuration,
+        delayChildren: delay
       },
     },
   };
@@ -36,10 +36,10 @@ export const TextReveal = ({
       opacity: 1,
       y: 0,
       rotateX: 0,
-      transition: { 
-        type: "spring", 
-        damping: 12, 
-        stiffness: 100 
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100
       },
     },
   };

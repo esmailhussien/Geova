@@ -1,11 +1,18 @@
 import React from 'react';
 import Header from '../components/landing/Header';
 import Footer from '../components/landing/Footer';
+import SEO from '../components/seo/SEO';
 import geovaiconAnimated from '../assets/geovaicon-animated.gif';
 
-const GeovaAiPage = () => {
+const PlatformPage = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display selection:bg-primary/30">
+      <SEO
+        title="Geova AI Platform — Spatial Intelligence"
+        description="90% of standard GIS analytical tools ready out-of-the-box. Real-time executive dashboards, automated QA/QC validation, and full audit trails — powered by on-device AI spatial processing."
+        url="/platform"
+        keywords="GIS platform, spatial analytics, AI dashboards, automated QA/QC, audit trail, offline spatial processing, predictive mapping"
+      />
       <Header />
 
       <main className="flex-grow pt-20 md:pt-24">
@@ -31,7 +38,7 @@ const GeovaAiPage = () => {
             <div className="space-y-8 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.3em]">
                 <span className="material-symbols-outlined text-[10px] animate-spin" style={{ animationDuration: '3s' }}>hourglass_empty</span>
-                Neural Engine V2.5
+                Geova AI — Spatial Intelligence Platform
               </div>
 
               <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-accent dark:text-white">
@@ -154,4 +161,4 @@ const GeovaAiPage = () => {
   );
 };
 
-export default GeovaAiPage;
+export default PlatformPage;

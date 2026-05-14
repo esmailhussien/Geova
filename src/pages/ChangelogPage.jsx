@@ -48,7 +48,7 @@ const ChangelogPage = () => {
   return (
     <div className="min-h-screen bg-background-light dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 relative override-light overflow-hidden">
       <SEO 
-        title="Intelligence Updates" 
+        title="Industry Insights Newsletters" 
         description="Geova Changelog and Release Notes. Track the latest optimizations, AI features, and system deployments." 
       />
       
@@ -64,7 +64,7 @@ const ChangelogPage = () => {
           <div className="mb-20 text-center">
             <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4 text-slate-900 dark:text-white">
               <span className="text-primary block text-sm tracking-[0.5em] mb-4">Transmission Log</span>
-              Intelligence Updates
+              Industry Insights Newsletters
             </h1>
             <p className="text-base text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
               System architecture changes, geospatial AI advancements, and core engine release notes. Standard protocol updates flow continuously.

@@ -27,10 +27,10 @@ const Solutions = () => {
             </div>
             <div className="relative z-10 space-y-4">
               <span className="material-symbols-outlined text-4xl text-primary">settings_input_component</span>
-              <h4 className="text-3xl font-bold">Autonomous Core Logic</h4>
+              <h4 className="text-3xl font-bold">AI-Powered Spatial Analytics Engine</h4>
               <p className="max-w-md text-slate-300 font-light">The backbone of future automation. We design proprietary spatial kernels that allow machines to navigate and understand complex physical domains.</p>
               <button className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-primary pt-4 group">
-                Deep Dive <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                Learn More <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
               </button>
             </div>
           </div>
@@ -38,13 +38,13 @@ const Solutions = () => {
           <div className="md:col-span-5 grid grid-rows-2 gap-6">
             <div className="glass-panel rounded-3xl p-8 flex flex-col justify-center border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
               <span className="material-symbols-outlined text-3xl text-primary mb-4">hub</span>
-              <h4 className="text-xl font-bold mb-2">Network Topology</h4>
+              <h4 className="text-xl font-bold mb-2">Smart Infrastructure Network Analysis</h4>
               <p className="text-sm text-slate-500 dark:text-slate-400">Designing high-efficiency communication nodes for smart cities and satellite infrastructure.</p>
             </div>
             <div className="bg-primary/10 dark:bg-primary/5 border border-primary/20 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group">
               <div className="relative z-10">
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">query_stats</span>
-                <h4 className="text-xl font-bold mb-2">Predictive Spatial Data</h4>
+                <h4 className="text-xl font-bold mb-2">Predictive Maintenance & Risk Mapping</h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400">AI-driven foresight tools that anticipate infrastructural stress points before they manifest.</p>
               </div>
               <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:rotate-12 transition-transform duration-500">

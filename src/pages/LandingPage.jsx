@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from '../components/landing/Header';
 import Hero from '../components/landing/Hero';
-import About from '../components/landing/About';
-import Solutions from '../components/landing/Solutions';
-import MapplexCore from '../components/landing/MapplexCore';
+import TrustBar from '../components/landing/TrustBar';
+import ThreePillars from '../components/landing/ThreePillars';
 import Vision from '../components/landing/Vision';
 import Footer from '../components/landing/Footer';
 import { ScanReveal } from '../components/animations/ScanReveal';
@@ -12,18 +11,19 @@ import SEO from '../components/seo/SEO';
 const LandingPage = () => {
   return (
     <>
-      <SEO title="Home" />
+      <SEO
+        title="Mapping Tomorrow's Solutions"
+        description="An end-to-end spatial intelligence platform trusted by government authorities. From RTK GNSS field data collection with Mapplex to AI-powered analytics dashboards — built by engineers who've managed city-scale GIS systems for 15+ years."
+        url="/"
+      />
       <Header />
       <main className="pt-20 md:pt-24">
         <Hero />
         <ScanReveal delay={0.1}>
-          <About />
+          <TrustBar />
         </ScanReveal>
         <ScanReveal delay={0.1}>
-          <Solutions />
-        </ScanReveal>
-        <ScanReveal delay={0.1}>
-          <MapplexCore />
+          <ThreePillars />
         </ScanReveal>
         <ScanReveal delay={0.1}>
           <Vision />

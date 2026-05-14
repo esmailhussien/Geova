@@ -19,9 +19,9 @@ const Hero = () => {
           }}
         ></div>
       </div>
-      
+
       <div className="relative z-10 max-w-5xl text-center space-y-8 flex flex-col items-center">
-        
+
         {/* 1. Badge Reveal */}
         <LineReveal delay={0.1}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.3em] mb-4">
@@ -32,40 +32,40 @@ const Hero = () => {
             Intelligent Infrastructure
           </div>
         </LineReveal>
-        
+
         {/* 2. Main Title Reveal */}
         <LineReveal delay={0.2} className="pb-4">
           <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tight text-accent dark:text-white">
             Mapping <span className="gradient-text">Tomorrow's</span><br />Solutions.
           </h1>
         </LineReveal>
-        
+
         {/* 3. Word-by-Word Subtext Physics */}
         <div className="w-full">
-          <TextReveal 
-            text="Geova engineers the intersection of complex physical infrastructure and intelligent spatial logic. We don't just map environments; we design the systems that thrive within them." 
+          <TextReveal
+            text="An end-to-end spatial intelligence platform trusted by government authorities and built by engineers who've managed city-scale GIS systems for 15+ years."
             className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed text-center block"
             delay={0.4}
             staggerDuration={0.03}
           />
         </div>
-        
+
         {/* 4. Action Buttons Reveal */}
         <LineReveal delay={0.6}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Link to="/mapplex">
               <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-primary/30 transition-all">
-                Discover Mapplex App
+                Explore Mapplex
               </button>
             </Link>
-            <a href="/docs/" className="glass-panel flex items-center justify-center text-accent dark:text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-slate-200 dark:border-slate-800 transition-all hover:bg-slate-50 dark:hover:bg-slate-800/50">
-              View Documentation
-            </a>
+            <Link to="/platform" className="glass-panel flex items-center justify-center text-accent dark:text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-slate-200 dark:border-slate-800 transition-all hover:bg-slate-50 dark:hover:bg-slate-800/50">
+              Explore Our Solutions
+            </Link>
           </div>
         </LineReveal>
-        
+
       </div>
-      
+
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
         <span className="material-symbols-outlined text-slate-400">south</span>

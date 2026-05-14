@@ -42,17 +42,17 @@ const MapplexCore = () => {
         <div className="grid md:grid-cols-3 gap-12 mt-20 max-w-5xl">
           <div className="space-y-4">
             <div className="text-primary"><span className="material-symbols-outlined text-3xl">fluid</span></div>
-            <h5 className="font-bold text-lg">Hyper-Spatial Logic</h5>
+            <h5 className="font-bold text-lg">Multi-Dimensional Mapping (2D–4D + Analytics)</h5>
             <p className="text-sm text-slate-500">Understands 4D environments, accounting for temporal changes in spatial datasets.</p>
           </div>
           <div className="space-y-4">
             <div className="text-primary"><span className="material-symbols-outlined text-3xl">token</span></div>
-            <h5 className="font-bold text-lg">Immutable Ledger</h5>
+            <h5 className="font-bold text-lg">Full Audit Trail & Version History</h5>
             <p className="text-sm text-slate-500">Every spatial adjustment is recorded on a secure, distributed system protocol.</p>
           </div>
           <div className="space-y-4">
             <div className="text-primary"><span className="material-symbols-outlined text-3xl">auto_fix_high</span></div>
-            <h5 className="font-bold text-lg">Self-Correcting</h5>
+            <h5 className="font-bold text-lg">Automated QA/QC Validation</h5>
             <p className="text-sm text-slate-500">Mapplex identifies data anomalies and resolves architectural conflicts autonomously.</p>
           </div>
         </div>

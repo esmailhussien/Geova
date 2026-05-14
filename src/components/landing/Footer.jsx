@@ -11,7 +11,7 @@ const Footer = () => {
             <img alt="Geova Logo" className="w-auto object-contain h-16 md:h-20 scale-[1.6] md:scale-[2.0] origin-left" src={logo} />
           </Link>
           <p className="text-xs text-slate-500 font-medium leading-loose uppercase tracking-widest">
-            Designing the logic of the physical world. Precision. Intelligence. Future.
+            Intelligent Infrastructure. Built by Engineers, for Engineers.
           </p>
           <div className="flex gap-4">
             <a className="text-slate-400 hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">share</span></a>
@@ -22,19 +22,19 @@ const Footer = () => {
         <div className="space-y-6">
           <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Navigation</h4>
           <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-500">
-            <li><a className="hover:text-primary transition-colors" href="#">Solutions</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Mapplex Engine</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Security</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Infrastructure</a></li>
+            <li><Link className="hover:text-primary transition-colors" to="/platform">Platform</Link></li>
+            <li><Link className="hover:text-primary transition-colors" to="/mapplex">Mapplex</Link></li>
+            <li><Link className="hover:text-primary transition-colors" to="/consulting">Consulting</Link></li>
+            <li><Link className="hover:text-primary transition-colors" to="/about">About Us</Link></li>
           </ul>
         </div>
         <div className="space-y-6">
           <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Resources</h4>
           <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-500">
-            <li><a className="hover:text-primary transition-colors" href="#">Manifesto</a></li>
             <li><a className="hover:text-primary transition-colors" href="/docs/">Documentation</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">System Status</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Global Map</a></li>
+            <li><Link className="hover:text-primary transition-colors" to="/updates">Updates</Link></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Security Certifications</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Case Studies</a></li>
           </ul>
         </div>
         <div className="space-y-6">
@@ -58,7 +58,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="space-y-6">
-          <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Intelligence Update</h4>
+          <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Industry Insights Newsletter</h4>
           <p className="text-sm text-slate-500 font-light">Join 12,000+ infrastructure specialists receiving our bi-monthly logic updates.</p>
           <form className="flex">
             <input
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
-        <p>© 2024 GEOVA TECHNOLOGIES. ALL SYSTEMS NOMINAL.</p>
+        <p>© 2026 Geova Technologies. All rights reserved.</p>
         <div className="flex gap-8">
           <Link className="hover:text-primary" to="/privacy">Privacy Protocol</Link>
           <a className="hover:text-primary" href="#">Terms of Access</a>

@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/ai",
+      "destination": "/platform",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/docs/(.*)",
