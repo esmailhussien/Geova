@@ -1,6 +1,6 @@
-# Module 02: Layers & Symbology Management
+# Module 02: Layers & Symbology
 
-> Layers are the foundation of your spatial data. Each layer represents a distinct theme (streetlights, parcels, pipelines) with its own geometry type, visual style, and form schema. This module covers creating, styling, and classifying layers.
+> Layers organize spatial data by theme. Each layer has a geometry type, visual style, and optional form schema. This module covers creating layers, styling them, labeling features, and applying field-based symbology.
 
 ---
 
@@ -11,17 +11,17 @@
 3. Fill in the **Define New Layer** dialog:
    - **Layer Name** — A descriptive name (e.g., "Street Lights", "Water Pipes").
    - **Geometry Type** — Choose one from the dropdown:
-     - **Point** *(Pins, Items, Trees)* — For discrete single-location assets.
-     - **Line** *(Pipes, Roads, Cables)* — For continuous linear features.
-     - **Polygon** *(Areas, Parcels, Zones)* — For enclosed boundaries.
+     - **Point** *(pins, assets, trees)* — For discrete single-location features.
+     - **Line** *(pipes, roads, cables)* — For continuous linear features.
+     - **Polygon** *(areas, parcels, zones)* — For enclosed boundaries.
    - **Marker Color** — Select from the curated palette (11 colors), or tap the **+** ring to pick any custom color using the color wheel.
    - **Polygon Fill Color** *(Polygon type only)* — Choose an internal area color. Toggle the **Hollow** checkbox to make the polygon transparent (outline only).
    - **Marker Icon** *(Point type only)* — Tap to open the **Icon Picker** with searchable categories: Location, Nature, Infrastructure, Transport, Emergency, Buildings, and more.
 4. Tap **Create Layer**.
 
-The new layer instantly appears in the Layer Manager with a card showing its geometry type, symbology preview, and whether a form is attached.
+The new layer appears in the Layer Manager with its geometry type, style preview, and form status.
 
-> **Example:** A telecom company creates three layers: "Splice Enclosures" (Point with an electrical icon), "Fiber Cables" (Line in blue), and "Service Areas" (Polygon with transparent purple fill).
+> **Example:** A fiber survey project might use three layers: "Splice Enclosures" as points, "Fiber Routes" as lines, and "Service Areas" as polygons. Keeping these themes separate makes forms, styling, and exports easier to manage.
 
 ---
 
@@ -35,15 +35,15 @@ Each layer card displays:
 | **Geometry Badge** | Shows `Point`, `LineString`, or `Polygon` |
 | **Form Badge** | Green ✅ `Form` if a form is attached; amber ⚠️ `No Form` if not |
 | **Symbology Preview** | Visual swatch showing current marker/line/polygon style |
-| **👁️ Visibility Toggle** | Show/hide the layer on the map |
-| **📍 Zoom to Layer** | Fly the map to the bounding extent of this layer's features |
-| **🎨 Style** | Open the Edit Layer Style modal |
-| **📖 Schema** | Open the Data Dictionary modal |
-| **🗑️ Delete** | Remove the layer and all its features (with confirmation) |
+| **Visibility Toggle** | Show or hide the layer on the map |
+| **Zoom to Layer** | Move the map to the layer's feature extent |
+| **Style** | Open the Edit Layer Style modal |
+| **Schema** | Open the Data Dictionary modal |
+| **Delete** | Remove the layer and all its features after confirmation |
 
 ### Reference Layers
 
-Reference layers (imported background polygons used for spatial auto-fill) appear with an orange theme and a "Background KMZ" badge. They support visibility toggling and deletion but don't accept new feature drawing.
+Reference layers are imported background polygons used for spatial auto-fill. They support visibility toggling and deletion, but they are not drawing layers.
 
 ---
 
@@ -70,9 +70,9 @@ Select from the palette or use a custom color via the **+** ring.
 
 The **Completion Indicator** toggle is inside the Edit Layer Style modal.
 
-When enabled, the map engine evaluates every geometry against its attached form schema. Features where **all form fields are filled** turn green on the map. Features with missing data keep their original color.
+When enabled, the map engine evaluates every feature against its attached form schema. Features where **all required form fields are filled** turn green on the map. Features with missing required data keep their original color.
 
-> **Example:** A supervisor activates the Completion Indicator on a fire hydrant layer. During inspections, any hydrant point that still appears gray means the field crew forgot to log the water pressure reading. The supervisor can scan the map at a glance and identify incomplete work.
+> **Example:** A supervisor enables the Completion Indicator on a hydrant inspection layer. Hydrants with complete required fields turn green; hydrants missing a required inspection value remain in the layer's normal color.
 
 ### How to Enable
 
@@ -85,7 +85,7 @@ When enabled, the map engine evaluates every geometry against its attached form 
 
 ## 5. Text Labels on the Map
 
-Display readable text directly on map features — no need to tap each one to see its name.
+Display selected attribute values directly on the map so users do not need to tap every feature to identify it.
 
 ### How to Enable
 
@@ -95,13 +95,13 @@ Display readable text directly on map features — no need to tap each one to se
 4. A **Label Field** dropdown appears. Select which attribute to render (e.g., `Shelter_Name`, `Road_ID`). Choose **Auto-detect** to let the engine pick the best field.
 5. Tap **Save Style**.
 
-> **Example:** In a disaster shelter map, enabling labels on the `Shelter_Name` field renders "Northside Red Cross" directly above each pin — dispatchers can read locations without clicking.
+> **Example:** On an inspection map, labeling the `Asset_ID` field lets reviewers identify hydrants, poles, or valves without opening each feature popup.
 
 ---
 
 ## 6. Field-Based Symbology (Classification)
 
-Classification transforms a generic single-color map into a data-driven visual story. Instead of all features being the same color, the engine reads a property value and assigns colors dynamically.
+Classification styles features by attribute values. Instead of showing a layer in one color, Mapplex reads a selected field and applies colors based on the configured rules.
 
 ### Selecting a Classification Field
 
@@ -139,17 +139,18 @@ Tap **Generate Bins** to auto-compute the classification rules.
 
 Toggle **Hide Unclassified** to remove features from the map that don't match any classification rule. Useful for cleaning up noise when you only care about specific categories.
 
-> **Example:** A tax assessor uses Graduated classification on `Tax_Value`:
-> - Pale green = parcels under $100K
-> - Dark green = parcels over $5M
+> **Example:** A water utility uses Graduated classification on `Flow_Rate_PSI`:
+> - Red = low pressure
+> - Yellow = expected range
+> - Green = high or acceptable pressure
 >
-> Instantly, the map tells a visual story of property wealth distribution.
+> This helps reviewers spot pressure issues without opening each record.
 
 ---
 
 ## 7. Data Dictionary (Schema)
 
-The **Schema** button on each layer card opens the **Data Dictionary** modal. This is where you teach the AI and analytics engine about your field names.
+The **Schema** button on each layer card opens the **Data Dictionary** modal. Use it to document what each field means so filters, reports, and Geova AI queries are easier to interpret.
 
 For each field in your layer's schema, you can configure:
 
@@ -160,28 +161,28 @@ For each field in your layer's schema, you can configure:
 | **Role** | Semantic category: Name, Category, Population, Area, Capacity, Date, Status, Slope, Amount, Identifier, Code, Notes |
 | **Type Hint** | Data type override: Auto, Text, Number, Date, Category, Yes/No |
 
-A **Readiness Score** at the top shows what percentage of fields have been configured (e.g., "8/12 fields taught — 67%"). Technical fields like `fid`, `objectid`, and `sys_` prefixes are automatically excluded from teaching.
+A **Readiness Score** at the top shows what percentage of fields have been configured, such as "8/12 fields configured - 67%". Technical fields like `fid`, `objectid`, and `sys_` prefixes are automatically excluded.
 
-> **Why does this matter?** When you ask Geova AI *"Show me all trees with height > 10"*, the AI needs to know that your database field `field_x47` actually means "Tree Height" and is measured in meters. The Data Dictionary provides this mapping.
+> **Why does this matter?** Imported files often use short or unclear field names such as `field_x47` or `ht_m`. The Data Dictionary lets you record that the field means "Tree Height" and uses meters, which improves filtering, reporting, and AI-assisted queries.
 
 ---
 
-## 8. Case Study: Annual Fire Hydrant Inspections
+## 8. Example: Annual Fire Hydrant Inspections
 
-**Challenge:** A municipal water department needs to inspect 5,000 fire hydrants. Field crews are prone to skipping the flow-rate reading. The supervisor needs real-time visibility into progress.
+**Need:** A municipal water department needs to inspect hydrants and make sure each record includes a flow-rate reading.
 
 **Solution using Mapplex Layers:**
 
 1. **Create the Layer:** A **Point** layer named "Hydrants 2026" — points are ideal for exact curb locations.
 
-2. **Style the Baseline:** Open Style → select the **Water Drop** icon → set marker color to faint gray.
+2. **Style the Baseline:** Open Style, select a water-related icon, and set the marker color to gray.
 
-3. **Enable Labels:** Toggle on **Show Feature Labels** → target the `Cross_Street` field. The map now reads "Main & 5th" directly over each pin.
+3. **Enable Labels:** Toggle on **Show Feature Labels** and target the `Cross_Street` field. The map shows labels such as "Main & 5th" over each point.
 
-4. **Force Compliance:** Activate the **Completion Indicator**, tying it to the mandatory "Flow Rate (PSI)" form field. If a worker flushes the hydrant but forgets the PSI, the icon stays gray. Once entered, it turns green.
+4. **Track Completion:** Mark "Flow Rate (PSI)" as required in the form and enable the **Completion Indicator**. Points remain gray until required values are entered.
 
-5. **Find Problems:** Switch symbology to **Graduated** → target `Flow_Rate_PSI` → select **Red-Yellow-Green** ramp → Generate Bins. Any point below 20 PSI glows red. A cluster of red dots in one neighborhood reveals a probable water main leak.
+5. **Review Results:** Switch symbology to **Graduated**, target `Flow_Rate_PSI`, select a red-yellow-green ramp, and generate bins. Low-pressure points stand out for follow-up review.
 
 ---
 
-> **Next:** Proceed to [Module 03: The Map Engine](./03-map-view.md) to start drawing, measuring, and collecting data on the map.
+> **Next:** Proceed to [Module 03: Map View](./03-map-view.md) to start drawing, measuring, and collecting data on the map.

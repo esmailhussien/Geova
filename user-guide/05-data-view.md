@@ -1,12 +1,12 @@
 # Module 05: Data & Sync
 
-> The Data & Sync module is your hub for exporting collected data, importing new datasets, managing reference zones, performing local P2P synchronization, and reviewing all features in tabular format.
+> The Data & Sync module is where you export project data, import datasets, manage reference zones, run local peer-to-peer sync, and review collected features in table form.
 
 ---
 
 ## 1. Module Overview
 
-The Data & Sync screen is divided into four sections:
+The Data & Sync screen is divided into five sections:
 
 1. **Export Data** — Download your project in multiple formats
 2. **Import Features** — Upload geographic files or spreadsheets into your project
@@ -30,12 +30,12 @@ Use the **export layer dropdown** at the top to choose:
 |--------|--------|-------------|
 | **JSON (GeoJSON)** | `JSON` | Standard GeoJSON format. Universally compatible with QGIS, ArcGIS, Mapbox, and web applications |
 | **KMZ** | `KMZ` | Compressed KML for Google Earth and Google Maps. Includes styling and descriptions |
-| **GPKG (GeoPackage)** | `GPKG` | SQLite-based OGC standard. Ideal for desktop GIS software and large datasets |
+| **GPKG (GeoPackage)** | `GPKG` | SQLite-based OGC standard. Ideal for desktop GIS software and large datasets. Requires an entitlement that includes GeoPackage export |
 | **CSV** | `CSV` | Tabular comma-separated values. Opens in Excel, Google Sheets, and databases. Includes coordinates as columns |
 
 Tap the desired format button and the file downloads immediately.
 
-> **Example:** A supervisor needs to submit weekly inspection progress to the city planning office. She selects the "Hydrant Inspections" layer → taps **CSV** → opens the file in Excel → emails it as an attachment. Total time: 30 seconds.
+> **Example:** A supervisor needs to send weekly hydrant inspection progress to a client. She selects the "Hydrant Inspections" layer, exports CSV, checks the file in Excel, and attaches it to the weekly report.
 
 ---
 
@@ -45,7 +45,7 @@ Tap the desired format button and the file downloads immediately.
 
 1. Tap the **GeoJSON / KMZ / GPKG** import button.
 2. Select a file from your device.
-3. The system auto-detects the file type using **magic byte analysis** — no need for correct file extensions:
+3. The system checks the file signature to detect the format, even if the file extension is incorrect:
    - **ZIP header** (PK) → treated as KMZ
    - **SQLite header** → treated as GeoPackage
    - **XML header** (`<`) → treated as KML
@@ -57,9 +57,12 @@ For large GeoPackage files (50MB+), a warning appears before processing.
 
 ### Spreadsheet Import (CSV / Excel)
 
-1. Tap the **CSV / Excel** import button.
-2. Select a `.csv`, `.xlsx`, or `.xls` file.
-3. The **Spreadsheet Import Wizard** launches — a three-step process:
+Spreadsheet import creates point features from coordinate columns. It is available when your workspace includes the spreadsheet import entitlement.
+
+1. Select a **Point** layer as the target layer.
+2. Tap the **CSV / Excel** import button.
+3. Select a `.csv`, `.xlsx`, or `.xls` file.
+4. The **Spreadsheet Import Wizard** launches — a three-step process:
 
 #### Step 1: Column Mapping
 The wizard scans your columns and auto-detects which contain **latitude** and **longitude** values. You can override the mapping manually.
@@ -79,7 +82,9 @@ A preview shows the first few rows mapped to geographic points on a mini-map. Co
 
 ## 4. Spatial Reference Zones
 
-Reference zones are background polygon layers used by the **Spatial Auto-Fill** feature in Forms.
+Reference zones are background polygon layers used by **Spatial Auto-Fill** in Forms.
+
+Reference zone management requires a workspace entitlement that includes reference imports and a project role with data-management access.
 
 ### Uploading Reference Data
 
@@ -90,15 +95,17 @@ Reference zones are background polygon layers used by the **Spatial Auto-Fill** 
 
 ### Managing Reference Layers
 
-Uploaded reference layers appear as tagged chips showing the source layer name. Each chip has a **🗑️ Delete** button to remove the reference layer.
+Uploaded reference layers appear as tagged chips showing the source layer name. Each chip has a **Delete** button to remove the reference layer.
 
-> **How Auto-Fill Works:** When you draw a point inside a reference polygon, form fields configured for Spatial Auto-Fill extract and auto-populate the matching attribute from the reference zone. See [Module 04: Forms](./04-forms-view.md) for configuration details.
+> **How Auto-Fill Works:** When you draw a feature, Mapplex checks the configured reference polygon layer and copies the selected attribute from the matching zone into the form. Points are matched by their location; lines and polygons use their centroid for the lookup. See [Module 04: Forms](./04-forms-view.md) for configuration details.
 
 ---
 
 ## 5. Field Gathering (Local P2P Sync)
 
-Synchronize data between devices on the same Wi-Fi network — **no internet required**. This is designed for field teams working in remote areas.
+Synchronize data between devices on the same Wi-Fi network. This is useful when field teams need to exchange collected records before cloud connectivity is available.
+
+Local P2P sync depends on native local-network support and device permissions. It works best on supported mobile builds or controlled field networks where both devices are on the same Wi-Fi or hotspot.
 
 ### Hosting a Session
 
@@ -120,7 +127,7 @@ Synchronize data between devices on the same Wi-Fi network — **no internet req
 5. Tap **Send Features to Host**.
 6. The status panel shows transfer progress.
 
-> **Example:** A field team of 5 workers collects hydrant data independently throughout the day. At the end of the shift, the supervisor opens "Host Session" on their tablet. Each worker connects via Wi-Fi hotspot and taps "Join & Send" — all data flows into the supervisor's device in under a minute. No cell signal needed.
+> **Example:** Five inspectors collect hydrant records throughout the day. At the end of the shift, the supervisor hosts a local sync session from a tablet. Each inspector joins the hotspot and sends their records to the host device for review.
 
 ---
 
@@ -131,7 +138,7 @@ Below the import/export controls, all collected features are displayed as **expa
 ### Layer Card
 
 Each card shows:
-- **Layer name** with a geometry icon (📍 Point, 📏 Line, ⬠ Polygon)
+- **Layer name** with a geometry type indicator
 - **Feature count** (e.g., "347 Features Collected")
 - **Storage badge** — ☁️ `CLOUD` or 📱 `OFFLINE`
 - **Expand arrow** — Tap to reveal the data table
@@ -148,7 +155,7 @@ When expanded, a **scrollable, paginated table** appears with:
 
 ### Pagination
 
-The table loads **50 rows at a time**. For large datasets, a **"Load More (+50)"** button appears at the bottom. This DOM virtualization approach keeps the browser responsive even with thousands of features.
+The table loads **50 rows at a time**. For large datasets, a **"Load More (+50)"** button appears at the bottom to keep the browser responsive.
 
 ### Image & File Display
 
@@ -171,6 +178,8 @@ The table loads **50 rows at a time**. For large datasets, a **"Load More (+50)"
 | **Viewer** | ✅ | ❌ | ❌ | ✅ |
 
 > **Note:** Viewers can export and participate in sync sessions but cannot import new features or reference layers.
+
+> **Note:** Collectors can import records into an existing target layer. Creating new project data structures, such as reference layers, CAD layers, or SHP layers, requires Owner, Admin, or Editor access.
 
 ---
 

@@ -21,7 +21,7 @@ const AboutPage = () => {
         <section className="px-6 py-24 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-center">
           <div className="max-w-4xl mx-auto space-y-6">
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-accent dark:text-white leading-tight">
-              Built by <span className="gradient-brand">Engineers</span>.<br /> Trusted by Governments.
+              Built by <span className="text-primary">Engineers</span>.<br /> Trusted by Governments.
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
               We've spent 15+ years managing city-scale GIS systems for national authorities. Now, we've built the spatial intelligence platform we always needed.

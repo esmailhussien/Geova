@@ -103,7 +103,7 @@
 
 - Ensure the file is a valid SQLite-based GeoPackage (`.gpkg`).
 - Files larger than 50MB trigger a warning — confirm to proceed.
-- The system uses magic byte detection, so the file extension doesn't need to be correct.
+- The system checks the file signature, so the file extension does not always need to be correct.
 
 ---
 
@@ -133,11 +133,11 @@
 
 ## 6. Geova AI Chat
 
-### "The AI gives wrong answers"
+### "Geova AI gives unexpected answers"
 
-- Use `@Layer` and `#Column` mentions for precision — the AI performs better with explicit references.
+- Use `@Layer` and `#Column` mentions for precision.
 - Check the **Data Dictionary** (Layers → Schema) to ensure field aliases and units are configured.
-- Tap **"Go Deeper"** to re-run with the structured DAG template engine for higher accuracy.
+- Tap **"Go Deeper"** to re-run with a structured analysis template when one is available.
 - Review the **SQL Query** in the expandable section to verify what was executed.
 
 ### "AI says 'Out of Credits'"
@@ -157,10 +157,10 @@
 
 ### "The app is slow with many features"
 
-- Mapplex uses **DOM virtualization** — data tables load 50 rows at a time.
+- Data tables load 50 rows at a time to reduce browser load.
 - Enable **Feature Clustering** in Settings to group nearby features at lower zoom levels.
-- The **ViewportCuller** automatically hides off-screen features for performance.
-- For datasets >15,000 features, the **CanvasIconLayer** renderer activates automatically.
+- Zoom into the area you are reviewing so fewer features are visible at once.
+- Turn off layers that are not needed for the current task.
 
 ### "The app crashed or froze"
 
@@ -185,16 +185,17 @@ Each account supports up to **2 trusted devices**. Manage devices in **Account �
 
 | Action | Formats |
 |--------|---------|
-| **Import** | GeoJSON, KMZ/KML, GeoPackage, CSV, Excel (.xlsx/.xls), DXF, SHP (.zip) |
-| **Export** | GeoJSON, KMZ, GeoPackage, CSV, DXF, SHP (.zip) |
+| **Import** | GeoJSON, KMZ/KML, GeoPackage, CSV, Excel (.xlsx/.xls), DXF, SHP ZIP or SHP component files |
+| **Export** | GeoJSON, KMZ, GeoPackage, CSV, DXF, SHP ZIP |
 | **Schema Import** | JSON, GeoJSON, CSV, KMZ/KML, GeoPackage |
 
 ### Is my data secure?
 
-- Data is stored locally on your device in IndexedDB (encrypted at rest by the OS).
+- Local project data is stored on your device in the browser's IndexedDB storage.
 - Cloud data uses Supabase with Row-Level Security (RLS) — users can only access their workspace's data.
-- Geova AI uses BYOK (Bring Your Own Key) — your API key never leaves your device.
-- No full datasets, geometries, or coordinates are sent to AI automatically.
+- Geova AI is routed through the Mapplex backend and charged against workspace credits.
+- Limited schema details, sample field values, and location context may be sent when needed for an AI request.
+- Full datasets and geometries are not sent automatically for ordinary chat planning.
 
 ### What languages are supported?
 

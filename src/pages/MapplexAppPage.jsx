@@ -20,14 +20,14 @@ const MapplexAppPage = () => {
   const interactiveFeatures = [
     {
       id: 0,
-      title: 'Geova AI Co-Pilot',
-      desc: 'Ask complex spatial questions in natural language. The AI uses DAG orchestration to run filters, generate Voronoi polygons, and detect anomalies instantly.',
+      title: 'AI Spatial Assistant',
+      desc: 'Ask complex spatial questions in natural language. The AI runs filters, generates buffer zones, and detects anomalies instantly on your device.',
       icon: 'psychology',
       screenTitle: 'Geova AI Assistant',
       screenData: [
         { label: 'Query', value: '"Find optimal sites > 5km from wetlands"', color: 'text-brand-orange' },
-        { label: 'Operation', value: 'DAG Orchestration Active', color: 'text-slate-900 dark:text-white' },
-        { label: 'Result', value: '3 Voronoi Catchments Generated', color: 'text-slate-900 dark:text-white' }
+        { label: 'Operation', value: 'Spatial Buffer Active', color: 'text-slate-900 dark:text-white' },
+        { label: 'Result', value: '3 Suitable Zones Generated', color: 'text-slate-900 dark:text-white' }
       ]
     },
     {
@@ -103,7 +103,7 @@ const MapplexAppPage = () => {
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-accent dark:text-white">
-                Take the Power of Geova to the <span className="gradient-brand">Field</span><span className="text-brand-orange">.</span>
+                Take the Power of Geova to the <span className="text-primary">Field</span><span className="text-brand-orange">.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">

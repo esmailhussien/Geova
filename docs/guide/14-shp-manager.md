@@ -1,13 +1,13 @@
-# Module 14: Shp Manager (Shapefile Import & Export)
+# Module 14: SHP Manager (Shapefile Import & Export)
 
-> Import and export ESRI Shapefiles (`.shp` / `.zip`) with smart coordinate system detection and multi-shapefile support. Shp Manager is a **Pro** feature.
+> Import and export ESRI Shapefiles (`.shp` / `.zip`) with coordinate system handling and multi-shapefile ZIP support. SHP Manager is a **Pro** feature.
 
 ---
 
-## 1. Opening Shp Manager
+## 1. Opening SHP Manager
 
 1. Navigate to the **Data & Sync** view from the sidebar.
-2. Tap the **Shp Manager** button (indigo gradient, below CAD Manager).
+2. Tap the **Shp Manager** button below CAD Manager.
 3. The modal opens with **Import SHP** and **Export SHP** tabs.
 
 > **Pro Feature:** Shp Manager requires a Pro or Team subscription. Free-tier users see a locked button with a "PRO" badge and are prompted to upgrade.
@@ -16,9 +16,12 @@
 
 ## 2. Importing Shapefiles
 
-### Step 1: Select a ZIP File
+### Step 1: Select a ZIP or Shapefile Components
 
-Tap **"Choose SHP / ZIP File"** and select a `.zip` archive containing one or more shapefiles.
+Tap **"Choose SHP / ZIP File"** and select either:
+
+- A `.zip` archive containing one or more shapefiles
+- Loose shapefile component files, such as `.shp`, `.shx`, `.dbf`, `.prj`, and `.cpg`
 
 A shapefile is actually a group of files sharing the same base name:
 
@@ -32,7 +35,7 @@ A shapefile is actually a group of files sharing the same base name:
 
 ### Step 2: Preview Shapefiles Found
 
-After parsing, Shp Manager shows a table listing **every shapefile** found inside the ZIP:
+After parsing, SHP Manager shows a table listing **every shapefile** found in the selected ZIP or component-file set:
 
 | ☑ | Shapefile | Type | Fields | Features | CRS |
 |---|-----------|------|--------|----------|-----|
@@ -42,7 +45,7 @@ After parsing, Shp Manager shows a table listing **every shapefile** found insid
 
 - **Checkboxes** let you select which shapefiles to import (all checked by default).
 - **Green badge (🟢)** means the CRS was auto-detected from the `.prj` file.
-- **Amber badge (🟡)** means no `.prj` was found — you'll need to choose the CRS manually.
+- **Amber badge (🟡)** means no `.prj` was found. You need to choose the CRS manually.
 
 ### Step 3: CRS (Coordinate System) Handling
 
@@ -52,7 +55,7 @@ The system reads the WKT definition and auto-detects the EPSG code. Common forma
 - UTM Zones 1-60 N/S (EPSG:326xx / 327xx)
 - Web Mercator (EPSG:3857)
 
-No manual action is needed — coordinates are reprojected to WGS84 automatically.
+No manual CRS selection is needed when the `.prj` is recognized. Coordinates are reprojected to WGS84 during import.
 
 **When `.prj` is missing:**
 A CRS picker appears with radio cards:
@@ -61,7 +64,7 @@ A CRS picker appears with radio cards:
 - Web Mercator
 - Custom proj4 string (for advanced users)
 
-> **Tip:** Each shapefile in a multi-SHP ZIP can have a **different CRS**. Shp Manager handles each one independently — parcels might be UTM 36N while roads are UTM 37N.
+> **Tip:** Each shapefile in a multi-SHP ZIP can have a **different CRS**. SHP Manager handles each one independently, but you should still confirm CRS settings when files come from different sources.
 
 ### Step 4: Import
 
@@ -98,7 +101,7 @@ city_data_2026.zip
 └── utilities.shp / .shx / .dbf
 ```
 
-Shp Manager detects all shapefiles automatically and lets you:
+SHP Manager detects all shapefiles automatically and lets you:
 - Preview each one separately
 - Select/deselect individual shapefiles
 - See per-file CRS status
@@ -121,16 +124,16 @@ Shp Manager detects all shapefiles automatically and lets you:
 ## 6. Tips for Best Results
 
 - **Always include the `.prj` file** — without it, the system must guess the CRS. If you created the shapefile in QGIS or ArcGIS, the `.prj` is generated automatically.
-- **ZIP the entire folder** — select all related files (`.shp`, `.shx`, `.dbf`, `.prj`, `.cpg`) and compress them together.
+- **Keep related files together** — a ZIP is easiest for handoff, but you can also select the loose component files together when importing.
 - **Name your files clearly** — the shapefile base name becomes the Mapplex layer name.
 - **DBF field name limit** — Shapefile attribute field names are limited to 10 characters by the format specification. Longer names are truncated.
 - **Check encoding** — if Arabic or special characters appear garbled, the original shapefile may lack a `.cpg` encoding file.
 
 ---
 
-## 7. Comparison: Shp Manager vs CAD Manager
+## 7. Comparison: SHP Manager vs CAD Manager
 
-| Feature | Shp Manager | CAD Manager |
+| Feature | SHP Manager | CAD Manager |
 |---------|------------|-------------|
 | **Format** | ESRI Shapefile (.shp/.zip) | AutoCAD DXF |
 | **CRS Detection** | Auto from `.prj` file | Manual (fingerprint + GPS) |

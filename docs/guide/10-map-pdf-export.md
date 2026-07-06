@@ -1,6 +1,6 @@
 # Module 10: Map PDF Export
 
-> Generate professional, print-quality map documents directly from your Mapplex project. Configure the layout, add titles and notes, toggle map elements, and download a high-resolution PDF — all from a single dialog.
+> Export the current map view as a PDF with a title, notes, legend, scale bar, north arrow, and project metadata.
 
 ---
 
@@ -55,7 +55,7 @@ Toggle which cartographic elements appear on the PDF:
 | **Scale Bar** | ✅ On | Distance reference bar calibrated to the current map zoom |
 | **North Arrow** | ✅ On | Compass arrow indicating geographic north |
 
-Each toggle has an icon and clear label for easy configuration.
+Each toggle has a label so you can choose the elements needed for the report.
 
 ---
 
@@ -95,14 +95,14 @@ Flow Rate (GPM) (200 features)
 
 ---
 
-## 5. PDF Generation Pipeline
+## 5. PDF Generation
 
-When you tap **Generate PDF**, the system executes a 4-step pipeline:
+When you tap **Generate PDF**, Mapplex prepares the document in four steps:
 
-1. **Map Capture** — The current map view is rendered at high resolution (print quality) using the `PrintCaptureService`. A full-screen loading overlay displays: *"Generating high-resolution map..."*
+1. **Map Capture** — The current map view is rendered at high resolution. A loading overlay displays: *"Generating high-resolution map..."*
 2. **Legend Build** — Legend items are computed from visible layers, including symbology rule expansion and per-rule feature counts
 3. **Project Metadata** — The project name is resolved for the PDF header
-4. **PDF Generation** — The `MapPdfExporter` assembles all components into a formatted PDF document
+4. **PDF Generation** — Mapplex assembles the map, title block, legend, notes, and footer into a PDF document
 
 The pipeline is **cancellable** — tap the cancel button on the loading overlay to abort at any point.
 

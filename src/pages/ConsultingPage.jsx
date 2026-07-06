@@ -25,7 +25,7 @@ const ConsultingPage = () => {
               The Human Expertise
             </div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-accent dark:text-white leading-tight">
-              15+ Years of <span className="gradient-brand">Engineering</span> Excellence.
+              15+ Years of <span className="text-primary">Engineering</span> Excellence.
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
               Technology is only as good as the engineers behind it. Geova Consulting provides government-grade GIS expertise, environmental assessments, and digital transformation strategies — backed by hands-on experience managing infrastructure at national scale.

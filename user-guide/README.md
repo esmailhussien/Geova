@@ -1,88 +1,126 @@
-# 🌍 Mapplex User Guide
+# Mapplex User Guide
 
-> **Mapplex** — *Mapping & Beyond*
-> **Geova AI** — *Your Spatial Intelligence Co-Pilot*
+> **Mapplex** - field mapping, data collection, and geospatial reporting
+> **Geova AI** - optional assistant for querying project data
 
 ---
 
-Welcome to the official **Mapplex User Guide** — your complete reference to mastering the platform from first login to advanced spatial analytics powered by Geova AI.
+Welcome to the **Mapplex User Guide**. This guide explains how to install Mapplex, create projects, collect data in the field, manage layers and forms, import and export GIS files, and produce map reports.
 
-Mapplex is an **offline-first geospatial operations platform** built for teams that collect, manage, analyze, and report field data. Whether you're a solo environmental researcher mapping endangered habitats or a municipal enterprise managing 50 field inspectors across an entire city — Mapplex gives you the tools to do it all from a single application, online or off.
+Mapplex is an **offline-first geospatial operations platform** for teams that need dependable field workflows. It supports solo work, small survey teams, and larger organizations that manage multiple projects, roles, and data sources from one application.
 
 ---
 
 ## Who Is This Guide For?
 
-This guide is written for **everyone** on your team, regardless of technical background:
+This guide is written for the people who set up, collect, review, and report field data:
 
 | Role | What You'll Learn |
 |------|-------------------|
-| 📍 **Field Collector** | How to collect points/lines/polygons, attach photos, fill forms, and work completely offline |
-| ✏️ **Supervisor / Editor** | How to review collected data, edit geometries, merge/split shapes, and export reports |
-| 📊 **GIS Analyst** | How to import shapefiles, run spatial queries, use data-driven symbology, and leverage Geova AI |
-| 🔑 **Admin / Program Manager** | How to manage teams, assign roles, monitor KPIs, handle billing, and configure workspaces |
+| **Field Collector** | Collect points, lines, and polygons; complete forms; attach photos; work offline |
+| **Supervisor / Editor** | Review submissions, correct attributes, edit geometries, and export progress reports |
+| **GIS Analyst** | Import GIS files, manage coordinate systems, classify layers, and run data queries |
+| **Admin / Program Manager** | Manage workspaces, roles, subscriptions, devices, and team visibility |
 
 ---
 
-## Five Real-World Workflows to Inspire You
+## Common Workflows
 
-Before diving into the modules, here are five practical scenarios that show how Mapplex works end-to-end:
+These examples show how Mapplex is typically used in the field. They are intentionally practical: each one starts with a common operational need and points to the modules that support it.
 
-### 🌪️ 1. Disaster Response & Recovery
+### 1. Storm Damage Assessment
 
-> **The Situation:** A hurricane has knocked out cell towers. Field teams need to assess building damage in an area with zero connectivity.
+**Situation:** A public works team needs to inspect damaged roads and structures in an area with limited connectivity.
 
 **The Workflow:**
-- Before leaving base, supervisors use the **Map View** to download offline tiles of the impact zone
-- In the field, workers use the **Form Builder** to log damaged structures with photos and severity ratings
-- Because cell towers are down, they use **Local Peer-to-Peer Sync** to share data with nearby colleagues over a portable Wi-Fi router — no internet needed
-- Back at base, the commander asks **Geova AI**: *"Draw 1km and 5km blast radii around the impact site and calculate total affected acreage"*
+- Before leaving, supervisors download offline map tiles for the inspection area
+- Field staff collect point and line features with photos, damage categories, and notes
+- Devices exchange updates using local peer-to-peer sync when internet service is unavailable
+- Back at the office, the supervisor exports a CSV or PDF map for the daily situation report
 
 ---
 
-### 🏙️ 2. Smart City Asset Management
+### 2. Municipal Asset Inspection
 
-> **The Situation:** A municipality needs to track street-light inspections by 30 contractors while preventing data deletion.
+**Situation:** A municipality needs contractors to inspect streetlights without giving them permission to delete records.
 
 **The Workflow:**
-- The city manager invites contractors as **Collectors** via the **Team View**, blocking delete permissions
-- Using **Smart Logic** in the Form Builder, an inspection form auto-triggers a cost formula when a light is marked "Broken"
-- The **Performance Dashboard** shows each contractor's completion rate and the **Leaderboard** identifies top performers
-- At the end of the week, the manager exports a **Map PDF** with legend, scale bar, and north arrow for the city council meeting
+- The project owner invites contractors as **Collectors**
+- The layer form records asset ID, condition, repair priority, photo, and inspection date
+- Smart Logic shows repair fields only when an asset is marked as damaged
+- At the end of the week, the supervisor reviews contributor activity and exports a PDF map with a legend and notes
 
 ---
 
-### 🌱 3. Environmental Audits & Compliance
+### 3. Environmental Compliance Survey
 
-> **The Situation:** An agency needs every wildlife sighting automatically tagged with its political district — without requiring field workers to know district borders.
+**Situation:** A consultant needs every observation point tagged with the correct management zone.
 
 **The Workflow:**
-- The agency imports district boundary polygons into the **Data View** as a **Spatial Reference Layer**
-- Using **Auto-Calculate from Spatial Reference** in the Form Builder, every new point is automatically tagged with the district it falls inside
-- When the audit is complete, they ask **Geova AI**: *"Analyze the logs, detect anomalies, and export a PDF report"*
+- The analyst imports zone boundaries as a spatial reference layer
+- A form field is configured to auto-fill the zone name from the polygon that contains the observation
+- Field staff collect observations without manually checking boundary maps
+- The reviewer exports the final dataset as GeoJSON, CSV, or GeoPackage for submission
 
 ---
 
-### 🏗️ 4. Urban Planning & Site Selection
+### 4. Planning Review
 
-> **The Situation:** A city planner needs to find the optimal location for a new public library.
+**Situation:** A planner needs to compare candidate sites against zoning, access, and parcel constraints.
 
 **The Workflow:**
-- The planner imports demographic shapefiles and wetland boundaries via the **Data View**
-- They apply **Graduated Symbology** in the **Layers View** to color-code neighborhoods by population density
-- They ask **Geova AI**: *"Find optimal construction sites that are > 5km from wetlands, < 1km from highways, and inside high-density neighborhoods"*
-- The AI clusters results and generates **Voronoi catchment polygons** for the proposed sites
+- The planner imports parcels, zoning boundaries, and road access data
+- Graduated or categorical symbology highlights relevant attributes
+- The dashboard query tools filter parcels by area, zone type, or other stored fields
+- The team reviews candidate sites on the map and exports a report for discussion
 
 ---
 
-### 🏥 5. Public Health & Outbreak Tracking
+### 5. Public Health Field Follow-Up
 
-> **The Situation:** Epidemiologists need to track a disease outbreak's geographic spread over six months.
+**Situation:** A health department needs to track follow-up visits and review case distribution over time.
 
 **The Workflow:**
-- Using the **Dashboard SQL Engine**, researchers filter case data by symptoms and date ranges
-- They activate the **Time Slider** in the Map View to animate the outbreak's geographic movement
-- They ask **Geova AI**: *"Analyze the outbreak dataset"* — the AI proactively flags a 300% infection spike in a rural zone and recommends medical team dispatch
+- Staff collect visit locations, dates, case status, and notes
+- Analysts filter records by date range and status in the dashboard
+- The map time slider helps review changes over the reporting period
+- Summary exports support internal review while keeping source data under the team's control
+
+---
+
+## Quick Features Worth Knowing
+
+These features often save the most time once a project is already set up:
+
+| Feature | What It Helps With | Where to Learn More |
+|---------|--------------------|---------------------|
+| **Quick Capture** | Create point records at the current GPS location with fewer taps during repetitive field collection | [Map View](./03-map-view.md) and [Capability Reference](./15-capability-reference.md) |
+| **AI-Assisted SQL / Filters** | Turn plain-language questions into reviewable dashboard filters or Geova AI results | [Dashboard](./01-dashboard-view.md) and [Geova AI](./06-geova-ai-chat.md) |
+| **Lexicon Picklists** | Keep names, categories, and codes consistent across projects and teams | [Forms & Smart Logic](./04-forms-view.md) |
+| **Spatial Auto-Fill** | Look up another reference layer by location and copy a matching polygon attribute into the form, such as district, parcel, or management area | [Forms & Smart Logic](./04-forms-view.md) and [Data & Sync](./05-data-view.md) |
+| **Auto Geometry Fields** | Store coordinates, length, area, or perimeter values from the feature geometry | [Forms & Smart Logic](./04-forms-view.md) |
+| **Offline Field Checklist** | Prepare devices, maps, roles, GPS, and sync before field deployment | [Capability Reference](./15-capability-reference.md) |
+
+---
+
+## When to Use Which Feature
+
+Use this table when you are deciding how to set up a workflow:
+
+| Need | Use | Why |
+|------|-----|-----|
+| **Collect many new point records quickly** | Quick Capture | Best for repeated GPS-based point collection after the active layer and form are ready |
+| **Place one point carefully** | GPS Pin or manual coordinate entry | Better when the user needs to confirm location, wait for GPS accuracy, or enter known coordinates |
+| **Fill a form value from another layer by location** | Spatial Auto-Fill | Copies a selected attribute from the matching reference polygon, such as district, parcel, or zone |
+| **Calculate coordinates, length, area, or perimeter from the feature itself** | Auto Geometry field | Stores geometry-derived values without manual typing |
+| **Reuse the same controlled list across forms or projects** | Lexicon Picklist | Keeps values consistent and easier to update than separate dropdown lists |
+| **Show fields only when they are relevant** | Smart Logic | Keeps forms shorter and reduces irrelevant entries |
+| **Find records with plain language** | AI-assisted SQL / filters | Drafts a reviewable filter for incomplete work, urgent repairs, missing photos, or other QA checks |
+| **Run spatial questions like nearest, buffer, join, or summarize by zone** | Geova AI spatial analysis | Produces result tables, map previews, exports, or temporary layers for review |
+| **Import operational GIS data** | GeoJSON, KMZ/KML, GeoPackage, CSV/Excel | Good for existing GIS files, spreadsheets, and field-ready point datasets |
+| **Import engineering or formal GIS exchange files** | CAD Manager or SHP Manager | Use DXF for CAD drawings and SHP for shapefile packages from GIS teams |
+| **Prepare work with no reliable internet** | Offline map tiles and local/P2P workflow | Download basemaps first and confirm sync or handoff method before fieldwork |
+| **Explain why a feature is locked** | Capability Reference | Check the required plan, role, setting, network, and device support |
 
 ---
 
@@ -95,24 +133,27 @@ Follow the modules in order for a full walkthrough, or jump directly to the sect
 | [**00**](./00-getting-started.md) | **Getting Started & Onboarding** | Installing the PWA, signing in (Email / Guest / Pending), multi-device limits |
 | [**01**](./01-dashboard-view.md) | **The Project Dashboard** | Creating projects, hosted vs. local storage, sync status, AI SQL Query Engine |
 | [**02**](./02-layers-view.md) | **Layers & Symbology** | Geometry types, styling, categorical/graduated classification, completion tracking, Data Dictionary |
-| [**03**](./03-map-view.md) | **The Map Engine** | Drawing tools, GPS tracking, auto-track, offline tiles, measurements, split/merge, sketch mode |
+| [**03**](./03-map-view.md) | **Map View** | Drawing tools, GPS tracking, auto-track, offline tiles, measurements, split/merge, sketch mode |
 | [**04**](./04-forms-view.md) | **Forms & Smart Logic** | 10 field types, spatial auto-fill, schema import, Lexicon picklists, AI-assisted conditional rules |
-| [**05**](./05-data-view.md) | **Data & Sync** | Export (JSON/KMZ/GPKG/CSV), import with magic byte detection, spreadsheet wizard, P2P sync, reference zones |
-| [**06**](./06-geova-ai-chat.md) | **Geova AI Assistant** | Natural language queries, @mention layers, display modes, DAG orchestration, export/commit results |
+| [**05**](./05-data-view.md) | **Data & Sync** | Export formats and entitlements, file signature detection, spreadsheet wizard, P2P sync, reference zones |
+| [**06**](./06-geova-ai-chat.md) | **Geova AI Assistant** | Natural language queries, prompt cookbook, @mention layers, display modes, export/commit results |
 | [**07**](./07-team-view.md) | **Team & Collaboration** | Performance KPIs, sparkline charts, leaderboards, member roster, invite system, role management |
-| [**08**](./08-settings.md) | **Settings, Account & Workspace** | 14 app settings, device management, workspace switcher, offline maps, subscriptions & entitlements |
+| [**08**](./08-settings.md) | **Settings, Account & Workspace** | 15 app settings, device management, workspace switcher, offline maps, subscriptions & entitlements |
 | [**09**](./09-slope-profiler.md) | **Slope Profiler** | Digital clinometer HUD, cross-section profiles, calibration, severity-coded readings |
 | [**10**](./10-map-pdf-export.md) | **Map PDF Export** | Page layout, title/notes, legend with classification expansion, print-quality generation |
 | [**11**](./11-troubleshooting.md) | **Troubleshooting & FAQ** | Common issues, GPS tips, import/export debugging, AI accuracy, performance optimization |
-| [**12**](./12-cad-manager.md) | **CAD Manager (DXF)** | Import DXF files with smart CRS detection, export features as DXF, UTM zone intelligence, Pro feature |
+| [**12**](./12-cad-manager.md) | **CAD Manager (DXF)** | Import DXF files with CRS suggestions, export features as DXF, UTM zone handling, Pro feature |
 | [**13**](./13-engineering-drawing-export.md) | **Engineering Drawing Export** | Technical schematics with dimension lines, vertex labels, angles, area/perimeter summaries |
 | [**14**](./14-shp-manager.md) | **Shp Manager (SHP)** | Import/export ESRI Shapefiles with auto CRS from .prj, multi-SHP ZIP, DBF schema preview |
+| [**15**](./15-capability-reference.md) | **Capability Reference** | Feature requirements, role/plan boundaries, offline checklist, and format support |
+| [**16**](./16-sample-project-municipal-asset-inspection.md) | **Sample Project: Municipal Asset Inspection** | End-to-end setup, field collection, QA, AI review, export, and handoff workflow |
+| [**17**](./17-glossary-key-concepts.md) | **Glossary & Key Concepts** | Plain-language definitions for Mapplex, GIS, form, CRS, sync, and AI terms |
 
 ---
 
 ## Quick-Start Cheat Sheet
 
-Already comfortable and just need a refresher? Here are the most common tasks at a glance:
+Use this table when you already know what you want to do:
 
 | I want to... | Go here |
 |-------------|---------|
@@ -125,10 +166,11 @@ Already comfortable and just need a refresher? Here are the most common tasks at
 | Build a data collection form | [Module 04 → Section 2](./04-forms-view.md) |
 | Color-code my map by data values | [Module 02 → Section 5](./02-layers-view.md) |
 | Ask the AI a spatial question | [Module 06 → Section 2](./06-geova-ai-chat.md) |
+| Find realistic AI prompt examples | [Module 06 → Section 5](./06-geova-ai-chat.md) |
 | Export a PDF map | [Module 10](./10-map-pdf-export.md) |
 | Import a CAD / DXF drawing | [Module 12](./12-cad-manager.md) |
 | Export features as DXF | [Module 12 → Section 3](./12-cad-manager.md) |
-| Generate engineering survey drawings | [Module 13](./13-engineering-drawing-export.md) |
+| Generate engineering drawing pages | [Module 13](./13-engineering-drawing-export.md) |
 | Import a Shapefile (.shp) | [Module 14](./14-shp-manager.md) |
 | Export features as SHP | [Module 14 → Section 3](./14-shp-manager.md) |
 | Invite a team member | [Module 07 → Section 3](./07-team-view.md) |
@@ -136,17 +178,21 @@ Already comfortable and just need a refresher? Here are the most common tasks at
 | Sync data between devices offline | [Module 05 → Section 5](./05-data-view.md) |
 | Measure terrain slope | [Module 09](./09-slope-profiler.md) |
 | Configure map settings | [Module 08 → Section 3](./08-settings.md) |
+| Check what a feature requires | [Module 15](./15-capability-reference.md) |
+| Prepare devices for offline fieldwork | [Module 15 → Section 12](./15-capability-reference.md) |
+| Follow a complete sample project | [Module 16](./16-sample-project-municipal-asset-inspection.md) |
+| Understand a Mapplex or GIS term | [Module 17](./17-glossary-key-concepts.md) |
 
 ---
 
 ## Language Support
 
-Mapplex is fully bilingual:
-- 🇬🇧 **English** — Default interface language
-- 🇸🇦 **Arabic (العربية)** — Full RTL support with dialect-aware AI processing
+Mapplex supports:
+- **English** - default interface language
+- **Arabic (العربية)** - RTL interface support
 
 The interface language adapts automatically based on your device settings, or can be manually toggled in **Settings → Language**.
 
 ---
 
-*Mapplex v1.0.0 — Modern Spatial Infrastructure — Powered by Geova AI*
+*Mapplex v1.0.0*

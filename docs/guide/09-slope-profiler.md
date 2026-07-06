@@ -1,12 +1,12 @@
 # Module 09: Slope Profiler
 
-> The Slope Profiler is an advanced field tool that turns your device into a digital clinometer. Measure terrain slope angles in real-time using your phone's gyroscope, record cross-section profiles, and visualize elevation changes — all without external equipment.
+> The Slope Profiler uses your device sensors as a digital clinometer for quick field slope checks. Use it for screening, notes, and site review. For construction staking, legal surveys, or safety-critical measurements, verify results with approved survey equipment.
 
 ---
 
 ## 1. What Is the Slope Profiler?
 
-The Slope Profiler uses your device's built-in **accelerometer and gyroscope** (via the DeviceOrientation API) to measure the angle of slope at your current position. It's designed for engineers, surveyors, and field workers who need to assess terrain gradient for road design, drainage, pipeline installation, or accessibility compliance.
+The Slope Profiler uses your device's built-in **accelerometer and gyroscope** through the DeviceOrientation API to estimate slope angle at your current position. It is intended for field teams who need a quick indication of terrain gradient for site notes, drainage checks, route review, or accessibility screening.
 
 ---
 
@@ -22,26 +22,26 @@ The Slope Profiler uses your device's built-in **accelerometer and gyroscope** (
 
 ## 3. The HUD (Heads-Up Display)
 
-When active, a floating **HUD gauge** appears at the top-center of the map:
+When active, a floating **HUD gauge** appears at the top-center of the map.
 
 ### Gauge Components
 
 | Element | Description |
 |---------|-------------|
 | **Arc Gauge** | A semicircular gauge with a color-coded gradient (green → yellow → orange → red) representing slope severity |
-| **Needle** | Points to the current slope angle in real-time, animated with smooth transitions |
+| **Needle** | Points to the current slope angle and updates as the device moves |
 | **Angle Readout** | Large numeric display: `12.5°` — color-coded by severity |
 | **Grade Percentage** | Shows slope as a percentage: `22.2% grade` |
 | **Status** | Current state: `READY`, `RECORDING`, `CALIBRATING` |
 
-### Color-Coded Severity
+### Color-Coded Ranges
 
 | Angle Range | Color | Meaning |
 |-------------|-------|---------|
 | 0° – 5° | 🟢 Green | Flat / gentle slope |
 | 5° – 15° | 🟡 Yellow | Moderate slope |
 | 15° – 30° | 🟠 Orange | Steep slope |
-| 30°+ | 🔴 Red | Very steep / hazardous |
+| 30°+ | 🔴 Red | Very steep; use caution and verify conditions |
 
 ---
 
@@ -70,11 +70,11 @@ Tap **Finish** (green button) to complete the section. The profile is finalized 
 
 ## 5. Calibration
 
-Before recording a section, you can calibrate the sensor:
+Before recording a section, calibrate the sensor when possible:
 
 1. A **calibration overlay** appears with a full-screen dark background.
 2. Place your phone on a **known flat surface**.
-3. A **calibration dot** shows real-time sensor readings:
+3. A **calibration dot** shows live sensor readings:
    - The dot moves as your phone tilts
    - When centered (flat), it turns **green** and pulses
 4. Tap **"Set Zero"** to calibrate the zero-point.
@@ -130,12 +130,12 @@ When the bottom sheet is open, the action bar **docks inside the sheet** instead
 
 ---
 
-## 8. Real-World Scenarios
+## 8. Practical Scenarios
 
-> **Road Design:** A civil engineer walks perpendicular to a proposed road alignment, recording 10 stations across a 200m cross-section. The profile chart reveals a dip in the center requiring fill material. The color-coded readings immediately show a 28° slope (orange) on the eastern embankment.
+> **Road Review:** A field engineer records several stations across a proposed access route. The profile helps identify sections that may need a closer survey before design decisions are made.
 
-> **Drainage Assessment:** A hydrologist records slope readings along a drainage channel to verify that the 1% minimum grade is maintained. The HUD shows 0.6° at station 4 — below the minimum — flagging a potential ponding location.
+> **Drainage Check:** A site inspector records slope readings along a drainage channel to flag areas that may require additional grading review.
 
 ---
 
-> **Next:** Proceed to [Module 10: Map PDF Export](./10-map-pdf-export.md) to generate professional print-quality map documents.
+> **Next:** Proceed to [Module 10: Map PDF Export](./10-map-pdf-export.md) to export map documents.

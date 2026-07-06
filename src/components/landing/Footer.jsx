@@ -32,6 +32,7 @@ const Footer = () => {
           <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Resources</h4>
           <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-500">
             <li><a className="hover:text-primary transition-colors" href="/docs/">Documentation</a></li>
+            <li><Link className="hover:text-primary transition-colors" to="/guide">User Manual</Link></li>
             <li><Link className="hover:text-primary transition-colors" to="/updates">Updates</Link></li>
             <li><a className="hover:text-primary transition-colors" href="#">Security Certifications</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">Case Studies</a></li>
@@ -59,7 +60,7 @@ const Footer = () => {
         </div>
         <div className="space-y-6">
           <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Industry Insights Newsletter</h4>
-          <p className="text-sm text-slate-500 font-light">Join 12,000+ infrastructure specialists receiving our bi-monthly logic updates.</p>
+          <p className="text-sm text-slate-500 font-light">Subscribe for product updates and industry insights.</p>
           <form className="flex">
             <input
               className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-l-lg px-4 py-3 w-full text-xs focus:ring-1 focus:ring-primary outline-none"
@@ -73,9 +74,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
         <p>© 2026 Geova Technologies. All rights reserved.</p>
         <div className="flex gap-8">
-          <Link className="hover:text-primary" to="/privacy">Privacy Protocol</Link>
-          <a className="hover:text-primary" href="#">Terms of Access</a>
-          <a className="hover:text-primary" href="#">Legal Framework</a>
+          <Link className="hover:text-primary" to="/privacy">Privacy Policy</Link>
+          <a className="hover:text-primary" href="#">Terms of Service</a>
+          <a className="hover:text-primary" href="#">Legal</a>
         </div>
       </div>
     </footer>

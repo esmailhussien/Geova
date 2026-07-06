@@ -51,20 +51,20 @@ const TrustBar = () => {
 
           <div className="flex flex-col items-center gap-3 group">
             <span className="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform">apartment</span>
-            <span className="text-4xl font-black text-accent dark:text-white"><AnimatedCounter target={200} suffix="+" /></span>
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Projects Delivered</span>
+            <span className="text-4xl font-black text-accent dark:text-white"><AnimatedCounter target={50} suffix="+" /></span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Enterprise Deployments</span>
           </div>
 
           <div className="flex flex-col items-center gap-3 group">
             <span className="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform">verified_user</span>
-            <span className="text-4xl font-black text-accent dark:text-white"><AnimatedCounter target={90} suffix="%" /></span>
+            <span className="text-4xl font-black text-accent dark:text-white">Full</span>
             <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">GIS Tool Coverage</span>
           </div>
 
           <div className="flex flex-col items-center gap-3 group">
             <span className="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform">security</span>
             <span className="text-4xl font-black text-accent dark:text-white">Gov't</span>
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Standards Certified</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Standards Compliant</span>
           </div>
 
         </div>

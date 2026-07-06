@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import MapplexAppPage from "./pages/MapplexAppPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FieldGuide from "./pages/FieldGuide";
+import UserManualPage from "./pages/UserManualPage";
 import PlatformPage from "./pages/PlatformPage";
 import ConsultingPage from "./pages/ConsultingPage";
 import AboutPage from "./pages/AboutPage";
@@ -19,7 +20,8 @@ function App() {
         <Route path="/consulting" element={<ConsultingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/guide" element={<FieldGuide />} />
+        <Route path="/guide" element={<UserManualPage />} />
+        <Route path="/user-guide" element={<UserManualPage />} />
         <Route path="/ai" element={<Navigate to="/platform" replace />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/updates" element={<ChangelogPage />} />

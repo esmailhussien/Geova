@@ -1,6 +1,6 @@
 # Module 07: Team & Collaboration
 
-> Mapplex's team features let you invite members to your workspace, assign roles, track field collection performance with KPI dashboards, and manage team access — all from within the app.
+> Team features let workspace administrators invite members, assign roles, review collection activity, and manage access from inside Mapplex.
 
 ---
 
@@ -16,7 +16,7 @@ The panel has two tabs:
 
 ## 2. Performance Dashboard
 
-The Performance tab provides a real-time analytics dashboard of field data collection activity.
+The Performance tab summarizes field data collection activity for the selected date range.
 
 ### Date Range Filter
 
@@ -36,11 +36,11 @@ Four cards display key metrics:
 ### Geometry Breakdown
 
 A visual bar chart shows the distribution of geometry types:
-- 🔵 **Points** (e.g., hydrants, poles)
-- 🟢 **Lines** (e.g., pipes, roads)
-- 🟣 **Polygons** (e.g., parcels, zones)
+- **Points** (e.g., hydrants, poles)
+- **Lines** (e.g., pipes, roads)
+- **Polygons** (e.g., parcels, zones)
 
-The stacked bar adjusts proportionally with animated transitions.
+The stacked bar adjusts proportionally as the date range changes.
 
 ### 14-Day Activity Sparkline
 
@@ -48,12 +48,12 @@ A bar chart showing daily feature creation over the past 14 days. Hover over any
 
 ### Top Contributor
 
-A highlighted card with a 🏆 trophy icon showing the team member who collected the most features in the selected period.
+A highlighted card shows the team member who collected the most features in the selected period.
 
 ### Contributor Leaderboard
 
 A ranked list of all contributors with:
-- 🥇🥈🥉 Medal icons for top 3
+- Ranking indicators for the top contributors
 - Feature count with progress bar (relative to the top performer)
 - Breakdown by geometry type (points/lines/polygons)
 - Number of layers touched
@@ -70,11 +70,11 @@ All workspace members are displayed in a continuous card list. Each member card 
 - **Avatar** — Initial-based with gradient (or email icon for pending invites)
 - **Name & Email** — Full name and email address
 - **Role Badge** — Color-coded role indicator:
-  - 🟡 **Owner** — Full control, billing, workspace deletion
-  - 🔴 **Admin** — Full access, can invite and manage members
-  - 🔵 **Editor** — Can edit features and review data
-  - 🟢 **Collector** — Data entry only
-  - ⚪ **Viewer** — Read-only access
+  - **Owner** — Full control, billing, workspace deletion
+  - **Admin** — Full access, can invite and manage members
+  - **Editor** — Can edit features and review data
+  - **Collector** — Data entry only
+  - **Viewer** — Read-only access
 - **Feature Count** — Number of features contributed
 - **(You)** indicator for the current user
 - **Pending** badge for invitations not yet accepted
@@ -84,7 +84,7 @@ All workspace members are displayed in a continuous card list. Each member card 
 *(Requires Owner or Admin role)*
 
 1. Tap **Invite Member** (top-right of the Members tab).
-2. A glassmorphism modal opens with:
+2. The invite modal opens with:
    - **Email Address** — Enter the colleague's email
    - **Assigned Role** — Select from Collector, Editor, or Admin via a rich dropdown
 3. Tap **Send Invite**.
@@ -120,11 +120,11 @@ A list of users who have requested access to the workspace. For each request:
 
 A list of approved members (excluding the current user and owners). Each member shows:
 - Name and email
-- **Role Selector** — A custom dropdown to change roles in real-time:
-  - 📍 **Collector** — Data entry
-  - ✏️ **Editor** — Review & edit
-  - 🔑 **Admin** — Full control
-- **🚫 Revoke** button — Removes workspace access entirely (requires confirmation)
+- **Role Selector** — A dropdown for changing a member's role:
+  - **Collector** — Data entry
+  - **Editor** — Review and edit
+  - **Admin** — Full control
+- **Revoke** button — Removes workspace access entirely after confirmation
 
 ### Performance KPIs (Workspace-Wide)
 
@@ -136,9 +136,9 @@ The Admin Dashboard includes the same KPI analytics as the Team Panel but scoped
 
 ### Security
 
-- Role changes are applied instantly via Supabase
-- The assignable roles are hardened to an allowlist (`collector`, `editor`, `admin`) — the `owner` role cannot be assigned through the UI
-- This is a defense-in-depth layer; server-side RLS constraints also enforce this
+- Role changes are saved through Supabase
+- The assignable roles are limited to `collector`, `editor`, and `admin`; the `owner` role cannot be assigned through the UI
+- Server-side Row-Level Security (RLS) also enforces workspace permissions
 
 ---
 

@@ -1,12 +1,12 @@
 # Module 13: Engineering Drawing Export
 
-> Generate professional engineering survey drawings directly inside your Map PDF. When enabled, Mapplex appends a technical schematic page for each polygon and line feature in your map viewport — complete with scaled outlines, dimension lines, vertex labels, interior angles, and area/perimeter calculations.
+> Engineering Drawing Export adds schematic pages to a Map PDF for visible polygon and line features. These pages show scaled outlines, dimensions, vertex labels, angles, and area or length summaries for review and documentation.
 
 ---
 
 ## 1. What Is an Engineering Drawing?
 
-An Engineering Drawing is an **additional page** appended to your standard Map PDF export. It renders each polygon or line feature as a scaled technical schematic — similar to what you'd see on a cadastral survey plan or site layout blueprint.
+An Engineering Drawing is an **additional page** appended to your standard Map PDF export. It renders each polygon or line feature as a scaled technical schematic for review, handover notes, and field documentation.
 
 Each drawing page includes:
 
@@ -19,7 +19,7 @@ Each drawing page includes:
 | **Summary Card** | Area (m² and hectares), perimeter, vertex count, and side count |
 | **Coordinate Table** | WGS84 coordinates for each vertex in compact format |
 
-> **Example:** A land surveyor marks a building footprint on the map (5 vertices). She exports a PDF with Engineering Drawing enabled. The first page shows the satellite map view. The second page shows the exact polygon outline with "12.4 m", "8.7 m" labels on each side, angle arcs showing 90°, 90°, 108°, etc., and a summary card reading "Area: 107.88 m² · Perimeter: 42.2 m · 5 Vertices".
+> **Example:** A field engineer marks a building footprint with 5 vertices. With Engineering Drawing enabled, the PDF includes the map page plus a schematic page showing the footprint outline, side lengths, angle labels, and a summary of area, perimeter, and vertex count.
 
 ---
 
@@ -125,7 +125,7 @@ Below the summary metrics, a compact row lists the WGS84 coordinates of the firs
 
 ## 5. Page Header
 
-Each engineering page includes a professional header:
+Each engineering page includes a header:
 
 | Element | Position |
 |---------|----------|
@@ -162,7 +162,7 @@ Each page includes the standard Mapplex footer with generation date and page num
 - **Use Landscape orientation** — Wider shapes render better in landscape mode, giving more horizontal drawing space.
 - **Keep shapes simple** — Shapes with more than 30 vertices skip dimension lines and angle arcs (the outline and summary card still render). Simplify complex shapes before export.
 - **Name your features** — Features with a `name` or `title` property get meaningful page headers instead of "Feature 1".
-- **Check the summary card** — The area and perimeter values use Turf.js geodesic calculations, which are survey-grade accurate for WGS84 coordinates.
+- **Check the summary card** — Area and perimeter values are calculated from the stored geometry. Verify critical measurements with approved survey methods.
 
 ---
 
@@ -173,8 +173,9 @@ Each page includes the standard Mapplex footer with generation date and page num
 | **Point geometries** | Not supported — points have no edges or area to draw |
 | **Max 10 features** | To keep PDF size reasonable. Zoom in to reduce the count |
 | **Vertex limit** | Shapes with > 30 vertices render outlines only (no dimension lines or angle arcs) |
-| **Coordinate system** | Calculations assume WGS84 input. CAD-imported features must be reprojected first |
+| **Coordinate system** | Calculations assume WGS84 input. CAD-imported features must be reprojected correctly first |
 | **Multi-geometries** | Only the first ring/part of MultiPolygon or MultiLineString is drawn |
+| **Legal/survey use** | Use as documentation support, not as a substitute for certified survey drawings |
 
 ---
 

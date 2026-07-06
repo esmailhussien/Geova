@@ -1,6 +1,6 @@
 # Module 12: CAD Manager (DXF Import & Export)
 
-> Import CAD drawings from AutoCAD, Civil 3D, BricsCAD, and other drafting software into your Mapplex project — or export your collected features as DXF files for engineering teams. The CAD Manager handles coordinate system detection, reprojection, and geometry-aware layer splitting automatically.
+> Use CAD Manager to import DXF drawings into a Mapplex project or export collected features as DXF files for engineering and drafting teams. Coordinate system selection is important: review the source CRS before importing and the target CRS before exporting.
 
 ---
 
@@ -20,11 +20,11 @@
 
 Before loading a file, the CRS picker shows a single placeholder card: *"Select a DXF file to detect CRS..."*
 
-After you load a DXF file (Step 2), the picker automatically populates with smart suggestions based on two sources:
+After you load a DXF file (Step 2), the picker populates suggestions based on two sources:
 
 | Source | What It Provides |
 |--------|-----------------|
-| **Coordinate Fingerprinting** | Analyzes the first 200 entities in your DXF to classify coordinates as WGS84, UTM, Web Mercator, local grid, or projected |
+| **Coordinate Fingerprinting** | Analyzes sample entities in your DXF to classify coordinates as WGS84, UTM, Web Mercator, local grid, or projected |
 | **Map Position** | Uses your last known map center (current session or saved from a previous session) to infer the nearest UTM zone |
 
 The CRS picker organizes options into groups:
@@ -39,7 +39,7 @@ The CRS picker organizes options into groups:
 
 Select a CRS card by tapping it. The selected card highlights in amber.
 
-> **Tip:** If no GPS position is available, a hint appears: *"💡 Open the Map tab first so Mapplex can suggest the correct UTM zone based on your location."* You only need to have viewed the Map tab once — even in a previous session — for zone inference to work.
+> **Tip:** If no GPS position is available, a hint appears: *"Open the Map tab first so Mapplex can suggest the correct UTM zone based on your location."* Open the Map tab near the project area before importing so zone suggestions are more useful.
 
 ### Step 2: Choose a DXF File
 
@@ -54,7 +54,7 @@ Select a CRS card by tapping it. The selected card highlights in amber.
 
 1. Review the preview table. The import button shows the exact number of convertible entities.
 2. Tap **Import Convertible CAD Entities (N)**.
-3. A **progress bar** appears showing real-time status:
+3. A **progress bar** appears showing import status:
    - Checking permissions...
    - Converting DXF to GeoJSON...
    - Importing layer 1/3 — "Roads LineString" — 247 features
@@ -86,25 +86,39 @@ If a large file is taking too long, tap the **Cancel** button next to the progre
 
 ### Generating the File
 
-1. Tap **Export as DXF**.
-2. The system converts your GeoJSON features to DXF format:
+1. Select the target coordinate system for the exported DXF.
+2. Tap **Export as DXF**.
+3. The system converts your GeoJSON features to DXF format:
    - Points → DXF POINT entities
    - Lines → DXF POLYLINE entities
    - Polygons → DXF closed POLYLINE entities
    - Multi-geometries are expanded into individual entities
-3. The `.dxf` file downloads automatically, named with today's date: `mapplex_export_2026-05-13.dxf`
+4. The `.dxf` file downloads automatically, named with the export date, for example `mapplex_export_YYYY-MM-DD.dxf`.
+
+### Export Coordinate Systems
+
+CAD Manager can export DXF coordinates in several target CRS options:
+
+| Option | When to Use |
+|--------|-------------|
+| **WGS84 (EPSG:4326)** | GPS longitude/latitude workflows or GIS systems that expect decimal degrees |
+| **Qatar National / Qatar 1974 grids** | Qatar-based engineering or municipal workflows that require these projected systems |
+| **GPS-derived UTM** | Field projects where the app can infer the likely UTM zone from the current map position |
+| **Custom proj4** | Projects using a local grid, legacy survey system, or organization-specific projection |
+
+Confirm the receiving CAD team's expected CRS before sharing the export.
 
 ### Compatibility
 
-The exported DXF file is compatible with:
-- AutoCAD (all versions)
+The exported DXF file is designed for common CAD/GIS tools that support DXF, including:
+- AutoCAD
 - Civil 3D
 - BricsCAD
 - QGIS
 - MicroStation
 - Any software supporting DXF R12/R14
 
-> **Note:** Exported coordinates are in **WGS84 (EPSG:4326)** — longitude/latitude in degrees. If your CAD software expects projected coordinates (e.g., UTM meters), you'll need to reproject on the CAD side.
+> **Note:** DXF files do not always carry enough CRS metadata for downstream software to infer the coordinate system. Include the selected CRS in your handoff notes when sending the file to a CAD or survey team.
 
 ---
 
@@ -150,7 +164,7 @@ Most CAD drawings use **local or projected coordinates** rather than GPS coordin
 | **Web Mercator** | X/Y: -20M to 20M | Very large values | Web Mercator (EPSG:3857) |
 | **Local Grid** | X/Y: 0–10,000 | Small metric values, no clear pattern | Custom proj4 string from your surveyor |
 
-> **Example:** You receive a DXF from a civil engineer in Istanbul. The coordinates show Easting ~500,000 and Northing ~4,500,000. The CAD Manager detects "UTM" coordinates. Since your map was last viewed near Istanbul, it recommends **UTM Zone 36N (EPSG:32636)** with a "Best" badge. You tap that card and import — the data lands perfectly on the map.
+> **Example:** You receive a DXF from a civil engineer. The coordinates show easting values near 500,000 and northing values in the millions, which usually indicates UTM. If the map was last viewed near the project area, CAD Manager can suggest the likely UTM zone. Confirm the CRS with the CAD source when possible before importing.
 
 ---
 
@@ -178,4 +192,4 @@ Most CAD drawings use **local or projected coordinates** rather than GPS coordin
 
 ---
 
-> **Next:** Proceed to [Module 13: Engineering Drawing Export](./13-engineering-drawing-export.md) to learn how to export your map view as a professional CAD-style layout.
+> **Next:** Proceed to [Module 13: Engineering Drawing Export](./13-engineering-drawing-export.md) to learn how to export schematic drawing pages with your map PDF.

@@ -1,6 +1,6 @@
 # Module 04: Forms & Smart Logic
 
-> Forms define what data each layer collects. Every time you draw a feature on the map, the form's fields appear for data entry. This module covers building schemas, importing them, and creating Smart Logic rules.
+> Forms define the attributes collected for each layer. When a user draws or edits a feature, the related form appears for data entry. This module covers field setup, schema import, spatial auto-fill, Lexicon picklists, and Smart Logic rules.
 
 ---
 
@@ -46,16 +46,18 @@ For each field, you can set:
 
 ## 3. Spatial Auto-Fill (Reference Layers)
 
-This powerful feature auto-populates a field value based on the spatial location of the drawn feature.
+Spatial Auto-Fill populates a field value by comparing the collected feature with another reference layer. In practice, Mapplex looks up the reference polygon that contains the feature location and copies one property from that polygon into the form.
 
 1. In the Add Field dialog, check **"Auto-calculate from Spatial Reference"**.
 2. Two new dropdowns appear:
    - **Reference Layer** — Select a polygon layer that contains background zones (e.g., "Zoning Districts", "Soil Types").
    - **Extract Property** — Select which property from the reference layer to extract (e.g., "Zone_Name", "Soil_Class").
 
-When a field worker draws a point inside a reference polygon, the form auto-fills with the matching property value.
+When a field worker draws a point inside a reference polygon, the form auto-fills with the matching property value. For line and polygon features, Mapplex uses the feature centroid for the lookup, so the value comes from the reference polygon containing the feature's center.
 
-> **Example:** Your project has a reference layer of land parcels with a `Zone_Name` property. When a field worker places a point inside a parcel, the "Zoning District" form field auto-fills with "Residential Zone A" — no manual lookup needed.
+> **Example:** A project includes parcel polygons with a `Zone_Name` attribute. When a field worker places an inspection point inside a parcel, the "Zoning District" field fills with the matching zone value.
+
+> **Important:** Spatial Auto-Fill is a form lookup, not a full overlay analysis. It does not split geometry or calculate intersection area; it copies the selected attribute from the matching reference feature.
 
 ---
 
@@ -63,7 +65,7 @@ When a field worker draws a point inside a reference polygon, the form auto-fill
 
 Instead of building a form from scratch, import an existing schema:
 
-1. Tap the **📤 Import Schema** button (top-right of the Form Builder).
+1. Tap the **Import Schema** button (top-right of the Form Builder).
 2. Select a file:
    - `.json` / `.geojson` — Extracts property keys as fields
    - `.csv` — Uses column headers as fields
@@ -84,10 +86,10 @@ Once fields are created, they appear as cards in the **Configured Fields** list.
 
 ### Auto-Save
 
-The Form Builder uses an **auto-save engine** with a 1.5-second debounce. Every change you make (adding, editing, deleting, or reordering fields) is automatically saved. A floating status pill at the bottom shows:
-- ✏️ **"Unsaved changes"** — You've made changes (amber)
-- 🔄 **"Saving…"** — Save in progress (blue spinner)
-- ✅ **"All changes saved"** — Confirmation (green, fades after 2.5s)
+The Form Builder auto-saves changes after a short delay. A status message shows:
+- **"Unsaved changes"** — A change is waiting to be saved
+- **"Saving..."** — Save in progress
+- **"All changes saved"** — The latest changes were saved
 
 ---
 
@@ -97,7 +99,7 @@ The **Lexicon** panel appears above the form builder. It's a project-wide regist
 
 ### Why Use Lexicons?
 
-If three layers all need a "Material Type" dropdown with the same options (PVC, Steel, HDPE, Cast Iron), creating a Lexicon once and linking it to all three fields keeps them synchronized. Change the list in one place, it updates everywhere.
+If three layers all need a "Material Type" dropdown with the same options, create one Lexicon and link it to each field. Updating the Lexicon updates the linked picklists.
 
 ### Linking a Field to a Lexicon
 
@@ -108,13 +110,13 @@ When creating a **Dropdown** field, you'll see a toggle: **"Link to Lexicon"**:
 3. A preview of the Lexicon's values appears.
 4. Save the field — it now pulls its options from the Lexicon registry.
 
-### Proactive Lexicon Suggestion
+### Lexicon Suggestions
 
-When typing a field label that matches an existing Lexicon name, a suggestion banner appears:
-> 💡 **"Building Type"** — 12 items · Linked to 2 fields
+When a field label matches an existing Lexicon name, a suggestion banner appears:
+> **"Building Type"** - 12 items - Linked to 2 fields
 > **[Link it]**
 
-Tap **Link it** to instantly connect the field to the matching Lexicon.
+Tap **Link it** to connect the field to the matching Lexicon.
 
 ### Upgrade to Lexicon
 
@@ -132,12 +134,12 @@ At the top of the Smart Logic panel, toggle between:
 - **Simple** — AI-assisted natural language rule creation
 - **Advanced** — Manual rule configuration
 
-### Simple Mode: AI-Generated Rules
+### Simple Mode: AI-Assisted Rules
 
-1. Type a rule in plain English in the **Magic Prompt Bar**:
+1. Type a rule in plain English in the prompt bar:
    > *"If Building Type is Residential, show the Number of Floors field"*
 2. Tap **Generate** (costs **1 AI credit**).
-3. The AI creates the conditional rule and adds it to the rules list.
+3. Geova AI drafts the conditional rule and adds it to the rules list.
 4. Review and adjust if needed.
 
 ### Advanced Mode: Manual Rules
@@ -151,9 +153,9 @@ At the top of the Smart Logic panel, toggle between:
 
 ### How It Works in the Field
 
-When a field worker fills out a form, Smart Logic evaluates the rules in real-time. Fields appear or disappear based on the worker's selections, keeping the form clean and relevant.
+When a field worker fills out a form, Smart Logic evaluates the rules as values change. Fields appear or disappear based on the worker's selections, keeping the form shorter and more relevant.
 
-> **Example:** A utility inspection form has 20 fields, but only 8 apply to gas mains and a different 8 apply to water mains. Smart Logic hides irrelevant fields based on the "Utility Type" selection, preventing confusion and data entry errors.
+> **Example:** A utility inspection form includes fields for both gas and water assets. Smart Logic can show gas-specific fields only when "Gas" is selected and water-specific fields only when "Water" is selected.
 
 ---
 

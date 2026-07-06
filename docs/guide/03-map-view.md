@@ -1,24 +1,26 @@
-# Module 03: The Map Engine
+# Module 03: Map View
 
-> The Map Engine is where geospatial work happens. Draw points, lines, and polygons. Measure distances. Record GPS paths. Split and merge geometries. Cache tiles for offline use. Animate data through time. This is the most feature-rich module in Mapplex.
+> The Map View is where users draw features, collect GPS locations, measure distances and areas, edit geometries, cache offline tiles, and review spatial results.
 
 ---
 
 ## 1. Map Interface Overview
 
-When you navigate to the Map View, the full-bleed map fills your screen with several floating controls:
+When you open the Map View, the map fills the screen and shows controls around the edges:
 
 | Control | Position | Purpose |
 |---------|----------|---------|
 | **Layer Selector Pill** | Top-center | Switch the active drawing layer |
-| **Offline Map** ☁️↓ | Top-right | Download tiles for offline use |
-| **Basemap Toggle** 🗺️ | Top-right | Switch between Satellite and Street map |
-| **Layer Visibility** 👁️ | Right side | Toggle individual layer show/hide on the map |
-| **Measure Tool** 📏 | Right side | Enter measurement mode (distance + area) |
-| **Record GPS Path** ⏺️ | Right side | Auto-record points as you walk *(requires GPS Tools setting)* |
-| **Silent Track** 🧭 | Right side | Background GPS tracking *(requires GPS Tools setting)* |
-| **Advanced Edit** ✂️ | Right side | Split and merge polygon tools *(requires Advanced Edit setting)* |
-| **GPS Pin** 📍 | Bottom-right | Grab your current GPS location and place a point |
+| **Offline Map** | Top-right | Download tiles for offline use |
+| **Basemap Toggle** | Top-right | Switch between Satellite and Street map |
+| **Layer Visibility** | Right side | Show or hide individual layers |
+| **Measure Tool** | Right side | Enter measurement mode for distance and area |
+| **Record GPS Path** | Right side | Auto-record points as you walk *(requires GPS Tools setting)* |
+| **Silent Track** | Right side | Record GPS movement in the background *(requires GPS Tools setting)* |
+| **Advanced Edit** | Right side | Split and merge polygon tools *(requires Advanced Edit setting)* |
+| **Sketch Mode** | Right side / drawing tools | Freehand drawing support *(requires Sketch Mode setting)* |
+| **GPS Pin** | Bottom-right | Capture your current GPS location and place a point |
+| **Quick Capture** | Bottom-right / GPS tools | Create a point at your current GPS location with fewer taps *(requires Quick Capture entitlement and setting)* |
 | **Status Bar** | Bottom-center | Shows current mode (Idle, Drawing, Measuring, Editing, etc.) |
 | **AI Preview Pill** | Bottom-left | Shows/hides Geova AI spatial query results on the map |
 
@@ -46,7 +48,7 @@ After drawing, a **Bottom Sheet** popup appears with the form for that layer. Fi
 
 ### Snap Engine
 
-When drawing, the **Snap Engine** automatically activates. As your cursor or finger approaches an existing vertex or edge, it "snaps" to that position — ensuring topological correctness. This is critical for utility networks where pipes must connect precisely.
+When drawing, the **Snap Engine** can align your cursor or finger to nearby vertices and edges. This helps users connect lines and polygons cleanly, which is useful for utility networks, parcel boundaries, and other datasets where shared edges matter.
 
 ---
 
@@ -54,7 +56,7 @@ When drawing, the **Snap Engine** automatically activates. As your cursor or fin
 
 ### Grabbing Your GPS Location
 
-Tap the **📍 GPS Pin** button (bottom-right). The map:
+Tap the **GPS Pin** button (bottom-right). The map:
 
 1. Activates your device's GPS.
 2. Displays a blue pulsing dot at your location.
@@ -63,22 +65,26 @@ Tap the **📍 GPS Pin** button (bottom-right). The map:
 
 If an active drawing layer is selected, the GPS point is captured as a new feature on that layer.
 
+### Quick Capture
+
+When **Quick Capture** is enabled and your workspace includes the feature, tapping GPS can create a point feature at your current location with fewer steps. Use it for repetitive point collection where the active layer and form schema are already prepared.
+
 ### Recording a GPS Path (Auto-Track)
 
 For surveys where you walk along a road, trail, or pipeline:
 
-1. Tap the **⏺️ Record Path** button (right side).
+1. Tap the **Record Path** button (right side).
 2. A dialog appears: **"Auto-Record GPS Path"**
    - **Min Distance (Meters)** — Minimum movement before a new point is recorded (default: 2m).
    - **Min Time (Seconds)** — Minimum time between recordings (default: 3s).
 3. Tap **Start Tracking**. The app drops points automatically as you walk.
 4. Tap the button again (now pulsing red) to stop recording.
 
-> **Example:** A pipeline inspector walks along a 3km gas main. With auto-track at 2m intervals, Mapplex drops 1,500 GPS points along the route — no screen tapping needed. The result is a precise line representing the pipe's actual path.
+> **Example:** A pipeline inspector walks along a mapped route and records a GPS path at set distance and time intervals. The resulting points can be reviewed as a path record without requiring the inspector to tap the screen at every location.
 
 ### Silent Track
 
-Silent Track records your GPS movement in the background without drawing visible points. Useful for tracking team member positions during a field operation.
+Silent Track records your GPS movement without drawing visible collection points on the active layer. Use it when you need a device path for review but do not want to add point features at every interval.
 
 ---
 
@@ -94,11 +100,13 @@ For precision placement (e.g., known survey coordinates):
    ```
 4. Tap **Place Point**. A marker appears at the exact location.
 
+When precision placement tools are enabled, the map can also show a center crosshair to help position a feature before confirming placement. This is useful on tablets where dragging the map is easier than tapping an exact coordinate.
+
 ---
 
 ## 5. Measurement Tools
 
-Tap the **📏 Measure Tool** button on the right side. The map enters **Measure Mode**:
+Tap the **Measure Tool** button on the right side. The map enters **Measure Mode**:
 
 ### Simple Distance (2 points)
 
@@ -158,16 +166,16 @@ Cached tiles are stored in the browser's Cache API and persist across sessions.
 
 When enabled (default), features that are close together visually cluster into numbered bubbles at lower zoom levels. Tap a cluster to zoom in and reveal individual features. This prevents visual overload when your project has thousands of features.
 
-### Spiderfy
+### Overlapping Cluster Expansion
 
-When clustered features overlap at the same location, tapping the cluster triggers a **Spiderfy** animation that fans them out in a radial pattern, letting you select individual features.
+When clustered features overlap at the same location, tapping the cluster can expand the points so you can select individual features.
 
 ### Canvas Rendering & Viewport Culling
 
-For projects with many features, Mapplex automatically activates:
-- **CanvasIconLayer** — Renders point markers on an HTML5 Canvas instead of individual DOM elements, enabling smooth rendering of 10,000+ points.
-- **ViewportCuller** — Only features inside the visible map area are attached to the rendering pipeline. Features outside the viewport are detached from the DOM, saving memory.
-- **Dynamic Mode** — For projects exceeding 15,000 features, the map switches to spatial streaming: only features in the current viewport are loaded from the database, and off-screen features are purged.
+For projects with many features, Mapplex uses optimized rendering techniques:
+- **Canvas rendering** — Draws large point sets more efficiently than individual HTML markers.
+- **Viewport culling** — Keeps off-screen features out of the active rendering area.
+- **Dynamic loading** — For very large projects, loads data for the current viewport instead of drawing the full dataset at once.
 
 ---
 
@@ -179,7 +187,7 @@ Tap any feature on the map to open its **popup**. The popup shows:
 - All form field values
 - Photos (with gallery navigation)
 - Computed geometry info (coordinates, area, perimeter)
-- Action buttons: **Edit**, **Delete** (based on your role)
+- Action buttons: **Edit**, **Delete**, and **History** where available (based on your role and workspace entitlement)
 
 ### Editing a Feature's Attributes
 
@@ -205,16 +213,16 @@ For point features, you can drag the marker to a new position directly.
 
 ### Splitting a Polygon
 
-1. Tap the **✂️ Advanced Edit** button → the Advanced Edit panel appears.
+1. Tap the **Advanced Edit** button. The Advanced Edit panel appears.
 2. Tap **Split Polygon** (scissors icon).
 3. Draw a line **across** the polygon you want to divide. The split line must enter on one side and exit on the other.
 4. When the line is complete, the polygon is divided into two separate features, each inheriting the original's attributes.
 
-> **Example:** A large agricultural parcel needs to be divided after a property sale. Draw a line along the new property boundary. The polygon splits into two parcels with independent forms.
+> **Example:** A parcel boundary needs to be split after an approved subdivision. Draw the split line across the parcel; Mapplex creates two polygon features that can be reviewed and edited separately.
 
 ### Merging Polygons
 
-1. Tap the **✂️ Advanced Edit** button → the Advanced Edit panel appears.
+1. Tap the **Advanced Edit** button. The Advanced Edit panel appears.
 2. Tap **Merge Polygons** (join icon).
 3. Tap two or more adjacent polygons. Selected polygons highlight in red.
 4. The state indicator shows "SELECTED: 2" (or more).
@@ -234,7 +242,7 @@ Tap the **👁️ Layers** button on the right side to toggle the **Layer Visibi
 
 - Toggle individual layers on/off without leaving the map
 - Reference layers (imported KMZ backgrounds) are listed separately
-- Changes are instant — no map reload needed
+- Changes apply without reloading the map
 
 ---
 
@@ -247,7 +255,7 @@ For datasets with temporal attributes, Mapplex can animate features across time:
 3. Drag the slider to filter features by date range.
 4. Press play to animate the progression over time.
 
-> **Example:** An epidemiologist tracking disease cases over 6 months uses the time slider to watch the outbreak spread geographically week by week.
+> **Example:** A public health team can filter visit records by date to review how follow-up activity changed over a reporting period.
 
 ---
 

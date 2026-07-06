@@ -1,6 +1,6 @@
 # Module 08: Settings, Account & Workspace
 
-> Configure map behavior, manage your account, control device limits, switch between workspaces, and customize Mapplex for your field workflow — all from the sidebar and settings panel.
+> Use Settings to manage your account, devices, workspace access, map behavior, offline tiles, subscriptions, and application preferences.
 
 ---
 
@@ -54,7 +54,7 @@ Tap **Recharge** to purchase additional Geova AI credits for your workspace.
 
 ## 3. App Settings
 
-Tap **Settings** (⚙️) in the sidebar to open the Settings modal. All settings are applied **instantly** — no app restart needed.
+Tap **Settings** in the sidebar to open the Settings modal. Most settings apply immediately.
 
 ### Map Settings
 
@@ -91,7 +91,7 @@ Tap **Settings** (⚙️) in the sidebar to open the Settings modal. All setting
 |---------|---------|-------------|
 | **Keep Screen Awake** | ✅ On | Prevents the device screen from sleeping during fieldwork. Uses the Wake Lock API |
 
-> **Tip:** For maximum battery life during all-day fieldwork, disable GPS Accuracy Indicator and Map Rotation, and enable Keep Screen Awake.
+> **Tip:** For longer field sessions, turn off GPS Accuracy Indicator and Map Rotation when you do not need them. Keep Screen Awake is useful during active collection but can increase battery use.
 
 ---
 
@@ -109,9 +109,9 @@ A **Workspace** is an isolated tenant environment. Everything — projects, laye
 2. Your current workspace name appears below your profile.
 3. Tap the workspace name to open the **Workspace Switcher**.
 4. A list of all workspaces you've been invited to appears.
-5. Tap a workspace to switch. The system unmounts the current spatial cache, rebinds the project list, and reloads the UI.
+5. Tap a workspace to switch. Mapplex reloads the project list and related workspace data.
 
-> **Example:** A consulting firm manages separate contracts for City A and City B. The project manager switches from "City A GIS" to "City B Utilities" workspace to review that team's progress — both environments are completely isolated.
+> **Example:** A consulting firm manages separate contracts for a road audit and a utility survey. The project manager switches workspaces to review the correct project list, members, and storage usage for each contract.
 
 ---
 
@@ -127,33 +127,42 @@ Tap **Download Map Area** to cache the currently visible map tiles for offline u
 
 Tap **Clear Offline Cache** to delete all downloaded map tiles. A confirmation dialog appears before deletion. This frees device storage but requires re-downloading for future offline use.
 
-> **When to clear:** If syncing errors occur, or if offline tiles consume too much device storage, clearing the cache acts as an emergency reset.
+> **When to clear:** Clear the cache when offline tiles are taking too much storage or when downloaded tiles need to be refreshed.
 
 ---
 
 ## 6. Subscription & Entitlements
 
-### Free Tier
+Feature availability is controlled by your workspace plan and entitlement flags. If a tool is not included in your current workspace, Mapplex shows a lock state or upgrade prompt instead of silently failing.
 
-All core GIS features are available for free:
-- Project creation, layer management, form building
-- Map drawing, GPS tracking, data collection
-- Export (GeoJSON, KMZ, GPKG, CSV)
-- Local P2P sync
+### Free / Core Access
 
-### Pro Tier (Unlock via Upgrade)
+The default free workspace is intended for solo or lightweight field work:
 
-Pro features are gated by the **EntitlementEngine**. When a locked feature is accessed, a blurred "Ghost UI" appears with an unlock prompt. Pro features include:
+- Local projects on the current device
+- One hosted project in the free workspace
+- Layer creation, form setup, drawing, GPS capture, and feature collection according to your role
+- GPS recording tools and redlining/markup when enabled
+- Export to GeoJSON, KMZ, and CSV
+
+### Pro / Team Access
+
+When a locked feature is accessed, Mapplex shows an upgrade prompt. Pro features include:
 
 | Feature | Description |
 |---------|-------------|
-| **Geova AI Chat** | Conversational spatial intelligence |
-| **Team Performance Dashboard** | KPI analytics and leaderboards |
-| **Cloud Sync** | Supabase-backed project synchronization |
+| **Geova AI Chat** | Natural-language queries, spatial analysis planning, and report/export assistance |
+| **GeoPackage and PDF Export** | GIS handoff and print-ready map output |
+| **Team Workspace Tools** | Collaboration, member roles, realtime sync, and audit history where enabled |
 | **Lexicon Picklists** | Project-wide shared dropdown registries |
 | **Gallery Fields** | Multi-photo form fields with carousel |
 | **Smart Logic** | Conditional form rules |
-| **Advanced Symbology** | Graduated classification |
+| **Spreadsheet and Reference Imports** | CSV/Excel point import and spatial reference zones |
+| **Advanced Symbology** | Graduated classification and completion indicators |
+| **Quick Capture and Slope Profiler** | Faster field capture and terrain/slope tools |
+| **CAD and SHP Managers** | DXF and Shapefile import/export workflows |
+
+> **Note:** Team and Enterprise workspaces may have additional limits or enabled features, including longer audit-history retention and larger collaboration allowances.
 
 ---
 

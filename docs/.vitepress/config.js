@@ -46,7 +46,10 @@ export default defineConfig({
           { text: '11 - Troubleshooting', link: '/guide/11-troubleshooting' },
           { text: '12 - CAD Manager', link: '/guide/12-cad-manager' },
           { text: '13 - Engineering Drawing', link: '/guide/13-engineering-drawing-export' },
-          { text: '14 - SHP Manager', link: '/guide/14-shp-manager' }
+          { text: '14 - SHP Manager', link: '/guide/14-shp-manager' },
+          { text: '15 - Capability Reference', link: '/guide/15-capability-reference' },
+          { text: '16 - Sample Project', link: '/guide/16-sample-project-municipal-asset-inspection' },
+          { text: '17 - Glossary', link: '/guide/17-glossary-key-concepts' }
         ]
       }
     ],

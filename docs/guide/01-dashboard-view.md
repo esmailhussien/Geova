@@ -1,6 +1,6 @@
 # Module 01: The Project Dashboard
 
-> The Dashboard is your command center. You manage projects, choose storage types, monitor sync status, check storage usage, and run tabular analytics here — all before opening a map.
+> The Dashboard is where you create projects, choose storage mode, monitor sync status, check storage usage, and run project-level tabular queries.
 
 ---
 
@@ -11,12 +11,14 @@
    - **Project Name** *(required)* — Give it a descriptive name (e.g., "Water Network Audit Q2").
    - **Description** *(optional)* — Add context for your team.
    - **Storage Type** — Choose one:
-     - ☁️ **Hosted (Cloud)** — Data syncs to the cloud. Supports team collaboration. *(Requires a signed-in account.)*
-     - 📱 **Local (Offline)** — Data stays on this device only. Ultra-fast, no internet needed. *(Available in Guest mode.)*
+     - **Hosted (Cloud)** — Data syncs to the cloud and supports team collaboration. *(Requires a signed-in account.)*
+     - **Local (Offline)** — Data stays on the current device. Use this for guest work, testing, or field collection without cloud sync.
    - **Import Initial Data** *(optional)* — Upload a `.KMZ`, `.KML`, or `.GeoJSON` file to pre-populate the project. A preview shows the file name and size before you commit.
 3. Tap **Create Project**.
 
-> **Example:** You receive a legacy `.kmz` file containing 2,000 utility poles. Instead of creating an empty project and importing later, drop the file into the Import Initial Data area during creation — the system parses it, creates a layer, and auto-generates form fields from the imported attributes.
+> **Example:** You receive a `.kmz` file containing utility pole locations from a previous survey. Add it during project creation so the project opens with the imported features and matching attribute fields already available.
+
+> **Plan note:** Free workspaces can create one hosted project. Local projects remain available for offline-only work on the current device.
 
 ---
 
@@ -24,12 +26,12 @@
 
 Your Dashboard shows all projects as cards in a grid. Each card displays:
 
-- 📁 **Project Name** and description
+- **Project Name** and description
 - **Storage Badge**: `HOSTED (CLOUD)` or `LOCAL (OFFLINE)`
 - **Storage Size**: Estimated disk usage (e.g., "12.3 MB")
 - An **Activate** button (or a green ✅ **Active** badge if already selected)
 
-**To switch projects:** Tap the **Activate** button on any project card. The platform instantly refreshes all layers, forms, and data connections without a full page reload.
+**To switch projects:** Tap **Activate** on a project card. Mapplex loads that project's layers, forms, and data.
 
 ---
 
@@ -38,19 +40,19 @@ Your Dashboard shows all projects as cards in a grid. Each card displays:
 If you started with a local project and now want to enable collaboration:
 
 1. Locate the ☁️ **cloud upload** icon in the top-right corner of the project card.
-2. Tap it. A confirmation dialog appears: *"This will safely migrate your local data to our secure servers and enable Team Collaboration features."*
+2. Tap it. A confirmation dialog explains that the local project will be uploaded to cloud storage and team collaboration will be enabled.
 3. Tap **Upload** to proceed, or **Cancel** to abort.
 
 ---
 
 ## 4. Deleting a Project
 
-1. Tap the 🗑️ **delete** icon on the project card.
+1. Tap the **delete** icon on the project card.
 2. A confirmation dialog warns: *"This will permanently remove the project and all its layers, forms, and collected data."*
 3. You must type the word `delete` into the confirmation input to enable the Delete button. This prevents accidental data loss.
 4. Tap **Delete**.
 
-> The deletion cascades through all child data — layers, forms, features, and pending sync records are all cleaned up.
+> Deleting a project also removes its layers, forms, features, and pending sync records.
 
 ---
 
@@ -71,7 +73,7 @@ When storage exceeds 75%, the progress bar turns amber; above 90%, it turns red.
 
 ## 6. Project Analytics: Tabular Queries & SQL Engine
 
-Tap on any project card to open the **Project Detail Modal**. This is a powerful analytics workspace.
+Tap a project card to open the **Project Detail Modal**. Use this view to inspect project statistics and query layer data before opening the map.
 
 ### Layer Selection
 
@@ -98,7 +100,7 @@ Ideal for non-technical users. Build queries visually:
 
 #### Mode 2: Raw SQL
 
-For power users who know their schema. Type SQL `WHERE` clause directly:
+For users who know the layer schema, type a filter expression directly. Enter the condition only; do not include `SELECT`, `WHERE`, `ORDER BY`, `GROUP BY`, joins, or database functions.
 
 ```
 NAME = 'Substation' AND area > 100
@@ -110,9 +112,9 @@ Field name chips are displayed below the input for quick reference.
 
 Describe your query in plain English or Arabic:
 
-> *"Show features where area > 500 and name contains school"*
+> *"Show parcels where area is greater than 500 and name contains school"*
 
-Tap **Generate**. The AI translates your text into a SQL clause, displays it for review with an explanation, and lets you edit before running. Costs **1 AI credit** per generation.
+Tap **Generate**. Geova AI drafts a SQL clause, displays it for review, and lets you edit it before running. Each generation uses **1 AI credit**.
 
 ### Running & Exporting
 

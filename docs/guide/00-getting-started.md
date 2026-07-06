@@ -1,12 +1,12 @@
 # Module 00: Getting Started & Onboarding
 
-> This module walks you through installing Mapplex, signing in, and creating your first workspace — step by step.
+> This module explains how to install Mapplex, sign in, use guest mode, and understand workspaces.
 
 ---
 
 ## 1. Installing Mapplex (Progressive Web App)
 
-Mapplex is deployed as a **Progressive Web App (PWA)**. You install it once from your browser and it runs like a native app — no App Store required. Once installed, the app and your cached data work even without an internet connection.
+Mapplex is delivered as a **Progressive Web App (PWA)**. You install it from the browser and launch it from the device home screen, similar to a native app. Once installed, the app can continue to open offline, and previously cached map tiles and local project data remain available on the device.
 
 ### On iOS / Safari
 
@@ -24,13 +24,13 @@ Mapplex is deployed as a **Progressive Web App (PWA)**. You install it once from
 4. Select **Install App** or **Add to Home Screen**.
 5. Launch directly from your device's app drawer.
 
-> **Why a PWA?** App Store installs restrict deep local cache access and can force unwanted updates. A PWA locks the application payload to your device, guaranteeing that your offline map tiles and local databases launch reliably even in a dead-zone forest.
+> **Why a PWA?** A PWA keeps installation simple across mobile and desktop devices and supports offline caching through the browser. For field teams, this means the app can still open when connectivity is poor, provided the required project data and map tiles were prepared beforehand.
 
 ---
 
 ## 2. Authentication
 
-Mapplex offers three ways to access the platform. When you first launch, you'll see the Auth View with the Mapplex logo.
+Mapplex offers three access paths. When you first launch the app, the sign-in screen is displayed.
 
 ### Option A: Sign In with Email & Password
 
@@ -52,9 +52,9 @@ The system remembers your last email for faster subsequent logins.
 
 ### Option C: Continue as Guest (Local Offline)
 
-If you don't want to create an account yet, tap **"Continue as Guest (Local Offline)"** at the bottom of the Auth screen. Guest mode stores all data locally on your device — no cloud sync, no team features.
+If you do not want to create an account yet, tap **"Continue as Guest (Local Offline)"** at the bottom of the Auth screen. Guest mode stores data locally on the current device only. Cloud sync, team features, and workspace collaboration are not available in guest mode.
 
-> **⚠️ Guest Limitation:** Guest data lives only on your device. If you lose your device, the data is gone. Create an account to back up to the cloud.
+> **Guest limitation:** Guest data is not backed up to a workspace. If the device is lost, reset, or cleared, the local data may be lost as well. Use an account-backed workspace for projects that need backup or collaboration.
 
 ### Forgot Your Password?
 
@@ -71,10 +71,10 @@ Your account supports up to **2 active devices**. If you see a "Device Limit Rea
 
 ## 3. Creating Your First Workspace
 
-In Mapplex, user accounts don't hold data — **Workspaces** do. A Workspace is a secure, isolated container that holds billing configuration, team members, and all geographic projects underneath it.
+In Mapplex, data belongs to **Workspaces**, not directly to user accounts. A workspace is an isolated environment that contains projects, layers, forms, team members, storage settings, and subscription details.
 
-After your first login (or immediately as a guest), the system routes you to the **Dashboard View** where you can create your very first project.
+After your first login, or immediately in guest mode, Mapplex opens the **Dashboard View**. From there you can create a project.
 
-> **Example:** A freelance GIS consultant might work for "Miami City Planning" on Monday and "Global Telecom Solutions" on Tuesday. They have one user account that switches between two isolated Workspaces, ensuring Miami's data never leaks into the Telecom database.
+> **Example:** A consultant may keep one workspace for a municipal streetlight inventory and another workspace for a utility corridor survey. The same user account can switch between both workspaces, but projects and team access remain separated.
 
 > **Next:** Proceed to [Module 01: The Project Dashboard](./01-dashboard-view.md) to create your first project.
