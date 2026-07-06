@@ -10,7 +10,7 @@ const modules = [
     subtitle: 'Install & Sign In',
     desc: 'Installing the PWA, signing in with Email / Guest / Pending, multi-device limits, and creating your first workspace.',
     icon: 'rocket_launch',
-    href: '/docs/guide/00-getting-started',
+    href: '/docs/guide/00-getting-started.html',
     color: 'from-emerald-500 to-teal-600',
   },
   {
@@ -19,7 +19,7 @@ const modules = [
     subtitle: 'Create & Manage Projects',
     desc: 'Creating projects, hosted vs. local storage, sync status, storage usage, and the AI-assisted SQL query engine.',
     icon: 'dashboard',
-    href: '/docs/guide/01-dashboard-view',
+    href: '/docs/guide/01-dashboard-view.html',
     color: 'from-blue-500 to-indigo-600',
   },
   {
@@ -28,7 +28,7 @@ const modules = [
     subtitle: 'Organize & Style',
     desc: 'Geometry types, styling, categorical and graduated classification, completion tracking, and the Data Dictionary.',
     icon: 'layers',
-    href: '/docs/guide/02-layers-view',
+    href: '/docs/guide/02-layers-view.html',
     color: 'from-violet-500 to-purple-600',
   },
   {
@@ -37,7 +37,7 @@ const modules = [
     subtitle: 'Collect & Navigate',
     desc: 'Drawing tools, GPS tracking, auto-track, offline tiles, measurements, split and merge, sketch mode.',
     icon: 'map',
-    href: '/docs/guide/03-map-view',
+    href: '/docs/guide/03-map-view.html',
     color: 'from-cyan-500 to-blue-600',
   },
   {
@@ -46,7 +46,7 @@ const modules = [
     subtitle: 'Data Entry Design',
     desc: '10 field types, spatial auto-fill, schema import, Lexicon picklists, and AI-assisted conditional rules.',
     icon: 'assignment',
-    href: '/docs/guide/04-forms-view',
+    href: '/docs/guide/04-forms-view.html',
     color: 'from-amber-500 to-orange-600',
   },
   {
@@ -55,7 +55,7 @@ const modules = [
     subtitle: 'Import, Export & Share',
     desc: 'Export formats, file signature detection, spreadsheet wizard, P2P sync, and reference zones.',
     icon: 'cloud_sync',
-    href: '/docs/guide/05-data-view',
+    href: '/docs/guide/05-data-view.html',
     color: 'from-teal-500 to-emerald-600',
   },
   {
@@ -64,7 +64,7 @@ const modules = [
     subtitle: 'Spatial Intelligence',
     desc: 'Natural language queries, prompt cookbook, @mention layers, display modes, export and commit results.',
     icon: 'psychology',
-    href: '/docs/guide/06-geova-ai-chat',
+    href: '/docs/guide/06-geova-ai-chat.html',
     color: 'from-fuchsia-500 to-pink-600',
   },
   {
@@ -73,7 +73,7 @@ const modules = [
     subtitle: 'Manage Your Crew',
     desc: 'Performance KPIs, sparkline charts, leaderboards, member roster, invite system, and role management.',
     icon: 'groups',
-    href: '/docs/guide/07-team-view',
+    href: '/docs/guide/07-team-view.html',
     color: 'from-sky-500 to-blue-600',
   },
   {
@@ -82,7 +82,7 @@ const modules = [
     subtitle: 'Configure Everything',
     desc: '15 app settings, device management, workspace switcher, offline maps, subscriptions and entitlements.',
     icon: 'settings',
-    href: '/docs/guide/08-settings',
+    href: '/docs/guide/08-settings.html',
     color: 'from-slate-500 to-gray-600',
   },
   {
@@ -91,7 +91,7 @@ const modules = [
     subtitle: 'Terrain Measurement',
     desc: 'Digital clinometer HUD, cross-section profiles, calibration, and severity-coded slope readings.',
     icon: 'terrain',
-    href: '/docs/guide/09-slope-profiler',
+    href: '/docs/guide/09-slope-profiler.html',
     color: 'from-lime-500 to-green-600',
   },
   {
@@ -100,7 +100,7 @@ const modules = [
     subtitle: 'Print-Ready Maps',
     desc: 'Page layout, title and notes, legend with classification expansion, and print-quality generation.',
     icon: 'picture_as_pdf',
-    href: '/docs/guide/10-map-pdf-export',
+    href: '/docs/guide/10-map-pdf-export.html',
     color: 'from-red-500 to-rose-600',
   },
   {
@@ -109,7 +109,7 @@ const modules = [
     subtitle: 'Common Issues & FAQ',
     desc: 'GPS tips, import/export debugging, AI accuracy, sync problems, and performance optimization.',
     icon: 'troubleshoot',
-    href: '/docs/guide/11-troubleshooting',
+    href: '/docs/guide/11-troubleshooting.html',
     color: 'from-yellow-500 to-amber-600',
   },
   {
@@ -118,7 +118,7 @@ const modules = [
     subtitle: 'DXF Import & Export',
     desc: 'Import DXF files with CRS suggestions, export features as DXF, UTM zone handling. Pro feature.',
     icon: 'architecture',
-    href: '/docs/guide/12-cad-manager',
+    href: '/docs/guide/12-cad-manager.html',
     color: 'from-orange-500 to-red-600',
   },
   {
@@ -127,7 +127,7 @@ const modules = [
     subtitle: 'Technical Schematics',
     desc: 'Dimension lines, vertex labels, angles, area and perimeter summaries appended to your Map PDF.',
     icon: 'engineering',
-    href: '/docs/guide/13-engineering-drawing-export',
+    href: '/docs/guide/13-engineering-drawing-export.html',
     color: 'from-indigo-500 to-violet-600',
   },
   {
@@ -136,7 +136,7 @@ const modules = [
     subtitle: 'Shapefile Workflows',
     desc: 'Import and export ESRI Shapefiles with auto CRS from .prj, multi-SHP ZIP, and DBF schema preview.',
     icon: 'database',
-    href: '/docs/guide/14-shp-manager',
+    href: '/docs/guide/14-shp-manager.html',
     color: 'from-emerald-500 to-cyan-600',
   },
   {
@@ -145,7 +145,7 @@ const modules = [
     subtitle: 'Feature Requirements',
     desc: 'Feature requirements matrix, role/plan boundaries, offline checklist, and full format support table.',
     icon: 'fact_check',
-    href: '/docs/guide/15-capability-reference',
+    href: '/docs/guide/15-capability-reference.html',
     color: 'from-blue-500 to-sky-600',
   },
   {
@@ -154,7 +154,7 @@ const modules = [
     subtitle: 'Municipal Inspection',
     desc: 'End-to-end setup, field collection, QA, AI review, export, and handoff workflow example.',
     icon: 'lightbulb',
-    href: '/docs/guide/16-sample-project-municipal-asset-inspection',
+    href: '/docs/guide/16-sample-project-municipal-asset-inspection.html',
     color: 'from-pink-500 to-rose-600',
   },
   {
@@ -163,28 +163,28 @@ const modules = [
     subtitle: 'Key Concepts',
     desc: 'Plain-language definitions for Mapplex, GIS, form, CRS, sync, and AI terminology.',
     icon: 'menu_book',
-    href: '/docs/guide/17-glossary-key-concepts',
+    href: '/docs/guide/17-glossary-key-concepts.html',
     color: 'from-purple-500 to-indigo-600',
   },
 ];
 
 const quickStart = [
-  { task: 'Install Mapplex on my phone', link: '/docs/guide/00-getting-started', module: '00' },
-  { task: 'Create a new map project', link: '/docs/guide/01-dashboard-view', module: '01' },
-  { task: 'Draw a point / line / polygon', link: '/docs/guide/03-map-view', module: '03' },
-  { task: 'Download maps for offline use', link: '/docs/guide/08-settings', module: '08' },
-  { task: 'Import a GeoJSON / KMZ file', link: '/docs/guide/05-data-view', module: '05' },
-  { task: 'Import a CSV spreadsheet', link: '/docs/guide/05-data-view', module: '05' },
-  { task: 'Build a data collection form', link: '/docs/guide/04-forms-view', module: '04' },
-  { task: 'Color-code my map by data', link: '/docs/guide/02-layers-view', module: '02' },
-  { task: 'Ask the AI a spatial question', link: '/docs/guide/06-geova-ai-chat', module: '06' },
-  { task: 'Export a PDF map', link: '/docs/guide/10-map-pdf-export', module: '10' },
-  { task: 'Import a CAD / DXF drawing', link: '/docs/guide/12-cad-manager', module: '12' },
-  { task: 'Import a Shapefile (.shp)', link: '/docs/guide/14-shp-manager', module: '14' },
-  { task: 'Invite a team member', link: '/docs/guide/07-team-view', module: '07' },
-  { task: 'Measure terrain slope', link: '/docs/guide/09-slope-profiler', module: '09' },
-  { task: 'Follow a sample project', link: '/docs/guide/16-sample-project-municipal-asset-inspection', module: '16' },
-  { task: 'Understand a GIS term', link: '/docs/guide/17-glossary-key-concepts', module: '17' },
+  { task: 'Install Mapplex on my phone', link: '/docs/guide/00-getting-started.html', module: '00' },
+  { task: 'Create a new map project', link: '/docs/guide/01-dashboard-view.html', module: '01' },
+  { task: 'Draw a point / line / polygon', link: '/docs/guide/03-map-view.html', module: '03' },
+  { task: 'Download maps for offline use', link: '/docs/guide/08-settings.html', module: '08' },
+  { task: 'Import a GeoJSON / KMZ file', link: '/docs/guide/05-data-view.html', module: '05' },
+  { task: 'Import a CSV spreadsheet', link: '/docs/guide/05-data-view.html', module: '05' },
+  { task: 'Build a data collection form', link: '/docs/guide/04-forms-view.html', module: '04' },
+  { task: 'Color-code my map by data', link: '/docs/guide/02-layers-view.html', module: '02' },
+  { task: 'Ask the AI a spatial question', link: '/docs/guide/06-geova-ai-chat.html', module: '06' },
+  { task: 'Export a PDF map', link: '/docs/guide/10-map-pdf-export.html', module: '10' },
+  { task: 'Import a CAD / DXF drawing', link: '/docs/guide/12-cad-manager.html', module: '12' },
+  { task: 'Import a Shapefile (.shp)', link: '/docs/guide/14-shp-manager.html', module: '14' },
+  { task: 'Invite a team member', link: '/docs/guide/07-team-view.html', module: '07' },
+  { task: 'Measure terrain slope', link: '/docs/guide/09-slope-profiler.html', module: '09' },
+  { task: 'Follow a sample project', link: '/docs/guide/16-sample-project-municipal-asset-inspection.html', module: '16' },
+  { task: 'Understand a GIS term', link: '/docs/guide/17-glossary-key-concepts.html', module: '17' },
 ];
 
 const roles = [
@@ -273,7 +273,7 @@ const UserManualPage = () => {
             </p>
             <div className="flex justify-center gap-4 pt-2">
               <a
-                href="/docs/guide/README"
+                href="/docs/guide/"
                 className="inline-flex items-center gap-2 bg-accent dark:bg-white text-white dark:text-accent px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white transition-all shadow-lg hover:shadow-primary/30"
               >
                 <span className="material-symbols-outlined text-[18px]">auto_stories</span>
@@ -450,7 +450,7 @@ const UserManualPage = () => {
               Built with VitePress for a fast, focused reading experience.
             </p>
             <a
-              href="/docs/guide/README"
+              href="/docs/guide/"
               className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
             >
               <span className="material-symbols-outlined text-[18px]">open_in_new</span>
