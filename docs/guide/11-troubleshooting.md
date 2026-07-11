@@ -192,7 +192,7 @@ Each account supports up to **2 trusted devices**. Manage devices in **Account �
 ### Is my data secure?
 
 - Local project data is stored on your device in the browser's IndexedDB storage.
-- Cloud data uses Supabase with Row-Level Security (RLS) — users can only access their workspace's data.
+- Cloud data uses Geova Cloud with Row-Level Security (RLS) — users can only access their workspace's data.
 - Geova AI is routed through the Mapplex backend and charged against workspace credits.
 - Limited schema details, sample field values, and location context may be sent when needed for an AI request.
 - Full datasets and geometries are not sent automatically for ordinary chat planning.

@@ -21,7 +21,7 @@ All consumers (`MapView`, `ProjectManager`, etc.) use a unified `dbAPI` interfac
 Whenever data is inserted or updated via `dbAPI.put` or `putBatch` targeting a hosted project, the system performs a critical connectivity check:
 
 If `!navigator.onLine` is true:
-1. The system **bypasses ALL Supabase API calls** completely. This prevents blocking UI threads during mobile network timeouts (which can sometimes hang for up to 30 seconds on 3G networks).
+1. The system **bypasses ALL Geova Cloud API calls** completely. This prevents blocking UI threads during mobile network timeouts (which can sometimes hang for up to 30 seconds on 3G networks).
 2. The data is written to the local store (IDB/SQLite).
 3. A sync operation is added to the `STORES.PENDING_SYNC` table with the action `upsert`.
 4. A UI event (`sync-status-change`) is emitted, instantly updating the Dashboard/Cloud icons to reflect offline pending states.

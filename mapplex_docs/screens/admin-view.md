@@ -12,7 +12,7 @@ The Admin View provides workspace owners with top-down visibility over their tea
 
 ## 1. Performance KPI Tracker
 
-Mapplex doesn't just store geometries; it calculates productivity. The KPI engine (`fetchTeamKPIs`) queries the Supabase `features` table dynamically based on a date range to generate performance metrics.
+Mapplex doesn't just store geometries; it calculates productivity. The KPI engine (`fetchTeamKPIs`) queries the Geova Cloud `features` table dynamically based on a date range to generate performance metrics.
 
 **Available Metrics:**
 - **Geometry Breakdown**: Live distribution of Points, Lines, and Polygons collected.

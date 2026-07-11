@@ -44,7 +44,7 @@ You can instantly alter what a team member is allowed to do:
 
 ## Technical Architecture (For Developers)
 
-The Admin engine is built directly into Supabase's Row Level Security (RLS) system.
+The Admin engine is built directly into Geova Cloud's Row Level Security (RLS) system.
 
 - **KPI Calculation Engine:** The `fetchTeamKPIs` module does not statically cache metrics. It executes dynamic aggregate queries across the `features` table scoped to `created_at` boundaries to generate real-time productivity stats purely off geometric payloads.
 - **Role Constraints:** Mapplex operates an explicit-approval model. A user holds an unmapped role until an Admin writes an `enum` string to their auth profile. The JWT dictates whether UI components (like the "Delete Feature" trash can) even physically mount to the React DOM.

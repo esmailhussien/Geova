@@ -15,7 +15,7 @@ Unlike traditional web applications that rely on constant internet connectivity 
 Mapplex forces the browser into behaving like a native desktop application. 
 
 1. **Storage First, Cloud Second**: Every geometry, every form entry, and every style configuration is immediately committed to an embedded local client database (either IndexedDB or SQLite WASM). 
-2. **Synchronous Speed, Asynchronous Sync**: Because operations hit local storage first, rendering is instantaneous. A background Mutex-locked queue quietly negotiates with Supabase when cell connectivity is restored.
+2. **Synchronous Speed, Asynchronous Sync**: Because operations hit local storage first, rendering is instantaneous. A background Mutex-locked queue quietly negotiates with Geova Cloud when cell connectivity is restored.
 3. **No Blank Screens**: An aggressive Service Worker intercepts all static assets. Mapplex literally never shows a Chrome "No Internet" dinosaur; the UX always functions flawlessly.
 
 ## Master Index
