@@ -2,6 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Vision = () => {
+  const dimensions = [
+    'Location',
+    'Elevation',
+    'Time',
+    'Cost',
+    'Condition',
+    'Risk',
+    'Ownership',
+    'Compliance',
+    'Environment',
+    'Operations',
+    'Recommended action',
+  ];
+
   return (
     <section className="py-24 px-6 bg-accent text-white relative overflow-hidden" id="vision">
       {/* Simple angled accent — no spinning animations */}
@@ -11,10 +25,13 @@ const Vision = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Copy */}
           <div className="space-y-8">
-            <h2 className="text-sm font-black uppercase tracking-[0.24em] text-primary">Operational Clarity</h2>
-            <h3 className="text-4xl md:text-5xl font-bold leading-[1.1]">A map is useful when the data behind it can be trusted.</h3>
+            <h2 className="text-sm font-black uppercase tracking-[0.24em] text-primary">Beyond the Map</h2>
+            <h3 className="text-4xl md:text-5xl font-bold leading-[1.1]">The map is the story of the problem and the beginning of the solution.</h3>
             <p className="text-lg text-slate-300 font-light leading-relaxed">
-              Geova keeps location, form responses, photos, edits, and review status connected to every asset. Teams can see what was collected, what still needs correction, and what is ready for reporting.
+              Geova uses GIS as the foundation for technical systems. It connects the physical place with operational data, analysis, AI reasoning, and recommended action so every solution keeps its relationship to location.
+            </p>
+            <p className="text-base text-slate-400 leading-relaxed">
+              We describe this as multi-dimensional spatial intelligence: not just 2D, 3D, or time-aware mapping, but a model that can include cost, risk, compliance, environment, ownership, operations, and decision logic.
             </p>
             <div className="pt-4">
               <Link
@@ -27,24 +44,25 @@ const Vision = () => {
           </div>
 
           {/* Right: Concrete feature list */}
-          <div className="space-y-4 pt-4">
-            {[
-              { icon: 'fact_check', label: 'Review Queues', desc: 'Route missing photos, invalid attributes, and geometry issues to the right reviewer.' },
-              { icon: 'history', label: 'Change History', desc: 'Keep user, timestamp, and edit context attached to each feature update.' },
-              { icon: 'payments', label: 'Cost Fields', desc: 'Connect quantities and unit rates to map features for budget summaries.' },
-              { icon: 'health_and_safety', label: 'Condition Tracking', desc: 'Record condition, severity, and repair priority directly on each asset.' },
-              { icon: 'ios_share', label: 'Handover Outputs', desc: 'Export GIS files, reports, and map PDFs without losing the project structure.' },
-            ].map((item) => (
-              <div key={item.label} className="flex gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-primary text-[20px]">{item.icon}</span>
-                </div>
-                <div>
-                  <div className="font-bold text-sm text-white">{item.label}</div>
-                  <div className="text-xs text-slate-400 leading-relaxed">{item.desc}</div>
-                </div>
+          <div className="rounded-lg border border-white/10 bg-white/5 p-6">
+            <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+              <div>
+                <div className="text-sm font-bold uppercase tracking-[0.24em] text-primary">11D Framework</div>
+                <div className="mt-2 text-2xl font-black text-white">A fuller context for decisions</div>
               </div>
-            ))}
+              <span className="material-symbols-outlined text-4xl text-primary">hub</span>
+            </div>
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {dimensions.map((dimension, index) => (
+                <div key={dimension} className="rounded-lg border border-white/10 bg-slate-950/30 p-3">
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-primary">{String(index + 1).padStart(2, '0')}</div>
+                  <div className="mt-1 text-sm font-semibold text-slate-200">{dimension}</div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-relaxed text-slate-400">
+              The framework is not a visual trick. It is a way to define the parameters, operational variables, and relationships needed to build a system around a specific problem.
+            </p>
           </div>
         </div>
       </div>

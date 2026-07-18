@@ -9,8 +9,8 @@ const AboutPage = () => {
   return (
     <div className="bg-slate-50 dark:bg-[#0f1115] min-h-screen text-slate-800 dark:text-slate-200 font-display selection:bg-primary/30 flex flex-col">
       <SEO
-        title="About Geova — Built by GIS Engineers"
-        description="Geova builds field data collection, GIS review, and spatial reporting tools shaped by hands-on infrastructure and environmental project work."
+        title="About Geova — Spatial Intelligence Technology Company"
+        description="Geova is a GIS-based technology company building spatial intelligence systems, Geova AI, Mapplex, and custom SaaS workflows for location-based problems."
         url="/about"
         keywords="about Geova, GIS company, spatial intelligence, government GIS, engineering consultancy, national standards, city-scale GIS"
       />
@@ -21,10 +21,13 @@ const AboutPage = () => {
         <section className="px-6 py-24 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-center">
           <div className="max-w-4xl mx-auto space-y-6">
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-accent dark:text-white leading-tight">
-              Built by <span className="text-primary">GIS engineers</span>.<br /> Shaped by field work.
+              A spatial intelligence company built on <span className="text-primary">GIS foundations</span>.
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              Geova grew from practical GIS delivery: field surveys, data cleanup, asset inventories, environmental mapping, dashboards, and the handover pressure that comes at the end of every project.
+              Geova builds technology for problems where location matters: infrastructure, environment, planning, roads, assets, operations, and decision-making systems.
+            </p>
+            <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
+              Mapplex is the first technical arm. Geova AI is the intelligence layer that can participate in every product, client system, and future solution we create.
             </p>
           </div>
         </section>
@@ -104,7 +107,7 @@ const AboutPage = () => {
                     <time className="font-mono text-primary text-sm font-bold">2023</time>
                   </div>
                   <div className="text-slate-600 dark:text-slate-400 font-light">
-                    After seeing the same gaps across projects, Geova begins developing the Platform and Mapplex to connect field capture, QA review, reporting, and GIS exports in one workflow.
+                    After seeing the same gaps across projects, Geova begins developing Mapplex, Geova AI, and a broader spatial SaaS model that can be adapted into project-specific systems.
                   </div>
                 </div>
               </div>

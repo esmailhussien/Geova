@@ -11,7 +11,7 @@ const Footer = () => {
             <img alt="Geova Logo" className="w-auto object-contain h-16 md:h-20 scale-[1.6] md:scale-[2.0] origin-left" src={logo} />
           </Link>
           <p className="text-xs text-slate-500 font-medium leading-loose uppercase tracking-widest">
-            Intelligent Infrastructure. Built by Engineers, for Engineers.
+            Mapping Tomorrow's Solutions through GIS and spatial intelligence.
           </p>
           <div className="flex gap-4">
             <Link className="text-slate-400 hover:text-primary transition-colors" to="/contact" aria-label="Contact Geova"><span className="material-symbols-outlined">contact_mail</span></Link>

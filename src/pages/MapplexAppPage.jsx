@@ -20,8 +20,8 @@ const MapplexAppPage = () => {
   const interactiveFeatures = [
     {
       id: 0,
-      title: 'Field QA Assistant',
-      desc: 'Find missing photos, incomplete attributes, duplicate points, and records outside the assigned work area before the team leaves site.',
+      title: 'Geova AI Field Review',
+      desc: 'Use Geova AI to help find missing photos, incomplete attributes, duplicate points, and records outside the assigned work area before the team leaves site.',
       icon: 'fact_check',
       screenTitle: 'QA Review',
       screenData: [
@@ -32,8 +32,8 @@ const MapplexAppPage = () => {
     },
     {
       id: 1,
-      title: 'Offline Team Sync',
-      desc: 'Share collected edits through a local network, then reconcile updates with the project database when internet connectivity is available.',
+      title: 'Offline and Online Work',
+      desc: 'Collect without internet, share edits through a local network when needed, then reconcile updates with the project database when connectivity is available.',
       icon: 'wifi_off',
       screenTitle: 'Local Sync',
       screenData: [
@@ -44,8 +44,8 @@ const MapplexAppPage = () => {
     },
     {
       id: 2,
-      title: 'Configured Survey Forms',
-      desc: 'Use required fields, controlled picklists, calculated district values, and severity rules so every contractor collects the same structure.',
+      title: 'Configurable GIS Constructs',
+      desc: 'Use required fields, controlled picklists, calculated district values, severity rules, and project parameters so every workflow matches the system design.',
       icon: 'dynamic_form',
       screenTitle: 'Asset Inspection',
       screenData: [
@@ -59,10 +59,10 @@ const MapplexAppPage = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display relative">
       <SEO
-        title="Mapplex — Professional Field Data Collection"
-        description="Offline mobile GIS data collection for field teams. Capture locations, forms, photos, QA notes, and sync-ready project updates."
+        title="Mapplex — Geova's First Technical Arm"
+        description="Mapplex is Geova's first technical arm: a mobile GIS fieldwork app for offline and online collection, spatial operations, review, analysis, and communication."
         url="/mapplex"
-        keywords="Mapplex, field data collection, offline GIS, mobile mapping, spatial data capture, GIS QA QC"
+        keywords="Mapplex, Geova, field data collection, offline GIS, mobile mapping, spatial intelligence, GIS QA QC, spatial analysis"
       />
       <Header />
 
@@ -72,7 +72,7 @@ const MapplexAppPage = () => {
           <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img src={mapplexIcon} alt="Mapplex Logo" className="w-8 h-8 object-contain" />
-              <span className="font-bold text-accent dark:text-white hidden sm:block">Mapplex Field App</span>
+              <span className="font-bold text-accent dark:text-white hidden sm:block">Mapplex by Geova</span>
             </div>
             <Link to="/contact" className="flex items-center justify-center gap-2 bg-accent dark:bg-white text-white dark:text-accent px-4 py-2 rounded-lg hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all text-sm font-bold shadow-lg shadow-primary/20">
               <span className="material-symbols-outlined text-[18px]">phone_android</span>
@@ -99,15 +99,19 @@ const MapplexAppPage = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                Field Collection App
+                First Technical Arm
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.08] tracking-tight text-accent dark:text-white">
-                Mapplex keeps field data usable after the site visit.
+                Mapplex starts Geova in the field.
               </h1>
 
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Capture locations, forms, photos, and notes offline. Review quality issues early, sync project updates cleanly, and export data your GIS and engineering teams can trust.
+                Mapplex is the first technical arm of Geova: a mobile GIS application for fieldwork, offline and online collection, spatial operations, review, analysis, and communication.
+              </p>
+
+              <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                It gives teams the field foundation for larger systems, while Geova AI helps interpret, validate, analyze, and connect collected data to project decisions.
               </p>
 
               {/* Download Badges */}

@@ -87,8 +87,8 @@ const Header = () => {
                     <span className="material-symbols-outlined text-[18px]">widgets</span>
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Features</div>
-                    <div className="text-[10px] text-slate-500">GIS Coverage & Tools</div>
+                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Spatial Platform</div>
+                    <div className="text-[10px] text-slate-500">GIS systems and tools</div>
                   </div>
                 </Link>
                 <Link to="/platform" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -96,8 +96,8 @@ const Header = () => {
                     <span className="material-symbols-outlined text-[18px]">psychology</span>
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Assisted Analysis</div>
-                    <div className="text-[10px] text-slate-500">Queries, filters, and QA review</div>
+                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Geova AI</div>
+                    <div className="text-[10px] text-slate-500">Spatial intelligence layer</div>
                   </div>
                 </Link>
                 <Link to="/platform" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -105,8 +105,8 @@ const Header = () => {
                     <span className="material-symbols-outlined text-[18px]">dashboard</span>
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Dashboards</div>
-                    <div className="text-[10px] text-slate-500">Executive & Operational</div>
+                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">System Templates</div>
+                    <div className="text-[10px] text-slate-500">Project-specific SaaS</div>
                   </div>
                 </Link>
                 <Link to="/platform" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -115,7 +115,7 @@ const Header = () => {
                   </div>
                   <div>
                     <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Integrations</div>
-                    <div className="text-[10px] text-slate-500">Connect to Mapplex & APIs</div>
+                    <div className="text-[10px] text-slate-500">Mapplex, APIs, and workflows</div>
                   </div>
                 </Link>
               </div>
@@ -195,13 +195,13 @@ const Header = () => {
               <div className={`overflow-hidden transition-all duration-300 ${expandedMenu === 'platform' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="flex flex-col pl-4 gap-5 py-4 border-l-2 border-primary/20 ml-2">
                   <Link onClick={toggleMobileMenu} to="/platform" className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-3">
-                    <span className="material-symbols-outlined text-[18px]">widgets</span> Features
+                    <span className="material-symbols-outlined text-[18px]">widgets</span> Spatial Platform
                   </Link>
                   <Link onClick={toggleMobileMenu} to="/platform" className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-3">
-                    <span className="material-symbols-outlined text-[18px]">psychology</span> Assisted Analysis
+                    <span className="material-symbols-outlined text-[18px]">psychology</span> Geova AI
                   </Link>
                   <Link onClick={toggleMobileMenu} to="/platform" className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-3">
-                    <span className="material-symbols-outlined text-[18px]">dashboard</span> Dashboards
+                    <span className="material-symbols-outlined text-[18px]">dashboard</span> System Templates
                   </Link>
                   <Link onClick={toggleMobileMenu} to="/platform" className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-3">
                     <span className="material-symbols-outlined text-[18px]">integration_instructions</span> Integrations

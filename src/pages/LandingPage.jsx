@@ -12,8 +12,8 @@ const LandingPage = () => {
   return (
     <>
       <SEO
-        title="Spatial Data Operations for Infrastructure Teams"
-        description="Geova connects Mapplex field collection with GIS review, QA/QC, dashboards, and handover exports for infrastructure and environmental teams."
+        title="Mapping Tomorrow's Solutions"
+        description="Geova is a spatial intelligence technology company building GIS-based systems, Geova AI, Mapplex field operations, and custom spatial SaaS solutions."
         url="/"
       />
       <Header />

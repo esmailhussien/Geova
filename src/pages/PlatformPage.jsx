@@ -9,10 +9,10 @@ const PlatformPage = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display selection:bg-primary/30">
       <SEO
-        title="Geova Platform — GIS Review and Spatial Reporting"
-        description="Review, analyze, and export field data with dashboards, QA/QC workflows, audit trails, and GIS-ready handover outputs."
+        title="Geova AI Platform — Spatial Intelligence Layer"
+        description="Geova AI is the spatial intelligence layer behind Geova systems, supporting spatial operations, analysis, QA/QC, reporting, recommendations, and custom SaaS workflows."
         url="/platform"
-        keywords="GIS platform, spatial analytics, dashboards, automated QA/QC, audit trail, offline spatial processing, field data analysis"
+        keywords="Geova AI, GIS platform, spatial intelligence, spatial analytics, dashboards, automated QA/QC, custom GIS systems, spatial SaaS"
       />
       <Header />
 
@@ -27,15 +27,15 @@ const PlatformPage = () => {
           <div className="max-w-5xl mx-auto w-full relative z-10 text-center space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.3em]">
               <span className="material-symbols-outlined text-[14px]">psychology</span>
-              Geova Platform
+              Geova AI Platform
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-accent dark:text-white">
-              Review Field Data.<br />Deliver Reliable Maps.
+              The spatial brain behind every Geova system.
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              Geova turns collected features into review queues, dashboards, reports, and validated datasets without forcing teams to rebuild the workflow in separate GIS, spreadsheet, and reporting tools.
+              Geova AI supports spatial operations, analysis, QA/QC, reporting, scenario evaluation, and recommendations. It is designed to participate in Mapplex, custom client platforms, and future Geova technical arms.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -56,40 +56,40 @@ const PlatformPage = () => {
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Core Capabilities</h2>
               <h3 className="text-4xl md:text-5xl font-black tracking-tight text-accent dark:text-white">
-                Built around quality control
+                Built for spatial operations, not only map viewing
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                A practical toolkit for teams that collect, manage, and report spatial data.
+                Geova AI combines GIS foundations with operational logic so each system can understand where things are, what they mean, and what should happen next.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <ScanReveal delay={0.1}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 hover:border-primary/40 transition-colors shadow-sm">
-                  <span className="material-symbols-outlined text-4xl text-primary">wifi_off</span>
-                  <h4 className="text-xl font-bold text-accent dark:text-white">Offline-First Operation</h4>
+                  <span className="material-symbols-outlined text-4xl text-primary">hub</span>
+                  <h4 className="text-xl font-bold text-accent dark:text-white">Spatial Operations Core</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Run spatial queries, measurements, and data filters directly on-device — no internet required. Sync when you're back online.
+                    Run buffers, joins, filters, measurements, classification, change detection, and project-specific spatial workflows from one intelligence layer.
                   </p>
                 </div>
               </ScanReveal>
 
               <ScanReveal delay={0.15}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 hover:border-primary/40 transition-colors shadow-sm">
-                  <span className="material-symbols-outlined text-4xl text-primary">map</span>
-                  <h4 className="text-xl font-bold text-accent dark:text-white">Offline Map Tiles</h4>
+                  <span className="material-symbols-outlined text-4xl text-primary">schema</span>
+                  <h4 className="text-xl font-bold text-accent dark:text-white">Project Templates</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Download basemap tiles before heading to the field. Your team always has map coverage, even in areas with no signal.
+                    Adapt the interface, data schema, parameters, rules, dashboards, and operational variables to fit a specific system idea.
                   </p>
                 </div>
               </ScanReveal>
 
               <ScanReveal delay={0.2}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 hover:border-primary/40 transition-colors shadow-sm">
-                  <span className="material-symbols-outlined text-4xl text-primary">fact_check</span>
-                  <h4 className="text-xl font-bold text-accent dark:text-white">Automated QA/QC</h4>
+                  <span className="material-symbols-outlined text-4xl text-primary">conversion_path</span>
+                  <h4 className="text-xl font-bold text-accent dark:text-white">Common GIS Coverage</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Built-in validation catches topology errors, missing attributes, and duplicate features before data leaves the field.
+                    The roadmap targets broad coverage of the everyday GIS tools and analysis constructs needed for most field, planning, infrastructure, and environmental workflows.
                   </p>
                 </div>
               </ScanReveal>
@@ -101,12 +101,12 @@ const PlatformPage = () => {
         <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Assisted Analysis</h2>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Geova AI</h2>
               <h3 className="text-4xl md:text-5xl font-black tracking-tight text-accent dark:text-white">
-                Practical spatial queries, plain language
+                A reasoning layer for spatial systems
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                Ask the platform to count features, find nearby assets, generate filters, or prepare a spatial join, then review the result on the map before exporting.
+                The goal is not only to ask questions. Geova AI helps systems analyze spatial conditions, detect gaps, build workflows, recommend actions, and explain results.
               </p>
             </div>
 
@@ -114,9 +114,9 @@ const PlatformPage = () => {
               <ScanReveal delay={0.1}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 shadow-sm h-full">
                   <span className="material-symbols-outlined text-3xl text-primary">chat</span>
-                  <h4 className="text-lg font-bold text-accent dark:text-white">Natural Language Queries</h4>
+                  <h4 className="text-lg font-bold text-accent dark:text-white">Natural Language + Spatial Logic</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Ask questions like <em>"Show damaged streetlights without photos"</em> or <em>"Count inspections by district"</em>. Geova prepares the query, shows the logic, and lets you review before applying it.
+                    Ask for counts, filters, joins, buffers, comparisons, or suitability checks. Geova prepares the logic and keeps the result reviewable before applying it.
                   </p>
                 </div>
               </ScanReveal>
@@ -124,9 +124,9 @@ const PlatformPage = () => {
               <ScanReveal delay={0.15}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 shadow-sm h-full">
                   <span className="material-symbols-outlined text-3xl text-primary">dashboard</span>
-                  <h4 className="text-lg font-bold text-accent dark:text-white">Executive Dashboards</h4>
+                  <h4 className="text-lg font-bold text-accent dark:text-white">Decision Dashboards</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Project-level statistics — feature counts, completion rates, area and length summaries — updated in real time as your field teams collect data.
+                    Convert spatial and operational data into project dashboards that show progress, risk, condition, cost, compliance, and next actions.
                   </p>
                 </div>
               </ScanReveal>
@@ -134,9 +134,9 @@ const PlatformPage = () => {
               <ScanReveal delay={0.2}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 shadow-sm h-full">
                   <span className="material-symbols-outlined text-3xl text-primary">layers</span>
-                  <h4 className="text-lg font-bold text-accent dark:text-white">Spatial Analysis Templates</h4>
+                  <h4 className="text-lg font-bold text-accent dark:text-white">Spatial Analysis Constructs</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Gap analysis, catchment areas, suitability ranking, clustering, and density mapping — available as structured workflows you can run on your own data.
+                    Cover common GIS analysis needs such as gap analysis, catchments, suitability, clustering, density, corridors, risk zones, and asset relationships.
                   </p>
                 </div>
               </ScanReveal>
@@ -144,9 +144,9 @@ const PlatformPage = () => {
               <ScanReveal delay={0.25}>
                 <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl space-y-4 shadow-sm h-full">
                   <span className="material-symbols-outlined text-3xl text-primary">history</span>
-                  <h4 className="text-lg font-bold text-accent dark:text-white">Full Audit Trail</h4>
+                  <h4 className="text-lg font-bold text-accent dark:text-white">Audit Trail & Explanation</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Every feature edit is tracked with user, timestamp, and change details. Essential for government compliance, handover documentation, and team accountability.
+                    Track edits, assumptions, parameters, generated outputs, and reviewer decisions so technical results can be explained and defended.
                   </p>
                 </div>
               </ScanReveal>
@@ -184,15 +184,44 @@ const PlatformPage = () => {
           </div>
         </section>
 
-        {/* Mapplex Connection */}
+        {/* Custom Systems */}
         <section className="py-24 px-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/30">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-5">
+              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Custom Spatial Systems</h2>
+              <h3 className="text-3xl md:text-5xl font-black tracking-tight text-accent dark:text-white">
+                Turn a project idea into a dedicated GIS-based SaaS workflow.
+              </h3>
+              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                For clients who need more than a standard product, Geova can shape the template, interface, data model, analysis logic, and operational variables around the specific problem.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: 'table_chart', title: 'Data Model', text: 'Layers, attributes, domains, CRS, attachments, and relationships.' },
+                { icon: 'tune', title: 'Parameters', text: 'Thresholds, formulas, classifications, roles, and approval states.' },
+                { icon: 'route', title: 'Operations', text: 'Field tasks, office review, alerts, exports, and reporting cycles.' },
+                { icon: 'psychology', title: 'Geova AI', text: 'Spatial reasoning, QA/QC support, recommendations, and explanations.' },
+              ].map((item) => (
+                <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                  <span className="material-symbols-outlined text-3xl text-primary">{item.icon}</span>
+                  <h4 className="mt-4 font-bold text-accent dark:text-white">{item.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mapplex Connection */}
+        <section className="py-24 px-6 border-t border-slate-200 dark:border-slate-800">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <span className="material-symbols-outlined text-5xl text-primary">hub</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-accent dark:text-white">
               Connected to Mapplex
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              Mapplex uses the same project structure, validation rules, and review logic as the Geova Platform, so field and office teams stay aligned.
+              Mapplex uses Geova AI and the same project structure, validation rules, and review logic, so field data can move into analysis, dashboards, reports, and future custom systems.
             </p>
             <div className="pt-4">
               <Link to="/mapplex" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-accent dark:hover:text-white transition-colors">

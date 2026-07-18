@@ -4,13 +4,13 @@ import { LineReveal } from '../animations/TextReveal';
 
 const Hero = () => {
   const proofPoints = [
-    'Offline field capture',
-    'QA/QC before handover',
-    'Open GIS exports',
+    'Geova AI intelligence layer',
+    'Mapplex field operations',
+    'Custom spatial systems',
   ];
 
   return (
-    <section className="relative min-h-[72vh] flex items-center overflow-hidden px-6 py-12 md:py-14">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden px-6 py-10 md:py-12">
       <div className="absolute inset-0 z-0 bg-slate-50 dark:bg-[#0f1115] pointer-events-none">
         <div className="absolute inset-0 opacity-[0.16] dark:opacity-[0.12] bg-[linear-gradient(to_right,rgba(15,23,42,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.45)_1px,transparent_1px)] bg-[size:64px_64px]" />
         <div className="absolute inset-0 opacity-[0.18] dark:opacity-[0.24] bg-[linear-gradient(125deg,transparent_0%,transparent_42%,rgba(13,148,136,0.35)_42.2%,rgba(13,148,136,0.35)_42.8%,transparent_43%),linear-gradient(26deg,transparent_0%,transparent_54%,rgba(255,117,31,0.24)_54.1%,rgba(255,117,31,0.24)_54.6%,transparent_55%)]" />
@@ -20,14 +20,14 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block">
         <div className="absolute right-[7%] top-[16%] w-[360px] rounded-lg border border-slate-200/90 dark:border-slate-700/70 bg-white/86 dark:bg-slate-900/78 shadow-xl backdrop-blur-md">
           <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-4 py-3">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Inspection Progress</span>
-            <span className="text-xs font-semibold text-primary">Live review</span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Geova AI Layer</span>
+            <span className="text-xs font-semibold text-primary">Spatial brain</span>
           </div>
           <div className="space-y-3 p-4">
             {[
-              ['Road assets', '78%', 'bg-primary'],
-              ['Drainage nodes', '64%', 'bg-brand-orange'],
-              ['Photos attached', '91%', 'bg-slate-700'],
+              ['Spatial reasoning', '86%', 'bg-primary'],
+              ['Scenario analysis', '72%', 'bg-brand-orange'],
+              ['Workflow automation', '91%', 'bg-slate-700'],
             ].map(([label, value, color]) => (
               <div key={label} className="space-y-1">
                 <div className="flex items-center justify-between text-xs">
@@ -44,43 +44,47 @@ const Hero = () => {
 
         <div className="absolute right-[18%] bottom-[12%] w-[300px] rounded-lg border border-slate-200/90 dark:border-slate-700/70 bg-white/80 dark:bg-slate-900/76 shadow-lg backdrop-blur-md">
           <div className="grid grid-cols-3 border-b border-slate-200 dark:border-slate-800 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
-            <span className="px-3 py-2">Layer</span>
-            <span className="px-3 py-2">Records</span>
-            <span className="px-3 py-2">Status</span>
+            <span className="px-3 py-2">System</span>
+            <span className="px-3 py-2">Input</span>
+            <span className="px-3 py-2">Output</span>
           </div>
           {[
-            ['Streetlights', '1,284', 'Checked'],
-            ['Manholes', '642', 'Needs QA'],
-            ['Road signs', '518', 'Ready'],
-          ].map(([layer, records, status]) => (
-            <div key={layer} className="grid grid-cols-3 border-b border-slate-100 px-3 py-2 text-xs last:border-b-0 dark:border-slate-800">
-              <span className="font-semibold text-slate-700 dark:text-slate-200">{layer}</span>
-              <span className="text-slate-500">{records}</span>
-              <span className="text-primary">{status}</span>
+            ['Mapplex', 'Field', 'Verified'],
+            ['Planning', 'Layers', 'Scenarios'],
+            ['Assets', 'Status', 'Action'],
+          ].map(([system, input, output]) => (
+            <div key={system} className="grid grid-cols-3 border-b border-slate-100 px-3 py-2 text-xs last:border-b-0 dark:border-slate-800">
+              <span className="font-semibold text-slate-700 dark:text-slate-200">{system}</span>
+              <span className="text-slate-500">{input}</span>
+              <span className="text-primary">{output}</span>
             </div>
           ))}
         </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="max-w-3xl space-y-6">
+        <div className="max-w-3xl space-y-5">
           <LineReveal delay={0.05}>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-primary shadow-sm dark:bg-slate-900/70">
               <span className="inline-flex h-2 w-2 rounded-full bg-primary" />
-              Geova Spatial Operations
+              Geova Spatial Intelligence
             </div>
           </LineReveal>
 
-          <h1 className="text-6xl md:text-7xl font-black leading-[0.92] tracking-tight text-accent dark:text-white">
+          <h1 className="text-6xl md:text-6xl font-black leading-[0.92] tracking-tight text-accent dark:text-white">
             Geova
           </h1>
 
+          <p className="text-2xl md:text-3xl font-black leading-tight text-accent dark:text-white">
+            Mapping <span className="gradient-brand">Tomorrow's</span> Solutions
+          </p>
+
           <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 max-w-2xl font-medium leading-relaxed">
-            Spatial data software for infrastructure teams that need reliable field collection, clean QA workflows, and practical decision dashboards.
+            A GIS-based technology company building spatial intelligence systems where every asset, risk, operation, and decision is tied to location.
           </p>
 
           <p className="max-w-2xl text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            Geova connects Mapplex field capture with review tools, audit trails, and GIS-ready exports so surveyors, engineers, and managers work from the same verified data.
+            Geova AI is the shared brain across our products and client systems. Mapplex is the first technical arm, starting from fieldwork and growing into analysis, communication, and project-specific spatial workflows.
           </p>
 
           <div className="flex flex-wrap gap-3">

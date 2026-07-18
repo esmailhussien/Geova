@@ -39,26 +39,26 @@ const TrustBar = () => {
     {
       icon: 'history',
       value: <AnimatedCounter target={15} suffix="+" />,
-      label: 'Years in GIS delivery',
-      note: 'Field, office, and handover workflows',
+      label: 'Years GIS foundation',
+      note: 'Consulting, field delivery, data models, and project handover',
     },
     {
-      icon: 'wifi_off',
-      value: 'Offline',
-      label: 'Field-ready capture',
-      note: 'Collect and review data with weak connectivity',
+      icon: 'psychology',
+      value: 'AI',
+      label: 'Shared intelligence layer',
+      note: 'Spatial reasoning, analysis, QA/QC, reporting, and recommendations',
     },
     {
-      icon: 'fact_check',
-      value: 'QA/QC',
-      label: 'Validation first',
-      note: 'Check attributes, geometry, and attachments early',
+      icon: 'public',
+      value: '01',
+      label: 'First product arm',
+      note: 'Mapplex begins the technical ecosystem with mobile GIS fieldwork',
     },
     {
-      icon: 'ios_share',
-      value: 'GIS',
-      label: 'Open exports',
-      note: 'Shapefile, GeoJSON, GeoPackage, DXF, CSV, PDF',
+      icon: 'deployed_code',
+      value: 'SaaS',
+      label: 'Custom spatial systems',
+      note: 'Templates and platforms shaped around project-specific variables',
     },
   ];
 
@@ -66,7 +66,7 @@ const TrustBar = () => {
     <section className="py-14 border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-xs font-bold text-slate-500 uppercase tracking-[0.24em] mb-10">
-          Built for field data that has to survive review, reporting, and handover
+          GIS foundations, AI reasoning, field applications, and custom systems working as one ecosystem
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left items-stretch">
           {signals.map((signal) => (
