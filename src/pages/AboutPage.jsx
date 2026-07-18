@@ -9,8 +9,8 @@ const AboutPage = () => {
   return (
     <div className="bg-slate-50 dark:bg-[#0f1115] min-h-screen text-slate-800 dark:text-slate-200 font-display selection:bg-primary/30 flex flex-col">
       <SEO
-        title="About Geova — Built by Engineers. Trusted by Governments."
-        description="15+ years managing city-scale GIS systems for national authorities. Learn how Geova evolved from consulting to building the spatial intelligence platform we always needed."
+        title="About Geova — Built by GIS Engineers"
+        description="Geova builds field data collection, GIS review, and spatial reporting tools shaped by hands-on infrastructure and environmental project work."
         url="/about"
         keywords="about Geova, GIS company, spatial intelligence, government GIS, engineering consultancy, national standards, city-scale GIS"
       />
@@ -21,10 +21,10 @@ const AboutPage = () => {
         <section className="px-6 py-24 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-center">
           <div className="max-w-4xl mx-auto space-y-6">
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-accent dark:text-white leading-tight">
-              Built by <span className="text-primary">Engineers</span>.<br /> Trusted by Governments.
+              Built by <span className="text-primary">GIS engineers</span>.<br /> Shaped by field work.
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              We've spent 15+ years managing city-scale GIS systems for national authorities. Now, we've built the spatial intelligence platform we always needed.
+              Geova grew from practical GIS delivery: field surveys, data cleanup, asset inventories, environmental mapping, dashboards, and the handover pressure that comes at the end of every project.
             </p>
           </div>
         </section>
@@ -50,7 +50,7 @@ const AboutPage = () => {
                     <time className="font-mono text-primary text-sm font-bold">2010</time>
                   </div>
                   <div className="text-slate-600 dark:text-slate-400 font-light">
-                    Geova begins as a geospatial consulting firm — digitizing urban districts, building cadastral databases, and delivering land-cover classifications for government planning agencies across the MENA region.
+                    Geova begins with geospatial consulting work: digitizing urban districts, building cadastral databases, and preparing land-cover classifications for planning teams.
                   </div>
                 </div>
               </div>
@@ -64,11 +64,11 @@ const AboutPage = () => {
                 </div>
                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-3xl glass-panel shadow-sm">
                   <div className="flex items-center justify-between space-x-2 mb-1">
-                    <div className="font-bold text-slate-900 dark:text-slate-100">Mega-Infrastructure Projects</div>
+                    <div className="font-bold text-slate-900 dark:text-slate-100">Infrastructure Workflows</div>
                     <time className="font-mono text-primary text-sm font-bold">2016</time>
                   </div>
                   <div className="text-slate-600 dark:text-slate-400 font-light">
-                    Our engineers lead road and drainage asset registration across 7+ major national infrastructure projects — establishing GIS departments from the ground up, developing QA/QC protocols, and managing end-to-end field-to-office workflows for mega-contractors.
+                    The team expands into road and drainage asset registration, GIS department setup, QA/QC procedures, and field-to-office workflows for infrastructure contractors.
                   </div>
                 </div>
               </div>
@@ -82,11 +82,11 @@ const AboutPage = () => {
                 </div>
                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-3xl glass-panel shadow-sm">
                   <div className="flex items-center justify-between space-x-2 mb-1">
-                    <div className="font-bold text-slate-900 dark:text-slate-100">Government Digital Transformation</div>
+                    <div className="font-bold text-slate-900 dark:text-slate-100">Municipal GIS Operations</div>
                     <time className="font-mono text-primary text-sm font-bold">2020</time>
                   </div>
                   <div className="text-slate-600 dark:text-slate-400 font-light">
-                    Managing GIS infrastructure for a governorate serving 5+ million residents. Automating administrative workflows, building web-based executive monitoring dashboards, and driving Integrated Coastal Zone Management planning at the national level.
+                    Geova supports municipal GIS operations with managed layers, administrative workflow automation, web dashboards, and Integrated Coastal Zone Management planning.
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ const AboutPage = () => {
                     <time className="font-mono text-primary text-sm font-bold">2023</time>
                   </div>
                   <div className="text-slate-600 dark:text-slate-400 font-light">
-                    Frustrated by the disconnected tools on the market, we begin developing the Geova AI Platform and Mapplex — bridging the gap between field survey, AI processing, and executive dashboard in one seamless ecosystem.
+                    After seeing the same gaps across projects, Geova begins developing the Platform and Mapplex to connect field capture, QA review, reporting, and GIS exports in one workflow.
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ const AboutPage = () => {
               <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Proven Track Record</h2>
               <h3 className="text-3xl md:text-4xl font-black tracking-tight text-accent dark:text-white">What We've Delivered</h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">
-                We don't lead with titles — we lead with what we've built, managed, and delivered at scale for national authorities and mega-contractors.
+                We focus on the work clients need to complete: collect the right data, check it properly, explain it clearly, and deliver it in the right format.
               </p>
             </div>
 
@@ -145,7 +145,7 @@ const AboutPage = () => {
                   </div>
                   <h4 className="text-xl font-bold text-accent dark:text-white mb-3">GIS Department Establishment</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                    Built GIS departments from the ground up for mega-contractors — server infrastructure, software procurement, team recruitment, SOP development, and comprehensive staff training programs.
+                    GIS operating models for contractors and project teams, including server planning, software selection, team roles, SOP development, and staff training.
                   </p>
                 </div>
               </ScanReveal>
@@ -157,7 +157,7 @@ const AboutPage = () => {
                   </div>
                   <h4 className="text-xl font-bold text-accent dark:text-white mb-3">Executive Monitoring Dashboards</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                    Real-time spatial dashboards for government leadership — translating complex operational data into intuitive visualizations for field progress tracking and data-driven decision-making.
+                    Spatial dashboards for project leadership, translating field progress and asset status into clear views for review meetings and decisions.
                   </p>
                 </div>
               </ScanReveal>
@@ -169,7 +169,7 @@ const AboutPage = () => {
                   </div>
                   <h4 className="text-xl font-bold text-accent dark:text-white mb-3">Coastal & Environmental Planning</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                    National-level ICZM strategies, shoreline change detection, flood-risk modeling, and sand nourishment feasibility studies coordinating environmental agencies, engineers, and urban planners.
+                    ICZM support, shoreline change detection, flood-risk mapping, and sand nourishment feasibility studies for environmental, engineering, and planning teams.
                   </p>
                 </div>
               </ScanReveal>
@@ -181,7 +181,7 @@ const AboutPage = () => {
                   </div>
                   <h4 className="text-xl font-bold text-accent dark:text-white mb-3">Workflow Automation</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                    Digital transformation of manual administrative processes using GIS-driven automation — reducing inter-departmental processing time by 40% and enabling real-time field inspection workflows.
+                    Digital transformation of manual administrative processes using GIS-driven routing, review queues, dashboards, and field inspection workflows.
                   </p>
                 </div>
               </ScanReveal>
@@ -207,26 +207,26 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
             <ScanReveal delay={0.1}>
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-black">7+</div>
-                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Major Infrastructure Projects</div>
+                <div className="text-4xl md:text-5xl font-black">15+</div>
+                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Years GIS Experience</div>
               </div>
             </ScanReveal>
             <ScanReveal delay={0.2}>
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-black">5M+</div>
-                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Residents Served</div>
+                <div className="text-4xl md:text-5xl font-black">Field</div>
+                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Offline Collection</div>
               </div>
             </ScanReveal>
             <ScanReveal delay={0.3}>
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-black">40%</div>
-                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Processing Time Reduction</div>
+                <div className="text-4xl md:text-5xl font-black">QA/QC</div>
+                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Review Workflows</div>
               </div>
             </ScanReveal>
             <ScanReveal delay={0.4}>
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-black">100%</div>
-                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Standards Compliance</div>
+                <div className="text-4xl md:text-5xl font-black">GIS</div>
+                <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/70">Handover Outputs</div>
               </div>
             </ScanReveal>
           </div>
@@ -236,24 +236,24 @@ const AboutPage = () => {
         <section className="py-24 px-6 bg-slate-100 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Compliance & Security</h2>
-              <h3 className="text-3xl md:text-4xl font-black tracking-tight text-accent dark:text-white">Built for Government Standards</h3>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Governed Data</h2>
+              <h3 className="text-3xl md:text-4xl font-black tracking-tight text-accent dark:text-white">Designed for controlled project environments</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ScanReveal delay={0.1}>
                 <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm flex flex-col items-center text-center gap-4 h-full">
                   <span className="material-symbols-outlined text-5xl text-slate-400">gavel</span>
-                  <h4 className="font-bold text-lg text-slate-800 dark:text-slate-200">National Standards Compliant</h4>
-                  <p className="text-sm text-slate-500 font-light">Full adherence to government infrastructure data standards and specifications across GCC and MENA regions.</p>
+                  <h4 className="font-bold text-lg text-slate-800 dark:text-slate-200">Standards-Based Data</h4>
+                  <p className="text-sm text-slate-500 font-light">Configure layers, attributes, domains, and outputs to match project or authority requirements.</p>
                 </div>
               </ScanReveal>
 
               <ScanReveal delay={0.2}>
                 <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm flex flex-col items-center text-center gap-4 h-full">
                   <span className="material-symbols-outlined text-5xl text-slate-400">verified_user</span>
-                  <h4 className="font-bold text-lg text-slate-800 dark:text-slate-200">ISO 27001 Ready</h4>
-                  <p className="text-sm text-slate-500 font-light">Enterprise-grade data security and infrastructure protection protocols.</p>
+                  <h4 className="font-bold text-lg text-slate-800 dark:text-slate-200">Security-Aware Delivery</h4>
+                  <p className="text-sm text-slate-500 font-light">Support for role-based access, controlled exports, and clear data ownership practices.</p>
                 </div>
               </ScanReveal>
 

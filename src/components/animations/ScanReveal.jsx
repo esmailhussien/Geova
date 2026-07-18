@@ -15,7 +15,7 @@ export const ScanReveal = ({ children, delay = 0, className = "" }) => {
       </motion.div>
       {/* Scanning laser line effect */}
       <motion.div
-        className="absolute left-0 right-0 h-[1px] bg-primary shadow-[0_0_8px_theme(colors.primary.DEFAULT)]"
+        className="absolute left-0 right-0 h-[1px] bg-primary shadow-[0_0_8px_rgba(13,148,136,0.65)]"
         initial={{ top: "100%", opacity: 1 }}
         whileInView={{ top: "-10%", opacity: 0 }}
         viewport={{ once: true }}

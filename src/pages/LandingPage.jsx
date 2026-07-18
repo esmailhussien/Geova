@@ -12,8 +12,8 @@ const LandingPage = () => {
   return (
     <>
       <SEO
-        title="Mapping Tomorrow's Solutions"
-        description="An end-to-end spatial intelligence platform trusted by government authorities. From RTK GNSS field data collection with Mapplex to AI-powered analytics dashboards — built by engineers who've managed city-scale GIS systems for 15+ years."
+        title="Spatial Data Operations for Infrastructure Teams"
+        description="Geova connects Mapplex field collection with GIS review, QA/QC, dashboards, and handover exports for infrastructure and environmental teams."
         url="/"
       />
       <Header />

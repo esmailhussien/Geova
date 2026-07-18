@@ -17,7 +17,7 @@ const updates = Object.values(mdxModules)
   // Sort by date descending
   .sort((a, b) => new Date(b.meta.date || 0) - new Date(a.meta.date || 0));
 
-// Custom components passed to MDX provider for high-end tech styling
+// Custom components passed to MDX provider for readable release notes
 const components = {
   h1: (props) => <h1 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-slate-800 pb-4" {...props} />,
   h2: (props) => <h2 className="text-2xl font-bold uppercase tracking-widest text-slate-800 dark:text-slate-100 mt-10 mb-4" {...props} />,
@@ -48,14 +48,12 @@ const ChangelogPage = () => {
   return (
     <div className="min-h-screen bg-background-light dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 relative override-light overflow-hidden">
       <SEO 
-        title="Industry Insights Newsletters" 
-        description="Geova Changelog and Release Notes. Track the latest optimizations, AI features, and system deployments." 
+        title="Product Updates" 
+        description="Geova release notes covering platform improvements, field collection workflows, spatial analysis, and documentation updates." 
       />
       
-      {/* Background styling for technical aesthetic */}
+      {/* Subtle background pattern */}
       <TopographicBackground />
-      <div className="absolute top-0 right-[-10%] w-[50%] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-[40%] left-[-10%] w-[40%] h-[600px] bg-blue-900/5 blur-[150px] rounded-full pointer-events-none" />
 
       <Header />
       
@@ -64,10 +62,10 @@ const ChangelogPage = () => {
           <div className="mb-20 text-center">
             <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4 text-slate-900 dark:text-white">
               <span className="text-primary block text-sm tracking-[0.5em] mb-4">Product Updates</span>
-              Industry Insights Newsletters
+              Product Updates
             </h1>
             <p className="text-base text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
-              Platform improvements, new analytics features, and field app release notes. See what's new in the Geova ecosystem.
+              Platform improvements, field app release notes, documentation updates, and practical workflow changes.
             </p>
           </div>
         </ScanReveal>
@@ -80,7 +78,7 @@ const ChangelogPage = () => {
               const { Content, meta } = update;
               
               // Formatting date
-              const displayDate = new Date(meta.date || Date.now()).toLocaleDateString('en-US', {
+              const displayDate = new Date(meta.date || '1970-01-01').toLocaleDateString('en-US', {
                 year: 'numeric', month: 'short', day: 'numeric'
               });
 
@@ -89,7 +87,7 @@ const ChangelogPage = () => {
                   <article className="relative pl-8 md:pl-12">
                     
                     {/* Timeline Node Indicator */}
-                    <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_12px_theme(colors.primary.DEFAULT)] ring-4 ring-background-light dark:ring-slate-950" />
+                    <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_12px_rgba(13,148,136,0.65)] ring-4 ring-background-light dark:ring-slate-950" />
                     <div className="absolute left-[-12px] top-[-5px] w-[25px] h-[25px] border border-primary/30 rounded-full animate-ping" />
 
                     <header className="mb-8">

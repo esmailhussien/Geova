@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, url, image, type }) => {
   const siteTitle = 'Geova - Intelligent Infrastructure. Built by Engineers, for Engineers.';
-  const defaultDescription = 'Geova is an end-to-end spatial intelligence platform trusted by government authorities. From RTK GNSS field data collection with Mapplex to AI-powered analytics dashboards — built by engineers who\'ve managed city-scale GIS systems for 15+ years.';
-  const defaultKeywords = 'GIS platform, spatial intelligence, Mapplex, field data collection, RTK GNSS, infrastructure mapping, government-grade GIS, AI spatial analytics, urban planning GIS, environmental assessment, consulting engineering';
+  const defaultDescription = 'Geova connects field data collection, GIS review workflows, QA/QC, dashboards, and handover exports for infrastructure and environmental teams.';
+  const defaultKeywords = 'GIS platform, spatial intelligence, Mapplex, field data collection, infrastructure mapping, GIS QA QC, urban planning GIS, environmental assessment, consulting engineering';
   const siteUrl = 'https://geova.net';
 
   const seoTitle = title ? `${title} | Geova` : siteTitle;
@@ -20,7 +20,7 @@ const SEO = ({ title, description, keywords, url, image, type }) => {
     "name": "Geova Technologies",
     "url": siteUrl,
     "logo": `${siteUrl}/assets/GEOVA.png`,
-    "description": "Spatial intelligence platform and GIS consulting firm with 15+ years of government-grade engineering expertise.",
+    "description": "Spatial data platform and GIS consulting firm for field collection, QA/QC, dashboards, and handover workflows.",
     "foundingDate": "2010",
     "sameAs": [],
     "contactPoint": [

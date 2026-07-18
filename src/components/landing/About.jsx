@@ -28,20 +28,20 @@ const About = () => {
         </div>
         <div className="space-y-6">
           <h2 className="text-sm font-black uppercase tracking-[0.4em] text-primary">Our Philosophy</h2>
-          <h3 className="text-4xl md:text-5xl font-bold leading-tight text-accent dark:text-white">Mapping Problems, Designing Solutions</h3>
+              <h3 className="text-4xl md:text-5xl font-bold leading-tight text-accent dark:text-white">Mapping Problems, Building Workflows</h3>
           <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-            At Geova, we believe the greatest challenges of the next decade won't be solved with more data, but with better <span className="text-primary font-semibold">spatial thinking</span>. Our approach transcends traditional engineering boundaries, applying tech-couture precision to global infrastructure problems.
+            Geova focuses on the practical work around spatial data: field capture, validation, project review, and exports that engineers can use without rework.
           </p>
           <div className="grid grid-cols-2 gap-8 pt-6">
             <div className="space-y-2">
               <span className="text-3xl font-black text-primary">01</span>
-              <h4 className="font-bold uppercase text-xs tracking-widest">Decoding</h4>
-              <p className="text-sm text-slate-500">Identifying hidden patterns in chaotic infrastructure environments.</p>
+              <h4 className="font-bold uppercase text-xs tracking-widest">Diagnosing</h4>
+              <p className="text-sm text-slate-500">Finding gaps in layers, forms, attachments, and handover requirements.</p>
             </div>
             <div className="space-y-2">
               <span className="text-3xl font-black text-primary">02</span>
-              <h4 className="font-bold uppercase text-xs tracking-widest">Synthesizing</h4>
-              <p className="text-sm text-slate-500">Creating unified digital twins and logic frameworks.</p>
+              <h4 className="font-bold uppercase text-xs tracking-widest">Structuring</h4>
+              <p className="text-sm text-slate-500">Building clear data models, QA rules, and repeatable reporting workflows.</p>
             </div>
           </div>
         </div>

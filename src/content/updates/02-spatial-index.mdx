@@ -1,77 +1,48 @@
 export const meta = {
-  title: "Spatial Indexing & DAG Execution Upgrade",
+  title: "Spatial Indexing & Query Performance Upgrade",
   date: "2026-04-05",
-  tags: ["Geova AI", "Performance", "Core Engine"]
+  tags: ["Geova", "Performance", "Spatial Analysis"]
 };
 
-# Spatial Index & Temporary DAG Pipelines
+# Spatial Indexing & Query Performance Upgrade
 
-Geova AI must execute exceedingly complex multi-step spatial mathematics. If a user asks *"Group Urban Planning Zones by overlapping Carbon Credits and find intersection points,"* it requires multiple sequential filters that cannot be processed natively in one shot.
+Geova now handles heavier spatial review tasks with a dedicated query pipeline and R-tree spatial indexing. The goal is simple: keep maps responsive while teams filter, compare, and validate large field datasets.
 
-To prevent main thread UI locks, Geova implements the robust **Directed Acyclic Graph Template Engine** (`dagTemplateEngine.js`) to break natural language down into pure topological execution steps grouped via the `spatialIndex.js` R-Tree.
+## Why It Matters
 
-## The Directed Acyclic Graph Template Engine (`dagTemplateEngine.js`)
+Field projects often contain thousands of assets, photos, and edits across multiple layers. Reviewers need to ask practical questions without waiting for the browser to lock up:
 
-Natural GIS logic must be completely decoupled from prompt ambiguity. The `dagTemplateEngine` ("Temp DAG") is a rigid compiler that parses abstract spatial intent into executable steps (Nodes) that guarantee mathematical closure.
+- Show drainage records missing required photos.
+- Find road signs captured outside the assigned district.
+- Count inspected streetlights by contractor and status.
+- Highlight assets within 50 meters of a planned road corridor.
+- Compare last month and this month to find changed or deleted features.
 
-Every "Temp DAG" maintains explicit input/output definitions. It ensures that the result of `Step 1 (Buffer)` logically types into `Step 2 (Intersect)`.
+## Query Pipeline
 
-**Execution Sequence:**
-1. **Compilation:** A query like *"Intersect Coastal Erosion Buffers with Real Estate Zoning"* triggers the `dagTemplateEngine`.
-2. **Translation:** The engine grabs the `SPATIAL_INTERSECT` structural template. It spins up a DAG ensuring the geometry payload from the specific Coastal polygons maps exactly structurally into the `input_var_1` of the next function.
-3. **Pipelining:** It routes these Nodes off the core UI thread into pure Web Workers (`dagWorkerBridge.js`), ensuring zero browser disruption even at 10,000+ points.
+When a request needs more than one spatial operation, Geova breaks it into smaller steps and runs the heavier geometry work away from the main interface. Each step keeps clear inputs and outputs, so the result can be reviewed before it becomes part of a report or export.
 
-### The 24 Core DAG Templates (Prompt Guide)
+Typical sequences include:
 
-Geova AI supports EXACTLY 24 distinct analytical templates. To trigger these deterministically without hallucination, construct natural language prompts that map to their designated capability structures:
+1. Filter a layer by status, contractor, date, or required fields.
+2. Use spatial indexing to narrow the candidate features.
+3. Run the geometry check, such as within, intersect, nearest, or buffer.
+4. Display the result on the map with counts and a review list.
+5. Export the selected records when the reviewer approves the result.
 
-#### 1. Basic Topology & Discovery
-Standard geometric operations spanning proximities and hard topological intersections.
-- **`tpl_nearest` (Find Nearest Features):** *"Find the nearest Emergency Shelters to my GPS location."*
-- **`tpl_buffer` (Geometric Buffer Zone):** *"Draw a 5km safety buffer around all active Volcanic Vents."*
-- **`tpl_buffer_join` (Buffer + Spatial Join):** *"Highlight all Residential Zones falling within 3km of the Coastal Erosion line."*
-- **`tpl_clip` (Spatial Clip / Masking):** *"Clip the National Highway dataset using the Municipal Border mask."*
-- **`tpl_spatial_join` (Attribute Spatial Join / Enrichment):** *"Tag every building footprint with its underlying Geological Fault Line rating."*
-- **`tpl_spatial_join_nearest` (Multi-Step Spatial Join):** *"For every elementary school, find the nearest hazardous waste site and join its containment status."*
-- **`tpl_layer_compare` (Change Detection):** *"Compare the 2024 Global Deforestation canopy with the 2025 canopy to calculate square kilometer differences."*
+## Supported Review Patterns
 
-#### 2. Pattern Aggregation & Density
-Mathematical normalization of dense spatial distributions.
-- **`tpl_group_by` (Spatial Aggregation):** *"Group the total Carbon Emission incidents by Urban Planning Zone."*
-- **`tpl_rank` (Rank by Measurement):** *"Rank the Global Seismic Activity points from highest to lowest magnitude."*
-- **`tpl_density_heatmap` (Kernel Density):** *"Generate a heatmap of historic Oceanic Spills to identify high-risk navigation corridors."*
+The update improves the workflows teams use most often:
 
-#### 3. Advanced Networking & Logistics
-Road-network operations utilizing underlying Isochrone APIs alongside topological rules.
-- **`tpl_service_area` (Isochrone Network):** *"Map the 15-minute driving service area around the new Metropolitan Fire Station."*
-- **`tpl_service_area_join` (Service Area + Join):** *"Find all elementary schools located entirely within a 10-minute drive of the active Chemical Plume."*
-- **`tpl_load_simulation` (Network Load):** *"Simulate traffic choke points on the Highway Network if the northern bridge is destroyed."*
+- Nearest feature checks for maintenance routing and field verification.
+- Buffer checks around corridors, facilities, utilities, and restricted zones.
+- Spatial joins that tag assets by district, zone, parcel, or project boundary.
+- Change detection between survey rounds or imported versions.
+- Density and clustering views for repeated defects or inspection gaps.
+- Right-of-way and corridor impact summaries for planning review.
 
-#### 4. Optimization & Site Selection
-Heavy computational topologies intended to find mathematically perfect deployment zones.
-- **`tpl_site_suitability` (Multi-Criteria Overlay):** *"Identify optimal construction sites that are > 5km from wetlands, < 1km from highways, and on slope gradients < 15%."*
-- **`tpl_catchment_analysis` (Voronoi):** *"Generate Voronoi catchment polygons to determine the theoretical service boundaries for all Regional Hospitals."*
-- **`tpl_spatial_cluster` (K-Means):** *"Cluster the 150,000 reported disease outbreak points into 8 distinct operation zones using K-Means."*
-- **`tpl_optimal_placement` (Gap Centroids):** *"Calculate the exact geographic center of existing service gaps to place 3 new Carbon Sequestration Plants."*
-- **`tpl_gap_analysis` (Service Coverage Gap):** *"Highlight the urban neighborhoods that fall completely outside the 20-minute ambulance service network."*
+## R-Tree Indexing
 
-#### 5. Multi-Step Environmental & Impact Profiling
-Composite DAGs that chain up to 5 distinct Mapbox GL and Turf.js nodes.
-- **`tpl_expropriation` (Right-of-Way Impact):** *"Calculate the total private property acreage lost if we impose a 50-meter right-of-way expansion along the National Railway."*
-- **`tpl_service_area_apportionment` (Population Apportionment):** *"Estimate the total population residing within the 30-minute flood evacuation isochrone."*
-- **`tpl_what_if_exclusion` (Scenario Removal):** *"Recalculate average emergency response times globally if the 3 largest disaster hubs are taken offline."*
-- **`tpl_multi_ring_buffer` (Concentric Rings):** *"Draw 1km, 5km, and 10km concentric blast-radius rings outward from the industrial reactor."*
-- **`tpl_green_equity` (Urban Heat Island):** *"Correlate neighborhood tree canopy percentages strictly against ambient summer surface temperatures."*
-- **`tpl_carbon_calc` (Carbon Sequestration):** *"Estimate the metric tons of CO2 sequestered annually based on the square footage and specific species tag of the documented forest layer."*
+The spatial index stores feature bounding boxes so Geova can quickly find likely matches before running detailed geometry checks. This reduces unnecessary calculations and keeps the interface usable on large municipal or infrastructure datasets.
 
-## The R-Tree Indexing Core (`spatialIndex.js`)
-
-Even with perfect DAG isolation, pure spatial topology is mathematically $O(N \times M)$ which crashes RAM on complex boundaries.
-
-To accelerate the "Temp DAG" execution, `spatialIndex.js` wraps `@turf/geojson-rbush`. Before large DAG nodes (e.g., `SPATIAL_JOIN`) execute:
-
-1. **Bulk Loading**: The DAG pipeline bulk loads Axis-Aligned Bounding Boxes (AABBs) for the designated zones (e.g. `Carbon Capture Facilities`). This guarantees $O(N \log N)$ initialization indexing time.
-2. **Filtering Superset Phase**: `queryCandidates` evaluates intercept checks, running logarithmically in $O(\log B + k)$.
-3. **Execution Edge-matching**: Only the severely narrowed subset matching the bounding boxes actually encounters the computationally heavy Turf geometry checks requested by the `dagTemplateEngine`.
-
-Because the API remains completely `LocalStorage` and `DOM` agnostic, these Temporary DAG engines execute blazingly fast in perfectly isolated environments.
+The result is a smoother review experience: faster filters, fewer UI pauses, and more confidence that spatial analysis can be used during everyday project work instead of only at the end of a project.

@@ -9,10 +9,10 @@ const PlatformPage = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display selection:bg-primary/30">
       <SEO
-        title="Geova AI Platform — Spatial Intelligence"
-        description="Ask questions in plain language, get spatial answers. Filter, analyze, and export field data with AI-powered dashboards, automated QA/QC, and full audit trails."
+        title="Geova Platform — GIS Review and Spatial Reporting"
+        description="Review, analyze, and export field data with dashboards, QA/QC workflows, audit trails, and GIS-ready handover outputs."
         url="/platform"
-        keywords="GIS platform, spatial analytics, AI dashboards, automated QA/QC, audit trail, offline spatial processing, field data analysis"
+        keywords="GIS platform, spatial analytics, dashboards, automated QA/QC, audit trail, offline spatial processing, field data analysis"
       />
       <Header />
 
@@ -27,15 +27,15 @@ const PlatformPage = () => {
           <div className="max-w-5xl mx-auto w-full relative z-10 text-center space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.3em]">
               <span className="material-symbols-outlined text-[14px]">psychology</span>
-              Geova AI Platform
+              Geova Platform
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-accent dark:text-white">
-              Ask Questions.<br />Get Spatial Answers.
+              Review Field Data.<br />Deliver Reliable Maps.
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              Filter, analyze, and export your field data using plain language. Geova AI turns collected features into dashboards, reports, and validated datasets — without writing SQL or switching tools.
+              Geova turns collected features into review queues, dashboards, reports, and validated datasets without forcing teams to rebuild the workflow in separate GIS, spreadsheet, and reporting tools.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -56,7 +56,7 @@ const PlatformPage = () => {
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Core Capabilities</h2>
               <h3 className="text-4xl md:text-5xl font-black tracking-tight text-accent dark:text-white">
-                What the Platform Does
+                Built around quality control
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                 A practical toolkit for teams that collect, manage, and report spatial data.
@@ -97,16 +97,16 @@ const PlatformPage = () => {
           </div>
         </section>
 
-        {/* AI Features */}
+        {/* Assisted Analysis Features */}
         <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">AI-Powered Analysis</h2>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Assisted Analysis</h2>
               <h3 className="text-4xl md:text-5xl font-black tracking-tight text-accent dark:text-white">
-                Spatial Intelligence, Plain Language
+                Practical spatial queries, plain language
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                Ask Geova AI to count features, find nearby assets, generate filters, or run spatial joins — then preview the results on your map before exporting.
+                Ask the platform to count features, find nearby assets, generate filters, or prepare a spatial join, then review the result on the map before exporting.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ const PlatformPage = () => {
                   <span className="material-symbols-outlined text-3xl text-primary">chat</span>
                   <h4 className="text-lg font-bold text-accent dark:text-white">Natural Language Queries</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Ask questions like <em>"Show damaged streetlights without photos"</em> or <em>"Count inspections by district"</em>. Geova AI generates the query, shows you the SQL, and lets you review before applying.
+                    Ask questions like <em>"Show damaged streetlights without photos"</em> or <em>"Count inspections by district"</em>. Geova prepares the query, shows the logic, and lets you review before applying it.
                   </p>
                 </div>
               </ScanReveal>
@@ -192,7 +192,7 @@ const PlatformPage = () => {
               Connected to Mapplex
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              The Geova AI engine powers Mapplex's spatial queries, data validation, and field analytics — the same tools, available on mobile.
+              Mapplex uses the same project structure, validation rules, and review logic as the Geova Platform, so field and office teams stay aligned.
             </p>
             <div className="pt-4">
               <Link to="/mapplex" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-accent dark:hover:text-white transition-colors">

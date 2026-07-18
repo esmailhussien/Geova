@@ -20,38 +20,38 @@ const MapplexAppPage = () => {
   const interactiveFeatures = [
     {
       id: 0,
-      title: 'AI Spatial Assistant',
-      desc: 'Ask complex spatial questions in natural language. The AI runs filters, generates buffer zones, and detects anomalies instantly on your device.',
-      icon: 'psychology',
-      screenTitle: 'Geova AI Assistant',
+      title: 'Field QA Assistant',
+      desc: 'Find missing photos, incomplete attributes, duplicate points, and records outside the assigned work area before the team leaves site.',
+      icon: 'fact_check',
+      screenTitle: 'QA Review',
       screenData: [
-        { label: 'Query', value: '"Find optimal sites > 5km from wetlands"', color: 'text-brand-orange' },
-        { label: 'Operation', value: 'Spatial Buffer Active', color: 'text-slate-900 dark:text-white' },
-        { label: 'Result', value: '3 Suitable Zones Generated', color: 'text-slate-900 dark:text-white' }
+        { label: 'Check', value: 'Drainage records missing cover photos', color: 'text-brand-orange' },
+        { label: 'Layer', value: 'Manholes - Zone B', color: 'text-slate-900 dark:text-white' },
+        { label: 'Result', value: '18 items need review', color: 'text-slate-900 dark:text-white' }
       ]
     },
     {
       id: 1,
-      title: 'Local Peer-to-Peer Sync',
-      desc: 'Cell towers down? Use Local P2P Sync to share data with colleagues over a portable Wi-Fi router. True offline-first capability.',
+      title: 'Offline Team Sync',
+      desc: 'Share collected edits through a local network, then reconcile updates with the project database when internet connectivity is available.',
       icon: 'wifi_off',
-      screenTitle: 'Offline Storage',
+      screenTitle: 'Local Sync',
       screenData: [
-        { label: 'Mode', value: 'P2P SYNC ACTIVE', color: 'text-brand-orange' },
-        { label: 'Network', value: 'Local Portable Router', color: 'text-slate-900 dark:text-white' },
-        { label: 'Transfer', value: '452 Geometries Synced', color: 'text-slate-900 dark:text-white' }
+        { label: 'Mode', value: 'Offline collection', color: 'text-brand-orange' },
+        { label: 'Network', value: 'Project field router', color: 'text-slate-900 dark:text-white' },
+        { label: 'Transfer', value: '452 edits ready to reconcile', color: 'text-slate-900 dark:text-white' }
       ]
     },
     {
       id: 2,
-      title: 'Smart Logic Forms',
-      desc: 'Forms that think. Utilize Auto-Calculate from Spatial Reference to auto-tag points based on the district they fall inside, plus Lexicon picklists.',
+      title: 'Configured Survey Forms',
+      desc: 'Use required fields, controlled picklists, calculated district values, and severity rules so every contractor collects the same structure.',
       icon: 'dynamic_form',
       screenTitle: 'Asset Inspection',
       screenData: [
         { label: 'Asset Type', value: 'Drainage Manhole', color: 'text-slate-900 dark:text-white' },
-        { label: 'Spatial Tag', value: 'District 4 (Auto-Calculated)', color: 'text-primary' },
-        { label: 'Logic Trigger', value: 'Severity > 3: Auto-flagged', color: 'text-amber-500' }
+        { label: 'District', value: 'District 4 (from boundary layer)', color: 'text-primary' },
+        { label: 'Review Rule', value: 'Severity high: supervisor review', color: 'text-amber-500' }
       ]
     }
   ];
@@ -60,9 +60,9 @@ const MapplexAppPage = () => {
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display relative">
       <SEO
         title="Mapplex — Professional Field Data Collection"
-        description="RTK GNSS-grade mobile data collection app. Works fully offline with on-device AI spatial analysis. Capture, analyze, and sync field data seamlessly with the Geova AI Platform."
+        description="Offline mobile GIS data collection for field teams. Capture locations, forms, photos, QA notes, and sync-ready project updates."
         url="/mapplex"
-        keywords="Mapplex, RTK GNSS, field data collection, offline GIS, mobile mapping, spatial data capture, on-device AI"
+        keywords="Mapplex, field data collection, offline GIS, mobile mapping, spatial data capture, GIS QA QC"
       />
       <Header />
 
@@ -74,17 +74,17 @@ const MapplexAppPage = () => {
               <img src={mapplexIcon} alt="Mapplex Logo" className="w-8 h-8 object-contain" />
               <span className="font-bold text-accent dark:text-white hidden sm:block">Mapplex Field App</span>
             </div>
-            <button className="flex items-center justify-center gap-2 bg-accent dark:bg-white text-white dark:text-accent px-4 py-2 rounded-xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all text-sm font-bold shadow-lg shadow-primary/20">
-              <span className="material-symbols-outlined text-[18px]">android</span>
-              Get it on Google Play
-            </button>
+            <Link to="/contact" className="flex items-center justify-center gap-2 bg-accent dark:bg-white text-white dark:text-accent px-4 py-2 rounded-lg hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all text-sm font-bold shadow-lg shadow-primary/20">
+              <span className="material-symbols-outlined text-[18px]">phone_android</span>
+              Request access
+            </Link>
           </div>
         </div>
       </div>
 
       <main className="flex-grow pt-20 md:pt-24">
         {/* App Hero Section */}
-        <section className="relative px-6 py-20 lg:py-32 overflow-hidden flex items-center min-h-[90vh]">
+        <section className="relative px-6 py-12 lg:py-16 overflow-hidden flex items-center min-h-[76vh]">
           {/* Background Ambient Glow */}
           <div className="absolute inset-0 z-0 opacity-40 dark:opacity-20 pointer-events-none">
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_50%_50%,_rgba(13,148,136,0.15),transparent_70%)]"></div>
@@ -93,45 +93,45 @@ const MapplexAppPage = () => {
 
           <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             {/* Left Box: Marketing Copy */}
-            <div className="space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.3em]">
+            <div className="space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.24em]">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                Mobile Intelligence
+                Field Collection App
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-accent dark:text-white">
-                Take the Power of Geova to the <span className="text-primary">Field</span><span className="text-brand-orange">.</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.08] tracking-tight text-accent dark:text-white">
+                Mapplex keeps field data usable after the site visit.
               </h1>
 
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Empower your mobile workforce with the Mapplex Engine. Capture spatial data with sub-meter precision, sync custom forms, and map offline—built by engineers for extreme field conditions.
+                Capture locations, forms, photos, and notes offline. Review quality issues early, sync project updates cleanly, and export data your GIS and engineering teams can trust.
               </p>
 
               {/* Download Badges */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
-                <button className="flex items-center justify-center gap-4 bg-accent dark:bg-white text-white dark:text-accent px-8 py-4 rounded-2xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-primary/20 hover:-translate-y-1">
-                  <span className="material-symbols-outlined text-3xl">android</span>
+                <Link to="/contact" className="flex items-center justify-center gap-4 bg-accent dark:bg-white text-white dark:text-accent px-8 py-4 rounded-lg hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-primary/20 hover:-translate-y-1">
+                  <span className="material-symbols-outlined text-3xl">phone_android</span>
                   <div className="flex flex-col items-start leading-tight">
-                    <span className="text-[10px] uppercase font-bold opacity-80 tracking-widest">Get it on</span>
-                    <span className="text-sm font-black tracking-wide">Google Play</span>
+                    <span className="text-[10px] uppercase font-bold opacity-80 tracking-widest">Start with</span>
+                    <span className="text-sm font-black tracking-wide">Project Access</span>
                   </div>
-                </button>
+                </Link>
 
-                <button className="flex items-center justify-center gap-4 glass-panel text-slate-400 dark:text-slate-500 px-8 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 cursor-not-allowed opacity-60">
-                  <span className="material-symbols-outlined text-3xl">phone_iphone</span>
+                <a href="/docs/" className="flex items-center justify-center gap-4 glass-panel text-slate-700 dark:text-slate-200 px-8 py-4 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary hover:text-primary transition-colors">
+                  <span className="material-symbols-outlined text-3xl">menu_book</span>
                   <div className="flex flex-col items-start leading-tight">
-                    <span className="text-[10px] uppercase font-bold opacity-80 tracking-widest">Coming Soon to</span>
-                    <span className="text-sm font-black tracking-wide">App Store</span>
+                    <span className="text-[10px] uppercase font-bold opacity-80 tracking-widest">Read the</span>
+                    <span className="text-sm font-black tracking-wide">User Guide</span>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
 
             {/* Right Box: Phone Mockup */}
-            <div className="relative mx-auto w-full max-w-[320px] lg:max-w-sm transform transition-transform hover:scale-105 duration-700">
+            <div className="relative mx-auto w-full max-w-[260px] lg:max-w-[300px] transform transition-transform hover:scale-[1.02] duration-700">
               <div className="aspect-[9/19] rounded-[48px] border-[14px] border-slate-900 shadow-2xl overflow-hidden glass-panel relative bg-slate-50 dark:bg-slate-950 flex flex-col pt-12">
                 {/* Dynamic Island / Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-7 bg-slate-900 rounded-b-3xl z-20"></div>
@@ -143,7 +143,7 @@ const MapplexAppPage = () => {
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-3xl font-black uppercase tracking-tighter text-accent dark:text-white">Mapplex</h3>
-                    <p className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">Mapping & Beyond</p>
+                    <p className="text-xs font-semibold text-primary uppercase tracking-[0.24em]">Offline GIS Capture</p>
                   </div>
                 </div>
 
@@ -152,9 +152,9 @@ const MapplexAppPage = () => {
               </div>
 
               {/* Decorative floating elements */}
-              <div className="absolute -right-8 top-20 glass-panel p-4 rounded-2xl hidden md:flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-                <span className="material-symbols-outlined text-primary">satellite_alt</span>
-                <span className="text-xs font-bold text-accent dark:text-white uppercase tracking-widest">RTK Fixed</span>
+              <div className="absolute -right-8 top-20 glass-panel p-4 rounded-lg hidden md:flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary">my_location</span>
+                <span className="text-xs font-bold text-accent dark:text-white uppercase tracking-widest">GNSS ready</span>
               </div>
             </div>
           </div>
@@ -164,8 +164,8 @@ const MapplexAppPage = () => {
         <section className="py-24 px-6 bg-slate-100 dark:bg-slate-900/50 border-y border-slate-200/50 dark:border-slate-800/50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Interactive Explorer</h2>
-              <h3 className="text-4xl font-black tracking-tight text-accent dark:text-white">Inside the Engine</h3>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.24em]">Field Workflows</h2>
+              <h3 className="text-4xl font-black tracking-tight text-accent dark:text-white">The jobs teams repeat every day</h3>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -186,7 +186,7 @@ const MapplexAppPage = () => {
                     <span className="material-symbols-outlined text-3xl">{interactiveFeatures[activeFeature].icon}</span>
                   </div>
                   <h4 className="text-xl font-bold text-center text-accent dark:text-white mb-6 uppercase tracking-widest">{interactiveFeatures[activeFeature].screenTitle}</h4>
-                  <div className="space-y-4 bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+                  <div className="space-y-4 bg-slate-50 dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800">
                     {interactiveFeatures[activeFeature].screenData.map((item, idx) => (
                       <div key={idx} className="flex flex-col space-y-1 pb-3 mb-3 border-b border-slate-200 dark:border-slate-800 last:border-0 last:pb-0 last:mb-0">
                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.label}</span>
@@ -205,7 +205,7 @@ const MapplexAppPage = () => {
                   <button
                     key={feat.id}
                     onClick={() => setActiveFeature(index)}
-                    className={`w-full text-left p-8 rounded-3xl transition-all duration-300 border ${activeFeature === index
+                    className={`w-full text-left p-8 rounded-lg transition-all duration-300 border ${activeFeature === index
                         ? 'bg-white dark:bg-slate-900 border-primary shadow-xl scale-[1.02]'
                         : 'glass-panel border-transparent hover:border-slate-300 dark:hover:border-slate-700 opacity-60 hover:opacity-100'
                       }`}
@@ -239,7 +239,7 @@ const MapplexAppPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ScanReveal delay={0.1}>
-              <div className="glass-panel p-6 rounded-3xl h-full border border-slate-200 dark:border-slate-800">
+              <div className="glass-panel p-6 rounded-lg h-full border border-slate-200 dark:border-slate-800">
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">folder_zip</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Supported Formats</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
@@ -252,20 +252,20 @@ const MapplexAppPage = () => {
             </ScanReveal>
 
             <ScanReveal delay={0.2}>
-              <div className="glass-panel p-6 rounded-3xl h-full border border-slate-200 dark:border-slate-800">
+              <div className="glass-panel p-6 rounded-lg h-full border border-slate-200 dark:border-slate-800">
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">analytics</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Spatial Analytics</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
-                  <li>• AI SQL Query Engine</li>
-                  <li>• Time Slider (4D Tracking)</li>
+                  <li>• Layer filters and counts</li>
+                  <li>• Buffers and nearby checks</li>
                   <li>• Graduated Symbology</li>
-                  <li>• DAG Orchestration</li>
+                  <li>• Review dashboards</li>
                 </ul>
               </div>
             </ScanReveal>
 
             <ScanReveal delay={0.3}>
-              <div className="glass-panel p-6 rounded-3xl h-full border border-slate-200 dark:border-slate-800">
+              <div className="glass-panel p-6 rounded-lg h-full border border-slate-200 dark:border-slate-800">
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">architecture</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Engineering Tools</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
@@ -278,13 +278,13 @@ const MapplexAppPage = () => {
             </ScanReveal>
 
             <ScanReveal delay={0.4}>
-              <div className="glass-panel p-6 rounded-3xl h-full border border-slate-200 dark:border-slate-800">
+              <div className="glass-panel p-6 rounded-lg h-full border border-slate-200 dark:border-slate-800">
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">groups</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Team Operations</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
-                  <li>• Performance Dashboards</li>
+                  <li>• Assignment tracking</li>
                   <li>• Local Peer-to-Peer Sync</li>
-                  <li>• Live Leaderboards</li>
+                  <li>• Reviewer notes</li>
                   <li>• Role & Permission Control</li>
                 </ul>
               </div>
@@ -301,25 +301,25 @@ const MapplexAppPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
+              <div className="p-8 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
                 <span className="material-symbols-outlined text-4xl text-primary mb-4">corporate_fare</span>
-                <h4 className="text-xl font-bold mb-3">Smart City Asset Management</h4>
+                <h4 className="text-xl font-bold mb-3">Municipal Asset Inspections</h4>
                 <p className="font-light text-slate-400 text-sm leading-relaxed">
-                  Municipalities tracking street-light inspections by multiple contractors. Form Smart Logic auto-triggers cost formulas, while the Team Dashboard ranks top performers in real-time.
+                  Field teams inspect streetlights, signs, road furniture, and drainage assets with consistent forms, required photos, and supervisor review queues.
                 </p>
               </div>
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
-                <span className="material-symbols-outlined text-4xl text-primary mb-4">storm</span>
-                <h4 className="text-xl font-bold mb-3">Disaster Response & Recovery</h4>
+              <div className="p-8 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
+                <span className="material-symbols-outlined text-4xl text-primary mb-4">add_road</span>
+                <h4 className="text-xl font-bold mb-3">Road & Drainage Inventory</h4>
                 <p className="font-light text-slate-400 text-sm leading-relaxed">
-                  Field teams assessing structural damage with zero cell connectivity. Workers use Local P2P Sync to share data over a portable router, and Geova AI calculates instant blast radii impacts.
+                  Contractors capture as-is asset locations, condition, dimensions, and attachments, then export clean GIS layers for client review and handover.
                 </p>
               </div>
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
+              <div className="p-8 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
                 <span className="material-symbols-outlined text-4xl text-primary mb-4">eco</span>
-                <h4 className="text-xl font-bold mb-3">Environmental Audits</h4>
+                <h4 className="text-xl font-bold mb-3">Environmental & Coastal Surveys</h4>
                 <p className="font-light text-slate-400 text-sm leading-relaxed">
-                  Agencies tagging wildlife sightings perfectly. Points are auto-calculated into political districts via Spatial Reference Layers, and AI runs anomaly detection on the final logs.
+                  Surveyors record outfalls, shoreline observations, sample points, and site photos while keeping each feature tied to project boundaries and review status.
                 </p>
               </div>
             </div>
@@ -332,25 +332,25 @@ const MapplexAppPage = () => {
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Quick Start</h2>
               <h3 className="text-3xl md:text-4xl font-black tracking-tight text-accent dark:text-white">
-                From Field to Dashboard.
+                From field capture to review.
               </h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto text-2xl font-black">1</div>
-                <h4 className="text-lg font-bold text-accent dark:text-white">Connect GPS</h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-light px-4">Pair high-precision external RTK receivers for robust real-time sub-meter tracking.</p>
+                <h4 className="text-lg font-bold text-accent dark:text-white">Set up the project</h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-light px-4">Load layers, forms, picklists, map tiles, and team assignments before crews start collection.</p>
               </div>
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto text-2xl font-black">2</div>
                 <h4 className="text-lg font-bold text-accent dark:text-white">Collect Offline</h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-light px-4">Capture data seamlessly using cached vector layers and custom forms, even without internet.</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-light px-4">Capture locations, forms, photos, and edits with cached map layers when internet is unreliable.</p>
               </div>
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto text-2xl font-black">3</div>
-                <h4 className="text-lg font-bold text-accent dark:text-white">Sync to Geova</h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-light px-4">When connectivity returns, push all edits to the central server for instant QA/QC review.</p>
+                <h4 className="text-lg font-bold text-accent dark:text-white">Review and export</h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-light px-4">Sync edits, resolve QA notes, and export GIS-ready deliverables for the client or authority.</p>
               </div>
             </div>
 
@@ -358,7 +358,7 @@ const MapplexAppPage = () => {
             <div className="pt-16 border-t border-slate-200/50 dark:border-slate-800/50 text-center">
               <h4 className="text-2xl font-bold text-accent dark:text-white mb-4">Need detailed instructions?</h4>
               <p className="text-slate-600 dark:text-slate-400 font-light mb-8 max-w-2xl mx-auto">
-                Dive deep into the Mapplex ecosystem with our comprehensive documentation. Learn how to configure RTK profiles, set up custom vector layers, and manage offline synchronization workflows.
+                The guide covers project setup, forms, layers, map exports, offline synchronization, QA review, and engineering drawing output.
               </p>
               <a href="/docs/" className="inline-flex items-center justify-center gap-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl hover:-translate-y-1">
                 <span className="material-symbols-outlined text-xl">menu_book</span> Read the User Guide

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScanReveal } from '../components/animations/ScanReveal';
 import { TopographicBackground } from '../components/animations/TopographicBackground';
 import Header from '../components/landing/Header';
@@ -6,10 +6,35 @@ import Footer from '../components/landing/Footer';
 import SEO from '../components/seo/SEO';
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const subject = `Geova project inquiry from ${formData.name || 'website visitor'}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      '',
+      'Message:',
+      formData.message,
+    ].join('\n');
+
+    window.location.href = `mailto:info@geova.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <div className="min-h-screen bg-background-light dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 relative override-light">
@@ -80,30 +105,30 @@ const ContactPage = () => {
               <div className="glass-panel border border-slate-200 dark:border-slate-800 p-8 min-h-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl shadow-xl flex flex-col justify-center">
                  <div className="flex items-center gap-3 mb-10 border-b border-slate-200 dark:border-slate-800 pb-5">
                     <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(13,148,136,0.6)]" />
-                    <span className="text-[10px] sm:text-xs font-mono tracking-[0.2em] text-slate-500 uppercase">Secure Form · Awaiting Your Message</span>
+                    <span className="text-[10px] sm:text-xs font-mono tracking-[0.2em] text-slate-500 uppercase">Project Inquiry · Opens Your Email Client</span>
                  </div>
                  
-                 <form className="space-y-8 flex-grow flex flex-col">
+                 <form className="space-y-8 flex-grow flex flex-col" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                        <div>
                           <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Your Name</label>
-                          <input type="text" className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm focus:border-primary outline-none transition-colors rounded overflow-hidden" placeholder="Full Name or Organization..." />
+                          <input name="name" type="text" value={formData.name} onChange={handleChange} className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm focus:border-primary outline-none transition-colors rounded overflow-hidden" placeholder="Full Name or Organization..." />
                        </div>
                        <div>
                           <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Email Address</label>
-                          <input type="email" className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm focus:border-primary outline-none transition-colors font-mono rounded overflow-hidden" placeholder="user@domain.com" required />
+                          <input name="email" type="email" value={formData.email} onChange={handleChange} className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm focus:border-primary outline-none transition-colors font-mono rounded overflow-hidden" placeholder="user@domain.com" required />
                        </div>
                     </div>
 
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Your Message</label>
-                      <textarea rows="6" className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm focus:border-primary outline-none transition-colors rounded resize-none" placeholder="Tell us about your project..."></textarea>
+                      <textarea name="message" rows="6" value={formData.message} onChange={handleChange} className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm focus:border-primary outline-none transition-colors rounded resize-none" placeholder="Tell us about your project..." required></textarea>
                     </div>
 
                     <div className="mt-auto pt-6 flex justify-end">
-                      <button type="button" className="group relative bg-primary hover:bg-teal-500 text-white font-bold uppercase tracking-[0.2em] text-[10px] px-8 py-4 overflow-hidden transition-all duration-300">
+                      <button type="submit" className="group relative bg-primary hover:bg-teal-500 text-white font-bold uppercase tracking-[0.2em] text-[10px] px-8 py-4 overflow-hidden transition-all duration-300">
                         <span className="relative z-10 flex items-center gap-2">
-                          Send Message <span className="material-symbols-outlined text-sm">send</span>
+                          Prepare Email <span className="material-symbols-outlined text-sm">send</span>
                         </span>
                         <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500" />
                       </button>

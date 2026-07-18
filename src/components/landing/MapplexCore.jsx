@@ -7,7 +7,7 @@ const MapplexCore = () => {
         <div className="mb-12">
           <h2 className="text-sm font-black uppercase tracking-[0.4em] text-primary mb-4">Core Engine</h2>
           <h3 className="text-5xl md:text-7xl font-black text-accent dark:text-white">MAPPLEX<sup className="text-2xl font-light">®</sup></h3>
-          <p className="mt-6 text-xl text-slate-500 dark:text-slate-400 max-w-2xl font-light">The first intelligent system designed to synchronize spatial data with real-time operational logic.</p>
+          <p className="mt-6 text-xl text-slate-500 dark:text-slate-400 max-w-2xl font-light">A field data collection app for offline mapping, structured forms, local sync, and GIS-ready exports.</p>
         </div>
         <div className="w-full relative">
           <div className="absolute inset-0 flex items-center justify-center opacity-10">
@@ -42,18 +42,18 @@ const MapplexCore = () => {
         <div className="grid md:grid-cols-3 gap-12 mt-20 max-w-5xl">
           <div className="space-y-4">
             <div className="text-primary"><span className="material-symbols-outlined text-3xl">fluid</span></div>
-            <h5 className="font-bold text-lg">Multi-Dimensional Mapping (2D–4D + Analytics)</h5>
-            <p className="text-sm text-slate-500">Understands 4D environments, accounting for temporal changes in spatial datasets.</p>
+            <h5 className="font-bold text-lg">Layer-Based Field Mapping</h5>
+            <p className="text-sm text-slate-500">Capture points, lines, polygons, attributes, photos, and notes against the right project layer.</p>
           </div>
           <div className="space-y-4">
             <div className="text-primary"><span className="material-symbols-outlined text-3xl">token</span></div>
             <h5 className="font-bold text-lg">Full Audit Trail & Version History</h5>
-            <p className="text-sm text-slate-500">Every spatial adjustment is recorded on a secure, distributed system protocol.</p>
+            <p className="text-sm text-slate-500">Every spatial adjustment is tied to a user, timestamp, and project record for later review.</p>
           </div>
           <div className="space-y-4">
             <div className="text-primary"><span className="material-symbols-outlined text-3xl">auto_fix_high</span></div>
             <h5 className="font-bold text-lg">Automated QA/QC Validation</h5>
-            <p className="text-sm text-slate-500">Mapplex identifies data anomalies and resolves architectural conflicts autonomously.</p>
+            <p className="text-sm text-slate-500">Mapplex highlights missing attributes, attachment gaps, and geometry issues before handover.</p>
           </div>
         </div>
       </div>

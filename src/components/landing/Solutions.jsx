@@ -6,11 +6,11 @@ const Solutions = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-xl">
-            <h2 className="text-sm font-black uppercase tracking-[0.4em] text-primary mb-4">Ecosystems</h2>
-            <h3 className="text-4xl font-bold text-accent dark:text-white">Precision Engineering for Complex Environments</h3>
+            <h2 className="text-sm font-black uppercase tracking-[0.24em] text-primary mb-4">Workflows</h2>
+            <h3 className="text-4xl font-bold text-accent dark:text-white">Reliable GIS operations for complex projects</h3>
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs font-light">
-            Specialized frameworks designed for autonomous systems, urban planning, and deep-tech logistical networks.
+            Practical tools for field collection, quality review, infrastructure reporting, and spatial decision support.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
@@ -27,8 +27,8 @@ const Solutions = () => {
             </div>
             <div className="relative z-10 space-y-4">
               <span className="material-symbols-outlined text-4xl text-primary">settings_input_component</span>
-              <h4 className="text-3xl font-bold">AI-Powered Spatial Analytics Engine</h4>
-              <p className="max-w-md text-slate-300 font-light">The backbone of future automation. We design proprietary spatial kernels that allow machines to navigate and understand complex physical domains.</p>
+              <h4 className="text-3xl font-bold">Spatial Review & Reporting</h4>
+              <p className="max-w-md text-slate-300 font-light">Turn collected layers into filters, QA lists, dashboards, and export packages that project teams can review and trust.</p>
               <button className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-primary pt-4 group">
                 Learn More <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
               </button>
@@ -38,8 +38,8 @@ const Solutions = () => {
           <div className="md:col-span-5 grid grid-rows-2 gap-6">
             <div className="glass-panel rounded-3xl p-8 flex flex-col justify-center border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
               <span className="material-symbols-outlined text-3xl text-primary mb-4">hub</span>
-              <h4 className="text-xl font-bold mb-2">Smart Infrastructure Network Analysis</h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Designing high-efficiency communication nodes for smart cities and satellite infrastructure.</p>
+              <h4 className="text-xl font-bold mb-2">Infrastructure Asset Analysis</h4>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Inspect road, drainage, utility, and public asset layers with clear attributes, photos, and status fields.</p>
             </div>
             <div className="bg-primary/10 dark:bg-primary/5 border border-primary/20 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group">
               <div className="relative z-10">

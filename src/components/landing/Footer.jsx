@@ -14,9 +14,9 @@ const Footer = () => {
             Intelligent Infrastructure. Built by Engineers, for Engineers.
           </p>
           <div className="flex gap-4">
-            <a className="text-slate-400 hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">share</span></a>
-            <a className="text-slate-400 hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">alternate_email</span></a>
-            <a className="text-slate-400 hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">hub</span></a>
+            <Link className="text-slate-400 hover:text-primary transition-colors" to="/contact" aria-label="Contact Geova"><span className="material-symbols-outlined">contact_mail</span></Link>
+            <a className="text-slate-400 hover:text-primary transition-colors" href="mailto:info@geova.net" aria-label="Email Geova"><span className="material-symbols-outlined">alternate_email</span></a>
+            <a className="text-slate-400 hover:text-primary transition-colors" href="/docs/" aria-label="Open documentation"><span className="material-symbols-outlined">menu_book</span></a>
           </div>
         </div>
         <div className="space-y-6">
@@ -34,8 +34,7 @@ const Footer = () => {
             <li><a className="hover:text-primary transition-colors" href="/docs/">Documentation</a></li>
             <li><Link className="hover:text-primary transition-colors" to="/guide">User Manual</Link></li>
             <li><Link className="hover:text-primary transition-colors" to="/updates">Updates</Link></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Security Certifications</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+            <li><Link className="hover:text-primary transition-colors" to="/contact">Contact</Link></li>
           </ul>
         </div>
         <div className="space-y-6">
@@ -59,24 +58,20 @@ const Footer = () => {
           </ul>
         </div>
         <div className="space-y-6">
-          <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Industry Insights Newsletter</h4>
-          <p className="text-sm text-slate-500 font-light">Subscribe for product updates and industry insights.</p>
-          <form className="flex">
-            <input
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-l-lg px-4 py-3 w-full text-xs focus:ring-1 focus:ring-primary outline-none"
-              placeholder="Email"
-              type="email"
-            />
-            <button className="bg-primary text-white px-4 py-3 rounded-r-lg font-bold text-xs uppercase hover:bg-teal-700 transition-colors" type="submit">Join</button>
-          </form>
+          <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-accent dark:text-white">Product Updates</h4>
+          <p className="text-sm text-slate-500 font-light">Read release notes and practical field workflow updates from the Geova team.</p>
+          <Link to="/updates" className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-teal-700">
+            View Updates
+            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </Link>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
         <p>© 2026 Geova Technologies. All rights reserved.</p>
         <div className="flex gap-8">
           <Link className="hover:text-primary" to="/privacy">Privacy Policy</Link>
-          <a className="hover:text-primary" href="#">Terms of Service</a>
-          <a className="hover:text-primary" href="#">Legal</a>
+          <a className="hover:text-primary" href="/docs/">Documentation</a>
+          <Link className="hover:text-primary" to="/contact">Contact</Link>
         </div>
       </div>
     </footer>

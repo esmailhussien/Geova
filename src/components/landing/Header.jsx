@@ -4,9 +4,18 @@ import MagneticButton from '../common/MagneticButton';
 import logo from '../../assets/GEOVA.png';
 import { Link } from 'react-router-dom';
 
+const getInitialDarkMode = () => {
+  if (typeof window === 'undefined') return false;
+
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  return savedTheme === 'dark' || (!savedTheme && prefersDark);
+};
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(getInitialDarkMode);
   const [expandedMenu, setExpandedMenu] = useState(null); // Tracks open accordion on mobile
 
   // Physics scroll triggers for Smart Island Navigation
@@ -16,31 +25,21 @@ const Header = () => {
   const navRadius = useTransform(scrollY, [0, 80], ['0px', '9999px']);
   const navShadow = useTransform(scrollY, [0, 80], ['0px 0px 0px rgba(0,0,0,0)', '0px 20px 40px -10px rgba(0,0,0,0.1)']);
 
-  // Initialize theme on mount
+  // Keep the document theme aligned with the selected navigation state.
   useEffect(() => {
-    // Check local storage or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (isDark) {
       document.documentElement.classList.add('dark');
-      setIsDark(true);
     } else {
       document.documentElement.classList.remove('dark');
-      setIsDark(false);
     }
-  }, []);
+  }, [isDark]);
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      setIsDark(true);
-    }
+    setIsDark((current) => {
+      const next = !current;
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+      return next;
+    });
   };
 
   const toggleMobileMenu = () => {
@@ -97,8 +96,8 @@ const Header = () => {
                     <span className="material-symbols-outlined text-[18px]">psychology</span>
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">AI Analytics</div>
-                    <div className="text-[10px] text-slate-500">Spatial Intelligence Engine</div>
+                    <div className="font-bold text-sm text-accent dark:text-white group-hover/item:text-primary">Assisted Analysis</div>
+                    <div className="text-[10px] text-slate-500">Queries, filters, and QA review</div>
                   </div>
                 </Link>
                 <Link to="/platform" className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -199,7 +198,7 @@ const Header = () => {
                     <span className="material-symbols-outlined text-[18px]">widgets</span> Features
                   </Link>
                   <Link onClick={toggleMobileMenu} to="/platform" className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-3">
-                    <span className="material-symbols-outlined text-[18px]">psychology</span> AI Analytics
+                    <span className="material-symbols-outlined text-[18px]">psychology</span> Assisted Analysis
                   </Link>
                   <Link onClick={toggleMobileMenu} to="/platform" className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-3">
                     <span className="material-symbols-outlined text-[18px]">dashboard</span> Dashboards

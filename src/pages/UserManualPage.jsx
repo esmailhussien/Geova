@@ -17,7 +17,7 @@ const modules = [
     id: '01',
     title: 'Project Dashboard',
     subtitle: 'Create & Manage Projects',
-    desc: 'Creating projects, hosted vs. local storage, sync status, storage usage, and the AI-assisted SQL query engine.',
+    desc: 'Creating projects, hosted vs. local storage, sync status, storage usage, and assisted SQL query tools.',
     icon: 'dashboard',
     href: '/docs/guide/01-dashboard-view.html',
     color: 'from-blue-500 to-indigo-600',
@@ -44,7 +44,7 @@ const modules = [
     id: '04',
     title: 'Forms & Smart Logic',
     subtitle: 'Data Entry Design',
-    desc: '10 field types, spatial auto-fill, schema import, Lexicon picklists, and AI-assisted conditional rules.',
+    desc: '10 field types, spatial auto-fill, schema import, Lexicon picklists, and conditional rules.',
     icon: 'assignment',
     href: '/docs/guide/04-forms-view.html',
     color: 'from-amber-500 to-orange-600',
@@ -71,7 +71,7 @@ const modules = [
     id: '07',
     title: 'Team & Collaboration',
     subtitle: 'Manage Your Crew',
-    desc: 'Performance KPIs, sparkline charts, leaderboards, member roster, invite system, and role management.',
+    desc: 'Activity summaries, progress charts, member roster, invite system, and role management.',
     icon: 'groups',
     href: '/docs/guide/07-team-view.html',
     color: 'from-sky-500 to-blue-600',
@@ -249,10 +249,7 @@ const UserManualPage = () => {
       <main className="flex-grow pt-20 md:pt-24">
         {/* ─── Hero ──────────────────────────────────────────────── */}
         <section className="relative overflow-hidden px-6 py-20 md:py-28 text-center border-b border-slate-200/50 dark:border-slate-800/50">
-          {/* Gradient glow */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 dark:bg-primary/5 rounded-full blur-[120px]" />
-          </div>
+          <div className="absolute inset-0 pointer-events-none opacity-[0.06] bg-[linear-gradient(to_right,rgba(15,23,42,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.45)_1px,transparent_1px)] bg-[size:56px_56px]" />
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -269,7 +266,7 @@ const UserManualPage = () => {
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
               Everything you need to deploy, configure, and master Mapplex — from first login
-              to advanced spatial analytics powered by Geova AI.
+              to assisted spatial queries, exports, and project handover.
             </p>
             <div className="flex justify-center gap-4 pt-2">
               <a
