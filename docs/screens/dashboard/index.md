@@ -5,21 +5,21 @@ description: Detailed technical and user documentation for the Geova Dashboard c
 
 ---
 title: System Dashboard
-description: Manage all your active spatial projects, track storage, and analyze vast datasets instantly.
+description: Manage projects, monitor storage, and review spatial data.
 ---
 
 # System Dashboard
 
 ## Overview
-The **Dashboard** is your high-altitude command center for the Geova GIS platform. Before you ever load a map canvas, this screen allows you to create new projects, seamlessly transition between Offline and Cloud storage, upload massive GeoJSON files, and run instant statistical cross-filtering on millions of geometric shapes.
+The **Dashboard** is where you create projects, choose local or cloud storage, import spatial files, and review project activity before opening the map.
 
 ## Action Steps
 
 ### 1. Create a New Geospatial Project
 1. Click **New Project** in the top right corner.
-2. Choose a name for your workspace (e.g., *"Global Seismic Activity"*).
-3. Select your deployment tier: **Hosted (Cloud)** for team sharing or **Local (Offline)** for massive isolated analysis.
-4. Drag and drop a valid `.kml`, `.kmz`, or `.geojson` file to instantly prepopulate the map.
+2. Choose a name for your project (for example, *"Water Utility Survey"*).
+3. Select **Hosted (Cloud)** for team sharing or **Local (Offline)** for work that stays on the device.
+4. Drag and drop a valid `.kml`, `.kmz`, or `.geojson` file to begin importing data into the project.
 
 ### 2. Monitor Sync Health & Storage
 1. Check the **Global Stats Module** at the top of the interface. 
@@ -30,13 +30,13 @@ The **Dashboard** is your high-altitude command center for the Geova GIS platfor
 Want instant metrics without rendering a heavy map?
 1. Tap any active Project Card in the grid. The Detail Modal will launch.
 2. Select your imported Data Layer from the dropdown. 
-3. Watch the animated counters calculate exact **Feature Counts** and **Geographic Areas** globally.
+3. Review the **Feature Counts** and **Geographic Areas** for the selected project.
 4. Use the **Guided Builder** to filter:
    - Run simple logic checks like *Severity Level GREATER THAN 3* and click **Run Query**.
-   - The results table will instantly output your targets, letting you export a CSV immediately!
+   - Review the filtered results and export them as CSV when needed.
 
 ## Pro-Tips
-> 💡 **Tip:** Organizing a massive fleet? Use the persistent top tabs to seamlessly switch between your **Personal Workspace** and **Team & Shared** environments.
+> **Tip:** Working with a team? Use the top tabs to switch between your **Personal Workspace** and **Team & Shared** environments.
 
 > 💡 **Tip:** Be mindful of file uploads! If you drag a `.geojson` file over 5MB, Geova evaluates the complexity in real-time and will warn you before bogging down your system.
 
@@ -44,9 +44,9 @@ Want instant metrics without rendering a heavy map?
 
 ## Technical Architecture (For Developers)
 
-The Dashboard maintains uncompromising 60FPS UI repaints despite processing colossal, schema-less GIS arrays.
+The Dashboard uses chunked processing and background work to keep project and import screens responsive.
 
 - **Event Loop Cohesion via Async Chunking:** Schema induction on 10,000+ GeoJSON features is processed synchronously in burst blocks of 500, yielding back to the main thread via `await new Promise(resolve => setTimeout(resolve, 0))`. This prevents the standard 500ms UI lockdown common in heavy web GIS tools.
-- **Sub-Linear Measurement Extrapolation:** When calculating the total baseline footprint (`Area`/`Length`) of a 5000+ multipolygon array via Turf.js, running $O(N)$ geometry math crashes memory. Dashboard implements a **Measurement Sampling Cap**, isolating 200 evenly-indexed bounds, calculating standard deviation, and scaling to the aggregate—providing phenomenally optimal 95% baseline accuracy in millisecond rendering bounds.
+- **Measurement Sampling:** For some large datasets, the Dashboard may use sampled measurements to keep summary calculations responsive. Treat sampled totals as estimates and use feature-level calculations when an exact value is required.
 - **Web Worker Offloading:** Massive file extractions (`.kmz` unzipping and KML destructuring) are ferried directly to `fileImportService` Web Workers, ensuring the UI CSS loading animations never stall.
 - **AbortPattern Garbage Collection:** Heavy event listeners attached closely to recursive file dropzones are destroyed proactively via a module-scoped `_dashboardAbort.abort()` signal whenever the Dashboard unmounts.

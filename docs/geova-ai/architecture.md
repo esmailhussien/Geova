@@ -1,38 +1,38 @@
 ---
 title: Geova AI Engine Architecture
-description: Deep dive into the privacy-first, purely client-side spatial computation engine driving Geova AI.
+description: How Geova AI combines local spatial processing with Geova Cloud assistance.
 ---
 
 ---
 title: Geova AI Architecture
-description: Deep dive into the privacy-first, purely client-side spatial computation engine driving Geova AI.
+description: How Geova AI combines local spatial processing with Geova Cloud assistance.
 ---
 
 # Geova AI Architecture
 
 ## Overview
-Geova AI represents a paradigm shift in geospatial intelligence. Most AI engines require you to upload your sensitive, proprietary corporate data to a third-party cloud. Geova AI calculates everything **100% locally within your device**, guaranteeing total data privacy while translating your natural language into complex analytics.
+Geova AI combines a conversational planning layer with local geospatial processing. The AI service receives the limited context needed to interpret a request, such as schema details, sample field values, and relevant location context. Full datasets and geometries are not uploaded automatically for ordinary chat planning.
 
 ## Action Steps
 
 ### 1. Working Offline
-1. You can freely use Geova AI while completely disconnected from the internet! Just load your field data, switch to local mode, and prompt the AI.
-2. Because the spatial engine (Turf.js) runs entirely within the browser's Web Worker context, the calculations natively leverage your tablet's local processing power.
+1. Mapplex data collection, form entry, drawing, and other supported local workflows continue without an internet connection.
+2. Geova AI chat requires a signed-in session, network access, and available workspace credits.
 
 ### 2. Ensuring Data Privacy
-1. No configuration is required to establish privacy.
-2. When you prompt Geova AI with *"Merge these pipelines"*, your geometric shapes are never transmitted. The AI orchestrator only interacts with the schema instructions, while the actual geographic processing remains cordoned off inside your local device RAM.
+1. When a request is sent, review the context shown by the app and avoid including sensitive values in the prompt itself.
+2. Where the operation is supported locally, the spatial calculation runs in the browser. The app does not automatically upload the full project dataset or all geometries for ordinary chat planning.
 
 ## Pro-Tips
-> 💡 **Tip:** If an AI operation seems to take longer than a few milliseconds, it's likely a massive scale bounding box calculation running natively. You don't need to refresh; the system uses progressive rendering to prevent your screen from freezing.
+> **Tip:** Review the generated query and map result before saving it as a project layer. Large layers or complex operations may take longer to complete.
 
 ---
 
 ## Technical Architecture (For Developers)
 
-Geova AI passes instructions across four highly specialized micro-orchestrators to securely decouple logic from mathematics.
+Geova AI separates intent parsing from spatial execution so each step can be reviewed and validated.
 
 - **AI Orchestrator**: The semantic brain. Responsible for conversational intent detection and extracting multi-step variables.
-- **DAG Compute Engine**: A Web Worker compatible grid running 40+ top-tier spatial operations in an isolated thread. It receives `JSON-RPC` triggers and applies them mathematically.
-- **DAG Result Validator**: A rigorous quality assurance layer. Before mutating the DOM, it scans output variables for "Null Island" coordinate errors or empty arrays.
+- **DAG Compute Engine**: A Web Worker-compatible execution layer that receives structured operation requests and applies supported spatial functions.
+- **DAG Result Validator**: Checks result variables for invalid coordinates, empty results, and other conditions before the map is updated.
 - **Topological Sorting**: Temporary Spatial Directed Acyclic Graphs compile dependencies (e.g. `Step 1 (Buffer)` logically types into `Step 2 (Intersect)`), mapping the execution path so that overlapping geographic logic executes without infinite loops or race-conditions.

@@ -5,13 +5,13 @@ description: Technical and user documentation covering the Enterprise Authentica
 
 ---
 title: Authentication & Login
-description: Securely access your hosted GIS workspaces or deploy instantly to the field in Offline Mode.
+description: Securely access your hosted GIS workspaces or continue local work when connectivity is unavailable.
 ---
 
 # Authentication & Login
 
 ## Overview
-The **Authentication View** is your secure entryway into the Geova platform. Whether you are syncing massive datasets over gigabit fiber in the office, or running completely disconnected deep in the field, this screen ensures your data is protected and available when you need it.
+The **Authentication View** is the entry point for Geova Cloud workspaces and local Guest Mode. It supports sign-in, account requests, password recovery, and local work when connectivity is unavailable.
 
 ## Action Steps
 
@@ -19,7 +19,7 @@ The **Authentication View** is your secure entryway into the Geova platform. Whe
 If you already have an account setup by your administrator:
 1. Enter your registered email address and password.
 2. Tap **Sign In**.
-3. If successful, you will instantly drop into the main Dashboard. 
+3. If successful, Mapplex opens the main Dashboard.
 
 ### 2. Request a New Account
 If you are a new field engineer needing access:
@@ -42,8 +42,8 @@ Operating in a region with zero cellular connectivity?
 
 ## Technical Architecture (For Developers)
 
-The `AuthView.js` manages identity assertion securely using isolated zero-trust cloud pipelines. 
+The `AuthView.js` manages sign-in, registration, password recovery, pending approval, and Guest Mode.
 
-- **Session Handling:** Bypasses heavy complex routers by relying purely on rapid JavaScript event delegation (`document.dispatchEvent(new CustomEvent('auth-change'))`) to shift the DOM instantly, saving mobile battery.
+- **Session Handling:** Announces authentication changes through the app's `auth-change` event so dependent views can refresh their state.
 - **Dynamic Route Hashing:** Intercepts password reset magic links directly from URL hashes (`#type=recovery`) to inject reset forms pre-flight, preventing unnecessary React DOM repaints.
-- **Data Wipes:** Logging out physically executes `AuthManager.signOut()`, securely destroying locally cached JSON Web Tokens (JWT) so the next user handling the iPad cannot access previous session states.
+- **Data Wipes:** Logging out executes `AuthManager.signOut()` and clears locally cached session data so the next user cannot reuse the previous session on the device.

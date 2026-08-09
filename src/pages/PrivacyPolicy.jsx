@@ -1,10 +1,17 @@
 import React from 'react';
 import Header from '../components/landing/Header';
 import Footer from '../components/landing/Footer';
+import SEO from '../components/seo/SEO';
 
 const PrivacyPolicy = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+      <SEO
+        title="Privacy Policy"
+        description="Read Geova's privacy policy for Mapplex field data, local-first storage, Geova Cloud synchronization, location services, and security practices."
+        url="/privacy"
+        keywords="Geova privacy policy, Mapplex data privacy, GIS data security, location data, Geova Cloud"
+      />
       <Header />
 
       <main className="flex-grow pt-20 md:pt-24 pb-20 px-6">

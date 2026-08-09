@@ -30,4 +30,4 @@ Mapplex operates an explicit-approval model.
    - `collector`: Can add features, cannot delete others.
    - `editor`: Can review and modify any feature.
    - `admin`: Full workspace control.
-3. **Revocation**: Admins can instantly revoke users, bumping them back into the Pending queue and deleting their local JWT, locking them out of the current project instantly.
+3. **Revocation**: Admins can revoke users, return them to the Pending queue, and invalidate their current Geova Cloud session.

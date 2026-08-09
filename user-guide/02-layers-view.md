@@ -1,3 +1,8 @@
+---
+title: Layers & Symbology
+description: Create Mapplex layers, manage geometry types, apply data-driven styles, and configure the Data Dictionary.
+---
+
 # Module 02: Layers & Symbology
 
 > Layers organize spatial data by theme. Each layer has a geometry type, visual style, and optional form schema. This module covers creating layers, styling them, labeling features, and applying field-based symbology.

@@ -1,3 +1,8 @@
+---
+title: Mapplex User Guide
+description: A practical guide to offline GIS field collection, forms, spatial data import and export, Geova AI, and team workflows.
+---
+
 # Mapplex User Guide
 
 > **Mapplex** - field mapping, data collection, and geospatial reporting
@@ -8,6 +13,20 @@
 Welcome to the **Mapplex User Guide**. This guide explains how to install Mapplex, create projects, collect data in the field, manage layers and forms, import and export GIS files, and produce map reports.
 
 Mapplex is an **offline-first geospatial operations platform** for teams that need dependable field workflows. It supports solo work, small survey teams, and larger organizations that manage multiple projects, roles, and data sources from one application.
+
+---
+
+## What's New in This Guide
+
+This edition documents the latest tested field and data-exchange workflows:
+
+- **File Geodatabase (GDB)** import and export for feature layers, related records, and supported attachments
+- **Relationships** between parent assets and records such as inspections or work orders
+- **Attachments and galleries** for photos, PDFs, and supporting field evidence
+- **Spatial Auto-Fill** from another reference layer, including the centroid behavior for line and polygon features
+- **Lexicon Picklists** for consistent values across forms and layers
+
+For the complete capability boundaries and setup requirements, see the [Capability Reference](./15-capability-reference.md). For a practical end-to-end example, see the [Municipal Asset Inspection](./16-sample-project-municipal-asset-inspection.md) walkthrough.
 
 ---
 
@@ -99,6 +118,8 @@ These features often save the most time once a project is already set up:
 | **Lexicon Picklists** | Keep names, categories, and codes consistent across projects and teams | [Forms & Smart Logic](./04-forms-view.md) |
 | **Spatial Auto-Fill** | Look up another reference layer by location and copy a matching polygon attribute into the form, such as district, parcel, or management area | [Forms & Smart Logic](./04-forms-view.md) and [Data & Sync](./05-data-view.md) |
 | **Auto Geometry Fields** | Store coordinates, length, area, or perimeter values from the feature geometry | [Forms & Smart Logic](./04-forms-view.md) |
+| **GDB Exchange** | Exchange feature layers with supported relationships, related records, and attachments | [Data & Sync](./05-data-view.md) and [Capability Reference](./15-capability-reference.md) |
+| **Related Records & Attachments** | Keep inspections, work orders, photos, PDFs, and other evidence connected to the correct parent asset | [Data & Sync](./05-data-view.md) and [Sample Project](./16-sample-project-municipal-asset-inspection.md) |
 | **Offline Field Checklist** | Prepare devices, maps, roles, GPS, and sync before field deployment | [Capability Reference](./15-capability-reference.md) |
 
 ---
@@ -118,6 +139,8 @@ Use this table when you are deciding how to set up a workflow:
 | **Find records with plain language** | AI-assisted SQL / filters | Drafts a reviewable filter for incomplete work, urgent repairs, missing photos, or other QA checks |
 | **Run spatial questions like nearest, buffer, join, or summarize by zone** | Geova AI spatial analysis | Produces result tables, map previews, exports, or temporary layers for review |
 | **Import operational GIS data** | GeoJSON, KMZ/KML, GeoPackage, CSV/Excel | Good for existing GIS files, spreadsheets, and field-ready point datasets |
+| **Exchange a complete GIS package** | File Geodatabase (GDB) | Use when layers, related records, and supported attachments need to move together |
+| **Keep field evidence with an asset** | Attachments, Gallery, and relationships | Store photos, PDFs, and follow-up records with the feature they support |
 | **Import engineering or formal GIS exchange files** | CAD Manager or SHP Manager | Use DXF for CAD drawings and SHP for shapefile packages from GIS teams |
 | **Prepare work with no reliable internet** | Offline map tiles and local/P2P workflow | Download basemaps first and confirm sync or handoff method before fieldwork |
 | **Explain why a feature is locked** | Capability Reference | Check the required plan, role, setting, network, and device support |
@@ -135,7 +158,7 @@ Follow the modules in order for a full walkthrough, or jump directly to the sect
 | [**02**](./02-layers-view.md) | **Layers & Symbology** | Geometry types, styling, categorical/graduated classification, completion tracking, Data Dictionary |
 | [**03**](./03-map-view.md) | **Map View** | Drawing tools, GPS tracking, auto-track, offline tiles, measurements, split/merge, sketch mode |
 | [**04**](./04-forms-view.md) | **Forms & Smart Logic** | 10 field types, spatial auto-fill, schema import, Lexicon picklists, AI-assisted conditional rules |
-| [**05**](./05-data-view.md) | **Data & Sync** | Export formats and entitlements, file signature detection, spreadsheet wizard, P2P sync, reference zones |
+| [**05**](./05-data-view.md) | **Data & Sync** | Export formats, GDB relationships and attachments, file imports, spreadsheet wizard, P2P sync, reference zones |
 | [**06**](./06-geova-ai-chat.md) | **Geova AI Assistant** | Natural language queries, prompt cookbook, @mention layers, display modes, export/commit results |
 | [**07**](./07-team-view.md) | **Team & Collaboration** | Performance KPIs, sparkline charts, leaderboards, member roster, invite system, role management |
 | [**08**](./08-settings.md) | **Settings, Account & Workspace** | 15 app settings, device management, workspace switcher, offline maps, subscriptions & entitlements |
@@ -146,7 +169,7 @@ Follow the modules in order for a full walkthrough, or jump directly to the sect
 | [**13**](./13-engineering-drawing-export.md) | **Engineering Drawing Export** | Technical schematics with dimension lines, vertex labels, angles, area/perimeter summaries |
 | [**14**](./14-shp-manager.md) | **Shp Manager (SHP)** | Import/export ESRI Shapefiles with auto CRS from .prj, multi-SHP ZIP, DBF schema preview |
 | [**15**](./15-capability-reference.md) | **Capability Reference** | Feature requirements, role/plan boundaries, offline checklist, and format support |
-| [**16**](./16-sample-project-municipal-asset-inspection.md) | **Sample Project: Municipal Asset Inspection** | End-to-end setup, field collection, QA, AI review, export, and handoff workflow |
+| [**16**](./16-sample-project-municipal-asset-inspection.md) | **Sample Project: Municipal Asset Inspection** | End-to-end setup, related records, attachments, field collection, QA, AI review, export, and handoff workflow |
 | [**17**](./17-glossary-key-concepts.md) | **Glossary & Key Concepts** | Plain-language definitions for Mapplex, GIS, form, CRS, sync, and AI terms |
 
 ---
@@ -162,7 +185,9 @@ Use this table when you already know what you want to do:
 | Draw a point / line / polygon | [Module 03 → Section 2](./03-map-view.md) |
 | Download maps for offline use | [Module 08 → Section 5](./08-settings.md) |
 | Import a GeoJSON / KMZ file | [Module 05 → Section 3](./05-data-view.md) |
+| Import or export a File Geodatabase | [Module 05 → Sections 2-3](./05-data-view.md) |
 | Import a CSV spreadsheet | [Module 05 → Section 3](./05-data-view.md) |
+| Review related records and attachments | [Module 05 → Section 6](./05-data-view.md) |
 | Build a data collection form | [Module 04 → Section 2](./04-forms-view.md) |
 | Color-code my map by data values | [Module 02 → Section 5](./02-layers-view.md) |
 | Ask the AI a spatial question | [Module 06 → Section 2](./06-geova-ai-chat.md) |

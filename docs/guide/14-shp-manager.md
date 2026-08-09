@@ -1,3 +1,8 @@
+---
+title: SHP Manager (Shapefile Import & Export)
+description: Import and export ESRI Shapefiles in Mapplex, including ZIP packages, CRS detection, and schema preview.
+---
+
 # Module 14: SHP Manager (Shapefile Import & Export)
 
 > Import and export ESRI Shapefiles (`.shp` / `.zip`) with coordinate system handling and multi-shapefile ZIP support. SHP Manager is a **Pro** feature.

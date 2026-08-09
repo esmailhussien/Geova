@@ -1,3 +1,8 @@
+---
+title: Slope Profiler
+description: Measure terrain slope with Mapplex Slope Profiler, including calibration, profiles, and severity-coded readings.
+---
+
 # Module 09: Slope Profiler
 
 > The Slope Profiler uses your device sensors as a digital clinometer for quick field slope checks. Use it for screening, notes, and site review. For construction staking, legal surveys, or safety-critical measurements, verify results with approved survey equipment.

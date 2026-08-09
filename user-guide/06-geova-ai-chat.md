@@ -1,3 +1,8 @@
+---
+title: Geova AI Chat
+description: Use Geova AI to query project data, review spatial results, and export or save analysis layers.
+---
+
 # Module 06: Geova AI Chat
 
 > Geova AI helps you query project data in plain language. It can draft SQL filters, summarize records, prepare exports, and preview spatial results. Review generated queries and results before using them for decisions.

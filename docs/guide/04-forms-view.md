@@ -1,3 +1,8 @@
+---
+title: Forms & Smart Logic
+description: Build Mapplex forms with required fields, Lexicon picklists, spatial auto-fill, attachments, and conditional rules.
+---
+
 # Module 04: Forms & Smart Logic
 
 > Forms define the attributes collected for each layer. When a user draws or edits a feature, the related form appears for data entry. This module covers field setup, schema import, spatial auto-fill, Lexicon picklists, and Smart Logic rules.
@@ -47,6 +52,8 @@ For each field, you can set:
 ## 3. Spatial Auto-Fill (Reference Layers)
 
 Spatial Auto-Fill populates a field value by comparing the collected feature with another reference layer. In practice, Mapplex looks up the reference polygon that contains the feature location and copies one property from that polygon into the form.
+
+This means the reference is another layer in the project, not a new overlay layer created by the form. For example, a streetlight point can copy `district_name` from the district polygon that contains it.
 
 1. In the Add Field dialog, check **"Auto-calculate from Spatial Reference"**.
 2. Two new dropdowns appear:

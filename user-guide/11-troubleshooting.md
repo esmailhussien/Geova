@@ -1,3 +1,8 @@
+---
+title: Troubleshooting & FAQ
+description: Troubleshoot Mapplex installation, GPS, imports, synchronization, Geova AI, and performance issues.
+---
+
 # Module 11: Troubleshooting & FAQ
 
 > Solutions for common issues encountered in the field and answers to frequently asked questions.
@@ -192,7 +197,7 @@ Each account supports up to **2 trusted devices**. Manage devices in **Account â
 ### Is my data secure?
 
 - Local project data is stored on your device in the browser's IndexedDB storage.
-- Cloud data uses Geova Cloud with Row-Level Security (RLS) â€” users can only access their workspace's data.
+- Geova Cloud applies workspace-level access controls, so users can access only the data available to their workspace.
 - Geova AI is routed through the Mapplex backend and charged against workspace credits.
 - Limited schema details, sample field values, and location context may be sent when needed for an AI request.
 - Full datasets and geometries are not sent automatically for ordinary chat planning.

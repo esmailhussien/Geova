@@ -1,3 +1,8 @@
+---
+title: Sample Project - Municipal Asset Inspection
+description: Follow a municipal asset inspection workflow with forms, Lexicons, spatial auto-fill, GDB handoff, relationships, and attachments.
+---
+
 # Module 16: Sample Project - Municipal Asset Inspection
 
 > This walkthrough shows how a supervisor can set up a realistic municipal inspection project, send collectors into the field, review the data, and export results. It is written as an example workflow, so adapt the names, fields, and roles to your organization.
@@ -20,6 +25,7 @@ By the end of this workflow, the project will include:
 - Offline map preparation for field teams
 - A review process for missing or high-priority records
 - Exportable CSV, GeoJSON, KMZ, PDF, and, where entitled, GeoPackage outputs
+- A File Geodatabase handoff with supported related records and attachments
 
 ---
 
@@ -35,6 +41,7 @@ By the end of this workflow, the project will include:
 | **Lexicons** | Lexicon entitlement | Optional, but improves value consistency |
 | **Geova AI review** | Geova AI entitlement, credits, and network | Optional decision-support step |
 | **PDF / GeoPackage export** | Export entitlement | Use CSV, GeoJSON, or KMZ if these are not available |
+| **GDB exchange** | GDB exchange enabled | Use when the GIS handoff must retain supported relationships and attachments |
 
 ---
 
@@ -49,6 +56,7 @@ This sample project uses several Mapplex shortcuts that are worth calling out be
 | **Lexicon picklists** | Shared condition, priority, or district values can stay consistent across contractors and inspection cycles |
 | **Spatial Auto-Fill** | A collected streetlight can automatically inherit the district or maintenance zone by matching its location against a reference polygon layer |
 | **Auto Geometry** | The form can store coordinates for point assets, and other workflows can calculate length, area, or perimeter for line and polygon layers |
+| **Related records and attachments** | Keep inspection visits, work orders, photos, PDFs, or other supporting files connected to the parent streetlight asset |
 
 These features are optional, but they make the workflow faster and reduce cleanup after field collection.
 
@@ -114,12 +122,20 @@ Open **Forms**, select the `Streetlights` layer, and create the form fields belo
 | **Inspection Status** | Dropdown | Not Started, In Progress, Complete, Needs Review | Supports completion tracking |
 | **Inspection Date** | Date | Current date | Required for reporting |
 | **Photo** | Photo | Site photo | Evidence of condition |
+| **Gallery** | Gallery | Multiple site photos | Evidence for complex or recurring defects |
+| **Attachment** | Attachment | PDF or supporting file | Work order, report, or related document |
 | **Notes** | Text | Free text | Field observations |
 | **Auto Geometry** | Auto geometry | Coordinates | Records location details |
 
 ### Human-Friendly Field Names
 
 Use labels that field teams already understand. For example, `Lamp Working` is clearer in the field than `Operational Boolean`, and `Repair Priority` is clearer than `Severity Code`.
+
+### Optional Related Inspection Records
+
+If the municipality keeps several inspection visits or work orders for each asset, use the streetlight as the parent record and link the additional records through the tested relationship fields. Keep `Asset ID` as the shared key, then attach the visit photo, work order PDF, or contractor note to the related record that it supports.
+
+Before field deployment, open one streetlight and confirm that its related records and attachments are visible from the parent record. This gives the team a clear pattern to follow during later inspections.
 
 ---
 
@@ -191,6 +207,7 @@ If the municipality already has streetlight locations, import them before field 
 | **CSV / Excel** | Data & Sync -> CSV / Excel import | Use when the file has coordinate columns. Target layer must be Point |
 | **GeoJSON / KMZ / KML** | Data & Sync -> geographic vector import | Good for existing GIS exports |
 | **GeoPackage** | Data & Sync -> geographic vector import | Useful for GIS teams and larger datasets |
+| **File Geodatabase (GDB)** | Data & Sync -> GDB import | Use when feature layers, related records, and attachments must be exchanged together |
 | **Shapefile** | SHP Manager | Requires SHP entitlement and Owner/Admin/Editor role |
 | **DXF** | CAD Manager | Use when asset locations come from CAD drawings |
 
@@ -203,6 +220,7 @@ After importing:
 3. Open the **Collected Features Table**.
 4. Check that Asset ID, Pole Number, and other fields imported correctly.
 5. If imported points appear in the wrong place, review the source CRS.
+6. If the source is GDB, open a parent asset and verify that related inspections and attachments are linked correctly.
 
 ---
 
@@ -356,7 +374,7 @@ Choose the export format based on the recipient.
 | Recipient | Recommended Export | Why |
 |-----------|--------------------|-----|
 | **Supervisor** | CSV | Easy to review in Excel or Google Sheets |
-| **GIS team** | GeoJSON or GeoPackage | Preserves geometry for GIS workflows |
+| **GIS team** | GeoJSON, GeoPackage, or GDB | Preserves geometry; GDB also supports the tested relationship and attachment handoff |
 | **Contractor** | CSV plus PDF map | Clear list of work plus visual reference |
 | **Public meeting / briefing** | PDF map | Good for presentation and printed review |
 | **Google Earth review** | KMZ | Easy visual handoff |
@@ -368,7 +386,8 @@ For a weekly municipal inspection handoff:
 1. CSV of all urgent and high-priority repairs.
 2. PDF map showing inspected assets and priority categories.
 3. GeoJSON or GeoPackage for GIS archive.
-4. Photo attachments retained in the project for evidence review.
+4. File Geodatabase when the GIS archive needs related records and attachments.
+5. Photo and file attachments retained in the project for evidence review.
 
 ---
 

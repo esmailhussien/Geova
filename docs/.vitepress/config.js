@@ -1,11 +1,39 @@
 import { defineConfig } from 'vitepress'
 
+const siteUrl = 'https://geova.net'
+
 export default defineConfig({
   title: "Geova / Mapplex Docs",
-  description: "Technical Documentation and Guides for Intelligent Infrastructure",
+  description: "Geova and Mapplex documentation for offline GIS fieldwork, spatial data, Geova AI, and mapping workflows.",
+  site: siteUrl,
   base: '/docs/',
   outDir: '../dist/docs',
   appearance: true, // Enable light/dark mode switch
+
+  transformHead({ pageData }) {
+    const relativePath = pageData.relativePath.replace(/\\/g, '/')
+    const canonicalPath = relativePath === 'index.md' || relativePath === 'README.md'
+      ? '/docs/'
+      : `/docs/${relativePath.replace(/\.md$/, '.html')}`
+    const canonicalUrl = `${siteUrl}${canonicalPath}`
+    const title = pageData.title ? `${pageData.title} | Geova / Mapplex Docs` : 'Geova / Mapplex Docs'
+    const description = pageData.description || 'Geova and Mapplex documentation for offline GIS fieldwork, spatial data, Geova AI, and mapping workflows.'
+
+    return [
+      ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
+      ['link', { rel: 'canonical', href: canonicalUrl }],
+      ['meta', { property: 'og:type', content: 'article' }],
+      ['meta', { property: 'og:site_name', content: 'Geova | Mapplex Docs' }],
+      ['meta', { property: 'og:url', content: canonicalUrl }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:image', content: `${siteUrl}/og-image.png` }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:image', content: `${siteUrl}/og-image.png` }]
+    ]
+  },
 
   markdown: {
     theme: {
@@ -23,7 +51,7 @@ export default defineConfig({
     nav: [
       { text: 'Docs Home', link: '/' },
       { text: 'User Guide', link: '/guide/README' },
-      { text: 'Back to App', link: 'https://www.geova.net/' }
+      { text: 'Back to App', link: 'https://geova.net/' }
     ],
 
     sidebar: [

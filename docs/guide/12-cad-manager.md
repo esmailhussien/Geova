@@ -1,3 +1,8 @@
+---
+title: CAD Manager (DXF Import & Export)
+description: Import and export DXF data in Mapplex with CRS suggestions, UTM handling, and role-based access.
+---
+
 # Module 12: CAD Manager (DXF Import & Export)
 
 > Use CAD Manager to import DXF drawings into a Mapplex project or export collected features as DXF files for engineering and drafting teams. Coordinate system selection is important: review the source CRS before importing and the target CRS before exporting.

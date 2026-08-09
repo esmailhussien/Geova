@@ -1,3 +1,8 @@
+---
+title: Team & Collaboration
+description: Invite team members, assign roles, review activity, and manage access in a Geova Cloud workspace.
+---
+
 # Module 07: Team & Collaboration
 
 > Team features let workspace administrators invite members, assign roles, review collection activity, and manage access from inside Mapplex.
@@ -138,7 +143,7 @@ The Admin Dashboard includes the same KPI analytics as the Team Panel but scoped
 
 - Role changes are saved through Geova Cloud
 - The assignable roles are limited to `collector`, `editor`, and `admin`; the `owner` role cannot be assigned through the UI
-- Server-side Row-Level Security (RLS) also enforces workspace permissions
+- Geova Cloud applies workspace-level access controls in addition to the permissions shown in the app
 
 ---
 

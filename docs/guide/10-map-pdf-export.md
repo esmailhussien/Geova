@@ -1,3 +1,8 @@
+---
+title: Map PDF Export
+description: Create print-ready Mapplex PDF maps with titles, notes, legends, scale, and layout controls.
+---
+
 # Module 10: Map PDF Export
 
 > Export the current map view as a PDF with a title, notes, legend, scale bar, north arrow, and project metadata.

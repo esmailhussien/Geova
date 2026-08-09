@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/landing/Header';
 import Hero from '../components/landing/Hero';
 import TrustBar from '../components/landing/TrustBar';
+import Solutions from '../components/landing/Solutions';
 import ThreePillars from '../components/landing/ThreePillars';
 import Vision from '../components/landing/Vision';
 import Footer from '../components/landing/Footer';
@@ -21,6 +22,9 @@ const LandingPage = () => {
         <Hero />
         <ScanReveal delay={0.1}>
           <TrustBar />
+        </ScanReveal>
+        <ScanReveal delay={0.1}>
+          <Solutions />
         </ScanReveal>
         <ScanReveal delay={0.1}>
           <ThreePillars />

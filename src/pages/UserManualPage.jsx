@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../components/landing/Header';
 import Footer from '../components/landing/Footer';
+import SEO from '../components/seo/SEO';
 
 const modules = [
   {
@@ -53,7 +54,7 @@ const modules = [
     id: '05',
     title: 'Data & Sync',
     subtitle: 'Import, Export & Share',
-    desc: 'Export formats, file signature detection, spreadsheet wizard, P2P sync, and reference zones.',
+    desc: 'GDB exchange, related records, attachments, export formats, spreadsheet wizard, P2P sync, and reference zones.',
     icon: 'cloud_sync',
     href: '/docs/guide/05-data-view.html',
     color: 'from-teal-500 to-emerald-600',
@@ -143,7 +144,7 @@ const modules = [
     id: '15',
     title: 'Capability Reference',
     subtitle: 'Feature Requirements',
-    desc: 'Feature requirements matrix, role/plan boundaries, offline checklist, and full format support table.',
+    desc: 'GDB, relationship, attachment, and format support, plus role/plan boundaries and the offline checklist.',
     icon: 'fact_check',
     href: '/docs/guide/15-capability-reference.html',
     color: 'from-blue-500 to-sky-600',
@@ -152,7 +153,7 @@ const modules = [
     id: '16',
     title: 'Sample Project',
     subtitle: 'Municipal Inspection',
-    desc: 'End-to-end setup, field collection, QA, AI review, export, and handoff workflow example.',
+    desc: 'End-to-end setup with related records, attachments, field collection, QA, AI review, export, and handoff.',
     icon: 'lightbulb',
     href: '/docs/guide/16-sample-project-municipal-asset-inspection.html',
     color: 'from-pink-500 to-rose-600',
@@ -174,7 +175,9 @@ const quickStart = [
   { task: 'Draw a point / line / polygon', link: '/docs/guide/03-map-view.html', module: '03' },
   { task: 'Download maps for offline use', link: '/docs/guide/08-settings.html', module: '08' },
   { task: 'Import a GeoJSON / KMZ file', link: '/docs/guide/05-data-view.html', module: '05' },
+  { task: 'Import or export a File Geodatabase', link: '/docs/guide/05-data-view.html', module: '05' },
   { task: 'Import a CSV spreadsheet', link: '/docs/guide/05-data-view.html', module: '05' },
+  { task: 'Review related records and attachments', link: '/docs/guide/05-data-view.html', module: '05' },
   { task: 'Build a data collection form', link: '/docs/guide/04-forms-view.html', module: '04' },
   { task: 'Color-code my map by data', link: '/docs/guide/02-layers-view.html', module: '02' },
   { task: 'Ask the AI a spatial question', link: '/docs/guide/06-geova-ai-chat.html', module: '06' },
@@ -244,6 +247,13 @@ const UserManualPage = () => {
 
   return (
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+      <SEO
+        title="Mapplex User Guide"
+        description="The Mapplex user guide covers offline GIS field collection, forms, Lexicons, GDB exchange, related records, attachments, spatial analysis, and team workflows."
+        url="/guide"
+        keywords="Mapplex user guide, offline GIS, GDB import export, related records, GIS attachments, Lexicon picklists, spatial auto-fill, field data collection"
+        imageAlt="Mapplex user guide by Geova"
+      />
       <Header />
 
       <main className="flex-grow pt-20 md:pt-24">
@@ -270,7 +280,7 @@ const UserManualPage = () => {
             </p>
             <div className="flex justify-center gap-4 pt-2">
               <a
-                href="/docs/guide/"
+                href="/docs/guide/README.html"
                 className="inline-flex items-center gap-2 bg-accent dark:bg-white text-white dark:text-accent px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white transition-all shadow-lg hover:shadow-primary/30"
               >
                 <span className="material-symbols-outlined text-[18px]">auto_stories</span>
@@ -447,7 +457,7 @@ const UserManualPage = () => {
               Built with VitePress for a fast, focused reading experience.
             </p>
             <a
-              href="/docs/guide/"
+              href="/docs/guide/README.html"
               className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
             >
               <span className="material-symbols-outlined text-[18px]">open_in_new</span>

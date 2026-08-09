@@ -1,3 +1,8 @@
+---
+title: Engineering Drawing Export
+description: Export engineering drawing pages from Mapplex with dimensions, vertex labels, angles, area, and perimeter.
+---
+
 # Module 13: Engineering Drawing Export
 
 > Engineering Drawing Export adds schematic pages to a Map PDF for visible polygon and line features. These pages show scaled outlines, dimensions, vertex labels, angles, and area or length summaries for review and documentation.

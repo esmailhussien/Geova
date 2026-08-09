@@ -1,3 +1,8 @@
+---
+title: Settings, Account & Workspace
+description: Configure Mapplex settings, devices, offline maps, workspace preferences, subscriptions, and entitlements.
+---
+
 # Module 08: Settings, Account & Workspace
 
 > Use Settings to manage your account, devices, workspace access, map behavior, offline tiles, subscriptions, and application preferences.

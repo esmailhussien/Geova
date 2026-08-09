@@ -1,3 +1,8 @@
+---
+title: Capability Reference
+description: Review Mapplex capabilities, file formats, roles, entitlements, offline workflows, and Geova AI boundaries.
+---
+
 # Module 15: Capability Reference
 
 > This module summarizes what Mapplex can do in the current application. Use it as a practical boundary guide when planning a deployment, training a team, or deciding which workflow belongs in Mapplex.
@@ -10,7 +15,7 @@ Mapplex capabilities depend on four things:
 
 | Factor | What It Controls |
 |--------|------------------|
-| **Workspace plan / entitlement** | Whether premium tools such as Geova AI, GeoPackage export, Smart Logic, CAD, SHP, slope tools, and team features are available |
+| **Workspace plan / entitlement** | Whether premium tools such as Geova AI, GeoPackage and GDB exchange, Smart Logic, CAD, SHP, slope tools, and team features are available |
 | **Project role** | Whether a user can create features, manage forms/layers, import reference data, or run administrative actions |
 | **App settings** | Whether optional map tools such as GPS recording, Advanced Edit, Sketch Mode, Quick Capture, or Slope Profiler are visible |
 | **Device and network context** | Whether GPS, offline tiles, native local sync, cloud sync, and AI services are available |
@@ -72,6 +77,7 @@ Use this table when a user asks why a tool is locked, hidden, or unavailable. Av
 | **Manage layers and forms** | Core | Owner, Admin, Editor | None | No internet for local projects |
 | **GeoJSON / KMZ / CSV export** | Core | Any project member with export access | None | No internet for local export |
 | **GeoPackage export** | GeoPackage entitlement | Any project member with export access | None | No internet for local export |
+| **File Geodatabase import/export** | GDB exchange enabled | Owner, Admin, or Editor for import; project members with export access for export | Relationship keys available when related data is used | No internet for local files |
 | **PDF map export** | PDF export entitlement | Any project member with export access | None | No internet after map data and tiles are available |
 | **Spreadsheet import** | Spreadsheet import entitlement | Owner, Admin, Editor, Collector | Target Point layer selected | No internet for local files |
 | **Reference zone import** | Reference import entitlement | Owner, Admin, Editor | None | No internet for local files |
@@ -109,6 +115,7 @@ Mapplex supports:
 - Guided dashboard filters for non-technical users
 - Raw filter expressions for users who know the layer schema
 - AI-assisted dashboard query generation when Geova AI is available
+- Importing and exporting File Geodatabases with supported related records and attachments
 
 Dashboard raw SQL is a filter-expression tool, not a full database console. Enter conditions such as `status = 'Open' AND priority = 'High'`, without `SELECT`, `WHERE`, joins, ordering, grouping, or database functions.
 
@@ -183,6 +190,8 @@ Additional form capabilities include:
 - Smart Logic for conditional visibility and values where entitled
 - AI-assisted Smart Logic generation where Geova AI credits are available
 - Lexicon linking, matching, and value cleanup where entitled
+- Photo, gallery, and file attachments for field evidence
+- Related-record workflows for linking inspections, work orders, or visits to a parent asset
 
 For reliable field data, keep field names clear, avoid duplicate meanings, and use Lexicons or dropdowns for values that must be consistent.
 
@@ -195,6 +204,7 @@ For reliable field data, keep field names clear, avoid duplicate meanings, and u
 | **GeoJSON** | Yes | Yes | General-purpose GIS/web format |
 | **KML / KMZ** | Yes | KMZ export | Useful for Google Earth-style handoff |
 | **GeoPackage (GPKG)** | Yes | Entitled feature | Large files may show warnings before processing |
+| **File Geodatabase (GDB)** | Yes | Yes where GDB exchange is enabled | Preserves configured feature relationships, related records, and attachments |
 | **CSV** | Yes for point import | Yes | Spreadsheet import requires coordinate columns |
 | **Excel (.xlsx / .xls)** | Yes for point import | No native Excel export | Export CSV for spreadsheet review |
 | **Reference zones** | KMZ, KML, GeoJSON | Managed in app | Polygon background layers for Spatial Auto-Fill |
@@ -252,7 +262,7 @@ Use this checklist before sending a team into the field, especially when the wor
 ### Before Leaving the Office
 
 1. Open the correct workspace and project on each device.
-2. Confirm the active layers, forms, dropdowns, Lexicons, and Smart Logic rules are loaded.
+2. Confirm the active layers, forms, dropdowns, Lexicons, Smart Logic rules, and required related-record structures are loaded.
 3. Download offline tiles for the work area and verify the map still displays after disabling internet.
 4. Confirm GPS permission is granted and the blue location dot appears on the map.
 5. Check the correct field tools are enabled in Settings: GPS Recording Tools, Quick Capture, Sketch Mode, Advanced Edit, or Slope Profiler as needed.
@@ -287,7 +297,7 @@ Before rolling Mapplex out to a team:
 4. Build forms with consistent field names and controlled values.
 5. Configure Data Dictionary aliases, units, and semantic roles.
 6. Import reference zones if Spatial Auto-Fill is part of the workflow.
-7. Test import/export formats with a real sample file from the client or GIS team.
+7. Test import/export formats, including one real GDB with relationships and attachments, from the client or GIS team.
 8. Download offline tiles for the field area before travel.
 9. Confirm GPS permissions on each device.
 10. Run one end-to-end pilot: collect, edit, sync, export, and review.

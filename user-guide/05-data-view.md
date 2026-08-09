@@ -1,3 +1,8 @@
+---
+title: Data & Sync
+description: Import and export GeoJSON, KMZ, GeoPackage, File Geodatabase, CSV, and Excel data, including relationships and attachments.
+---
+
 # Module 05: Data & Sync
 
 > The Data & Sync module is where you export project data, import datasets, manage reference zones, run local peer-to-peer sync, and review collected features in table form.
@@ -31,9 +36,12 @@ Use the **export layer dropdown** at the top to choose:
 | **JSON (GeoJSON)** | `JSON` | Standard GeoJSON format. Universally compatible with QGIS, ArcGIS, Mapbox, and web applications |
 | **KMZ** | `KMZ` | Compressed KML for Google Earth and Google Maps. Includes styling and descriptions |
 | **GPKG (GeoPackage)** | `GPKG` | SQLite-based OGC standard. Ideal for desktop GIS software and large datasets. Requires an entitlement that includes GeoPackage export |
+| **File Geodatabase (GDB)** | `GDB` | Geodatabase package for exchanging feature layers, related records, and supported attachments |
 | **CSV** | `CSV` | Tabular comma-separated values. Opens in Excel, Google Sheets, and databases. Includes coordinates as columns |
 
 Tap the desired format button and the file downloads immediately.
+
+Use **GDB** when the handoff needs more than geometry and attributes. A GDB export can include the supported relationships between feature layers and related records, together with supported attachments.
 
 > **Example:** A supervisor needs to send weekly hydrant inspection progress to a client. She selects the "Hydrant Inspections" layer, exports CSV, checks the file in Excel, and attaches it to the weekly report.
 
@@ -43,7 +51,7 @@ Tap the desired format button and the file downloads immediately.
 
 ### Geographic Vector Files
 
-1. Tap the **GeoJSON / KMZ / GPKG** import button.
+1. Tap the **GeoJSON / KMZ / GPKG / GDB** import button.
 2. Select a file from your device.
 3. The system checks the file signature to detect the format, even if the file extension is incorrect:
    - **ZIP header** (PK) → treated as KMZ
@@ -54,6 +62,18 @@ Tap the desired format button and the file downloads immediately.
 5. A progress indicator shows import status for large files.
 
 For large GeoPackage files (50MB+), a warning appears before processing.
+
+### File Geodatabase Import (GDB)
+
+Use GDB import when the source package contains feature classes together with related tables or attachments.
+
+1. Select the **GDB** import option.
+2. Choose the File Geodatabase package from your device.
+3. Review the available layers and related records in the import preview.
+4. Confirm the relationship fields and select the target project or layers.
+5. Start the import and wait for the progress indicator to finish.
+
+Mapplex preserves supported relationships and attachments during the import. If the source relationship key is missing or inconsistent, the records may import without a link, so review the preview and the resulting tables before field use.
 
 ### Spreadsheet Import (CSV / Excel)
 
@@ -164,6 +184,12 @@ The table loads **50 rows at a time**. For large datasets, a **"Load More (+50)"
 | **Photo / Image** | Clickable thumbnail that opens full-size in a new tab |
 | **PDF** | Red "View PDF" button that opens the document |
 | **Attachment** | Blue "View File" button for generic file download |
+
+### Related Records and Attachments
+
+When a project contains related records, open the parent feature first and review the linked records from its relationship panel. This is useful for workflows such as a streetlight with several inspection visits or a work order linked to one municipal asset.
+
+Attachments remain associated with the record they belong to. Use the photo, PDF, or file controls to review evidence before exporting. When the project is exchanged as GDB, supported relationships and attachments are included in the handoff.
 
 ---
 

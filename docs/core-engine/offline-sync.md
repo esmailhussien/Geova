@@ -59,7 +59,7 @@ To counteract this, the `db.js` restoration lifecycle implements a **"Fake Onlin
    ```javascript
    const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('API Ping Timeout')), 2500));
    const pingResult = await Promise.race([
-       supabase.auth.getSession(),
+       authManager.getCurrentSession(),
        timeoutPromise
    ]);
    ```

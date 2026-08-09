@@ -1,3 +1,8 @@
+---
+title: Map View
+description: Use Mapplex to draw features, capture GPS locations, measure geometry, track movement, and work with offline tiles.
+---
+
 # Module 03: Map View
 
 > The Map View is where users draw features, collect GPS locations, measure distances and areas, edit geometries, cache offline tiles, and review spatial results.

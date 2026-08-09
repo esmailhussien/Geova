@@ -16,4 +16,4 @@ The `AuthView` module handles Geova Cloud session management alongside local Gue
 2. **Sign Up**: Registers the user and sends a confirmation email.
 3. **Pending Approval**: If a user is registered but requires an admin to unlock their Organization tenant, they are shown a persistent `renderPendingView` screen preventing platform access.
 4. **Forgot Password**: The standard password reset loop, utilizing window hash fragments to intercept Geova Cloud reset tokens on callback.
-5. **Guest Mode (Local Offline)**: Field workers can opt to "Continue as Guest". This locks the app exclusively to the IndexedDB (Device) storage tier. `AuthManager` drops any active Geova Cloud JWTs. To prevent data leakage, guests cannot pull down company Cloud projects.
+5. **Guest Mode (Local Offline)**: Field workers can opt to "Continue as Guest". This locks the app exclusively to the IndexedDB (Device) storage tier. `AuthManager` clears any active Geova Cloud session. To prevent data leakage, guests cannot pull down company Cloud projects.

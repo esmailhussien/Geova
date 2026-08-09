@@ -1,3 +1,8 @@
+---
+title: Getting Started & Onboarding
+description: Install Mapplex, sign in, prepare an offline project, and begin collecting GIS data in the field.
+---
+
 # Module 00: Getting Started & Onboarding
 
 > This module explains how to install Mapplex, sign in, use guest mode, and understand workspaces.

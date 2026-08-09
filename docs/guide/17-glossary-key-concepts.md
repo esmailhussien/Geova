@@ -1,3 +1,8 @@
+---
+title: Glossary & Key Concepts
+description: Plain-language definitions for Mapplex, GIS, forms, CRS, synchronization, Geova AI, GDB, relationships, and attachments.
+---
+
 # Module 17: Glossary & Key Concepts
 
 > Use this module as a plain-language reference for Mapplex and GIS terms used throughout the guide.
@@ -53,6 +58,10 @@
 | **Spatial Auto-Fill** | A form lookup that copies a selected attribute from a matching reference polygon into the form. Points use their location; lines and polygons use their centroid. |
 | **Smart Logic** | Conditional form behavior that shows, hides, or sets fields based on earlier answers. |
 | **Schema Import** | Creating form fields from an existing file's columns or attributes. |
+| **Attachment** | A photo, PDF, or other file stored with the feature or related record it supports. |
+| **Relationship** | The configured link between a parent feature or layer and its related records, usually through a shared key. |
+| **Parent Record** | The main feature that other records describe, such as a streetlight asset. |
+| **Related Record** | A record linked to a parent feature, such as an inspection visit or work order. |
 
 ---
 
@@ -77,6 +86,7 @@
 | **GeoJSON** | A common web/GIS format for point, line, and polygon features. |
 | **KML / KMZ** | Google Earth-style geospatial formats. KMZ is a compressed KML package. |
 | **GeoPackage / GPKG** | A SQLite-based GIS file format used for larger or more formal GIS handoffs. |
+| **File Geodatabase / GDB** | A geodatabase package used to exchange feature layers together with supported relationships, related records, and attachments. |
 | **CSV** | A spreadsheet-style text file. In Mapplex, CSV import creates point features when coordinate columns are mapped. |
 | **Excel (.xlsx / .xls)** | Spreadsheet files that can be imported as point features when coordinate columns are available. |
 | **Shapefile / SHP** | An ESRI GIS format made of related files such as `.shp`, `.shx`, `.dbf`, and often `.prj`. |
@@ -140,6 +150,9 @@
 | **"I need to collect many GPS points quickly."** | Quick Capture |
 | **"I need to carefully place one point."** | GPS Pin or Manual Coordinate Entry |
 | **"I need to find incomplete or urgent records."** | Dashboard filters or Geova AI |
+| **"I need to keep inspections linked to one asset."** | Relationships and related records |
+| **"I need to send layers, related records, and evidence to a GIS team."** | File Geodatabase (GDB) export |
+| **"I need to carry photos or reports with a record."** | Attachments or Gallery fields |
 | **"I need nearest, buffer, join, or zone summaries."** | Geova AI spatial analysis |
 | **"My imported data is in the wrong place."** | Check CRS, `.prj`, UTM zone, or custom proj4 |
 | **"A button is locked or hidden."** | Check plan entitlement, project role, app setting, and network/device requirements |

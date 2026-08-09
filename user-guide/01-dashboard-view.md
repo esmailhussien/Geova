@@ -1,3 +1,8 @@
+---
+title: The Project Dashboard
+description: Create hosted or local Mapplex projects, monitor storage and sync, and run dashboard filters on project data.
+---
+
 # Module 01: The Project Dashboard
 
 > The Dashboard is where you create projects, choose storage mode, monitor sync status, check storage usage, and run project-level tabular queries.

@@ -8,15 +8,13 @@ order: 1
 
 Mapplex is built to solve one fundamental problem: **Off-grid spatial data collection**.
 
-Unlike traditional web applications that rely on constant internet connectivity to fetch datasets from a centralized PostgreSQL/PostGIS database, Mapplex operates on a *Local-First* methodology. The device itself is the primary source of truth.
+Unlike applications that depend on a continuous cloud connection, Mapplex follows a *local-first* model. Working data is stored on the device first and synchronized with Geova Cloud when connectivity is available.
 
 ## Platform Philosophy
 
-Mapplex forces the browser into behaving like a native desktop application. 
-
-1. **Storage First, Cloud Second**: Every geometry, every form entry, and every style configuration is immediately committed to an embedded local client database (either IndexedDB or SQLite WASM). 
-2. **Synchronous Speed, Asynchronous Sync**: Because operations hit local storage first, rendering is instantaneous. A background Mutex-locked queue quietly negotiates with Geova Cloud when cell connectivity is restored.
-3. **No Blank Screens**: An aggressive Service Worker intercepts all static assets. Mapplex literally never shows a Chrome "No Internet" dinosaur; the UX always functions flawlessly.
+1. **Local storage first**: Form entries, feature edits, and project settings are written to local device storage before synchronization.
+2. **Background synchronization**: Pending changes are queued locally and sent to Geova Cloud when a usable connection is available.
+3. **Offline continuity**: Collection and other supported local workflows remain available without a continuous internet connection. Cloud sync, team collaboration, and Geova AI require connectivity.
 
 ## Master Index
 

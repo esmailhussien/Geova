@@ -61,4 +61,4 @@ The `AuthView.js` bypasses heavy framework routers, relying purely on JavaScript
 - Geova leverages a pre-flight hook: `window.location.hash.includes('type=recovery')`. Before the AuthView ever mounts the login HTML, it sniffs the browser's raw URL payload. If it detects a magic-link signature, it intercepts the render pipeline entirely and instantly injects the `renderResetPasswordView()` function instead.
 
 ### Destructive Memory Overrides
-When an active session clicks `Sign Out` from the **Pending View**, the engine physically executes `AuthManager.signOut()` which rips the JSON Web Tokens (JWT) out of the secure cloud storage instances cleanly, ensuring the next user inheriting the tablet cannot sniff the previous session's hosted databases.
+When an active session clicks `Sign Out` from the **Pending View**, the engine executes `AuthManager.signOut()` and clears the local session state, so the next user on the tablet cannot reuse the previous user's hosted workspace session.
