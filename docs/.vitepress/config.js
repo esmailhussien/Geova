@@ -28,6 +28,7 @@ export default defineConfig({
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: description }],
       ['meta', { property: 'og:image', content: `${siteUrl}/og-image.png` }],
+      ['link', { rel: 'icon', href: '/favicon.svg?v=2', type: 'image/svg+xml' }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:title', content: title }],
       ['meta', { name: 'twitter:description', content: description }],
