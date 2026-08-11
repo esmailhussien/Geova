@@ -11,7 +11,7 @@ const SEO = ({ title, description, keywords, url, image, imageAlt, type, noindex
   const seoDescription = description || defaultDescription;
   const seoKeywords = keywords || defaultKeywords;
   const seoUrl = new URL(url || '/', siteUrl).toString();
-  const seoImage = new URL(image || '/og-image.png', siteUrl).toString();
+  const seoImage = new URL(image || '/og.png', siteUrl).toString();
   const seoImageAlt = imageAlt || 'Geova spatial intelligence and GIS systems';
   const seoType = type || 'website';
   const robotsContent = noindex
@@ -23,7 +23,7 @@ const SEO = ({ title, description, keywords, url, image, imageAlt, type, noindex
     "@type": "Organization",
     "name": "Geova Technologies",
     "url": siteUrl,
-    "logo": `${siteUrl}/assets/GEOVA.png`,
+    "logo": `${siteUrl}/favicon.svg`,
     "description": "Spatial intelligence technology company building GIS-based systems, Geova AI, Mapplex field operations, and custom spatial SaaS solutions.",
     "foundingDate": "2010",
     "contactPoint": [
@@ -84,6 +84,8 @@ const SEO = ({ title, description, keywords, url, image, imageAlt, type, noindex
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={seoImage} />
       <meta property="og:image:alt" content={seoImageAlt} />
+      <meta property="og:image:width" content="1728" />
+      <meta property="og:image:height" content="918" />
       <meta property="og:site_name" content="Geova Technologies" />
 
       {/* Twitter */}

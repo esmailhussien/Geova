@@ -256,7 +256,7 @@ const UserManualPage = () => {
       />
       <Header />
 
-      <main className="flex-grow pt-20 md:pt-24">
+      <main id="main-content" className="flex-grow pt-20 md:pt-24">
         {/* ─── Hero ──────────────────────────────────────────────── */}
         <section className="relative overflow-hidden px-6 py-20 md:py-28 text-center border-b border-slate-200/50 dark:border-slate-800/50">
           <div className="absolute inset-0 pointer-events-none opacity-[0.06] bg-[linear-gradient(to_right,rgba(15,23,42,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.45)_1px,transparent_1px)] bg-[size:56px_56px]" />

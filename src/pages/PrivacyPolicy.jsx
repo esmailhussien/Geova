@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       />
       <Header />
 
-      <main className="flex-grow pt-28 md:pt-36 pb-20 px-6">
+      <main id="main-content" className="flex-grow pt-28 md:pt-36 pb-20 px-6">
         <article className="max-w-4xl mx-auto glass-panel p-7 md:p-12 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 

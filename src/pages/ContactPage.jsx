@@ -47,7 +47,7 @@ const ContactPage = () => {
       <TopographicBackground />
       <Header />
       
-      <main className="relative z-10 pt-32 pb-24 max-w-7xl mx-auto px-6">
+      <main id="main-content" className="relative z-10 pt-32 pb-24 max-w-7xl mx-auto px-6">
         
         {/* Header Section */}
         <ScanReveal>

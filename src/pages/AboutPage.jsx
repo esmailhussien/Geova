@@ -16,7 +16,7 @@ const AboutPage = () => {
       />
       <Header />
       
-      <main className="flex-grow pt-24 pb-24">
+      <main id="main-content" className="flex-grow pt-24 pb-24">
         {/* Hero Section */}
         <section className="px-6 py-24 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-center">
           <div className="max-w-4xl mx-auto space-y-6">

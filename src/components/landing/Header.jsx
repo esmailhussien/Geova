@@ -53,6 +53,10 @@ const Header = () => {
   };
 
   return (
+    <>
+    <a href="#main-content" className="fixed left-4 top-3 z-[200] -translate-y-24 rounded-lg bg-accent px-4 py-3 text-sm font-bold text-white shadow-xl transition-transform focus:translate-y-0 dark:bg-white dark:text-accent">
+      Skip to content
+    </a>
     <motion.header 
       style={{
         left: navLeftRight,
@@ -73,11 +77,11 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation (Information Architecture Tier 1) */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-9">
 
           {/* Platform Dropdown */}
           <div className="relative group">
-            <Link to="/platform" className="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
+            <Link to="/platform" className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
               Platform <span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:-rotate-180">keyboard_arrow_down</span>
             </Link>
             <div className="absolute left-1/2 -translate-x-1/2 top-full w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pt-2">
@@ -122,19 +126,23 @@ const Header = () => {
             </div>
           </div>
 
-          <Link to="/mapplex" className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
+          <Link to="/mapplex" className="text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
             Mapplex
           </Link>
           
-          <Link to="/consulting" className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
+          <Link to="/consulting" className="text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
             Consulting
           </Link>
           
-          <Link to="/about" className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
+          <Link to="/about" className="text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
             About
           </Link>
+
+          <Link to="/updates" className="text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
+            Updates
+          </Link>
           
-          <a href="/docs/" className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
+          <a href="/docs/" className="text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors uppercase tracking-widest py-6">
             Docs
           </a>
 
@@ -154,18 +162,16 @@ const Header = () => {
             </span>
           </button>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <MagneticButton>
-              <Link to="/contact" className="inline-block relative">
-                <button className="bg-accent dark:bg-white text-white dark:text-accent px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#ff751f] dark:hover:bg-[#ff751f] hover:text-white dark:hover:text-white transition-colors duration-300 shadow-xl hover:shadow-[0_0_20px_#ff751f]">
-                  Request a Demo
-                </button>
+              <Link to="/contact" className="inline-block relative bg-accent dark:bg-white text-white dark:text-accent px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#ff751f] dark:hover:bg-[#ff751f] hover:text-white dark:hover:text-white transition-colors duration-300 shadow-xl hover:shadow-[0_0_20px_#ff751f]">
+                Request a Demo
               </Link>
             </MagneticButton>
           </div>
 
           {/* Mobile Hover Trigger */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}
               className="text-slate-800 dark:text-white p-2"
@@ -181,7 +187,7 @@ const Header = () => {
 
       {/* Mobile Navigation Accordion State */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-[100%] mt-4 left-0 w-full glass-panel border border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[85vh] rounded-3xl z-40">
+        <div className="lg:hidden absolute top-[100%] mt-4 left-0 w-full glass-panel border border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[85vh] rounded-3xl z-40">
           <nav className="flex flex-col px-6 py-6 gap-2">
             {/* Same mobile code structure below... */}
 
@@ -221,6 +227,10 @@ const Header = () => {
             <Link onClick={toggleMobileMenu} to="/about" className="flex items-center justify-between text-sm font-bold uppercase tracking-widest text-accent dark:text-white py-4 w-full border-b border-slate-200/50 dark:border-slate-800/80">
               About
             </Link>
+
+            <Link onClick={toggleMobileMenu} to="/updates" className="flex items-center justify-between text-sm font-bold uppercase tracking-widest text-accent dark:text-white py-4 w-full border-b border-slate-200/50 dark:border-slate-800/80">
+              Updates
+            </Link>
             
             <a onClick={toggleMobileMenu} href="/docs/" className="flex items-center justify-between text-sm font-bold uppercase tracking-widest text-accent dark:text-white py-4 w-full border-b border-slate-200/50 dark:border-slate-800/80">
               Docs
@@ -228,16 +238,15 @@ const Header = () => {
 
             {/* Mobile CTA */}
             <div className="pt-6 pb-2">
-              <Link to="/contact" className="w-full" onClick={toggleMobileMenu}>
-                <button className="bg-accent dark:bg-white text-white dark:text-accent w-full px-6 py-4 rounded-xl text-sm font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl border border-transparent dark:border-slate-800">
-                  Request a Demo
-                </button>
+              <Link to="/contact" className="block bg-accent dark:bg-white text-center text-white dark:text-accent w-full px-6 py-4 rounded-xl text-sm font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl border border-transparent dark:border-slate-800" onClick={toggleMobileMenu}>
+                Request a Demo
               </Link>
             </div>
           </nav>
         </div>
       )}
     </motion.header>
+    </>
   );
 };
 

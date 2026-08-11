@@ -16,7 +16,7 @@ const PlatformPage = () => {
       />
       <Header />
 
-      <main className="flex-grow pt-20 md:pt-24">
+      <main id="main-content" className="flex-grow pt-20 md:pt-24">
         {/* Hero Section */}
         <section className="relative px-6 py-24 md:py-32 overflow-hidden">
           {/* Subtle background */}

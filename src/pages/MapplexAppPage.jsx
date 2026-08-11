@@ -5,6 +5,8 @@ import Footer from '../components/landing/Footer';
 import SEO from '../components/seo/SEO';
 import { ScanReveal } from '../components/animations/ScanReveal';
 import mapplexIcon from '../assets/mapplex.png';
+import MapplexDataLifecycle from '../components/mapplex/MapplexDataLifecycle';
+import MapplexDeploymentReadiness from '../components/mapplex/MapplexDeploymentReadiness';
 
 const MapplexAppPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -82,7 +84,7 @@ const MapplexAppPage = () => {
         </div>
       </div>
 
-      <main className="flex-grow pt-20 md:pt-24">
+      <main id="main-content" className="flex-grow pt-20 md:pt-24">
         {/* App Hero Section */}
         <section className="relative px-6 py-12 lg:py-16 overflow-hidden flex items-center min-h-[76vh]">
           {/* Background Ambient Glow */}
@@ -113,6 +115,15 @@ const MapplexAppPage = () => {
               <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 It gives teams the field foundation for larger systems, while Geova AI helps interpret, validate, analyze, and connect collected data to project decisions.
               </p>
+
+              <div className="flex flex-wrap justify-center gap-2 lg:justify-start" aria-label="Mapplex availability">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" /> Company deployments active
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400">
+                  <span className="material-symbols-outlined text-[15px]">fact_check</span> Play Store readiness review
+                </span>
+              </div>
 
               {/* Download Badges */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
@@ -234,6 +245,8 @@ const MapplexAppPage = () => {
           </div>
         </section>
 
+        <MapplexDataLifecycle />
+
         {/* Technical Specifications Grid */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
@@ -247,10 +260,10 @@ const MapplexAppPage = () => {
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">folder_zip</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Supported Formats</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
-                  <li>• GeoJSON & KMZ</li>
-                  <li>• GeoPackage (GPKG) & CSV</li>
-                  <li>• ESRI Shapefiles (.shp)</li>
-                  <li>• CAD Files (.dxf)</li>
+                  <li>• GeoJSON, KML & KMZ</li>
+                  <li>• GeoPackage (GPKG), CSV & Excel</li>
+                  <li>• Shapefile, DXF & FileGDB exchange</li>
+                  <li>• Photos, galleries & file attachments</li>
                 </ul>
               </div>
             </ScanReveal>
@@ -260,10 +273,10 @@ const MapplexAppPage = () => {
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">analytics</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Spatial Analytics</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
-                  <li>• Layer filters and counts</li>
-                  <li>• Buffers and nearby checks</li>
-                  <li>• Graduated Symbology</li>
-                  <li>• Review dashboards</li>
+                  <li>• Whole-project layer queries</li>
+                  <li>• Buffers, joins & nearby checks</li>
+                  <li>• Graduated symbology & clustering</li>
+                  <li>• Geova AI review and reporting</li>
                 </ul>
               </div>
             </ScanReveal>
@@ -286,10 +299,10 @@ const MapplexAppPage = () => {
                 <span className="material-symbols-outlined text-3xl text-primary mb-4">groups</span>
                 <h4 className="font-bold text-lg text-accent dark:text-white mb-2">Team Operations</h4>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2 font-light">
-                  <li>• Assignment tracking</li>
-                  <li>• Local Peer-to-Peer Sync</li>
-                  <li>• Reviewer notes</li>
-                  <li>• Role & Permission Control</li>
+                  <li>• Hosted workspace synchronization</li>
+                  <li>• Secured local field transfer</li>
+                  <li>• Assignment and reviewer workflows</li>
+                  <li>• Role and permission control</li>
                 </ul>
               </div>
             </ScanReveal>
@@ -329,6 +342,8 @@ const MapplexAppPage = () => {
             </div>
           </div>
         </section>
+
+        <MapplexDeploymentReadiness />
 
         {/* How To Guide Section - Streamlined */}
         <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900/30">

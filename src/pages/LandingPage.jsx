@@ -6,6 +6,7 @@ import Solutions from '../components/landing/Solutions';
 import ThreePillars from '../components/landing/ThreePillars';
 import Vision from '../components/landing/Vision';
 import Footer from '../components/landing/Footer';
+import LatestUpdates from '../components/landing/LatestUpdates';
 import { ScanReveal } from '../components/animations/ScanReveal';
 import SEO from '../components/seo/SEO';
 
@@ -18,7 +19,7 @@ const LandingPage = () => {
         url="/"
       />
       <Header />
-      <main className="pt-20 md:pt-24">
+      <main id="main-content" className="pt-20 md:pt-24">
         <Hero />
         <ScanReveal delay={0.1}>
           <TrustBar />
@@ -28,6 +29,9 @@ const LandingPage = () => {
         </ScanReveal>
         <ScanReveal delay={0.1}>
           <ThreePillars />
+        </ScanReveal>
+        <ScanReveal delay={0.1}>
+          <LatestUpdates />
         </ScanReveal>
         <ScanReveal delay={0.1}>
           <Vision />

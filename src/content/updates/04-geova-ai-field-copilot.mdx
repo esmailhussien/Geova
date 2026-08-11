@@ -1,0 +1,38 @@
+export const meta = {
+  title: "Geova AI Moves Toward a Spatial Field Co-pilot",
+  date: "2026-08-11",
+  slug: "geova-ai-spatial-field-copilot",
+  product: "Geova AI",
+  status: "Phased improvement",
+  version: "Context and review",
+  summary: "Project-wide queries, clearer context, secure session recovery, and reviewed actions move the assistant beyond generic chat.",
+  tags: ["AI", "Spatial Context", "Security", "QA/QC"]
+};
+
+# The assistant should understand the work, not only the question
+
+Geova AI is being developed as a spatial and field co-pilot. The objective is to help teams inspect data, explain conditions, prepare outputs, and identify missing information while keeping the user in control of important actions.
+
+## Project-wide query scope
+
+Analytical questions run against the relevant project layers and records—not only the features currently visible in the map viewport. The map extent can still be supplied as optional context when a user explicitly asks about the current area.
+
+This distinction matters:
+
+- **Project scope** answers questions such as total counts, breakdowns, QA gaps, and cross-layer relationships.
+- **Map extent** helps with questions such as "what is near the area I am viewing?"
+- **Selected features** support an explicit review of a chosen subset.
+
+## Better use of project meaning
+
+The assistant can use layer definitions, form fields, lexicons, and coded-value domains to interpret technical field names and return controlled values that fit the project's data model.
+
+## Secure session recovery
+
+Android and browser sessions now follow the same refresh-and-retry boundary for authenticated AI requests. Provider credential failures are kept separate from user-session failures, preventing an upstream error from being presented as a request to sign in again.
+
+## Review before action
+
+Exports, layer creation, data changes, and other consequential operations pass through an authorization and confirmation boundary. The assistant can prepare the action and explain its inputs, but the operator retains the final decision.
+
+The next development work focuses on richer map context, clearer evidence attached to answers, permission-aware action plans, and device/browser performance evidence.

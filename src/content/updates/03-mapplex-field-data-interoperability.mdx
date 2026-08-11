@@ -1,0 +1,37 @@
+export const meta = {
+  title: "Mapplex Field Data & FileGDB Interoperability",
+  date: "2026-08-08",
+  slug: "mapplex-field-data-interoperability",
+  product: "Mapplex",
+  status: "Controlled deployment",
+  version: "Field interoperability",
+  summary: "FileGDB import/export, media relationships, local transfer resilience, and safer synchronization improve the field-to-office handover.",
+  tags: ["FileGDB", "Offline", "Attachments", "Data Exchange"]
+};
+
+# Field data can move without losing its project meaning
+
+Mapplex now supports a clearer field-to-office exchange path for organizations that work with Esri File Geodatabases alongside GeoPackage, GeoJSON, KML/KMZ, CSV/Excel, Shapefile, and DXF workflows.
+
+## FileGDB conversion service
+
+FileGDB import and export use Geova's dedicated GDAL conversion service. The mobile and web clients send a bounded conversion request to the service and receive a GIS-ready result. This keeps heavy conversion libraries outside the field application while preserving a simple operator workflow.
+
+The current workflow has been verified with:
+
+- Geometry and attribute transfer between Mapplex and FileGDB.
+- Project metadata tables used to describe Mapplex-specific context.
+- Photo and attachment data exported with a relationship back to the source feature.
+- ArcGIS Pro review of the resulting geodatabase.
+
+Availability depends on the service being reachable and on the deployment's configured limits. The app gives the worker additional startup time because free or low-cost hosted instances can need a cold start.
+
+## Offline transfer remains a first-class path
+
+Field teams are not required to treat the public internet as the only exchange channel. A secured, short-lived local transfer session can move collected records between devices connected to the same field network. Hosted synchronization remains available when connectivity returns.
+
+## Safer reconciliation
+
+Background revalidation now avoids destructive cache replacement when the hosted count is temporarily behind the local device. Synchronization work is queued behind the active database lock so concurrent field operations do not overwrite one another.
+
+> Mapplex does not promise that every third-party geodatabase construct can round-trip unchanged. Supported geometry, attributes, domains, metadata, and media should be verified against the organization's ArcGIS workflow before a project-wide rollout.

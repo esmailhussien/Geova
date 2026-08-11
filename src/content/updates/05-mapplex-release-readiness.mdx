@@ -1,0 +1,36 @@
+export const meta = {
+  title: "Mapplex Release Readiness & Language Stability",
+  date: "2026-08-12",
+  slug: "mapplex-release-readiness-language-stability",
+  product: "Mapplex",
+  status: "Pre-launch review",
+  version: "Android and web",
+  summary: "Privacy entry points, account deletion, four-language UI coverage, and automated quality gates support the path to Play Store publication.",
+  tags: ["Play Store", "Privacy", "Languages", "Quality"]
+};
+
+# Preparing a controlled deployment for broader publication
+
+Mapplex is currently distributed through managed company deployments. Public Play Store publication will follow the current review and correction cycle rather than bypass it.
+
+## Privacy and account controls
+
+The Geova website now provides dedicated privacy and account-deletion pages. Mapplex exposes a discoverable deletion-request path both before and after sign-in. Opening the page does not immediately delete data; it starts a verified request and explains what may be removed or retained.
+
+## Four-language interface coverage
+
+English, Arabic, Spanish, and French now share the same protected translation catalog for primary application workflows. Arabic changes the direction of translated text while the structural layout—navigation, controls, icons, and button locations—stays stable.
+
+Project names, layer names, field names, and collected values are project data. They are never replaced by interface translations.
+
+## Automated release evidence
+
+The release process now includes repeatable checks for:
+
+- Translation-key parity and primary-screen coverage.
+- Type consistency and architecture boundaries.
+- Source-safety review for dynamic interface rendering.
+- Complete regression tests.
+- Isolated production builds and bundle budgets.
+
+These checks reduce preventable regressions, but they do not replace Play pre-launch testing, physical-device verification, live service checks, or a review of the Data Safety declaration.
