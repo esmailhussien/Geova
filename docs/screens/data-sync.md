@@ -1,10 +1,4 @@
 ---
-title: Data & Sync Hub
-description: The control center for reviewing tabular spatial data, exporting formats, and hosting Local Sync sessions.
-order: 5
----
-
----
 title: Data Sync Hub
 description: The control center for exporting formats and hosting Local Sync sessions.
 ---

@@ -1,9 +1,4 @@
 ---
-title: Map View
-description: Use the map to draw, track, measure, and review spatial data.
----
-
----
 title: Map Interface
 description: The primary interactive GIS canvas for drawing, tracking, and AI analysis.
 ---

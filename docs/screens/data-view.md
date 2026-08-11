@@ -1,9 +1,4 @@
 ---
-title: Data & Sync View
-description: Detailed technical and user documentation for the Geova Data Management and Local Sync component.
----
-
----
 title: Data Table View
 description: Inspect and manage feature data in a tabular interface.
 ---

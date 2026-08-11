@@ -1,9 +1,4 @@
 ---
-title: Layers View
-description: Detailed technical and user documentation for the Geova Layers Manager component.
----
-
----
 title: Layers Manager
 description: Group and stylize your geospatial feature collections for the map view.
 ---

@@ -8,6 +8,7 @@ export default defineConfig({
   site: siteUrl,
   base: '/docs/',
   outDir: '../dist/docs',
+  srcExclude: ['README.md', 'core-engine/**', 'geova-ai/**', 'screens/**'],
   appearance: true, // Enable light/dark mode switch
 
   transformHead({ pageData }) {

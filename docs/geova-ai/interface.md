@@ -1,12 +1,6 @@
 ---
-title: Geova AI Capabilities & Orchestration
-description: Conversational spatial analysis, structured requests, and reviewable map results.
-order: 1
----
-
----
-title: Geova AI Protocol
-description: Interact conversationally with your maps using the Geova AI spatial assistant.
+title: Geova AI Interface
+description: Use Geova AI to create and review supported spatial requests.
 ---
 
 # Geova AI Protocol

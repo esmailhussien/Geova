@@ -1,12 +1,6 @@
 ---
-title: Spatial Indexing & DAG Execution
-description: High-performance R-Tree indexing and the Directed Acyclic Graph Template Engine parsing complex operations.
-order: 3
----
-
----
-title: Spatial Indexing execution
-description: High-performance R-Tree indexing and the Directed Acyclic Graph Template Engine.
+title: Spatial Indexing
+description: Reference material for the spatial indexing used by supported analysis workflows.
 ---
 
 # Spatial Indexing Execution

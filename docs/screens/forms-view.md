@@ -1,9 +1,4 @@
 ---
-title: Forms View
-description: Build structured forms for spatial data collection.
----
-
----
 title: Forms Builder
 description: Build structured forms for spatial data collection.
 ---

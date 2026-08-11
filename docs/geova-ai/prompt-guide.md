@@ -1,9 +1,4 @@
 ---
-title: Geova AI Prompt Guide
-description: Practical examples for using Geova AI with spatial data.
----
-
----
 title: AI Prompt Guide
 description: Practical examples for using Geova AI with spatial data.
 ---

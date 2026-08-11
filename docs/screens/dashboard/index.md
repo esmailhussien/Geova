@@ -1,9 +1,4 @@
 ---
-title: Dashboard View
-description: Detailed technical and user documentation for the Geova Dashboard component.
----
-
----
 title: System Dashboard
 description: Manage projects, monitor storage, and review spatial data.
 ---

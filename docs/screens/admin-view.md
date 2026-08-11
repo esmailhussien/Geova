@@ -1,10 +1,4 @@
 ---
-title: Admin Dashboard
-description: Team management, role assignment, and spatial KPI tracking.
-order: 7
----
-
----
 title: Admin Console
 description: Team management, role assignment, and spatial KPI tracking.
 ---

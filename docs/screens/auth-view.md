@@ -1,9 +1,4 @@
 ---
-title: Authentication View (AuthView)
-description: Technical and user documentation covering the Enterprise Authentication Layer and isolated Offline Guest operations.
----
-
----
 title: Authentication & Login
 description: Securely access your hosted GIS workspaces or continue local work when connectivity is unavailable.
 ---

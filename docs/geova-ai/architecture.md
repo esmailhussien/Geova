@@ -1,9 +1,4 @@
 ---
-title: Geova AI Engine Architecture
-description: How Geova AI combines local spatial processing with Geova Cloud assistance.
----
-
----
 title: Geova AI Architecture
 description: How Geova AI combines local spatial processing with Geova Cloud assistance.
 ---

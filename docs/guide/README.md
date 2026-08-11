@@ -219,5 +219,3 @@ Mapplex supports:
 The interface language adapts automatically based on your device settings, or can be manually toggled in **Settings → Language**.
 
 ---
-
-*Mapplex v1.0.0*
