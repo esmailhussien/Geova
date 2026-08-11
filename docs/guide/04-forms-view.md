@@ -66,6 +66,18 @@ When a field worker draws a point inside a reference polygon, the form auto-fill
 
 > **Important:** Spatial Auto-Fill is a form lookup, not a full overlay analysis. It does not split geometry or calculate intersection area; it copies the selected attribute from the matching reference feature.
 
+### Integrity Warnings and Capture Diagnostics
+
+Mapplex checks whether each saved Spatial Auto-Fill mapping still points to an available reference layer and property.
+
+- A configured field shows **Needs attention** when its saved source layer or property is no longer available. The saved mapping is retained; Mapplex does not silently replace or delete it.
+- Editors can open the field to review the existing mapping. Read-only users see the same status without receiving edit permission.
+- Restoring the missing reference layer or property clears the warning after the reference data refreshes.
+
+During **Quick Capture** and standard Map capture (drawing, Precision drawing, GPS, or pasted coordinates), an unavailable mapping produces a non-blocking message such as **"Spatial autofill unavailable for 1 field; enter it manually."** The affected field remains editable and the feature can still be saved after the operator enters the value manually.
+
+A valid mapping that simply has no polygon at the capture location is treated as a normal no-match, not as a broken configuration warning.
+
 ---
 
 ## 4. Importing a Schema

@@ -117,7 +117,10 @@ These features often save the most time once a project is already set up:
 | **AI-Assisted SQL / Filters** | Turn plain-language questions into reviewable dashboard filters or Geova AI results | [Dashboard](./01-dashboard-view.md) and [Geova AI](./06-geova-ai-chat.md) |
 | **Lexicon Picklists** | Keep names, categories, and codes consistent across projects and teams | [Forms & Smart Logic](./04-forms-view.md) |
 | **Spatial Auto-Fill** | Look up another reference layer by location and copy a matching polygon attribute into the form, such as district, parcel, or management area | [Forms & Smart Logic](./04-forms-view.md) and [Data & Sync](./05-data-view.md) |
+| **Spatial Auto-Fill Diagnostics** | Flag missing reference layers or properties without deleting the mapping, and keep capture available for manual entry | [Forms & Smart Logic](./04-forms-view.md) |
 | **Auto Geometry Fields** | Store coordinates, length, area, or perimeter values from the feature geometry | [Forms & Smart Logic](./04-forms-view.md) |
+| **AI Field Intelligence** | Run zero-credit quality, completeness, conflict, intersection, and handover checks with visible evidence grades | [Geova AI](./06-geova-ai-chat.md) |
+| **Controlled AI Field Actions** | Suggest one valid Lexicon/domain value, preview it, confirm it, and safely apply or undo it when permissions allow | [Geova AI](./06-geova-ai-chat.md) |
 | **GDB Exchange** | Exchange feature layers with supported relationships, related records, and attachments | [Data & Sync](./05-data-view.md) and [Capability Reference](./15-capability-reference.md) |
 | **Related Records & Attachments** | Keep inspections, work orders, photos, PDFs, and other evidence connected to the correct parent asset | [Data & Sync](./05-data-view.md) and [Sample Project](./16-sample-project-municipal-asset-inspection.md) |
 | **Offline Field Checklist** | Prepare devices, maps, roles, GPS, and sync before field deployment | [Capability Reference](./15-capability-reference.md) |
@@ -157,9 +160,9 @@ Follow the modules in order for a full walkthrough, or jump directly to the sect
 | [**01**](./01-dashboard-view.md) | **The Project Dashboard** | Creating projects, hosted vs. local storage, sync status, AI SQL Query Engine |
 | [**02**](./02-layers-view.md) | **Layers & Symbology** | Geometry types, styling, categorical/graduated classification, completion tracking, Data Dictionary |
 | [**03**](./03-map-view.md) | **Map View** | Drawing tools, GPS tracking, auto-track, offline tiles, measurements, split/merge, sketch mode |
-| [**04**](./04-forms-view.md) | **Forms & Smart Logic** | 10 field types, spatial auto-fill, schema import, Lexicon picklists, AI-assisted conditional rules |
+| [**04**](./04-forms-view.md) | **Forms & Smart Logic** | 10 field types, guarded spatial auto-fill and diagnostics, schema import, Lexicon picklists, AI-assisted conditional rules |
 | [**05**](./05-data-view.md) | **Data & Sync** | Export formats, GDB relationships and attachments, file imports, spreadsheet wizard, P2P sync, reference zones |
-| [**06**](./06-geova-ai-chat.md) | **Geova AI Assistant** | Natural language queries, prompt cookbook, @mention layers, display modes, export/commit results |
+| [**06**](./06-geova-ai-chat.md) | **Geova AI Assistant** | Whole-layer queries, zero-credit field intelligence, evidence grades, controlled one-field actions, and reviewed exports |
 | [**07**](./07-team-view.md) | **Team & Collaboration** | Performance KPIs, sparkline charts, leaderboards, member roster, invite system, role management |
 | [**08**](./08-settings.md) | **Settings, Account & Workspace** | 15 app settings, device management, workspace switcher, offline maps, subscriptions & entitlements |
 | [**09**](./09-slope-profiler.md) | **Slope Profiler** | Digital clinometer HUD, cross-section profiles, calibration, severity-coded readings |

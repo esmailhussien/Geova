@@ -1,6 +1,6 @@
 ---
 title: Geova AI Chat
-description: Use Geova AI to query project data, review spatial results, and export or save analysis layers.
+description: Use Geova AI for whole-layer spatial queries, field intelligence, evidence grades, guarded form actions, and reviewed exports.
 ---
 
 # Module 06: Geova AI Chat
@@ -44,7 +44,10 @@ Tap any chip to auto-send the query.
 If no messages exist, the **Empty State** shows:
 - Welcome message: *"Ask Me Anything"*
 - Privacy badges: **Managed workspace credits**, **Limited samples may be sent**, **1 credit per useful answer**
+- Zero-credit data helpers: **Explore Data**, **Layers**, **Fields**, and **Spatial**
 - Suggested Queries based on your project data
+
+Use **Explore Data** when you are not sure what to ask. Geova AI lists the layers, record counts, useful fields, and example questions it can answer from the active project.
 
 ---
 
@@ -119,6 +122,70 @@ Geova AI is strongest when your project has clear layer names, field names, and 
 | **Reports and exports** | Generate result tables, map previews, GeoJSON/CSV/KML exports, or PDF summaries |
 
 AI results are decision support, not a replacement for professional review. For engineering, regulatory, safety, or legal work, confirm the layer schema, coordinate system, and generated filters before acting on the output.
+
+### Field Intelligence and Evidence Grades
+
+Geova can run deterministic, read-only field checks without calling the language model or consuming an AI credit. Try requests such as:
+
+- *“Check data quality for this layer.”*
+- *“Show required-field completeness for the visible layers.”*
+- *“Summarize conflicts in this layer.”*
+- *“Which visible layers intersect the selected features?”*
+- *“Create an inspection handover report.”*
+
+These checks use the active form, Smart Logic, current lexicons/domains, geometry validity, field types, and synchronization state. They do not change records.
+
+For these questions, **visible layers means all records in those enabled layers**, not only features currently visible inside the map screen. A viewport filter is used only when you explicitly say *“on screen,” “in this map area,”* or similar wording. Selected-feature requests are limited to the current selection.
+
+Evidence badges mean:
+
+| Badge | Meaning |
+|---|---|
+| **Decision-grade** | Exact and complete deterministic evidence met the configured freshness, warning, and exclusion thresholds |
+| **Review required** | The result is exact but has a warning, freshness concern, or excluded-data concern |
+| **Advisory only** | The result is sampled, approximate, fallback, unknown, incomplete, or failed a validation gate |
+
+The grade describes the data path, not professional approval. Always review safety-, engineering-, legal-, or regulatory-critical results.
+
+### Focused Form Co-Pilot and Controlled Field Actions
+
+When Geova has context for one focused feature and form field, it can suggest a value from that field's current Lexicon or fixed options. It does not invent a new controlled value when the available choices are unknown, ambiguous, hidden by Smart Logic, or incompatible with the form.
+
+A supported suggestion remains a draft until you review a one-field card showing the current and proposed values, source, confidence, and relevant rule effects. **Apply** requires explicit confirmation and rechecks the current record, form rules, domain version, project, workspace, role, and ownership. **Undo** is offered only while the applied value and record revision are still safe to reverse.
+
+- Viewer and other read-only roles cannot apply a suggestion.
+- Resolve unsaved edits in an already-open form before applying an AI field action.
+- A hosted offline field action is blocked unless the device has valid offline authorization. Normal manual offline drafts continue to work.
+- Bulk field mutation is not enabled; each proposal affects one feature and one field.
+
+### Area-Scoped Questions: Field or Boundary Layer
+
+Questions like *"How many fire hydrants are in Toronto?"* can be answered in two practical ways:
+
+| Available Data | How Geova Should Handle It | Example |
+|----------------|----------------------------|---------|
+| **A section/city field on the target table** | Use a normal tabular filter first | `Fire Hydrants.City = Toronto` |
+| **A polygon section/boundary layer** | Use a spatial containment query | Count hydrants inside the `Toronto` feature from a sections/cities layer |
+| **Both are available** | Prefer the table field for simple counts; use the polygon layer when the user asks for *inside*, *within*, *boundary*, or spatial containment | *"Count hydrants inside the Toronto boundary"* |
+| **Neither is available** | Ask for the missing data instead of guessing | Add a section/city/district field, or add a polygon layer for sections/cities |
+
+For working projects, the target table should either include a clear area field such as **Section**, **City**, **District**, or **Municipality**, or the project should include a polygon layer representing those sections.
+
+### When Geova Needs More Detail
+
+If Geova AI cannot safely understand the question, it should not guess. It shows a clarification or recovery card with actions such as:
+
+| Situation | What Geova Shows | Useful Next Action |
+|-----------|------------------|--------------------|
+| **Unclear question** | A short note explaining that it needs a map, layer, field, or report question | Tap **Explore Data**, or add an `@Layer` / `#Field` mention |
+| **Multiple possible layers** | A prompt explaining that more than one layer could match | Tap **Choose Layer** or **Show Layers** |
+| **No table records matched** | What was checked and why the filter may be too narrow | Tap **Broaden Search** or check field values |
+| **No spatial features matched** | A note about overlap, distance, filters, or coordinate systems | Tap **Guided Pass** or **Check Layers** |
+| **Fallback method used** | A warning that the result used an estimated method | Review the notes before using the result operationally |
+
+Clarifications, system failures, and unconfirmed empty results are not billed as useful answers.
+
+For spatial analyses, the recovery guidance checks the details relevant to the requested operation: distance and units for buffers; overlap, geometry, filters, and CRS for joins or clips; origin, destination, GPS, and routing fallback for nearest analysis; and suitable numeric fields, sample density, boundaries, or grid settings for density and interpolation.
 
 ---
 

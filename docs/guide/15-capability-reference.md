@@ -36,7 +36,8 @@ If a tool is unavailable, the app normally shows a lock state, a disabled contro
 | Data import/export | Mostly yes | No for local files | Large files depend on device memory and browser limits |
 | Local P2P sync | Local network only | No internet required | Requires supported native/local-network capability and same Wi-Fi or hotspot |
 | Team collaboration | No | Yes | Requires authenticated cloud workspace |
-| Geova AI | No | Yes | Requires sign-in, workspace credits, and network access |
+| Generative Geova AI questions | No | Yes | Requires sign-in, workspace credits, and network access |
+| Deterministic AI field intelligence | Yes after authorized project data is loaded | No | Read-only quality, completeness, conflict, intersection, and handover checks use local project evidence and no AI credit |
 | Cloud audit/history | No | Yes | Availability depends on plan and retention policy |
 
 ---
@@ -93,7 +94,8 @@ Use this table when a user asks why a tool is locked, hidden, or unavailable. Av
 | **Local P2P sync** | Core / native support | Project members with sync access | None | Same Wi-Fi or hotspot; native local-network support |
 | **Cloud sync / team collaboration** | Team or cloud entitlement | Signed-in workspace member | Hosted project | Internet required |
 | **Audit history** | Team / audit entitlement | Project member with access | None | Internet required for cloud history |
-| **Geova AI Chat** | Geova AI entitlement and credits | Signed-in workspace user | None | Internet required |
+| **Geova AI generative questions** | Geova AI entitlement and credits | Signed-in workspace user | None | Internet required |
+| **AI field intelligence** | Geova AI interface; zero credits for deterministic checks | Authorized project user | Relevant project/layer/selection context loaded | No model connection required after authorized data is loaded |
 | **AI dashboard query generation** | Geova AI entitlement and credits | Signed-in workspace user | None | Internet required |
 | **CAD import** | CAD Manager entitlement | Owner, Admin, Editor | None | No internet for local file import |
 | **CAD export** | CAD Manager entitlement | Any project member with export access | Target CRS selected | No internet for local export |
@@ -187,6 +189,8 @@ Additional form capabilities include:
 
 - Schema import from supported data files
 - Spatial Auto-Fill from reference polygon layers using point-in-polygon or centroid-in-polygon lookup
+- **Needs attention** indicators for saved spatial mappings whose source layer or property is unavailable
+- Non-blocking manual-entry guidance during Quick Capture and standard Map capture when a configured spatial value cannot be resolved
 - Smart Logic for conditional visibility and values where entitled
 - AI-assisted Smart Logic generation where Geova AI credits are available
 - Lexicon linking, matching, and value cleanup where entitled
@@ -240,13 +244,18 @@ Geova AI can help with:
 - Finding nearest features and building buffers
 - Joining points to zones or comparing layers
 - Running template-driven spatial workflows such as gap analysis, catchment analysis, suitability ranking, clustering, density, interpolation, and scenario comparison where available
+- Running deterministic, read-only field-quality, completeness, conflict, selected-feature intersection, and inspection-handover checks without consuming an AI credit
+- Showing **Decision-grade**, **Review required**, or **Advisory only** evidence labels so users can distinguish exact evidence from warnings, samples, or fallbacks
+- Suggesting one controlled form value from the current Lexicon or fixed options, with a review card, explicit confirmation, guarded Apply, and safe Undo where role and record state permit
 - Previewing result layers on the map
 - Exporting AI results to formats such as GeoJSON, CSV, KML, or PDF
 - Saving AI results as permanent Mapplex layers after review
 
 Important boundaries:
 
-- Geova AI requires a signed-in session, network access, and workspace credits.
+- Generative Geova AI questions require a signed-in session, network access, and workspace credits. Supported deterministic field-intelligence and focused-form routes do not call the language model or consume a credit.
+- Ordinary analysis uses complete referenced layers by default. The current map extent or selected features become the scope only when the request explicitly asks for them.
+- Controlled field suggestions affect one feature and one field. They cannot bypass form rules, Lexicons/domains, role/ownership checks, explicit confirmation, or hosted sync authorization.
 - The model works best when layers, fields, aliases, units, and roles are configured clearly.
 - AI requests may include layer schema, field samples, and relevant location context.
 - Full datasets and geometries are not sent automatically for ordinary chat planning.
