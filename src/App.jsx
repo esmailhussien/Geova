@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import LandingPage from "./pages/LandingPage";
 import MapplexAppPage from "./pages/MapplexAppPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AccountDeletionPage from "./pages/AccountDeletionPage";
 import FieldGuide from "./pages/FieldGuide";
 import UserManualPage from "./pages/UserManualPage";
 import PlatformPage from "./pages/PlatformPage";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/consulting" element={<ConsultingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/account-deletion" element={<AccountDeletionPage />} />
         <Route path="/guide" element={<UserManualPage />} />
         <Route path="/user-guide" element={<UserManualPage />} />
         <Route path="/ai" element={<Navigate to="/platform" replace />} />

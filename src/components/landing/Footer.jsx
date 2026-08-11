@@ -70,6 +70,7 @@ const Footer = () => {
         <p>© 2026 Geova Technologies. All rights reserved.</p>
         <div className="flex gap-8">
           <Link className="hover:text-primary" to="/privacy">Privacy Policy</Link>
+          <Link className="hover:text-primary" to="/account-deletion">Delete Account</Link>
           <a className="hover:text-primary" href="/docs/">Documentation</a>
           <Link className="hover:text-primary" to="/contact">Contact</Link>
         </div>

@@ -80,6 +80,17 @@ Geova AI selects a display layout based on the query intent:
 | **MAX / MIN** | Hero with Context | *"Oldest hydrant? → ID: H-0047, installed 1987"* |
 | **General Query** | Full Data Table | *"Show all hydrants near the river"* |
 
+### Query Scope: Entire Layers by Default
+
+Unless you explicitly request a smaller scope, Geova AI evaluates the complete referenced layer or project dataset available to your workspace. It does **not** limit a count, group, filter, or spatial analysis to features currently visible on the map simply because the map is zoomed in.
+
+- Use `@Layer` and `#Column` mentions to identify the intended complete layer and field.
+- Say **"within the current map view"** only when you deliberately want the current map extent to be a filter.
+- Say **"the selected features"** when you want only the current selection.
+- A mini-map is a result preview; it does not change the analytical scope by itself.
+
+Always check the response scope, record count, SQL, and provenance before saving or exporting a result.
+
 ### SQL Transparency
 
 Many tabular responses include a collapsible **"View SQL Query"** section showing the filter or query logic that was executed:
@@ -214,11 +225,15 @@ The chat service requires a signed-in session, network access, and available wor
 
 ## 10. Privacy & Data Safety
 
-- **Managed AI service** — AI requests are routed through the Mapplex backend and charged against workspace credits
-- **Limited Context** — Layer names, field names, Data Dictionary details, and sample field values may be sent so the model can understand your project
-- **Location Context When Relevant** — Your current location may be used when you ask location-based questions such as "nearest to me"
-- **No Automatic Full Dataset Upload** — Full datasets and geometries are not sent automatically for ordinary chat planning
-- **Local Execution Where Possible** — Filters and many spatial operations run against local project data after the AI plan is prepared
+- **Managed AI service** — Requests are routed through the Geova backend and may be processed by the configured provider, currently OpenAI or Google Gemini.
+- **Minimum relevant context** — Layer names, schemas, Data Dictionary details, domain or lexicon values, selected records, sample field values, spatial scope, and derived statistics may be sent when needed to interpret your request.
+- **Location only when relevant** — Current location may be included when you intentionally ask a location-based question such as "nearest to me."
+- **No automatic full-dataset upload for ordinary planning** — Full datasets and geometries are not automatically sent merely by opening chat. The context used depends on the request you choose to run.
+- **Project and workspace isolation** — Queries must stay within the active authorized project/workspace. Verify the project name and scope shown in the response.
+- **Local execution where possible** — Filters and many spatial operations run against authorized project data after the plan is prepared.
+- **User responsibility** — Do not submit sensitive, regulated, or personal content unless your organization permits it. AI output is decision support and should be reviewed before operational, engineering, safety, legal, or regulatory use.
+
+See the [Mapplex Privacy Policy](https://geova.net/privacy) for provider, retention, deletion, and data-transfer details. Account deletion requests are available at [geova.net/account-deletion](https://geova.net/account-deletion).
 
 ---
 
